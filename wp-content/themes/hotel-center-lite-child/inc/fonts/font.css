@@ -1,0 +1,94 @@
+/* Gothic font */
+
+@font-face {
+    font-family: 'Malgun Gothic', 'sans-serif';
+    src: url('../../assets/fonts/gothic/malgun.ttf');
+}
+
+@font-face {
+    font-family: 'Yu Gothic', 'sans-serif';
+    src: url('../../assets/fonts/gothic/yugothib.ttf');
+}
+
+@font-face {
+    font-family: 'Yu Gothic Bold', 'sans-serif';
+    src: url('../../assets/fonts/gothic/yu-gothic-bold.ttf');
+}
+
+@font-face {
+    font-family: 'Yu Gothic Medium', 'sans-serif';
+    src: url('../../assets/fonts/gothic/yugothic-medium.otf');
+}
+
+@font-face {
+    font-family: 'Yu Gothic Regular', 'sans-serif';
+    src: url('../../assets/fonts/gothic/yugothic.ttf');
+}
+
+@font-face {
+    font-family: 'Yu Gothic Light', 'sans-serif';
+    src: url('../../assets/fonts/gothic/yugothil.ttf');
+}
+
+@font-face {
+    font-family: 'NanumGothic Regular', 'sans-serif';
+    src: url('../../assets/fonts/gothic/NanumGothic-Regular.ttf');
+}
+
+
+/* Open Sans */
+
+@font-face {
+    font-family: 'Open Sans Regular', 'sans-serif';
+    src: url('../../assets/fonts/opensans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans Light', 'sans-serif';
+    src: url('../../assets/fonts/opensans/OpenSans-Light.ttf');
+}
+
+
+/* Buenard */
+
+@font-face {
+    font-family: 'Buenard Regular', 'sans-serif';
+    src: url('../../assets/fonts/buenard/Buenard-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Buenard Bold', 'sans-serif';
+    src: url('../../assets/fonts/buenard/Buenard-Bold.ttf');
+}
+
+
+/* Alegreya SC */
+
+@font-face {
+    font-family: 'Alegreya SC Regular', 'serif';
+    src: url('../../assets/fonts/alegreyasc/AlegreyaSC-Regular.ttf');
+}
+
+
+/* Alegreya Sans */
+
+@font-face {
+    font-family: 'Alegreya Sans ExtraBoldItalic', 'Arial';
+    src: url('../../assets/fonts/alegreyasans/AlegreyaSans-ExtraBoldItalic.ttf');
+}
+
+
+/* SeoulHangang */
+
+@font-face {
+    font-family: 'SeoulHangang M', 'sans-serif';
+    src: url('../../assets/fonts/seoulhangangm/SeoulHangang-Medium.ttf');
+}
+
+
+/* Arizonia */
+
+@font-face {
+    font-family: 'Arizonia Regular', 'sans-serif';
+    src: url('../../assets/fonts/arizonia/Arizonia-Regular.ttf');
+}
