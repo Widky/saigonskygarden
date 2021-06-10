@@ -1,0 +1,705 @@
+.apartment-detail {
+    margin-top: 58px;
+}
+
+.apartment-detail .apd-tax {
+    position: relative;
+}
+
+.apartment-detail .cat-title {
+    font-size: 60px;
+    margin-left: 18.5px;
+    line-height: normal;
+}
+
+.apartment-detail .cat-des {
+    font: normal bold 24px 'Yu Gothic', 'sans-serif';
+    line-height: 30px;
+    color: #333333;
+    display: inline-block;
+    margin-left: 30px;
+    padding-left: 29.5px;
+    border-left: 1px solid #70707042;
+}
+
+.apartment-detail .apd-tax-share,
+.apartment-detail .apd-tax-share a {
+    font: normal 13px 'Yu Gothic Medium', 'sans-serif';
+    line-height: 30px;
+    color: #333333;
+    text-transform: uppercase;
+    display: contents;
+}
+
+.apartment-detail .apd-tax-share {
+    height: 100%;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.apartment-detail .apd-tax-share i,
+.apartment-detail .apd-tax-share svg {
+    width: 18px;
+    height: 20px;
+    color: #C1C1C1;
+    margin-right: 6.4px;
+}
+
+.apartment-detail .apd-tax-slide {
+    margin-top: 54px;
+    position: relative;
+}
+
+.apartment-detail .apd-tax-slide .carousel-item {
+    height: 760px;
+}
+
+.apartment-detail .apd-tax-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.apartment-detail .apd-tax-slide .carousel-control {
+    width: 75px !important;
+    height: 71px !important;
+    background-color: #5A5A5A;
+}
+
+.apartment-detail .apd-tax-slide .carousel-control:hover {
+    background-color: #2398A9;
+}
+
+.apartment-detail .apd-tax-slide .carousel-control-prev {
+    top: 345px !important;
+    left: 36px !important;
+}
+
+.apartment-detail .apd-tax-slide .carousel-control-next {
+    top: 345px !important;
+    right: 36px !important;
+}
+
+.apartment-detail .apd-tax-slide .carousel-indicators {
+    margin: 0 auto;
+    bottom: -55px;
+}
+
+.apartment-detail .apd-tax-slide .carousel-indicators>li {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #C8C8C8;
+    border-radius: 17px;
+    background-color: transparent;
+}
+
+.apartment-detail .apd-tax-slide .carousel-indicators>li:nth-child(n+2) {
+    margin-left: 17px;
+}
+
+.apartment-detail .apd-tax-slide .carousel-indicators>li.active,
+.apartment-detail .apd-tax-slide .carousel-indicators>li:hover {
+    border-color: #166772;
+}
+
+
+/* modal */
+
+.apartment-detail .apd-tax-slide .modal-dialog {
+    max-width: 1126px;
+    margin: auto;
+}
+
+.apartment-detail .apd-tax-slide .modal-content {
+    background: transparent;
+    border: none;
+}
+
+.apartment-detail .apd-tax-slide .modal-body {
+    padding: 0;
+}
+
+#carouselImgSlideModal .carousel-item {
+    height: 637px;
+    width: 100%;
+}
+
+#carouselImgSlideModal .carousel-control {
+    background: transparent;
+    top: 300px !important;
+}
+
+#carouselImgSlideModal .carousel-control span {
+    padding: 17px;
+}
+
+#carouselImgSlideModal .carousel-control-prev {
+    left: -75px !important;
+}
+
+#carouselImgSlideModal .carousel-control-next {
+    right: -75px !important;
+}
+
+#carouselImgSlideModal .carousel-indicators {
+    bottom: -131px;
+}
+
+#carouselImgSlideModal .carousel-indicators>li {
+    width: 201px;
+    height: 114px;
+    border-radius: 0;
+    border: 0;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+.apartment-detail .apd-tax-slide .modal-footer {
+    position: relative;
+}
+
+.apartment-detail .apd-tax-slide .modal-footer button:focus-visible,
+.apartment-detail .apd-tax-slide .modal-footer button:focus,
+.apartment-detail .apd-tax-slide .modal-footer button *:focus-visible,
+.apartment-detail .apd-tax-slide .modal-footer button *:focus {
+    outline: none;
+}
+
+.apartment-detail .apd-tax-slide .close,
+.apartment-detail .apd-tax-slide .close:focus,
+.apartment-detail .apd-tax-slide .close:hover {
+    opacity: 1;
+}
+
+.apartment-detail .apd-tax-slide .modal-footer button {
+    font: normal 16px 'Yu Gothic Regular', 'sans-serif';
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    z-index: 16;
+}
+
+.apartment-detail .apd-tax-slide .modal-footer button>* {
+    color: #FFFFFF;
+}
+
+.apartment-detail .apd-tax-slide .modal-footer button>span:last-child {
+    font-size: 21px;
+}
+
+.apartment-detail .apd-tax-header {
+    margin-top: 134px;
+}
+
+.apartment-detail .apd-tax-header .post-title {
+    margin-bottom: 17px;
+}
+
+.tax-btn-contact {
+    position: relative;
+    display: contents;
+}
+
+.tax-btn-contact a {
+    font: normal 21px 'Yu Gothic Regular', 'sans-serif';
+    line-height: 30px;
+    color: #FFFFFF;
+    height: 66px;
+    width: 208px;
+    background-color: #B88C8C;
+    display: block;
+    text-align: center;
+    line-height: 66px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+}
+
+.apartment-detail .apd-tax-detail {
+    margin-top: 50px;
+    margin-bottom: 79px;
+}
+
+.apd-title {
+    min-width: 280px;
+}
+
+.apd-title h4 {
+    font: normal bold 19px 'Yu Gothic', 'sans-serif';
+    line-height: 30px;
+    color: #333333;
+}
+
+.apd-basic,
+.apd-convenience,
+.apd-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 50.5px;
+    padding-bottom: 42.5px;
+}
+
+.apd-basic .apd-basic-item {
+    font: normal 18px 'Yu Gothic Regular', 'sans-serif';
+    line-height: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    float: left;
+}
+
+.apd-basic .apd-basic-item:nth-child(3),
+.apd-basic .utilities-item:nth-child(6) {
+    float: none;
+}
+
+.apd-basic .apd-basic-item .apd-basic-text {
+    color: #B88C8C;
+    padding-right: 3px;
+}
+
+.apd-basic .apd-basic-value {
+    color: #333333;
+}
+
+.apd-basic .apd-basic-item .post-price {
+    display: inline-block;
+}
+
+.apd-basic .apd-basic-item:nth-child(3n + 1) {
+    min-width: 202px;
+}
+
+.apd-basic .apd-basic-item:nth-child(3n + 2) {
+    min-width: 288px;
+}
+
+.apd-basic .apd-basic-item:nth-child(n + 2) {
+    padding-left: 79px;
+}
+
+.apd-basic .apd-basic-item:nth-child(4),
+.apd-basic .utilities-item:nth-child(7) {
+    padding-left: 0;
+}
+
+.apd-convenience .utilities-item .utilities-icon {
+    padding-right: 19.2px;
+}
+
+.apd-convenience .utilities-item:nth-child(n + 4) {
+    margin-top: 30px;
+}
+
+.apd-info .apd-info-content p {
+    line-height: 28px;
+}
+
+
+/* carousel */
+
+#multi-carousel-apartment {
+    width: 1592px;
+    margin: auto;
+    position: relative;
+}
+
+#multi-carousel-apartment .owl-carousel {
+    width: 1325px;
+    margin: auto;
+    margin-top: 54px;
+}
+
+#multi-carousel-apartment .owl-item {
+    width: auto;
+    height: auto;
+    /*467*/
+    background-color: #FFFFFF;
+    border: 1px solid #D2D2D2;
+}
+
+#multi-carousel-apartment .owl-item img {
+    width: 100%;
+    height: 264px;
+}
+
+#multi-carousel-apartment .owl-item .panel-thumbnail {
+    position: relative;
+}
+
+#multi-carousel-apartment .owl-item .evc-cat {
+    position: absolute;
+    top: 16px;
+    left: 21.6px;
+    min-width: 102px;
+    height: 41px;
+    background-color: #166772;
+    font: normal 16px 'NanumGothic Regular', 'sans-serif';
+    text-align: center;
+    line-height: 41px;
+    color: #FFFFFF;
+}
+
+#multi-carousel-apartment .owl-item .evc-title {
+    font: normal bold 24px 'Yu Gothic Bold', 'sans-serif';
+    line-height: 25px;
+    color: #333333;
+    text-align: center;
+}
+
+#multi-carousel-apartment .owl-item .evc-title {
+    margin-top: 28.7px;
+    margin-bottom: 17px;
+}
+
+#multi-carousel-apartment .owl-item .evc-excerpt {
+    font: normal 16px 'Yu Gothic Medium', 'sans-serif';
+    line-height: 25px;
+    color: #333333;
+    text-align: center;
+}
+
+#multi-carousel-apartment .owl-prev,
+#multi-carousel-apartment .owl-next {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: auto;
+    position: absolute;
+    top: 155px;
+}
+
+#multi-carousel-apartment .owl-next {
+    right: -60px;
+}
+
+#multi-carousel-apartment .owl-prev {
+    left: -60px;
+}
+
+#multi-carousel-apartment .next-icon,
+#multi-carousel-apartment .prev-icon {
+    background: none;
+    border: solid #343434;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 24px;
+}
+
+#multi-carousel-apartment .prev-icon {
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+#multi-carousel-apartment .next-icon {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#multi-carousel-apartment .owl-theme .owl-nav [class*=owl-]:hover {
+    background: none;
+}
+
+#multi-carousel-apartment button:focus {
+    outline: none;
+}
+
+#multi-carousel-apartment .item .apd-cat {
+    position: absolute;
+    top: 203px;
+    left: 0;
+    height: 61px;
+    min-width: 194.5px;
+    background-color: #2398A9;
+    color: #FFFFFF;
+    text-align: center;
+    font: normal 24px 'Yu Gothic Medium', 'sans-serif';
+    line-height: 30px;
+    line-height: 61px;
+}
+
+#multi-carousel-apartment .item .apd-title {
+    font: normal 16px 'Yu Gothic Regular', 'sans-serif';
+    color: #333333;
+    line-height: 25px;
+    padding-bottom: 39px;
+}
+
+#multi-carousel-apartment .item .apd-content {
+    padding: 14px 0px 39px 29px;
+}
+
+#multi-carousel-apartment .item .apd-content * {
+    font-size: 16px;
+}
+
+#multi-carousel-apartment .item .post-price {
+    padding: 0;
+}
+
+#multi-carousel-apartment .owl-carousel .owl-stage {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.apd-tax-other-room {
+    margin-top: 78px;
+    margin-bottom: 130px;
+}
+
+.apd-tax-other-room .ap-title {
+    margin-bottom: 81px;
+}
+
+.apd-tax-other-room .ap-title .cl-main-title.change-cl {
+    color: #2398A9;
+}
+
+.apd-tax-slide-lightbox button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #707070;
+    background-color: #514E4A;
+}
+
+.apd-tax-slide .csti-img {
+    position: relative;
+}
+
+.apd-tax-slide-lightbox {
+    position: absolute;
+    right: 27px;
+    bottom: 28px;
+}
+
+.apd-tax-slide-lightbox,
+.apd-tax-slide-lightbox *,
+.apd-tax-slide-lightbox *:focus {
+    outline: none;
+}
+
+.apartment-detail .apd-tax-slide-lightbox img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Model apartment */
+
+
+/* responsive */
+
+
+/* size LG - < 1200px */
+
+@media screen and (max-width: 1199.98px) {
+    .navbar-main.desktop {
+        display: none;
+    }
+    .apartment-detail .apd-tax-slide .carousel-item {
+        height: 570px !important;
+    }
+    .apartment-detail .apd-tax-slide .modal-dialog {
+        max-width: 768px;
+    }
+    .apartment-detail .apd-tax-slide .modal-body .carousel-item {
+        height: 414px;
+    }
+    .apartment-detail .apd-tax-slide .modal-footer button {
+        bottom: -138px;
+    }
+    #carouselImgSlideModal .carousel-control {
+        top: 215px !important;
+    }
+    .apartment-detail .apd-tax-slide .carousel-control-next,
+    .apartment-detail .apd-tax-slide .carousel-control-prev {
+        top: 235px !important;
+    }
+    .apd-title {
+        min-width: 150px;
+    }
+    .apd-basic .apd-basic-item:nth-child(n + 2) {
+        padding-left: 39px;
+    }
+    .apd-basic .apd-basic-item:nth-child(4),
+    .apd-basic .utilities-item:nth-child(7) {
+        padding-left: 0;
+    }
+    .apd-basic .apd-basic-item:nth-child(3n + 2) {
+        min-width: 249px;
+    }
+    .apd-basic .utilities-item:nth-child(3n + 1) {
+        min-width: 189px;
+    }
+    .apd-basic .utilities-item:nth-child(3n + 2) {
+        min-width: 210px;
+    }
+    #multi-carousel-apartment {
+        width: auto;
+    }
+    #multi-carousel-apartment .owl-carousel {
+        width: 834px;
+    }
+}
+
+
+/* size MD - < 991.98px */
+
+@media screen and (max-width: 991.98px) {
+    .apartment-detail .apd-tax-slide .carousel-item {
+        height: 440px !important;
+    }
+    .apartment-detail .apd-tax-slide .modal-dialog {
+        max-width: 614px;
+    }
+    .apartment-detail .apd-tax-slide .modal-body .carousel-item {
+        height: 375px;
+    }
+    .apartment-detail .apd-tax-slide .carousel-control-next,
+    .apartment-detail .apd-tax-slide .carousel-control-prev {
+        top: 172px !important;
+    }
+    .apartment-detail .apd-tax-header {
+        margin-top: 118px;
+    }
+    .apd-basic .apd-basic-item,
+    .apd-basic .apd-basic-item:nth-child(3),
+    .apd-basic .utilities-item:nth-child(6) {
+        float: left;
+        padding: 0;
+    }
+    .apd-basic .apd-basic-item:nth-child(n + 2) {
+        padding-left: 0;
+    }
+    .apd-basic .apd-basic-item:nth-child(3n + 1) {
+        min-width: 261px;
+    }
+    .apd-basic .apd-basic-item:nth-child(2n + 2) {
+        float: none;
+        padding-left: 39px;
+    }
+    .apd-convenience .utilities-item:nth-child(n + 3) {
+        margin-top: 30px;
+    }
+    .apd-convenience .utilities-item:nth-child(2n + 1) {
+        min-width: 261px;
+    }
+    .apd-convenience .utilities-item:last-child {
+        float: none;
+    }
+    #multi-carousel-apartment .owl-carousel {
+        width: 630px;
+    }
+    #multi-carousel-apartment .next-icon,
+    #multi-carousel-apartment .prev-icon {
+        padding: 16px;
+    }
+    #multi-carousel-apartment .owl-next {
+        right: -40px;
+    }
+    #multi-carousel-apartment .owl-prev {
+        left: -40px;
+    }
+}
+
+
+/* size SM - < 767.98px */
+
+@media screen and (max-width: 767.98px) {}
+
+
+/* size E SM - < 575.98px */
+
+@media screen and (max-width: 575.98px) {
+    .apartment-detail .cat-des {
+        font-size: 18px;
+        margin-left: 0;
+        padding-left: 0;
+        border: none;
+    }
+    .apartment-detail .apd-tax-slide .modal-dialog {
+        max-width: 300px;
+    }
+    .apartment-detail .apd-tax-slide .modal-body .carousel-item {
+        height: 225px !important;
+    }
+    #carouselImgSlideModal .carousel-control {
+        top: 109px !important;
+    }
+    #carouselImgSlideModal .carousel-control-next {
+        right: -40px !important;
+    }
+    #carouselImgSlideModal .carousel-control-prev {
+        left: -40px !important;
+    }
+    #carouselImgSlideModal .carousel-indicators>li {
+        height: 60px;
+    }
+    #carouselImgSlideModal .carousel-indicators>li:nth-child(n + 2) {
+        margin-left: 7px;
+    }
+    #carouselImgSlideModal .carousel-indicators {
+        bottom: -76px;
+    }
+    .apartment-detail .apd-tax-slide .modal-footer button {
+        bottom: -79px;
+    }
+    .apartment-detail .apd-tax-slide .carousel-control-next,
+    .apartment-detail .apd-tax-slide .carousel-control-prev {
+        top: 128px !important;
+    }
+    .apartment-detail .apd-tax-slide .carousel-item {
+        height: 330px !important;
+    }
+    .apartment-detail .apd-tax-slide .carousel-control {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .apartment-detail .apd-tax-slide .carousel-control-next {
+        right: 27px !important;
+    }
+    .apartment-detail .apd-tax-slide .carousel-control-prev {
+        left: 27px !important;
+    }
+    .tax-btn-contact a {
+        position: unset;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .apd-basic,
+    .apd-info {
+        display: block;
+    }
+    .apd-basic .apd-basic-item {
+        float: none !important;
+        padding: 0 !important;
+        width: auto;
+        margin-top: 30px !important;
+    }
+    .apd-info .apd-info-content {
+        margin-top: 30px;
+    }
+    #multi-carousel-apartment .owl-carousel {
+        width: 300px;
+    }
+    #multi-carousel-apartment .next-icon,
+    #multi-carousel-apartment .prev-icon {
+        padding: 10px;
+    }
+    #multi-carousel-apartment .owl-prev {
+        left: -31px;
+    }
+    #multi-carousel-apartment .owl-next {
+        right: -31px;
+    }
+}

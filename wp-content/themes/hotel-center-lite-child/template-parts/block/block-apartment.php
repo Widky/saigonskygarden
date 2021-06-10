@@ -52,9 +52,44 @@ switch($currentLang)
                 <div class="csti-item">
                     <div class="csti-img">
                         <?php
-                        $sliderCat = get_post_meta($my_posts[0]->ID,'slide_thumbnail', true);
-                        if($sliderCat){
-                            echo do_shortcode('[smartslider3 slider="'.$sliderCat.'"]');
+                        $sliderCat = get_field('slide_thumbnail', $my_posts[0]->ID);
+                        // echo "<pre>";var_dump($sliderCat);exit;
+                        // $sizeArray = count($sliderCat);
+                        if($sliderCat && $sliderCat['img_1'] != false){
+                            ?>
+                        <div class="post-img-slide-wrap">
+                            <div id="carouselImgSlide" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
+                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
+                                    <div class="carousel-item active">
+                                        <img src="<?php echo $image[0]; ?>"
+                                            alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                    </div>
+                                    <?php endif; ?>
+                                    <?php foreach($sliderCat as $k=>$v) : ?>
+                                    <?php if($sliderCat[$k] != false) : ?>
+                                    <div
+                                        class="carousel-item <?php if($k == 'img_1' && ! has_post_thumbnail( $my_posts[0]->ID )) echo 'active'; ?>">
+                                        <img src="<?php echo $v['url']; ?>" alt="<?php echo $v['title']; ?>">
+                                    </div>
+                                    <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </div>
+                                <a class="carousel-control carousel-control-prev" href="#carouselImgSlide" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control carousel-control-next" href="#carouselImgSlide" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <div class="quote-orverlay"></div>
+                        </div>
+                        <?php
                         }else{
                         ?>
                         <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
@@ -126,7 +161,7 @@ switch($currentLang)
                 // echo "<pre>";print_r($my_posts_bed);exit;
                 
                 $i = 1;
-                foreach($my_posts_bed as $k=>$v) : 
+                foreach($my_posts_bed as $k=>$v) :
                 ?>
                 <div class="cat-bed-items-wrap">
                     <div class="cat-main-title cat-bed-title">
@@ -138,11 +173,46 @@ switch($currentLang)
                     <div class="cb-item">
                         <div class="cb-img">
                             <?php
-                        $slider = get_post_meta($v->ID,'slide_thumbnail', true);
-                        if($slider){
-                            echo do_shortcode('[smartslider3 slider="'.$slider.'"]');
-                        }else{
-                        ?>
+                            $sliderCat = get_field('slide_thumbnail', $v->ID);
+                            // echo "<pre>";var_dump($sliderCat);exit;
+                            // $sizeArray = count($sliderCat);
+                            if($sliderCat && $sliderCat['img_1'] != false){
+                                ?>
+                            <div class="post-img-slide-wrap">
+                                <div id="carouselImgSlide1" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <?php if (has_post_thumbnail( $v->ID ) ): ?>
+                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                        <div class="carousel-item active">
+                                            <img src="<?php echo $image[0]; ?>"
+                                                alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                        </div>
+                                        <?php endif; ?>
+                                        <?php foreach($sliderCat as $ks=>$vs) : ?>
+                                        <?php if($sliderCat[$ks] != false) : ?>
+                                        <div
+                                            class="carousel-item <?php if($ks == 'img_1' && ! has_post_thumbnail( $v->ID )) echo 'active'; ?>">
+                                            <img src="<?php echo $vs['url']; ?>" alt="<?php echo $vs['title']; ?>">
+                                        </div>
+                                        <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <a class="carousel-control carousel-control-prev" href="#carouselImgSlide1"
+                                        role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control carousel-control-next" href="#carouselImgSlide1"
+                                        role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="quote-orverlay"></div>
+                            </div>
+                            <?php
+                            }else{
+                            ?>
                             <?php if (has_post_thumbnail( $v->ID ) ): ?>
                             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                             <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -151,7 +221,7 @@ switch($currentLang)
                         </div>
                         <div class="cb-content post-content">
                             <div class="cb-content-wrap">
-                                <a href="<?php echo $my_posts[0]->guid; ?>">
+                                <a href="<?php echo $v->guid; ?>">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                     <div class="post-price">
@@ -229,11 +299,46 @@ switch($currentLang)
                     <div class="cb-item island">
                         <div class="cb-img">
                             <?php
-                        $slider = get_post_meta($v->ID,'slide_thumbnail', true);
-                        if($slider){
-                            echo do_shortcode('[smartslider3 slider="'.$slider.'"]');
-                        }else{
-                        ?>
+                            $sliderCat = get_field('slide_thumbnail', $v->ID);
+                            // echo "<pre>";var_dump($sliderCat);exit;
+                            // $sizeArray = count($sliderCat);
+                            if($sliderCat && $sliderCat['img_1'] != false){
+                                ?>
+                            <div class="post-img-slide-wrap">
+                                <div id="carouselImgSlide2" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <?php if (has_post_thumbnail( $v->ID ) ): ?>
+                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                        <div class="carousel-item active">
+                                            <img src="<?php echo $image[0]; ?>"
+                                                alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                        </div>
+                                        <?php endif; ?>
+                                        <?php foreach($sliderCat as $ks=>$vs) : ?>
+                                        <?php if($sliderCat[$ks] != false) : ?>
+                                        <div
+                                            class="carousel-item <?php if($ks == 'img_1' && ! has_post_thumbnail( $v->ID )) echo 'active'; ?>">
+                                            <img src="<?php echo $vs['url']; ?>" alt="<?php echo $vs['title']; ?>">
+                                        </div>
+                                        <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <a class="carousel-control carousel-control-prev" href="#carouselImgSlide2"
+                                        role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control carousel-control-next" href="#carouselImgSlide2"
+                                        role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="quote-orverlay"></div>
+                            </div>
+                            <?php
+                            }else{
+                            ?>
                             <?php if (has_post_thumbnail( $v->ID ) ): ?>
                             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                             <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -320,11 +425,46 @@ switch($currentLang)
                     <div class="cb-item">
                         <div class="cb-img">
                             <?php
-                        $slider = get_post_meta($v->ID,'slide_thumbnail', true);
-                        if($slider){
-                            echo do_shortcode('[smartslider3 slider="'.$slider.'"]');
-                        }else{
-                        ?>
+                            $sliderCat = get_field('slide_thumbnail', $v->ID);
+                            // echo "<pre>";var_dump($sliderCat);exit;
+                            // $sizeArray = count($sliderCat);
+                            if($sliderCat && $sliderCat['img_1'] != false){
+                                ?>
+                            <div class="post-img-slide-wrap">
+                                <div id="carouselImgSlide3" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <?php if (has_post_thumbnail( $v->ID ) ): ?>
+                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                        <div class="carousel-item active">
+                                            <img src="<?php echo $image[0]; ?>"
+                                                alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                        </div>
+                                        <?php endif; ?>
+                                        <?php foreach($sliderCat as $ks=>$vs) : ?>
+                                        <?php if($sliderCat[$ks] != false) : ?>
+                                        <div
+                                            class="carousel-item <?php if($ks == 'img_1' && ! has_post_thumbnail( $v->ID )) echo 'active'; ?>">
+                                            <img src="<?php echo $vs['url']; ?>" alt="<?php echo $vs['title']; ?>">
+                                        </div>
+                                        <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <a class="carousel-control carousel-control-prev" href="#carouselImgSlide3"
+                                        role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control carousel-control-next" href="#carouselImgSlide3"
+                                        role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="quote-orverlay"></div>
+                            </div>
+                            <?php
+                            }else{
+                            ?>
                             <?php if (has_post_thumbnail( $v->ID ) ): ?>
                             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                             <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">

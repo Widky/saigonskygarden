@@ -30,7 +30,7 @@
                             'menu_id'           =>  'navbar-nav-header-collapse',
                             'menu_class'        =>  'navbar-nav-collapse',
                             'container'         =>  false,
-                            'theme_location'    =>  'primary',
+                            'theme_location'    =>  'mobile_menu',
                             // 'depth'             =>  1
                         );
                         wp_nav_menu($args);
@@ -66,7 +66,8 @@
                             <?php the_list_lang(); ?>
                         </div>
                         <div class="lbb-book">
-                            <button class="lbbb-btn bg-color-2398A9"><?php _e('Book Now') ?></button>
+                            <button
+                                class="lbbb-btn bg-color-2398A9"><?php _e('お問い合わせ', 'hotel-center-lite-child') ?></button>
                         </div>
                     </div>
                 </div>

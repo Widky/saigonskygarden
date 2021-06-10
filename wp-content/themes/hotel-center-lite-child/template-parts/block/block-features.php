@@ -48,7 +48,9 @@ switch($currentLang)
                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                         <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
                         <?php endif; ?>
-                        <?php if($i == 3) echo "<div class='fw-img-orverlay' style='background:url(".'/wp-content/uploads/'.date("Y").'/'.date("m").'/overlay-feature-3.png'.")'></div>"; ?>
+
+                        <?php $overlayImage = get_field('overlay_image', $v->ID); ?>
+                        <?php if($i == 3 && $overlayImage) $overlayImage = $overlayImage['url']; echo "<div class='fw-img-orverlay' style='background: url(".$overlayImage.")'></div>"; ?>
                     </div>
                     <div class="fw-content post-content">
                         <div class="fw-content-wrap">

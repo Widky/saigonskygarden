@@ -231,6 +231,34 @@ function add_register_taxonomies(){
     register_taxonomy( 'apartment-category', array( 'apartment' ), $args );
 
     unset($labels);
+    unset($args); 
+
+    $labels = array(
+      'name'              => _x( 'Utilities Category', 'taxonomy general name', 'hotel-center-lite-child' ),
+      'singular_name'     => _x( 'Utilities Category', 'taxonomy singular name', 'hotel-center-lite-child' ),
+      'search_items'      => __( 'Search Genres', 'hotel-center-lite-child' ),
+      'all_items'         => __( 'All Utilities Category', 'hotel-center-lite-child' ),
+      'parent_item'       => __( 'Parent Utilities Category', 'hotel-center-lite-child' ),
+      'parent_item_colon' => __( 'Parent Utilities Category:', 'hotel-center-lite-child' ),
+      'edit_item'         => __( 'Edit Utilities Category', 'hotel-center-lite-child' ),
+      'update_item'       => __( 'Update Utilities Category', 'hotel-center-lite-child' ),
+      'add_new_item'      => __( 'Add New Utilities Category', 'hotel-center-lite-child' ),
+      'new_item_name'     => __( 'New Utilities Category Name', 'hotel-center-lite-child' ),
+      'menu_name'         => __( 'Utilities Category', 'hotel-center-lite-child' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'utilities-category' ),
+    );
+
+    register_taxonomy( 'utilities-category', array( 'apartment' ), $args );
+
+    unset($labels);
     unset($args);
 
     // service
@@ -292,7 +320,16 @@ function add_register_taxonomies(){
 }
 add_action('init', 'add_register_taxonomies');
 
-
+// add menu
+if ( ! function_exists( 'mytheme_register_nav_menu' ) ) {
+ 
+  function mytheme_register_nav_menu(){
+      register_nav_menus( array(
+          'mobile_menu'  => __( 'Mobile Menu', 'hotel-center-lite-child' ),
+      ) );
+  }
+  add_action( 'after_setup_theme', 'mytheme_register_nav_menu', 0 );
+}
 // Add theme options
 add_action('admin_init','custom_theme_options_register_settings');
 function custom_theme_options_register_settings(){
@@ -396,4 +433,21 @@ function wk_change_page_permalink() {
     global $wp_rewrite;
     if ( strstr($wp_rewrite->get_page_permastruct(), '.html') != '.html' )
     $wp_rewrite->page_structure = $wp_rewrite->page_structure . '.html';
+}
+
+// Add .html extension for Single Post Type
+add_action( 'rewrite_rules_array', 'rewrite_rules' );
+function rewrite_rules( $rules ) {
+    $new_rules = array();
+    foreach ( get_post_types() as $t )
+        $new_rules[ $t . '/([^/]+)\.html$' ] = 'index.php?post_type=' . $t . '&name=$matches[1]';
+    return $new_rules + $rules;
+}
+
+// for cpt post_type_link (rather than post_link)
+add_filter( 'post_type_link', 'custom_post_permalink' ); 
+function custom_post_permalink ( $post_link ) {
+    global $post;
+    $type = get_post_type( $post->ID );
+    return home_url( $type . '/' . $post->post_name . '.html' );
 }

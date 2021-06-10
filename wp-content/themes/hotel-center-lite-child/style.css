@@ -336,13 +336,7 @@ ul {
 
 /* footer */
 
-.footer,
-.footer .footer-wrap {
-    height: 418.53px;
-}
-
-.footer .footer-wrap {
-    position: relative;
+.footer {
     display: block;
     background-color: #F4F4F4;
 }
@@ -351,14 +345,10 @@ ul {
     color: #464646;
 }
 
-.footer .footer-main-column {
-    position: absolute;
-}
-
-.footer .footer-main-column1 {
-    width: 386px;
-    top: 38px;
-    left: 303.5px;
+.footer .footer-main {
+    width: 100%;
+    padding-top: 39px;
+    padding-bottom: 39px;
 }
 
 .footer .footer-main-column1 .fmc1-title {
@@ -400,12 +390,6 @@ ul {
     color: #2398A9;
 }
 
-.footer .footer-main-column2 {
-    width: 165px;
-    top: 39px;
-    left: 714.5px;
-}
-
 .footer .footer-main-column .fm-title {
     font: normal bold 16px 'Yu Gothic', 'san-serif';
     line-height: 37px;
@@ -426,18 +410,6 @@ ul {
 .footer .footer-main-column .fm-items>.fm-item a:hover,
 .footer a:hover {
     color: #2398A9;
-}
-
-.footer .footer-main-column3 {
-    width: 185px;
-    top: 39px;
-    left: 848.5px;
-}
-
-.footer .footer-main-column4 {
-    width: 285.22px;
-    top: 38px;
-    right: 553.5px;
 }
 
 .footer .footer-main-column4,
@@ -477,12 +449,6 @@ ul {
     transform: rotate( 90deg);
 }
 
-.footer .footer-main-column5 {
-    width: 295px;
-    top: 38px;
-    right: 264.5px;
-}
-
 .footer .footer-main-column5 p {
     font: normal 14px 'Yu Gothic Medium', 'san-serif';
     line-height: 25px;
@@ -500,7 +466,7 @@ ul {
 }
 
 .footer .fm-mail>span input {
-    width: 281px;
+    width: 100%;
     height: 36px;
 }
 
@@ -529,7 +495,7 @@ ul {
     position: absolute;
     margin: 0;
     padding: 0;
-    right: -4px;
+    right: 0;
     top: 0;
     z-index: 9;
 }
@@ -554,8 +520,6 @@ ul {
 .footer .footer-absolute {
     height: 79.5px;
     width: 100%;
-    position: absolute;
-    bottom: 0;
 }
 
 .footer .footer-absolute-wrap,
@@ -691,30 +655,20 @@ ul {
     color: #2398A9;
 }
 
+.line-color {
+    border: 1px solid #707070;
+}
+
+.line-color.opacity {
+    opacity: 42%;
+}
+
 
 /* responsive */
 
-
-/* Size XL >= 1200px*/
-
-@media screen and (max-width: 1200px) {
-    .navbar-main.desktop {
-        display: none;
-    }
-    .footer .footer-main-column1 {
-        left: 15px;
-    }
-    .footer .footer-main-column2 {
-        left: 401px;
-    }
-    .footer .footer-main-column3 {
-        left: 566px;
-    }
-    .footer .footer-main-column4 {
-        right: 310px;
-    }
-    .footer .footer-main-column5 {
-        right: 15px;
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1437px;
     }
 }
 
@@ -725,12 +679,30 @@ ul {
     .navbar-main.desktop {
         display: none;
     }
+    /* header */
+    .section-breadcrumb .sb-title-wrap {
+        left: auto;
+    }
 }
 
 
 /* size MD - < 991.98px */
 
-@media screen and (max-width: 991.98px) {}
+@media screen and (max-width: 991.98px) {
+    .cat-title {
+        font-size: 40px !important;
+    }
+    .post-title {
+        line-height: 35px;
+    }
+    section .cl-title {
+        font-size: 40px;
+    }
+    .footer .footer-main-column4,
+    .footer .footer-main-column5 {
+        margin-top: 39px;
+    }
+}
 
 
 /* size SM - < 767.98px */
@@ -740,4 +712,44 @@ ul {
 
 /* size E SM - < 575.98px */
 
-@media screen and (max-width: 575.98px) {}
+@media screen and (max-width: 575.98px) {
+    .header,
+    body.home .fixed-header {
+        background-color: #FFFFFF !important;
+    }
+    .header .logo {
+        float: none;
+        margin: auto;
+    }
+    .lang-btn-book {
+        display: none;
+    }
+    /* breadcrumb */
+    .section-breadcrumb .sb-title-wrap {
+        display: block;
+        height: auto;
+        bottom: 30px;
+    }
+    .section-breadcrumb .sbtw-title h1 {
+        font-size: 30px;
+    }
+    .section-breadcrumb .sbtw-sub-title {
+        margin-left: 0;
+        display: block;
+    }
+    .section-breadcrumb {
+        height: 264px;
+        background-position: center !important;
+    }
+    .cat-title {
+        font-size: 30px !important;
+    }
+    /* footer */
+    .footer .footer-main-column:nth-child(n + 1),
+    .footer .footer-absolute {
+        margin-top: 39px;
+    }
+    .footer .footer-absolute-content {
+        font-size: 13px;
+    }
+}
