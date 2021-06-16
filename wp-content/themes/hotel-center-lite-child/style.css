@@ -721,6 +721,95 @@ ul {
 }
 
 
+/* orther facilities */
+
+.block-carousel-facilities-about {
+    margin-top: 164px;
+    margin-bottom: 144.5px;
+}
+
+.block-carousel-facilities-about-wrap {
+    width: 1676px;
+    height: 1110px;
+    background-color: #F6F5F1;
+    margin: auto;
+}
+
+.block-carousel-facilities-about .cl-title {
+    padding-top: 67px;
+}
+
+.block-carousel-facilities-about .cl-main-title {
+    font-size: 60px;
+    padding-top: 67px;
+}
+
+.block-carousel-facilities-about .cl-sub-title {
+    display: block;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 94px;
+}
+
+.block-carousel-facilities-about .carousel-inner {
+    width: 1094px;
+    height: 636px;
+    margin: auto;
+}
+
+.block-carousel-facilities-about .carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.block-carousel-facilities-about .carousel-control-prev,
+.block-carousel-facilities-about .carousel-control-next {
+    width: 75px;
+    height: 71px;
+    background-color: #5A5A5A;
+    top: 283px;
+    opacity: 61%;
+}
+
+.block-carousel-facilities-about .carousel-control-prev {
+    left: 291px;
+}
+
+.block-carousel-facilities-about .carousel-control-next {
+    right: 291px;
+}
+
+.block-carousel-facilities-about .carousel-control-prev-icon,
+.block-carousel-facilities-about .carousel-control-next-icon {
+    background: none;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+}
+
+.block-carousel-facilities-about .carousel-control-prev-icon {
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    margin-left: 10px;
+}
+
+.block-carousel-facilities-about .carousel-control-next-icon {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-right: 10px;
+}
+
+
+/* single facilities */
+
+.site-maincontentarea .cl-title {
+    margin-top: 72px;
+    margin-bottom: 82px;
+}
+
+
 /* responsive */
 
 @media (min-width: 1920px) {
@@ -743,6 +832,24 @@ ul {
     .section-breadcrumb .sb-title-wrap {
         left: auto;
     }
+    /* other facilities */
+    .block-carousel-facilities-about .carousel-inner {
+        width: 100%;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        top: 210px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev {
+        left: 20px;
+    }
+    .block-carousel-facilities-about .carousel-control-next {
+        right: 20px;
+    }
+    .block-carousel-facilities-about-wrap {
+        width: 100%;
+        height: 950px;
+    }
 }
 
 
@@ -762,6 +869,10 @@ ul {
     .footer .footer-main-column5 {
         margin-top: 39px;
     }
+    /* other facilities */
+    .block-carousel-facilities-about-wrap {
+        height: 850px;
+    }
 }
 
 
@@ -778,6 +889,23 @@ ul {
     }
     .lang-btn-book {
         display: none;
+    }
+    /* other facilities */
+    .block-carousel-facilities-about {
+        margin-top: 82px;
+        margin-bottom: 72px;
+    }
+    .block-carousel-facilities-about-wrap {
+        height: 630px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        width: 60px;
+        height: 56px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        top: 82px;
     }
     /* footer */
     .footer .footer-main-column:nth-child(n + 1),
@@ -830,5 +958,22 @@ ul {
     }
     .sr-title {
         margin: 36px auto 38px;
+    }
+    /* other facilities */
+    .block-carousel-facilities-about {
+        margin-top: 82px;
+        margin-bottom: 72px;
+    }
+    .block-carousel-facilities-about-wrap {
+        height: 630px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        width: 60px;
+        height: 56px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        top: 82px;
     }
 }

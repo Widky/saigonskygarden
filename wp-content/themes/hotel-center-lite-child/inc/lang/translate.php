@@ -35,6 +35,10 @@ switch($currentLang)
 
         // facilities
         $strCatFacilities = 'post-home';
+        // single facilities
+        $strCapacity = 'Capacity:';
+        $strLocation = 'Location:';
+        $strOpeningHours = 'Opening Hours:';
         break;
     default:
         $the_cat = 'スタジオ';
@@ -68,6 +72,10 @@ switch($currentLang)
 
         // facilities
         $strCatFacilities = 'ポストホーム';
+        // single facilities
+        $strCapacity = '容量:';
+        $strLocation = '場所:';
+        $strOpeningHours = '営業時間:';
         break;
 }
 ?>

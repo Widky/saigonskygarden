@@ -347,6 +347,34 @@ function add_register_taxonomies(){
     );
 
     register_taxonomy( 'facilities-category', array( 'facilities' ), $args );
+
+    unset($labels);
+    unset($args); 
+
+    $labels = array(
+      'name'              => _x( 'Utilities Category', 'taxonomy general name', 'hotel-center-lite-child' ),
+      'singular_name'     => _x( 'Utilities Category', 'taxonomy singular name', 'hotel-center-lite-child' ),
+      'search_items'      => __( 'Search Genres', 'hotel-center-lite-child' ),
+      'all_items'         => __( 'All Utilities Category', 'hotel-center-lite-child' ),
+      'parent_item'       => __( 'Parent Utilities Category', 'hotel-center-lite-child' ),
+      'parent_item_colon' => __( 'Parent Utilities Category:', 'hotel-center-lite-child' ),
+      'edit_item'         => __( 'Edit Utilities Category', 'hotel-center-lite-child' ),
+      'update_item'       => __( 'Update Utilities Category', 'hotel-center-lite-child' ),
+      'add_new_item'      => __( 'Add New Utilities Category', 'hotel-center-lite-child' ),
+      'new_item_name'     => __( 'New Utilities Category Name', 'hotel-center-lite-child' ),
+      'menu_name'         => __( 'Utilities Category', 'hotel-center-lite-child' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'facilities-utilities-category' ),
+    );
+
+    register_taxonomy( 'facilities-utilities-category', array( 'facilities' ), $args );
 }
 add_action('init', 'add_register_taxonomies');
 
@@ -475,9 +503,9 @@ function rewrite_rules( $rules ) {
 }
 
 // for cpt post_type_link (rather than post_link)
-add_filter( 'post_type_link', 'custom_post_permalink' ); 
-function custom_post_permalink ( $post_link ) {
-    global $post;
-    $type = get_post_type( $post->ID );
-    return home_url( $type . '/' . $post->post_name . '.html' );
-}
+// add_filter( 'post_type_link', 'custom_post_permalink' ); 
+// function custom_post_permalink ( $post_link ) {
+//     global $post;
+//     $type = get_post_type( $post->ID );
+//     return home_url( $type . '/' . $post->post_name . '.html' );
+// }
