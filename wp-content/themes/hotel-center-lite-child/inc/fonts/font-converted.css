@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Buenard-Regular';
+    src: url(../../assets/fonts/font-converted/buenard/Buenard-Regular.eot);
+    src: url(../../assets/fonts/font-converted/buenard/Buenard-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.otf) format('otf'),
+    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.svg#Buenard-Regular) format('svg'),
+    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.ttf) format('truetype'),
+    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.woff) format('woff'),
+    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.woff2) format('woff2');
+}
+
+
+
+@font-face {
+    font-family: 'yu-gothic-bold';
+    src: url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.eot);
+    src: url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.eot?#iefix) format('embedded-opentype'),
+    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.otf) format('otf'),
+    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.svg#yugothib) format('svg'),
+    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.ttf) format('truetype'),
+    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.woff) format('woff'),
+    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'yu-gothic-ligt';
+    src: url(../../assets/fonts/font-converted/yu-gothic/yugothil.eot);
+    src: url(../../assets/fonts/font-converted/yu-gothic/yugothil.eot?#iefix) format('embedded-opentype'),
+    url(../../assets/fonts/font-converted/yu-gothic/yugothil.otf) format('otf'),
+    url(../../assets/fonts/font-converted/yu-gothic/yugothil.svg#yugothil) format('svg'),
+    url(../../assets/fonts/font-converted/yu-gothic/yugothil.ttf) format('truetype'),
+    url(../../assets/fonts/font-converted/yu-gothic/yugothil.woff) format('woff'),
+    url(../../assets/fonts/font-converted/yu-gothic/yugothil.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'yu-gothic-medium';
+    src: url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.eot);
+    src: url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.eot?#iefix) format('embedded-opentype'),
+    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.otf) format('otf'),
+    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.svg#yugothic-medium) format('svg'),
+    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.ttf) format('truetype'),
+    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.woff) format('woff'),
+    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'nanum-gothic';
+    src: url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.eot);
+    src: url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.otf) format('otf'),
+    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.svg#NanumGothic-Regular) format('svg'),
+    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.ttf) format('truetype'),
+    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.woff) format('woff'),
+    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.woff2) format('woff2');
+}

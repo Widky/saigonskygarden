@@ -1,0 +1,120 @@
+/*body, pre, p{
+	font-family: "yu-gothic","sans-serif" !important;
+
+}*/
+body, pre, p {
+    font: normal 16px "yu-gothic-medium","sans-serif" !important;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: "yu-gothic-medium", sans-serif !important;
+   color: #333333;
+}
+#sidebar{display: none;}
+.page_title{
+	font-family: "Buenard-Regular", "sans-serif";
+	font-size: 60px;
+	color: #2398a9;
+	line-height: 1;
+}
+
+.page_title p{
+}
+.cat_title {
+	padding-bottom: 8px;
+	border-bottom: 1px solid #C3C3C3;
+
+}
+.cat_title .cat_text{
+	font-family: "Buenard-Regular", "sans-serif";
+	font-size: 40px;
+	line-height: 1;
+	color: #ffffff;
+	padding:0px 15px 8px 15px;
+	display: inline-block;
+}
+.event_items{
+	padding: 35px 0px;
+}
+.event_item{
+	border: 1px solid #DCDCDC;
+	box-sizing: border-box;
+	position: relative;
+}
+.event_item:hover{
+	/*filter: drop-shadow(0px 3px 3.5px rgba(0,0,0,0.16));*/
+	box-shadow: 0px 3px 3.5px rgba(0,0,0,0.16);
+	border-bottom: 2px solid #166772;
+}
+.sub_cat{
+	position: absolute;
+	top:15px;
+	left: 15px;
+	color: #ffffff;
+	padding:7px 20px;
+	z-index: 9;
+	font-family: "nanum-gothic","sans-serif";
+}
+.event_img{overflow:hidden;}
+.event_img img{width: 100%;transition: all 1.2s ease 0s;}
+.event_img img:hover{
+	transform: scale(1.3);
+}
+.event_date{
+	color: #9c9c9c;
+	font-size: 16px;
+}
+.event_info h3{
+	font-size: 24px;
+	/*margin-bottom: 4px;*/
+	font-family: "yu-gothic-bold","sans-serif";
+
+}
+.event_info h3 a {
+	color: #333333;
+}
+
+.event_excerpt p a{
+	color: #166772;
+	text-decoration: underline;
+}
+
+.event_info h3 a:hover ,.event_excerpt p a:hover{
+	color: #EC1F27;
+}
+/* pagination */
+	.page-item{
+		margin-left: 10px;
+	}
+
+	.page-link{
+		border: 1px solid #E2E2E2;
+		color: #9c9c9c;
+		font-size: 18px;
+		background: #ffffff;
+		outline: none;
+	}
+	.page-item.active .page-link{
+		background-color: #2398a9;
+		color: #ffffff;
+		font-size: 18px;
+		border: 1px solid #E2E2E2;
+		box-shadow: none;
+	}
+	.page-link:hover,.page-item.active .page-link:hover{
+		background: #BE0028;
+		color: #ffffff;
+		outline: none;
+	}
+	.page-link:focus{
+		outline: none;
+		box-shadow: none;
+	}
+
+/*end pagination */
