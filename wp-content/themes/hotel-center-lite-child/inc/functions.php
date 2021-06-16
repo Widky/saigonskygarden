@@ -13,6 +13,34 @@
 //         $theme->get('Version')
 //     );
 // }
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+function my_theme_enqueue_styles() {
+    $parenthandle = 'parent-style'; // This is 'hotel-center-lite-style' for the hotel-center-lite-child theme.
+    $theme = wp_get_theme();
+    wp_enqueue_style( $parenthandle, get_template_directory_uri() . '/css/index.css', 
+        array(
+          'cf7-grid-layout',
+          'contact-form-7',
+          'smart-grid',
+        ),  // if the parent theme code has a dependency, copy it to here
+        $theme->parent()->get('Version')
+    );
+    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri(),
+        array( $parenthandle ),
+        $theme->get('Version') // this only works if you have Version in the style header
+    );
+     $parenthandle_script = "parent-script";
+
+     wp_enqueue_script( $parenthandle_script, get_template_directory_uri() . '/js/index.js', 
+     array(
+       'wpcf7-recaptcha',
+       'contact-form-7',
+       'google-recaptcha',
+     ),  // if the parent theme code has a dependency, copy it to here
+     $theme->parent()->get('Version')
+ );
+    
+}
 
 // add css for theme
 function add_theme_styles(){
@@ -26,6 +54,18 @@ function add_theme_styles(){
     // nav
     wp_enqueue_style('custom-nav', get_stylesheet_directory_uri() . '/inc/libs/navcollapse/css/jquery.mCustomScrollbar.min.css',false);
     wp_enqueue_style('nav-style', get_stylesheet_directory_uri() . '/inc/libs/navcollapse/css/styleVerticalMenuCollapse.css',false);
+    if(is_page_template('page-event.php') || is_page_template("page-contact")){
+      wp_enqueue_style('font-converted', get_stylesheet_directory_uri() . '/inc/fonts/font-converted.css',false);
+
+    }
+    if(is_page_template('page-event.php')){
+      wp_enqueue_style('event-style', get_stylesheet_directory_uri() . '/assets/css/page-event.css',false);
+    }
+    if(is_page_template('page-contact.php')){
+      wp_enqueue_style('contact-style', get_stylesheet_directory_uri() . '/assets/css/page-contact.css',false);
+    }else{
+      wp_enqueue_style('contact-style', get_stylesheet_directory_uri() . '/assets/css/custom.css',false);
+    }
 
 }
 add_action('wp_enqueue_scripts','add_theme_styles');
@@ -347,34 +387,6 @@ function add_register_taxonomies(){
     );
 
     register_taxonomy( 'facilities-category', array( 'facilities' ), $args );
-
-    unset($labels);
-    unset($args); 
-
-    $labels = array(
-      'name'              => _x( 'Utilities Category', 'taxonomy general name', 'hotel-center-lite-child' ),
-      'singular_name'     => _x( 'Utilities Category', 'taxonomy singular name', 'hotel-center-lite-child' ),
-      'search_items'      => __( 'Search Genres', 'hotel-center-lite-child' ),
-      'all_items'         => __( 'All Utilities Category', 'hotel-center-lite-child' ),
-      'parent_item'       => __( 'Parent Utilities Category', 'hotel-center-lite-child' ),
-      'parent_item_colon' => __( 'Parent Utilities Category:', 'hotel-center-lite-child' ),
-      'edit_item'         => __( 'Edit Utilities Category', 'hotel-center-lite-child' ),
-      'update_item'       => __( 'Update Utilities Category', 'hotel-center-lite-child' ),
-      'add_new_item'      => __( 'Add New Utilities Category', 'hotel-center-lite-child' ),
-      'new_item_name'     => __( 'New Utilities Category Name', 'hotel-center-lite-child' ),
-      'menu_name'         => __( 'Utilities Category', 'hotel-center-lite-child' ),
-    );
-
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'facilities-utilities-category' ),
-    );
-
-    register_taxonomy( 'facilities-utilities-category', array( 'facilities' ), $args );
 }
 add_action('init', 'add_register_taxonomies');
 
@@ -503,9 +515,15 @@ function rewrite_rules( $rules ) {
 }
 
 // for cpt post_type_link (rather than post_link)
-// add_filter( 'post_type_link', 'custom_post_permalink' ); 
-// function custom_post_permalink ( $post_link ) {
-//     global $post;
-//     $type = get_post_type( $post->ID );
-//     return home_url( $type . '/' . $post->post_name . '.html' );
-// }
+add_filter( 'post_type_link', 'custom_post_permalink' ); 
+function custom_post_permalink ( $post_link ) {
+    global $post;
+    $type = get_post_type( $post->ID );
+    return home_url( $type . '/' . $post->post_name . '.html' );
+}
+
+function hotel_center_lite_child_setup() {
+    $path = get_stylesheet_directory().'/languages';
+    load_child_theme_textdomain( 'hotel-center-lite-child', $path );
+}
+add_action( 'after_setup_theme', 'hotel_center_lite_child_setup' );
