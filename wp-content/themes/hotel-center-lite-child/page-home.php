@@ -4,6 +4,7 @@
  */
 ?>
 <?php get_header(); ?>
+<?php include dirname( __FILE__ ) . '/inc/lang/translate.php'; ?>
 
 <section class="slider-home">
     <?php echo do_shortcode('[smartslider3 slider="2"]'); ?>

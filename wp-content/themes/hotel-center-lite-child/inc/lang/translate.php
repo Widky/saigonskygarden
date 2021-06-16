@@ -29,6 +29,12 @@ switch($currentLang)
         $strPriceApartment = 'Price:';
         $strBedType = 'Bed Type:';
         $strMaximumNumberPeople = 'Maximum number of people in a room:';
+
+        // feature
+        $strCatFeatures = 'features';
+
+        // facilities
+        $strCatFacilities = 'post-home';
         break;
     default:
         $the_cat = 'スタジオ';
@@ -56,6 +62,12 @@ switch($currentLang)
         $strPriceApartment = '料金:';
         $strBedType = 'ベッドタイプ:';
         $strMaximumNumberPeople = '一部屋の最大人数:';
+
+        // feature
+        $strCatFeatures = '特色';
+
+        // facilities
+        $strCatFacilities = 'ポストホーム';
         break;
 }
 ?>

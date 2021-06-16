@@ -11,9 +11,9 @@ switch($currentLang)
 }
 ?>
 <div class="features-wrap">
-    <h2 class="ap-title cl-title text-center">
-        <span class="cl-main-title"><?php echo _e('FEATURES', 'hotel-center-lite-child') ?></span>
-        <span class="cl-sub-title"><?php echo _e('特色', 'hotel-center-lite-child') ?></span>
+    <h2 class="cl-title text-center">
+        <span class="cl-main-title"><?php echo _e('FEATURES','hotel-center-lite-child') ?></span>
+        <span class="cl-sub-title"><?php echo _e('特色','hotel-center-lite-child') ?></span>
     </h2>
     <?php 
         $args = array(
@@ -35,13 +35,13 @@ switch($currentLang)
         $my_posts = $query->get_posts();
         // echo "<pre>";print_r($my_posts);exit;
         ?>
-    <div class="fw">
-        <div class="fw-items">
+    <div class="fw container-fluid">
+        <div class="fw-items row">
             <?php
             $i = 1;
                 foreach($my_posts as $k=>$v) : 
                 ?>
-            <div class="fw-items-wrap">
+            <div class="fw-items-wrap col-md-4 col-sm-12 col-12">
                 <a href="<?php echo $v->guid; ?>">
                     <div class="fw-img <?php if($i == 3) echo 'fw-set-orverlay'; ?>">
                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
@@ -50,7 +50,7 @@ switch($currentLang)
                         <?php endif; ?>
 
                         <?php $overlayImage = get_field('overlay_image', $v->ID); ?>
-                        <?php if($i == 3 && $overlayImage) $overlayImage = $overlayImage['url']; echo "<div class='fw-img-orverlay' style='background: url(".$overlayImage.")'></div>"; ?>
+                        <?php if($i == 3 && $overlayImage) {$overlayImage = $overlayImage['url']; echo "<div class='fw-img-orverlay' style='background: url(".$overlayImage.")'></div>";} ?>
                     </div>
                     <div class="fw-content post-content">
                         <div class="fw-content-wrap">

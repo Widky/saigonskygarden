@@ -20,7 +20,8 @@ $my_posts = $query->get_posts();
 // echo "<pre>"; var_dump($my_posts);exit;
 ?>
 <section id="block_about" class="section-home-about">
-    <div class="sha-wrap">
+    <div class="container">
+        <div class="sha-wrap row">
         <?php
         if( $my_posts ) : 
             switch($currentLang)
@@ -35,7 +36,7 @@ $my_posts = $query->get_posts();
                     break;
             }
         ?>
-        <div class="sha-column-left">
+        <div class="sha-column-left col-lg-6 col-md-12 col-12">
             <h3 class="sha-title cl-title text-center">
                 <span class="cl-main-title"><?php echo $my_posts[0]->post_title; ?></span>
                 <span class="sha-sub-title cl-sub-title"><?php echo $subTitle; ?></span>
@@ -51,7 +52,7 @@ $my_posts = $query->get_posts();
                     rel="noopener noreferrer"><?php _e('もっと見る', 'hotel-center-lite-child') ?></a>
             </div>
         </div>
-        <div class="sha-column-right">
+        <div class="sha-column-right col-lg-6 col-md-12 col-12">
             <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
             <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -60,4 +61,6 @@ $my_posts = $query->get_posts();
         </div>
         <?php endif; ?>
     </div>
+    </div>
+    
 </section>

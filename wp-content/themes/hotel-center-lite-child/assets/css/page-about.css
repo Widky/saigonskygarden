@@ -1,6 +1,7 @@
-.page-about-content {
+.page-about-content.container {
     width: 1044px;
     margin: auto;
+    padding: 0;
 }
 
 .page-about-title .post-title {
@@ -32,7 +33,6 @@
     margin-bottom: 140.5px;
 }
 
-.page-about-block-feature-wrap,
 .about-video {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -40,14 +40,18 @@
     margin: auto;
 }
 
-.about-feature-lists {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+.page-about-block-feature-wrap.container {
+    width: 1177px;
+    padding: 0;
+}
+
+.page-about-block-feature-wrap .about-feature-item {
+    max-width: 361px;
 }
 
 .about-feature-lists .about-feature-item {
     position: relative;
+    padding: 0;
 }
 
 .about-feature-lists .about-feature-item:nth-child(n + 2) {
@@ -158,4 +162,140 @@
 .about-video iframe {
     width: 100%;
     height: 100%;
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 1919.98px) {
+    .about-video {
+        width: 100%;
+    }
+}
+
+
+/* size LG - < 1200px */
+
+@media screen and (max-width: 1199.98px) {
+    .page-about-content.container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .page-about-block-feature-wrap.container {
+        width: auto;
+        padding: 0 20px;
+    }
+    .page-about-block-feature-wrap .about-feature-item {
+        max-width: 295px;
+    }
+    .about-feature-lists .about-feature-item img {
+        width: 100%;
+        height: 100%;
+    }
+    .about-video {
+        width: 100%;
+    }
+    .block-carousel-facilities-about .carousel-inner {
+        width: 100%;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        top: 210px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev {
+        left: 20px;
+    }
+    .block-carousel-facilities-about .carousel-control-next {
+        right: 20px;
+    }
+    .block-carousel-facilities-about-wrap {
+        width: 100%;
+        height: 950px;
+    }
+}
+
+
+/* size MD - < 991.98px */
+
+@media screen and (max-width: 991.98px) {
+    .page-about-block-feature-wrap .about-feature-item {
+        max-width: 215px;
+    }
+    .block-carousel-facilities-about-wrap {
+        height: 850px;
+    }
+}
+
+
+/* size SM - < 767.98px */
+
+@media screen and (max-width: 767.98px) {
+    .page-about-title .post-title {
+        margin: 76px auto 25px auto;
+    }
+    .page-about-block-feature-wrap .about-feature-item {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    .page-about-block-feature {
+        margin-top: 51px;
+        margin-bottom: 71px;
+    }
+    .about-feature-lists .about-feature-item:nth-child(n + 2) {
+        margin: auto;
+        margin-top: 32px;
+    }
+    .block-carousel-facilities-about {
+        margin-top: 82px;
+        margin-bottom: 72px;
+    }
+    .block-carousel-facilities-about-wrap {
+        height: 630px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        width: 60px;
+        height: 56px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        top: 82px;
+    }
+}
+
+
+/* size E SM - < 575.98px */
+
+@media screen and (max-width: 575.98px) {
+    .page-about-title .post-title {
+        margin: 76px auto 25px auto;
+    }
+    .page-about-block-feature-wrap .about-feature-item {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    .page-about-block-feature {
+        margin-top: 51px;
+        margin-bottom: 71px;
+    }
+    .about-feature-lists .about-feature-item:nth-child(n + 2) {
+        margin: auto;
+        margin-top: 32px;
+    }
+    .block-carousel-facilities-about {
+        margin-top: 82px;
+        margin-bottom: 72px;
+    }
+    .block-carousel-facilities-about-wrap {
+        height: 630px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        width: 60px;
+        height: 56px;
+    }
+    .block-carousel-facilities-about .carousel-control-prev,
+    .block-carousel-facilities-about .carousel-control-next {
+        top: 82px;
+    }
 }

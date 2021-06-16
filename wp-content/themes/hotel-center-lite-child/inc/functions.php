@@ -317,6 +317,36 @@ function add_register_taxonomies(){
     );
 
     register_taxonomy( 'event-category', array( 'event' ), $args );
+
+    // Facilities
+    unset($labels);
+    unset($args);
+
+    $labels = array(
+      'name'              => _x( 'Facilities Category', 'taxonomy general name', 'hotel-center-lite-child' ),
+      'singular_name'     => _x( 'Facilities Category', 'taxonomy singular name', 'hotel-center-lite-child' ),
+      'search_items'      => __( 'Search Genres', 'hotel-center-lite-child' ),
+      'all_items'         => __( 'All Facilities Category', 'hotel-center-lite-child' ),
+      'parent_item'       => __( 'Parent Facilities Category', 'hotel-center-lite-child' ),
+      'parent_item_colon' => __( 'Parent Facilities Category:', 'hotel-center-lite-child' ),
+      'edit_item'         => __( 'Edit Facilities Category', 'hotel-center-lite-child' ),
+      'update_item'       => __( 'Update Facilities Category', 'hotel-center-lite-child' ),
+      'add_new_item'      => __( 'Add New Facilities Category', 'hotel-center-lite-child' ),
+      'new_item_name'     => __( 'New Facilities Category Name', 'hotel-center-lite-child' ),
+      'menu_name'         => __( 'Facilities Category', 'hotel-center-lite-child' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'facilities-category' ),
+        'sort'              => true
+    );
+
+    register_taxonomy( 'facilities-category', array( 'facilities' ), $args );
 }
 add_action('init', 'add_register_taxonomies');
 

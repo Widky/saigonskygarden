@@ -8,12 +8,11 @@ jQuery(document).ready(function() {
             0: {
                 items: 1
             },
-            600: {
-                items: 2,
-                margin: 28,
+            768: {
+                items: 1,
             },
-            1000: {
-                items: 3,
+            1024: {
+                items: 2,
                 margin: 28,
             },
             1920: {
@@ -41,6 +40,10 @@ jQuery(document).ready(function() {
             1024: {
                 items: 2,
                 margin: 31,
+            },
+            1440: {
+                items: 2,
+                margin: 31
             },
             1920: {
                 items: 3,

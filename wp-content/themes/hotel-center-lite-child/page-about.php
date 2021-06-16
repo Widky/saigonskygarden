@@ -14,7 +14,7 @@ $showAboutPage = get_field('show_about_page');
 <?php include dirname(__FILE__) . '/assets/css/page-about.css';
 ?>
 </style>
-<div class="page-about-content">
+<div class="page-about-content container">
     <div class="page-about-title">
         <h3 class="post-title text-center"><?php echo $showHomePage[$pageAboutSub2Title] ?></h3>
     </div>
@@ -30,9 +30,9 @@ $showAboutPage = get_field('show_about_page');
     </div>
 </div>
 <div class="page-about-block-feature">
-    <div class="page-about-block-feature-wrap">
-        <div class="about-feature-lists">
-            <div class="about-feature-item">
+    <div class="page-about-block-feature-wrap container">
+        <div class="about-feature-lists row">
+            <div class="about-feature-item col-md-4 col-12">
                 <div class="about-feature-item-wrap">
                     <a href="#">
                         <div class="afi-img">
@@ -45,7 +45,7 @@ $showAboutPage = get_field('show_about_page');
                     </a>
                 </div>
             </div>
-            <div class="about-feature-item">
+            <div class="about-feature-item col-md-4 col-12">
                 <div class="about-feature-item-wrap">
                     <a href="#">
                         <div class="afi-img">
@@ -58,7 +58,7 @@ $showAboutPage = get_field('show_about_page');
                     </a>
                 </div>
             </div>
-            <div class="about-feature-item">
+            <div class="about-feature-item col-md-4 col-12">
                 <div class="about-feature-item-wrap">
                     <a href="#">
                         <div class="afi-img">
@@ -80,19 +80,14 @@ $showAboutPage = get_field('show_about_page');
 </div>
 <?php endif; ?>
 <div class="block-carousel-facilities-about">
-    <div class="block-carousel-facilities-about-wrap">
-        <h2 class="ap-title cl-title text-center">
-            <span class="cl-main-title">FACILITIES</span>
-            <span class="cl-sub-title">施設</span>
+    <div class="block-carousel-facilities-about-wrap container">
+        <h2 class="cl-title text-center">
+            <span class="cl-main-title"><?php echo _e('FACILITIES','hotel-center-lite-child') ?></span>
+            <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
         </h2>
         <div class="carousel-facilities-about">
             <div class="carousel-facilities-about-wrap">
                 <div id="carouselFacilitiesAbout" class="carousel slide" data-ride="carousel">
-                    <!-- <ol class="carousel-indicators">
-                        <li data-target="#carouselFacilitiesAbout" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselFacilitiesAbout" data-slide-to="1"></li>
-                        <li data-target="#carouselFacilitiesAbout" data-slide-to="2"></li>
-                    </ol> -->
                     <div class="carousel-inner">
                         <?php 
                     $args = array(
@@ -103,11 +98,12 @@ $showAboutPage = get_field('show_about_page');
                     );
                     $query = new WP_Query($args);
                     $myPosts = $query->get_posts();
+                    $i = 0;
                     // echo "<pre>";print_r($myPosts);
                     foreach($myPosts as $k=>$v) :
                         $image = get_field('image_show_on_slide_page_about', $v->ID);
                         if( !empty( $image ) ): ?>
-                        <div class="carousel-item <?php if($k == 0) echo 'active'; ?>">
+                        <div class="carousel-item <?php if($i == 0) echo 'active'; ?>">
                             <a href="<?php echo $v->guid; ?>">
                                 <div class="fiw-img">
                                     <img src="<?php echo esc_url($image['url']); ?>"
@@ -116,6 +112,7 @@ $showAboutPage = get_field('show_about_page');
                                 </div>
                             </a>
                         </div>
+                        <?php $i++; ?>
                         <?php endif; ?>
                         <?php endforeach; ?>
                     </div>

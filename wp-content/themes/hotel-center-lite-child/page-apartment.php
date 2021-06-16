@@ -49,7 +49,7 @@ if( $my_posts ) :
                 <div class="apd-tax-share">
                     <a href="#">
                         <i class="fas fa-share-alt"></i>
-                        <?php echo $strButtonShare; ?>
+                        <span><?php echo $strButtonShare; ?></span>
                     </a>
                 </div>
             </div>

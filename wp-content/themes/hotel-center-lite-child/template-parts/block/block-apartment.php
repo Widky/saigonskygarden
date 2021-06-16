@@ -17,7 +17,7 @@ switch($currentLang)
 }
 ?>
 <div class="apartment-wrap">
-    <h2 class="ap-title cl-title text-center">
+    <h2 class="cl-title text-center">
         <span class="cl-main-title"><?php echo _e('APARTMENT','hotel-center-lite-child') ?></span>
         <span class="cl-sub-title"><?php echo _e('アパート','hotel-center-lite-child') ?></span>
     </h2>
