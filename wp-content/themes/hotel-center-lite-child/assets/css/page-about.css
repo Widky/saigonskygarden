@@ -1,7 +1,6 @@
 .page-about-content.container {
     width: 1044px;
     margin: auto;
-    padding: 0;
 }
 
 .page-about-title .post-title {
@@ -40,7 +39,7 @@
     margin: auto;
 }
 
-.page-about-block-feature-wrap.container {
+.page-about-block-feature.container {
     width: 1177px;
     padding: 0;
 }
@@ -93,6 +92,12 @@
     .about-video {
         width: 100%;
     }
+    .block-carousel-facilities-about .carousel-control-prev {
+        left: 30px;
+    }
+    .block-carousel-facilities-about .carousel-control-next {
+        right: 30px;
+    }
 }
 
 
@@ -101,7 +106,6 @@
 @media screen and (max-width: 1199.98px) {
     .page-about-content.container {
         width: 100%;
-        padding: 0 15px;
     }
     .page-about-block-feature-wrap.container {
         width: auto;
@@ -137,7 +141,6 @@
     }
     .page-about-block-feature-wrap .about-feature-item {
         max-width: 100%;
-        padding: 0 15px;
     }
     .page-about-block-feature {
         margin-top: 51px;
@@ -157,8 +160,8 @@
         margin: 76px auto 25px auto;
     }
     .page-about-block-feature-wrap .about-feature-item {
-        max-width: 100%;
-        padding: 0 15px;
+        max-width: calc(100% - 40px);
+        margin: auto;
     }
     .page-about-block-feature {
         margin-top: 51px;

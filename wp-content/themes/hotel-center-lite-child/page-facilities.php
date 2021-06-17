@@ -82,7 +82,7 @@ $showAboutPage = get_field('show_about_page');
                             <p class="pfexcerpt"><?php echo $v->post_excerpt; ?></p >
                         </div>
                         <div class="pffooter btn-direct">
-                            <a href="<?php echo $v->post_type . '/' .$v->post_name ?>.html"
+                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html"
                                 rel="noopener noreferrer"><?php _e('もっと見る','hotel-center-lite-child') ?></a>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 <section class="service">
-    <div class="service-wrap">
+    <div class="service-wrap container">
         <h2 class="ap-title cl-title text-center">
             <span class="cl-main-title change-cl"><?php echo _e('SERVICES', 'hotel-center-lite-child') ?></span>
             <span class="cl-sub-title change-cl"><?php echo _e('サービス', 'hotel-center-lite-child') ?></span>

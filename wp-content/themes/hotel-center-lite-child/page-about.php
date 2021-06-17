@@ -29,8 +29,8 @@ $showAboutPage = get_field('show_about_page');
         <pre><?php echo $showAboutPage[$strPageAboutDesFeature] ?></pre>
     </div>
 </div>
-<div class="page-about-block-feature">
-    <div class="page-about-block-feature-wrap container">
+<div class="page-about-block-feature container">
+    <div class="page-about-block-feature-wrap ">
         <div class="about-feature-lists row">
             <div class="about-feature-item col-md-4 col-12">
                 <div class="about-feature-item-wrap">
@@ -101,14 +101,13 @@ $showAboutPage = get_field('show_about_page');
                     $i = 0;
                     // echo "<pre>";print_r($myPosts);
                     foreach($myPosts as $k=>$v) :
-                        $image = get_field('image_show_on_slide_page_about', $v->ID);
-                        if( !empty( $image ) ): ?>
+                        if (has_post_thumbnail( $v->ID ) ): ?>
                         <div class="carousel-item <?php if($i == 0) echo 'active'; ?>">
-                            <a href="<?php echo $v->guid; ?>">
+                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html">
                                 <div class="fiw-img">
-                                    <img src="<?php echo esc_url($image['url']); ?>"
-                                        alt="<?php echo esc_attr($image['alt']); ?>"
-                                        title="<?php echo $v->post_title; ?>" />
+                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                    <img src="<?php echo $image[0]; ?>"
+                                        alt="<?php custom_the_post_thumbnail_caption(); ?>">
                                 </div>
                             </a>
                         </div>

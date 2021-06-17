@@ -47,7 +47,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                     foreach($myPosts as $k=>$v) : ?>
                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
                         <div class="carousel-item <?php if($i == 0) echo 'active'; ?>">
-                            <a href="<?php echo $v->post_type . '/' .$v->post_name ?>.html">
+                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html">
                                 <div class="fiw-img">
                                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                                     <img src="<?php echo $image[0]; ?>"

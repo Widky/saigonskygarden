@@ -28,21 +28,24 @@
             ?>
             <div class="facilities-item col-md-4 col-12">
                 <div class="facilities-item-wrap">
-                    <a href="<?php echo $v->guid; ?>">
+                    <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html">
                         <div class="fiw-img">
-                            <?php if (has_post_thumbnail( $v->ID ) ): ?>
-                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                            <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
-                            <?php endif; ?>
                             <?php 
-                            $imgOrverlay = get_field('background_overlay_for_images', $v->ID);
-                            // echo "<pre>";var_dump($imgOrverlay);
+                            $showHome = get_field('show_home', $v->ID);
+                            // echo "<pre>";var_dump($showHome);
+                            if($showHome && $showHome != NULL){ ?>
+                            <img src="<?php echo $showHome['image']['url']; ?>"
+                                alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                            <?php 
+                            $imgOrverlay = $showHome['background_overlay_for_images'];
                             if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).")'></div>"; ?>
+                            <?php } ?>
                         </div>
                         <div class="fiw-content">
                             <?php
-                            $iconPost = get_field('icon_title',$v->ID);
-                            if($iconPost){
+                            $iconPost = $showHome['icon_title'];
+                            // echo "<pre>";var_dump($iconPost);
+                            if($iconPost != NULL){
                                 echo '<img src="'.esc_url($iconPost['url']).'" alt="'.esc_attr($iconPost['alt']).'"/>';
                             }
                             ?>

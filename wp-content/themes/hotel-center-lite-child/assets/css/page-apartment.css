@@ -682,6 +682,15 @@
     #multi-carousel-apartment .owl-carousel {
         width: 400px;
     }
+    #carouselImgSlideModal .carousel-indicators>li {
+        height: 60px;
+    }
+    #carouselImgSlideModal .carousel-indicators {
+        bottom: -75px;
+    }
+    #carouselImgSlideModal .carousel-control {
+        top: 124px !important;
+    }
 }
 
 
@@ -696,9 +705,6 @@
     }
     #carouselImgSlideModal .carousel-control-prev {
         left: -40px !important;
-    }
-    #carouselImgSlideModal .carousel-indicators>li {
-        height: 60px;
     }
     #carouselImgSlideModal .carousel-indicators>li:nth-child(n + 2) {
         margin-left: 7px;

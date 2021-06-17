@@ -10,7 +10,7 @@ switch($currentLang)
         break;
 }
 ?>
-<div class="features-wrap">
+<div class="features-wrap container">
     <h2 class="cl-title text-center">
         <span class="cl-main-title"><?php echo _e('FEATURES','hotel-center-lite-child') ?></span>
         <span class="cl-sub-title"><?php echo _e('特色','hotel-center-lite-child') ?></span>

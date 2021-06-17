@@ -1,6 +1,8 @@
 <?php 
 /**
- * Template Name: アパートメント - Page Apartment
+ * The Template for displaying all single posts.
+ *
+ * @package Hotel Center Lite
  */
 
 get_header();
@@ -13,29 +15,10 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 ?>
 </style>
 <?php 
-$args = array(
-    'post_type'         =>  'apartment',
-    'orderby'           =>  'date',
-    'order'             =>  'DESC',
-    'post_status'       =>  'publish',
-    'posts_per_page'        =>  1,
-    'tax_query'         =>  array(
-        array(
-            'taxonomy'      =>  'apartment-category',
-            'field'         =>  'slug',
-            'terms'         =>  $strTheCat,
-            'operator'      =>  'IN'
-        ),
-    )
-);
-$query = new WP_Query($args);
-$my_posts = $query->get_posts();
-// echo "<pre>";print_r($my_post);exit;
-if( $my_posts ) :
-    $terms = wp_get_object_terms( $my_posts[0]->ID, 'apartment-category');
-    // var_dump($terms);
-    $term_name = $terms[0]->name;
-    $term_des = $terms[0]->description;
+$terms = wp_get_object_terms( get_the_ID(), 'apartment-category');
+// var_dump($terms);
+$term_name = $terms[0]->name;
+$term_des = $terms[0]->description;
 ?>
 <div class="apartment-detail">
     <div class="apartment-detail-wrap">
@@ -56,7 +39,7 @@ if( $my_posts ) :
             <div class="apd-tax-slide">
                 <div class="csti-img">
                     <?php
-                        $sliderCat = get_field('slide_thumbnail', $my_posts[0]->ID);
+                        $sliderCat = get_field('slide_thumbnail', get_the_ID());
                         $lengthArray = count($sliderCat);
                         // echo "<pre>";var_dump($lengthArray);exit;
                         if($sliderCat && $sliderCat['img_1'] != false){
@@ -64,7 +47,7 @@ if( $my_posts ) :
                     <div class="post-img-slide-wrap">
                         <div id="carouselImgSlide" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
+                                <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
 
                                 <li data-target="#carouselImgSlide" data-slide-to="0" class="active"></li>
 
@@ -77,8 +60,8 @@ if( $my_posts ) :
                                 if($sliderCat[$nameImg] != false) : ?>
 
                                 <li data-target="#carouselImgSlide"
-                                    data-slide-to="<?php if(!has_post_thumbnail( $my_posts[0]->ID )) echo $i; else echo $i+1; ?>"
-                                    class="<?php if($i==0 && !has_post_thumbnail( $my_posts[0]->ID ))echo'active'; ?>">
+                                    data-slide-to="<?php if(!has_post_thumbnail( get_the_ID() )) echo $i; else echo $i+1; ?>"
+                                    class="<?php if($i==0 && !has_post_thumbnail( get_the_ID() ))echo'active'; ?>">
                                 </li>
 
                                 <?php endif; ?>
@@ -86,8 +69,8 @@ if( $my_posts ) :
                                 <?php endfor; ?>
                             </ol>
                             <div class="carousel-inner">
-                                <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
-                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
+                                <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
+                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
                                 <div class="carousel-item active">
                                     <img src="<?php echo $image[0]; ?>"
                                         alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -96,7 +79,7 @@ if( $my_posts ) :
                                 <?php foreach($sliderCat as $ks=>$vs) : ?>
                                 <?php if($sliderCat[$ks] != false) : ?>
                                 <div
-                                    class="carousel-item <?php if($ks == 'img_1' && ! has_post_thumbnail( $my_posts[0]->ID )) echo 'active'; ?>">
+                                    class="carousel-item <?php if($ks == 'img_1' && ! has_post_thumbnail( get_the_ID() )) echo 'active'; ?>">
                                     <img src="<?php echo $vs['url']; ?>" alt="<?php echo $vs['title']; ?>">
                                 </div>
                                 <?php endif; ?>
@@ -123,8 +106,8 @@ if( $my_posts ) :
                     </div>
                     <?php }else{ ?>
 
-                    <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
-                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
+                    <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
+                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
                     <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
                     <?php endif; ?>
 
@@ -138,7 +121,7 @@ if( $my_posts ) :
                             <div class="modal-content">
                                 <div class="modal-body">
                                     <?php
-                                    $sliderCat = get_field('slide_thumbnail', $my_posts[0]->ID);
+                                    $sliderCat = get_field('slide_thumbnail', get_the_ID());
                                     $lengthArray = count($sliderCat);
                                     // echo "<pre>";var_dump($lengthArray);exit;
                                     if($sliderCat && $sliderCat['img_1'] != false) :
@@ -146,8 +129,8 @@ if( $my_posts ) :
                                     <div class="post-img-slide-wrap">
                                         <div id="carouselImgSlideModal" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators">
-                                                <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
-                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
+                                                <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
+                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
                                                 <li data-target="#carouselImgSlideModal" data-slide-to="0"
                                                     class="active" style="background: url('<?php echo $image[0]; ?>')">
                                                 </li>
@@ -161,8 +144,8 @@ if( $my_posts ) :
                                                 if($sliderCat[$nameImg] != false) : ?>
 
                                                 <li data-target="#carouselImgSlideModal"
-                                                    data-slide-to="<?php if(!has_post_thumbnail( $my_posts[0]->ID )) echo $i; else echo $i+1; ?>"
-                                                    class="<?php if($i==0 && !has_post_thumbnail( $my_posts[0]->ID ))echo'active'; ?>"
+                                                    data-slide-to="<?php if(!has_post_thumbnail( get_the_ID() )) echo $i; else echo $i+1; ?>"
+                                                    class="<?php if($i==0 && !has_post_thumbnail( get_the_ID() ))echo'active'; ?>"
                                                     style="background: url('<?php echo $sliderCat[$nameImg]['url'] ?>')">
                                                 </li>
 
@@ -171,8 +154,8 @@ if( $my_posts ) :
                                                 <?php endfor; ?>
                                             </ol>
                                             <div class="carousel-inner">
-                                                <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
-                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
+                                                <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
+                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
                                                 <div class="carousel-item active">
                                                     <img src="<?php echo $image[0]; ?>"
                                                         alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -181,7 +164,7 @@ if( $my_posts ) :
                                                 <?php foreach($sliderCat as $ks=>$vs) : ?>
                                                 <?php if($sliderCat[$ks] != false) : ?>
                                                 <div
-                                                    class="carousel-item <?php if($ks == 'img_1' && ! has_post_thumbnail( $my_posts[0]->ID )) echo 'active'; ?>">
+                                                    class="carousel-item <?php if($ks == 'img_1' && ! has_post_thumbnail( get_the_ID() )) echo 'active'; ?>">
                                                     <img src="<?php echo $vs['url']; ?>"
                                                         alt="<?php echo $vs['title']; ?>">
                                                 </div>
@@ -223,8 +206,8 @@ if( $my_posts ) :
                 <div class="row">
                     <div class="col-lg-6 col-md-7 col-12">
                         <div class="apd-tax-header-content">
-                            <h3 class="post-title"><?php echo $my_posts[0]->post_title; ?></h3>
-                            <pre><?php echo $my_posts[0]->post_excerpt; ?></pre>
+                            <h3 class="post-title"><?php the_title(); ?></h3>
+                            <pre><?php echo get_the_excerpt(); ?></pre>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5 col-12">
@@ -236,47 +219,54 @@ if( $my_posts ) :
             </div>
             <div class="apd-tax-detail">
                 <div class="line-color"></div>
+                <?php 
+                $basicInformation = get_field('basic_infomation', get_the_ID());
+                if($basicInformation) :
+                ?>
                 <div class="apd-basic">
                     <div class="apd-title apd-basic-title">
                         <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
                     </div>
                     <div class="apd-basic-content">
-                        <?php 
-                        $basicInformation = get_field('basic_infomation', $my_posts[0]->ID);
-                        ?>
+                        <?php if($basicInformation['area'] != ''){ ?>
                         <div class="apd-basic-item">
                             <div class="apd-basic-text"><?php echo $strArea; ?></div>
                             <div class="apd-basic-value"><?php echo $basicInformation['area']; ?>
                                 m<sup>2</sup></div>
                         </div>
+                        <?php }  ?>
+                        <?php if($basicInformation['check_in'] != ''){ ?>
                         <div class="apd-basic-item">
                             <div class="apd-basic-text"><?php echo $strCheckIn; ?></div>
                             <div class="apd-basic-value"><?php echo $basicInformation['check_in']; ?>
                             </div>
                         </div>
+                        <?php }  ?>
+                        <?php 
+                        $priceDollar = get_post_meta(get_the_ID(),'price_dollar', true);
+                        if($basicInformation){ ?>
                         <div class="apd-basic-item">
                             <div class="apd-basic-text"><?php echo $strPriceApartment; ?></div>
                             <div class="apd-basic-value">
                                 <div class="post-price">
                                     <?php 
-                                    $priceDollar = get_post_meta($my_posts[0]->ID,'price_dollar', true);
-                                    $currentConversionRateToVND = get_post_meta($my_posts[0]->ID,'currency_conversion_rate_to_vnd', true);
+                                    $currentConversionRateToVND = get_post_meta(get_the_ID(),'currency_conversion_rate_to_vnd', true);
                                     switch($currentLang)
                                     {
                                         case 'en_US':
-                                            $currentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit_for_english', true);
-                                            $leaseTerm = get_post_meta($my_posts[0]->ID,'lease_term_for_english', true);
+                                            $currentConversionUnit = get_post_meta(get_the_ID(),'currency_conversion_unit_for_english', true);
+                                            $leaseTerm = get_post_meta(get_the_ID(),'lease_term_for_english', true);
                                             break;
                                         default:
-                                            $currentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit', true);
-                                            $leaseTerm = get_post_meta($my_posts[0]->ID,'lease_term', true);
+                                            $currentConversionUnit = get_post_meta(get_the_ID(),'currency_conversion_unit', true);
+                                            $leaseTerm = get_post_meta(get_the_ID(),'lease_term', true);
                                             break;
                                     }
                                                     ?>
                                     <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
                                     <span class="pp-vnd">
                                         <?php 
-                                        $priceVND = get_post_meta($my_posts[0]->ID,'price_vnd', true);
+                                        $priceVND = get_post_meta(get_the_ID(),'price_vnd', true);
                                         if($priceVND != ''){
                                             echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
                                         }else{
@@ -287,24 +277,38 @@ if( $my_posts ) :
                                 </div>
                             </div>
                         </div>
+                        <?php }  ?>
+                        <?php if($basicInformation['bed_type'] != ''){ ?>
                         <div class="apd-basic-item">
                             <div class="apd-basic-text"><?php echo $strBedType; ?></div>
                             <div class="apd-basic-value"><?php echo $basicInformation['bed_type']; ?>
                             </div>
                         </div>
+                        <?php }  ?>
+                        <?php if($basicInformation['check_out'] != ''){ ?>
                         <div class="apd-basic-item">
                             <div class="apd-basic-text"><?php echo $strCheckOut; ?></div>
                             <div class="apd-basic-value"><?php echo $basicInformation['check_out']; ?>
                             </div>
                         </div>
+                        <?php }  ?>
+                        <?php if($basicInformation['maximum_number_of_people_in_a_room'] != ''){ ?>
                         <div class="apd-basic-item">
                             <div class="apd-basic-text"><?php echo $strMaximumNumberPeople; ?></div>
                             <div class="apd-basic-value">
                                 <?php echo $basicInformation['maximum_number_of_people_in_a_room']; ?>
                             </div>
                         </div>
+                        <?php }  ?>
                     </div>
                 </div>
+                <?php endif; ?>
+
+                <?php  
+                    $termsUtilities = wp_get_object_terms( get_the_ID(), 'utilities-category');
+                    // var_dump($termsUtilities);
+                    if($termsUtilities) :
+                ?>
                 <div class="line-color opacity"></div>
                 <div class="apd-convenience apd-basic">
                     <div class="apd-title apd-convenience-title">
@@ -312,8 +316,6 @@ if( $my_posts ) :
                     </div>
                     <div class="apd-basic-utilities">
                         <?php  
-                        $termsUtilities = wp_get_object_terms( $my_posts[0]->ID, 'utilities-category');
-                        // var_dump($termsUtilities);
                         foreach($termsUtilities as $kterm=>$vterm) :
                         ?>
                         <div class="utilities-item apd-basic-item">
@@ -330,21 +332,23 @@ if( $my_posts ) :
                         <?php endforeach; ?>
                     </div>
                 </div>
+                <?php endif; ?>
+                <?php if(get_the_content() != '') : ?>
                 <div class="line-color opacity"></div>
                 <div class="apd-info">
                     <div class="apd-title apd-info-title">
                         <h4><?php _e('情報利用', 'hotel-center-lite-child'); ?></h4>
                     </div>
                     <div class="apd-info-content">
-                        <?php echo wpautop($my_posts[0]->post_content); ?>
+                        <?php echo wpautop(get_the_content()); ?>
                     </div>
                 </div>
+                <?php endif; ?>
                 <div class="line-color opacity"></div>
             </div>
         </div>
     </div>
 </div>
-<?php endif; ?>
 
 <section class="apd-tax-other-room">
     <div class="apd-tax-other-room-wrap">
@@ -372,8 +376,8 @@ if( $my_posts ) :
                         <div class="item">
                             <div class="panel panel-default">
                                 <div class="panel-thumbnail">
-                                    <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html" title="<?php echo $v->post_title; ?>"
-                                        class="thumb">
+                                    <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html"
+                                        title="<?php echo $v->post_title; ?>" class="thumb">
                                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
                                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                                         <img src="<?php echo $image[0]; ?>"

@@ -16,7 +16,7 @@ switch($currentLang)
         break;
 }
 ?>
-<div class="apartment-wrap">
+<div class="apartment-wrap container">
     <h2 class="cl-title text-center">
         <span class="cl-main-title"><?php echo _e('APARTMENT','hotel-center-lite-child') ?></span>
         <span class="cl-sub-title"><?php echo _e('アパート','hotel-center-lite-child') ?></span>
