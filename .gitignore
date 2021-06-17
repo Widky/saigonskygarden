@@ -1,0 +1,20 @@
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins", "plugins", "themes" directory
+# wp-content/*
+# !wp-content/languages/
+# !wp-content/plugins/
+# !wp-content/themes/
+
+# ignore these plugins
+wp-content/plugins/hello.php
+
+# ignore specific themes
+wp-content/themes/twenty*/
+
+# ignore wp-config.php
+# wp-config.php
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
