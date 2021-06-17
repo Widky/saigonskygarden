@@ -9,7 +9,7 @@ get_header();
 
 <div class="contact-container container">
     <div class="row contact-wrapper my-5">
-        <div class="col-12 col-md-6 px-3 contact-left">
+        <div class="col-12 col-md-6 ">
             <h1>
                 <?php 
                     $locale = get_locale();
@@ -25,18 +25,13 @@ get_header();
                 <?php the_content() ?>
             </div>
             <div class="contact-form mb-5">
-                <?php 
-                    $locale = get_locale();
-                    if($locale == 'ja'){
-                        echo do_shortcode ( '[cf7form cf7key="contact-ja"]' );
-                    }else{
-                        echo do_shortcode ( '[cf7form cf7key="contact-en"]' );
-                    }                     
+                <?php                    
+                    echo do_shortcode ( '[cf7form cf7key="contact"]' );
                 ?>
                     
             </div>
         </div>
-        <div class="col-12 col-md-6 px-3 contact-right">
+        <div class="col-12 col-md-6 ">
             <?php
                     $contact_map_url = get_post_meta( get_the_ID(), 'contact_map_url',true );
                     $contact_address = get_post_meta( get_the_ID(), 'contact_address',true );
@@ -55,7 +50,7 @@ get_header();
             <h4><?php echo __('Contact Details','hotel-center-lite-child'); ?></h4>
 
             <div class="row contact-details">
-                <div class="col-12 col-xl-6 detail-left">
+                <div class="col-12 col-xl-6 ">
                     <?php if(!empty($contact_address)) {?>
                         <div class="mb-3 d-block  indent address">
                             <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/contact/place-icon.png">
@@ -74,11 +69,11 @@ get_header();
                         </div>
                     <?php } ?>
                 </div>
-                <div class="col-12 col-xl-6 detail-right">
+                <div class="col-12 col-xl-6 ">
                     <?php if(!empty($contact_url)) {?>
                         <div class="mb-3 d-block  url">
                             <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/contact/url_icon.png">
-                            <a href="<?php echo $contact_url ?>" class="contact_url"><?php echo $contact_url; ?></a>
+                            <a href="<?php echo $contact_url['url'] ?>" target="<?php echo $contact_url['target']; ?>" class="contact_url"><?php echo !empty($contact_url['title']) ? $contact_url['title'] : $contact_url['url'] ; ?></a>
                         </div>
                     <?php } ?>
                     <?php if(!empty($contact_email)) {?>
@@ -99,6 +94,7 @@ get_header();
 
         </div>
     </div>
+</div>
 
 <?php
 
