@@ -1,5 +1,5 @@
 .pfacilities-wrap {
-    margin-bottom: 272px;
+    margin-bottom: 225px;
 }
 
 .pfacilities-wrap .pfacilities-items>div {
@@ -95,7 +95,14 @@
 
 /* size SM - < 767.98px */
 
-@media screen and (max-width: 767.98px) {}
+@media screen and (max-width: 767.98px) {
+    .pfacilities-wrap .pfacilities-items>div {
+        margin: 23px auto;
+    }
+    .pfacilities-wrap {
+        margin-bottom: 112px;
+    }
+}
 
 
 /* size E SM - < 575.98px */

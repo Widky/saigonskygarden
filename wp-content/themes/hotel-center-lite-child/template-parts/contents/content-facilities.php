@@ -1,7 +1,12 @@
-<?php $note = get_field('note', get_the_ID() ); ?>
+<?php 
+$note = get_field('note', get_the_ID() ); 
+if($note == '' || $note == NUll){
+    $note = get_the_title();
+}
+?>
 <div class="site-maincontentarea-facilities">
-    <h2 class="cl-title text-center">
-        <span class="cl-main-title change-cl"><?php echo _e($note,'hotel-center-lite-child') ?></span>
+    <h2 class="sr-title cl-title text-center">
+        <span class="cl-main-title change-cl"><?php echo _e(get_the_title(),'hotel-center-lite-child') ?></span>
         <span class="cl-sub-title"><?php echo _e($note,'hotel-center-lite-child') ?></span>
     </h2>
     <div class="sm-img">
@@ -57,6 +62,14 @@
             </div>
             <div class="quote-orverlay"></div>
         </div>
+
+        <?php else :?>
+
+        <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
+        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+        <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
+        <?php endif;?>
+
         <?php endif; ?>
     </div>
     <div class="sm-header">
@@ -71,20 +84,26 @@
         </div>
     </div>
     <div class="sm-detail">
-    <div class="line-color opacity"></div>
+
+        <?php $basicInformation = get_field('basic_information', get_the_ID()); ?>
+        <?php if($basicInformation != Null && $basicInformation['area'] != '') :?>
+        <div class="line-color opacity"></div>
         <div class="smrow-utilities sm-basic row">
             <div class="apd-title smrow-title col-md-4">
                 <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
             </div>
             <div class="smrow-basic-utilities col-md-8">
                 <div class="row">
-                    <?php $basicInformation = get_field('basic_information', get_the_ID()); ?>
+                    <?php if($basicInformation['area'] != ''){ ?>
                     <div class="smrow-item col-md-6">
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f1.png"
                             alt="">
                         <div class="smrow-text"><?php echo $strArea; ?></div>
-                        <div class="smrow-value"><?php echo $basicInformation['area']; ?><span>m<sup>2</sup></span></div>
+                        <div class="smrow-value"><?php echo $basicInformation['area']; ?><span>m<sup>2</sup></span>
+                        </div>
                     </div>
+                    <?php } ?>
+                    <?php if($basicInformation['capacity'] != ''){ ?>
                     <div class="smrow-item col-md-6">
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f4.png"
                             alt="">
@@ -92,6 +111,8 @@
                         <div class="smrow-value"><?php echo $basicInformation['capacity']; ?>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php if($basicInformation['location'] != ''){ ?>
                     <div class="smrow-item col-md-6">
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f2.png"
                             alt="">
@@ -99,6 +120,8 @@
                         <div class="smrow-value"><?php echo $basicInformation['location']; ?>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php if($basicInformation['opening_hours'] != ''){ ?>
                     <div class="smrow-item col-md-6">
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f3.png"
                             alt="">
@@ -106,9 +129,11 @@
                         <div class="smrow-value"><?php echo $basicInformation['opening_hours']; ?>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
         <div class="line-color opacity"></div>
         <div class="smrow-content apd-title">
             <?php the_content(); ?>

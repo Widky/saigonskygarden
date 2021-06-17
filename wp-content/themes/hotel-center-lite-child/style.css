@@ -367,7 +367,7 @@ ul {
 
 .sr-title .cl-tax-share {
     position: absolute;
-    right: 0;
+    right: 15px;
     top: 48px;
 }
 
@@ -813,11 +813,18 @@ ul {
 /* responsive */
 
 @media (min-width: 1920px) {
-    .container {
-        max-width: 1437px;
-    }
     .sr-title .container {
         max-width: 1676px;
+    }
+    .container,
+    #pFacilities .sr-title .container {
+        max-width: 1437px;
+    }
+}
+
+@media screen and (max-width: 1919.98px) {
+    .navbar-main {
+        display: none;
     }
 }
 
@@ -906,6 +913,15 @@ ul {
     .block-carousel-facilities-about .carousel-control-prev,
     .block-carousel-facilities-about .carousel-control-next {
         top: 82px;
+    }
+    .sr-title .cl-tax-share {
+        display: block;
+        position: unset;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin: auto;
+        margin-top: 15px;
     }
     /* footer */
     .footer .footer-main-column:nth-child(n + 1),

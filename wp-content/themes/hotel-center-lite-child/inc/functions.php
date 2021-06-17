@@ -515,12 +515,12 @@ function rewrite_rules( $rules ) {
 }
 
 // for cpt post_type_link (rather than post_link)
-// add_filter( 'post_type_link', 'custom_post_permalink' ); 
-// function custom_post_permalink ( $post_link ) {
-//     global $post;
-//     $type = get_post_type( $post->ID );
-//     return home_url( $type . '/' . $post->post_name . '.html' );
-// }
+add_filter( 'post_type_link', 'custom_post_permalink' ); 
+function custom_post_permalink ( $post_link ) {
+    global $post;
+    $type = get_post_type( $post->ID );
+    return home_url( $type . '/' . $post->post_name . '.html' );
+}
 
 function hotel_center_lite_child_setup() {
     $path = get_stylesheet_directory().'/languages';

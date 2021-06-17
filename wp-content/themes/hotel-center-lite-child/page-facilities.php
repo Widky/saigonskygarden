@@ -39,14 +39,14 @@ $showAboutPage = get_field('show_about_page');
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  12,
-                'tax_query'         =>  array(
-                    array(
-                        'taxonomy'      =>  'facilities-category',
-                        'field'         =>  'slug',
-                        'terms'         =>  $strCatFacilities,
-                        'operator'      =>  'NOT IN'
-                    ),
-                )
+                // 'tax_query'         =>  array(
+                //     array(
+                //         'taxonomy'      =>  'facilities-category',
+                //         'field'         =>  'slug',
+                //         'terms'         =>  $strCatFacilities,
+                //         'operator'      =>  'NOT IN'
+                //     ),
+                // )
             );
             $query = new WP_Query($args);
             $my_posts = $query->get_posts();
@@ -72,7 +72,9 @@ $showAboutPage = get_field('show_about_page');
                         <?php endif; ?>
 
                         <?php $note = get_field('note', $v->ID); ?>
+                        <?php if($note != '') { ?>
                         <div class="pfnote"><?php echo $note; ?></div>
+                        <?php } ?>
                     </div>
                     <div class="pfacilities-body">
                         <div class="pfcontent">
@@ -80,7 +82,7 @@ $showAboutPage = get_field('show_about_page');
                             <p class="pfexcerpt"><?php echo $v->post_excerpt; ?></p >
                         </div>
                         <div class="pffooter btn-direct">
-                            <a href="<?php echo str_replace(' ','-',$v->post_title); ?>.html"
+                            <a href="<?php echo $v->post_type . '/' .$v->post_name ?>.html"
                                 rel="noopener noreferrer"><?php _e('もっと見る','hotel-center-lite-child') ?></a>
                         </div>
                     </div>
