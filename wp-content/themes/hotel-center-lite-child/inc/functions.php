@@ -25,10 +25,7 @@ function my_theme_enqueue_styles() {
         ),  // if the parent theme code has a dependency, copy it to here
         $theme->parent()->get('Version')
     );
-    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri(),
-        array( $parenthandle ),
-        $theme->get('Version') // this only works if you have Version in the style header
-    );
+    
      $parenthandle_script = "parent-script";
 
      wp_enqueue_script( $parenthandle_script, get_template_directory_uri() . '/js/index.js', 
