@@ -3,7 +3,7 @@
 }
 
 .pfacilities-wrap .pfacilities-items>div {
-    margin-top: 30px;
+    margin: 47px auto;
 }
 
 .pfacilities-item {
@@ -11,6 +11,8 @@
     height: 100%;
     padding: 30px 20px;
     background-color: #F9f9f9;
+    box-shadow: 0px 3px 6px #00000016;
+    border-top: 3px solid #166772;
 }
 
 .pfacilities-item .pfacilities-img {

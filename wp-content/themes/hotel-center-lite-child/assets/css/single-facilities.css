@@ -1,0 +1,140 @@
+.site-maincontentarea-facilities .carousel-item {
+    width: 100%;
+    height: 636px;
+}
+
+.site-maincontentarea-facilities .carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.site-maincontentarea-facilities .carousel-indicators {
+    margin: 0;
+    bottom: -62px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.site-maincontentarea-facilities .carousel-indicators li {
+    width: 90px;
+    height: 52px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    margin: auto 5px;
+}
+
+.site-maincontentarea-facilities .sm-header {
+    margin-top: 126px;
+}
+
+.site-maincontentarea-facilities .sm-header .post-title {
+    display: inline-block;
+}
+
+.site-maincontentarea-facilities .line-left {
+    height: 1px;
+    width: 49px;
+    background-color: #1F1F1F;
+    display: inline-block;
+    margin-right: 23px;
+}
+
+.site-maincontentarea-facilities .sm-header .sm-header-content pre {
+    margin: 17px auto;
+    margin-left: 72px;
+}
+
+.apd-title h4 {
+    font: normal bold 19px 'Yu Gothic', 'sans-serif';
+    line-height: 30px;
+    color: #333333;
+}
+
+.smrow-content.apd-title h4 {
+    font-size: 24px;
+}
+
+.smrow-utilities,
+.smrow-content {
+    padding: 45px 0;
+}
+
+.smrow-content {
+    margin-left: 72px;
+}
+
+.smrow-content p {
+    margin: 15px 0;
+}
+
+.smrow-item>* {
+    float: left;
+}
+
+.smrow-item .smrow-text {
+    padding: 0 18px;
+}
+
+.smrow-item:nth-child(n + 3) {
+    margin-top: 23px;
+}
+
+
+/* responsive */
+
+@media (min-width: 1920px) {
+    .single-facilities .page-wrap>.container {
+        max-width: 1094px;
+        padding: 0;
+    }
+}
+
+
+/* size LG - < 1200px */
+
+@media screen and (max-width: 1199.98px) {}
+
+
+/* size MD - < 991.98px */
+
+@media screen and (max-width: 991.98px) {}
+
+
+/* size SM - < 767.98px */
+
+@media screen and (max-width: 767.98px) {
+    .smrow-content {
+        margin-left: 0;
+    }
+    .site-maincontentarea-facilities .carousel-item {
+        height: 300px;
+    }
+    .site-maincontentarea-facilities .carousel-indicators {
+        width: auto;
+    }
+    .site-maincontentarea-facilities .carousel-indicators li {
+        margin: auto 1px;
+    }
+    .smrow-item {
+        margin-top: 23px;
+    }
+    section .cl-title {
+        margin: 30px 0;
+    }
+    section .cl-title .cl-sub-title {
+        margin-top: 11px;
+    }
+    .cl-title .cl-main-title {
+        font-size: 40px;
+    }
+    .container,
+    .content-area {
+        width: auto;
+    }
+}
+
+
+/* size E SM - < 575.98px */
+
+@media screen and (max-width: 575.98px) {}

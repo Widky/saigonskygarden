@@ -80,7 +80,7 @@ $showAboutPage = get_field('show_about_page');
                             <p class="pfexcerpt"><?php echo $v->post_excerpt; ?></p >
                         </div>
                         <div class="pffooter btn-direct">
-                            <a href="<?php echo $v->guid; ?>"
+                            <a href="<?php echo str_replace(' ','-',$v->post_title); ?>.html"
                                 rel="noopener noreferrer"><?php _e('もっと見る','hotel-center-lite-child') ?></a>
                         </div>
                     </div>
