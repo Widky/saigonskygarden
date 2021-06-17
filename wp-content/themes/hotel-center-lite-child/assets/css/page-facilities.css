@@ -22,6 +22,7 @@
 .pfacilities-item .pfacilities-img img {
     width: 100%;
     height: 271px;
+    display: block;
 }
 
 .pfacilities-item .pfacilities-img .pfnote {

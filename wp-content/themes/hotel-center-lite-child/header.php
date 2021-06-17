@@ -83,6 +83,9 @@
         $page_id = get_queried_object_id();
 
         $pageTitle = get_field($pageTitle, $page_id);
+        if(is_singular()){
+            $pageTitle = '<a href="/"><i class="fas fa-home"></i></a>';
+        }
 
         $pageSubTitle = get_the_title();
 

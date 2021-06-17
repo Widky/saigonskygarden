@@ -55,21 +55,8 @@ $showAboutPage = get_field('show_about_page');
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="pfacilities-item">
                     <div class="pfacilities-img">
-                        <?php
-                            $image = get_field('image_for_post_page', $v->ID);
-                            if( !empty( $image ) ): ?>
-
-                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
-                            title="<?php echo $v->post_title; ?>" />
-
-                        <?php else : ?>
-
-                        <?php if (has_post_thumbnail( $v->ID ) ): ?>
                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                        <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
-                        <?php endif; ?>
-
-                        <?php endif; ?>
+                        <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>" alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
 
                         <?php $note = get_field('note', $v->ID); ?>
                         <?php if($note != '') { ?>

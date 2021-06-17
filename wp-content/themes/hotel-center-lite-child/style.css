@@ -367,7 +367,7 @@ ul {
 
 .sr-title .cl-tax-share {
     position: absolute;
-    right: 15px;
+    right: 0;
     top: 48px;
 }
 
@@ -829,6 +829,12 @@ ul {
 @media screen and (max-width: 1919.98px) {
     .navbar-main {
         display: none;
+    }
+    .block-carousel-facilities-about .carousel-control-prev {
+        left: 30px;
+    }
+    .block-carousel-facilities-about .carousel-control-next {
+        right: 30px;
     }
 }
 
