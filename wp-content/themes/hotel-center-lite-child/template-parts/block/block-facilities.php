@@ -26,7 +26,7 @@
             // echo "<pre>";print_r($myPosts);
             foreach($myPosts as $k=>$v) :
             ?>
-            <div class="facilities-item col-md-4 col-12">
+            <div class="facilities-item col-md-4 col-sm-6 col-12">
                 <div class="facilities-item-wrap">
                     <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html">
                         <div class="fiw-img">

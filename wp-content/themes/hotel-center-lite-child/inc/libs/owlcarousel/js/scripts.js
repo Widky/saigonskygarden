@@ -9,11 +9,12 @@ jQuery(document).ready(function() {
                 items: 1
             },
             768: {
-                items: 1,
-            },
-            1024: {
                 items: 2,
                 margin: 28,
+            },
+            1440: {
+                items: 3,
+                margin: 72.7
             },
             1920: {
                 items: 3,

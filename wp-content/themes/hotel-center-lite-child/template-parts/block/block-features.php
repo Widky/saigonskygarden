@@ -35,7 +35,7 @@ switch($currentLang)
         $my_posts = $query->get_posts();
         // echo "<pre>";print_r($my_posts);exit;
         ?>
-    <div class="fw container-fluid">
+    <div class="fw container">
         <div class="fw-items row">
             <?php
             $i = 1;
