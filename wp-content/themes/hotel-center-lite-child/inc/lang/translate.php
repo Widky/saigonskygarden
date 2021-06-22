@@ -39,6 +39,14 @@ switch($currentLang)
         $strCapacity = 'Capacity:';
         $strLocation = 'Location:';
         $strOpeningHours = 'Opening Hours:';
+
+        // attractions
+        $theAttractionsAbout = 'gioi-thieu';
+        $theAttractionsTourist = 'tourist-attractions';
+        $theAttractionsRestaurant = 'restaurant';
+        $theAttractionsBar = 'bar';
+        $theAttractionsCoffee = 'coffee';
+        $theAttractionsFesRes = 'festiva-restaurant';
         break;
     default:
         $the_cat = 'スタジオ';
@@ -76,6 +84,14 @@ switch($currentLang)
         $strCapacity = '容量:';
         $strLocation = '場所:';
         $strOpeningHours = '営業時間:';
+
+        // attractions
+        $theAttractionsAbout = '導入する';
+        $theAttractionsTourist = '観光名所';
+        $theAttractionsRestaurant = 'レストラン';
+        $theAttractionsBar = 'バール';
+        $theAttractionsCoffee = 'コーヒー';
+        $theAttractionsFesRes = 'お祝いレストラン';
         break;
 }
 ?>

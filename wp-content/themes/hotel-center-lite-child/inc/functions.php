@@ -236,6 +236,42 @@ function add_register_post_type(){
     'taxonomies'         => array(  'event-category' )
   );
   register_post_type( 'event', $argsEvent );
+
+  // attractions
+  $labelAttractions = array(
+    'name'                  => _x( 'Attractions', 'Attractions', 'hotel-center-lite-child' ),
+    'singular_name'         => _x( 'Attractions', 'Attractions', 'hotel-center-lite-child' ),
+    'menu_name'             => _x( 'Attractions', 'Attractions', 'hotel-center-lite-child' ),
+    'name_admin_bar'        => _x( 'Attractions', 'Attractions', 'hotel-center-lite-child' ),
+    'add_new'               => __( 'Add New', 'hotel-center-lite-child' ),
+    'add_new_item'          => __( 'Add New Attractions', 'hotel-center-lite-child' ),
+    'new_item'              => __( 'New Attractions', 'hotel-center-lite-child' ),
+    'edit_item'             => __( 'Edit Attractions', 'hotel-center-lite-child' ),
+    'view_item'             => __( 'View Attractions', 'hotel-center-lite-child' ),
+    'all_items'             => __( 'All Attractions', 'hotel-center-lite-child' ),
+    'search_items'          => __( 'Search Attractions', 'hotel-center-lite-child' ),
+    'parent_item_colon'     => __( 'Parent Attractions:', 'hotel-center-lite-child' ),
+    'not_found'             => __( 'No Attractions found.', 'hotel-center-lite-child' ),
+    'not_found_in_trash'    => __( 'No Attractions found in Trash.', 'hotel-center-lite-child' )
+  );
+
+  $argsAttractions = array(
+    'labels'             => $labelAttractions,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => array( 'slug' => 'attractions' ),
+    'capability_type'    => 'post',
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => 20,
+    'menu_icon'          => 'dashicons-palmtree',
+    'supports'           => array( 'title', 'editor','thumbnail', 'excerpt'),
+    'taxonomies'         => array(  'attractions-category' )
+  );
+  register_post_type( 'attractions', $argsAttractions );
 }
 add_action('init', 'add_register_post_type');
 
@@ -384,6 +420,36 @@ function add_register_taxonomies(){
     );
 
     register_taxonomy( 'facilities-category', array( 'facilities' ), $args );
+
+    // Attractions
+    unset($labels);
+    unset($args);
+
+    $labels = array(
+      'name'              => _x( 'Attractions Category', 'taxonomy general name', 'hotel-center-lite-child' ),
+      'singular_name'     => _x( 'Attractions Category', 'taxonomy singular name', 'hotel-center-lite-child' ),
+      'search_items'      => __( 'Search Genres', 'hotel-center-lite-child' ),
+      'all_items'         => __( 'All Attractions Category', 'hotel-center-lite-child' ),
+      'parent_item'       => __( 'Parent Attractions Category', 'hotel-center-lite-child' ),
+      'parent_item_colon' => __( 'Parent Attractions Category:', 'hotel-center-lite-child' ),
+      'edit_item'         => __( 'Edit Attractions Category', 'hotel-center-lite-child' ),
+      'update_item'       => __( 'Update Attractions Category', 'hotel-center-lite-child' ),
+      'add_new_item'      => __( 'Add New Attractions Category', 'hotel-center-lite-child' ),
+      'new_item_name'     => __( 'New Attractions Category Name', 'hotel-center-lite-child' ),
+      'menu_name'         => __( 'Attractions Category', 'hotel-center-lite-child' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'attractions-category' ),
+        'sort'              => true
+    );
+
+    register_taxonomy( 'attractions-category', array( 'attractions' ), $args );
 }
 add_action('init', 'add_register_taxonomies');
 
@@ -515,8 +581,10 @@ function rewrite_rules( $rules ) {
 add_filter( 'post_type_link', 'custom_post_permalink' ); 
 function custom_post_permalink ( $post_link ) {
     global $post;
+    // var_dump($post);
     $type = get_post_type( $post->ID );
     return home_url( $type . '/' . $post->post_name . '.html' );
+    
 }
 
 function hotel_center_lite_child_setup() {

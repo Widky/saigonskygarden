@@ -1,0 +1,241 @@
+/* css */
+
+.attractions-about {
+    margin-top: 220px;
+}
+
+.attractions-about .aimage img {
+    width: 100%;
+}
+
+.attractions-about .atitle {
+    font: normal bold 40px 'Buenard Bold', 'sans-serif';
+    color: #2398A9;
+    line-height: 60px;
+}
+
+.attractions-about .ades {
+    font: normal bold 24px 'Yu Gothic', 'sans-serif';
+    color: #333333;
+    line-height: 25px;
+    margin: 37px 0 67px;
+}
+
+.attractions-items .cl-title {
+    margin-top: 155px;
+    margin-bottom: 67px;
+}
+
+
+/* item */
+
+.attractions-item {
+    position: relative;
+}
+
+.attractions-item .aiw-img img {
+    max-width: 480px;
+    width: 100%;
+    height: 514px;
+}
+
+.attractions-item .aiw-des {
+    color: #161616;
+    font-size: 15px;
+    padding: 13px 17px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    position: absolute;
+    top: 18px;
+    right: 13px;
+}
+
+.attractions-item .aiw-body {
+    min-height: 380px;
+    border: 1px solid #B9B9B9;
+    margin-top: 6px;
+    padding: 40px 42px;
+}
+
+.attractions-item .aiw-title {
+    font: normal bold 24px 'Yu Gothic', 'sans-serif';
+    color: #333333;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.attractions-item .aiw-line {
+    height: 2px;
+    width: 100%;
+    background-color: #707070;
+}
+
+.attractions-item .aiw-content {
+    margin-top: 30px;
+}
+
+.aiw-content p {
+    font: normal 16px 'Yu Gothic Medium', 'sans-serif';
+    color: #33333390;
+    line-height: 25px;
+}
+
+
+/* feativa retaurant */
+
+.festiva-restaurant {
+    margin-top: 155px;
+}
+
+.festiva-restaurant .frw-item {
+    width: 100%;
+    min-height: 505px;
+    position: relative;
+    display: block;
+}
+
+.festiva-restaurant .frw-item img {
+    width: 100%;
+    min-height: 505px;
+}
+
+.festiva-restaurant .fri-body {
+    max-width: calc(100% - 616px);
+    height: auto;
+    background-color: #FFFFFF;
+    z-index: 10;
+    padding: 60px 232px;
+    position: absolute;
+    top: 96px;
+    left: 306px;
+    right: 306px;
+}
+
+.festiva-restaurant .fri-body .fri-title {
+    font: normal 60px 'Buenard Regular', 'sans-serif';
+    color: #333333;
+    line-height: 50px;
+    margin-bottom: 35px;
+}
+
+.festiva-restaurant .fri-body .fri-content p {
+    font-size: 18px;
+}
+
+.fri-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #0E111142;
+    position: absolute;
+    top: 0;
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 1919.98px) {
+    .pAttractions>.container {
+        max-width: calc(100% - 448px);
+    }
+    .festiva-restaurant .fri-body {
+        max-width: 100%;
+        padding: 60px 116px;
+    }
+}
+
+@media screen and (max-width: 1439.98px) {
+    .pAttractions>.container {
+        max-width: calc(100% - 224px);
+    }
+    .festiva-restaurant .fri-body {
+        left: 153px;
+        right: 153px;
+    }
+}
+
+
+/* size LG - < 1200px */
+
+@media screen and (max-width: 1199.98px) {
+    .pAttractions>.container {
+        max-width: 100%;
+    }
+    .attractions-about {
+        margin-top: 110px;
+    }
+    .attractions-about .atitle {
+        font-size: 24px;
+        line-height: 35px;
+        margin-top: 30px;
+    }
+    .attractions-about .ades {
+        margin: 17px 0 37px;
+    }
+}
+
+
+/* size MD - < 991.98px */
+
+@media screen and (max-width: 991.98px) {
+    .attractions-items>div:nth-child(4n + 4) {
+        display: none;
+    }
+    .festiva-restaurant .fri-body {
+        left: 75px;
+        right: 75px;
+    }
+    .festiva-restaurant .fri-body .fri-title {
+        font-size: 40px;
+    }
+    .festiva-restaurant .fri-body {
+        padding: 30px 75px;
+    }
+}
+
+
+/* size SM - < 767.98px */
+
+@media screen and (max-width: 767.98px) {
+    .attractions-items>div:nth-child(4n + 4) {
+        display: block;
+    }
+    .attractions-items>div:nth-child(n + 2) {
+        margin-top: 30px;
+    }
+    .festiva-restaurant {
+        margin-top: 77px;
+    }
+    .festiva-restaurant .fri-body {
+        left: 35px;
+        right: 35px;
+    }
+    .festiva-restaurant .fri-body .fri-title {
+        font-size: 24px;
+    }
+    .festiva-restaurant .fri-body {
+        top: 48px;
+        padding: 30px 35px;
+    }
+}
+
+
+/* size E SM - < 575.98px */
+
+@media screen and (max-width: 575.98px) {
+    .attractions-about {
+        margin-top: 55px;
+    }
+    .attractions-items .cl-title {
+        margin-top: 77px;
+        margin-bottom: 37px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .festiva-restaurant .fri-body {
+        padding: 15px;
+    }
+    .festiva-restaurant .fri-body .fri-title {
+        margin-bottom: 17px;
+    }
+}
