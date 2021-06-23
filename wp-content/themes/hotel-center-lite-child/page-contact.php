@@ -11,13 +11,8 @@ get_header();
     <div class="row contact-wrapper my-5">
         <div class="col-12 col-md-6 ">
             <h1>
-                <?php 
-                    $locale = get_locale();
-                    if($locale == 'ja'){
-                        echo "連絡する";
-                    }else{
-                        echo "Contact";
-                    }
+                <?php                    
+                    the_title();
                 ?>
                  
              </h1>

@@ -93,6 +93,7 @@ body, pre, p {
 .contact-details .indent {
     padding-left: 24px;
     text-indent: -24px;
+    font-size: 15px;
 }
 .contact-details .fax,
 .contact-details .email2{

@@ -51,7 +51,7 @@ function add_theme_styles(){
     // nav
     wp_enqueue_style('custom-nav', get_stylesheet_directory_uri() . '/inc/libs/navcollapse/css/jquery.mCustomScrollbar.min.css',false);
     wp_enqueue_style('nav-style', get_stylesheet_directory_uri() . '/inc/libs/navcollapse/css/styleVerticalMenuCollapse.css',false);
-    if(is_page_template('page-event.php') || is_page_template("page-contact")){
+    if(is_page_template('page-event.php') || is_page_template("page-contact") || (is_single() && 'event'== get_post_type())){
       wp_enqueue_style('font-converted', get_stylesheet_directory_uri() . '/inc/fonts/font-converted.css',false);
 
     }
@@ -62,6 +62,11 @@ function add_theme_styles(){
       wp_enqueue_style('contact-style', get_stylesheet_directory_uri() . '/assets/css/page-contact.css',false);
     }else{
       wp_enqueue_style('contact-style', get_stylesheet_directory_uri() . '/assets/css/custom.css',false);
+    }
+    if(is_single() && 'event'== get_post_type()){
+      wp_enqueue_style('event-detail-style', get_stylesheet_directory_uri() . '/assets/css/single-event.css',false);
+      wp_enqueue_style('slick-style', get_stylesheet_directory_uri() . '/inc/libs/slick/slick.css',false);
+      wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/inc/libs/slick/slick-theme.css',false);
     }
 
 }
@@ -77,6 +82,10 @@ function add_theme_scripts(){
   wp_enqueue_script('popper',  get_stylesheet_directory_uri() . '/inc/libs/navcollapse/js/popper.min.js',array(),false, false);
   wp_enqueue_script('custom-mcsroll',  get_stylesheet_directory_uri() . '/inc/libs/navcollapse/js/jquery.mCustomScrollbar.concat.min.js',array(),false, false);
   wp_enqueue_script('custom-cl',  get_stylesheet_directory_uri() . '/inc/libs/navcollapse/js/customCollapse.js',array(),false, false);
+  if(is_single() && 'event'== get_post_type()){
+      wp_enqueue_script('event-script',  get_stylesheet_directory_uri() . '/assets/js/script.js',array(),false, false);
+      wp_enqueue_script('slick',  get_stylesheet_directory_uri() . '/inc/libs/slick/slick.js',array(),false, false);
+    }
 
 }
 add_action('wp_enqueue_scripts','add_theme_scripts');

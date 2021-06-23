@@ -69,8 +69,8 @@ if($locale == 'ja'){
                                             
                                             $sub_cat = wp_get_post_terms(get_the_ID(),'event-category',$sub_arr)  ;
                                          ?>   
-                                            <div class="col-12 col-md-6 col-lg-4">
-                                                <div class="event_item mb-4">
+                                            <div class="col-12 col-md-6 col-lg-4 mb-4 item_wrap">
+                                                <div class="event_item ">
                                                     <?php if(!empty( $sub_cat)) {
                                                         $sub_cat_color = get_field('category_background_color',$sub_cat[0]->taxonomy.'_'.$sub_cat[0]->term_id) ;
                                                         $sub_cat_color = !empty($sub_cat_color) ? $sub_cat_color : '#166772';
@@ -90,7 +90,7 @@ if($locale == 'ja'){
                                                             </a>
                                                         </h3>
                                                         <div class="event_excerpt">
-                                                            <?php echo substr(the_excerpt(), 0, 200);?>
+                                                            <?php echo substr(get_the_excerpt(), 0, 200);?>
                                                             <p class="mt-2">
                                                                 <a href="<?php the_permalink(); ?>">
                                                                 <span><?php echo __('View More','hotel-center-lite-child') ?></span>
