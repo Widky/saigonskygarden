@@ -1,13 +1,13 @@
 jQuery(document).ready(function() {
 
-//other event
+    //other event
     jQuery('#multi-carousel-event .owl-carousel').owlCarousel({
         loop: false,
         nav: true,
         navText: ['<span class="prev-icon"></span>', '<span class="next-icon"></span>'],
         dots: false,
         margin: 28,
-        
+
         responsive: {
             0: {
                 items: 1,
@@ -17,7 +17,7 @@ jQuery(document).ready(function() {
             },
             960: {
                 items: 3,
-                
+
             },
             1200: {
                 items: 3,
@@ -25,31 +25,31 @@ jQuery(document).ready(function() {
 
         }
     });
+
     //event facilities
     jQuery('.center').slick({
         infinite: true,
         centerMode: true,
         slidesToShow: 1,
-        slidesToScroll: 1,  
-        centerPadding: '25%', 
-        appendArrows: jQuery('.arrows_custom'),   
-            responsive: [
-            {
-            breakpoint: 768,
-            settings: {
-                arrows: true,
-                centerMode: true,
-                slidesToShow: 1,
-                centerPadding: '25%',
+        slidesToScroll: 1,
+        centerPadding: '25%',
+        appendArrows: jQuery('.arrows_custom'),
+        responsive: [{
+                breakpoint: 768,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    slidesToShow: 1,
+                    centerPadding: '25%',
                 }
             },
             {
-            breakpoint: 480,
-            settings: {
-                arrows: true,
-                centerMode: false,
-                slidesToShow: 1,
-                centerPadding: '20px',
+                breakpoint: 480,
+                settings: {
+                    arrows: true,
+                    centerMode: false,
+                    slidesToShow: 1,
+                    centerPadding: '20px',
                 }
             }
         ]
