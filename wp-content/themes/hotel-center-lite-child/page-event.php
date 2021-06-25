@@ -100,7 +100,7 @@ if($locale == 'ja'){
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php endwhile; //wp_reset_query();?>
+                                        <?php endwhile; wp_reset_postdata();?>
                                         
                                         
                                     </div>  
@@ -172,11 +172,10 @@ if($locale == 'ja'){
                     <?php //the_content(); ?>
                 </div>
             </section><!-- section-->
-            <?php get_sidebar();?>
+            <?php //get_sidebar();?>
             <div class="clear"></div>
         </div><!-- .pagelayout_area -->
     </div><!-- .container -->
-
 <?php
 
 get_footer();
