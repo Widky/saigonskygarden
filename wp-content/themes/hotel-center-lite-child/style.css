@@ -264,6 +264,7 @@ ul {
     width: auto;
     height: auto;
     color: #333333;
+    position: relative;
 }
 
 #navbar-nav-header li:nth-child(n + 2) {
@@ -277,7 +278,43 @@ ul {
 }
 
 #navbar-nav-header li a:hover,
-#navbar-nav-header li.current-menu-item a {
+#navbar-nav-header li.current-menu-item a,
+#navbar-nav-header li.current-menu-parent a {
+    color: #2398A9;
+}
+
+
+/* submenu */
+
+#navbar-nav-header li ul.sub-menu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    min-width: 300px;
+}
+
+#navbar-nav-header li:hover ul.sub-menu {
+    display: block;
+    transition: .6s;
+}
+
+#navbar-nav-header li ul.sub-menu li {
+    display: block;
+    margin-left: 0;
+}
+
+#navbar-nav-header li ul.sub-menu a {
+    font: normal bold 16px 'Yu Gothic', 'san-serif' !important;
+    line-height: 24px;
+    display: block;
+    color: #333333;
+    background-color: #FFFFFF;
+    text-align: left;
+    padding: 7.5px 0;
+}
+
+#navbar-nav-header li ul.sub-menu li:hover a,
+#navbar-nav-header li ul.sub-menu li.current-menu-item a {
     color: #2398A9;
 }
 
