@@ -93,6 +93,8 @@ function add_theme_scripts(){
 }
 add_action('wp_enqueue_scripts','add_theme_scripts');
 
+// load language
+// load_theme_textdomain('hotel-center-lite-child', get_stylesheet_directory_uri(). '/inc/lang');
 // get caption image
 function custom_the_post_thumbnail_caption() {
     global $post;
@@ -131,16 +133,16 @@ function add_register_post_type(){
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'apartment' ),
+    'rewrite'            => array( 'slug' => 'apartments' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => 20,
     'menu_icon'          => 'dashicons-admin-multisite',
     'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','custom-fields' ),
-    'taxonomies'         => array(  'apartment-category' )
+    'taxonomies'         => array(  'apartment' )
   );
-  register_post_type( 'apartment', $argsApartment );
+  register_post_type( 'apartments', $argsApartment );
 
   // Facilities
   $labelFacilities = array(
@@ -346,10 +348,10 @@ function add_register_taxonomies(){
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'apartment-category' ),
+        'rewrite'           => array( 'slug' => 'apartment' ),
     );
 
-    register_taxonomy( 'apartment-category', array( 'apartment' ), $args );
+    register_taxonomy( 'apartment', array( 'apartments' ), $args );
 
     unset($labels);
     unset($args); 
@@ -377,7 +379,7 @@ function add_register_taxonomies(){
         'rewrite'           => array( 'slug' => 'utilities-category' ),
     );
 
-    register_taxonomy( 'utilities-category', array( 'apartment' ), $args );
+    register_taxonomy( 'utilities-category', array( 'apartments' ), $args );
 
     unset($labels);
     unset($args);
@@ -657,15 +659,26 @@ function rewrite_rules( $rules ) {
         $new_rules[ $t . '/([^/]+)\.html$' ] = 'index.php?post_type=' . $t . '&name=$matches[1]';
     return $new_rules + $rules;
 }
-
-// for cpt post_type_link (rather than post_link)
+// format cpt post_type_link (rather than post_link)
 add_filter( 'post_type_link', 'custom_post_permalink' ); 
 function custom_post_permalink ( $post_link ) {
     global $post;
     // var_dump($post);
-    $type = get_post_type( $post->ID );
-    return home_url( $type . '/' . $post->post_name . '.html' );
+    if($post){
+      $type = get_post_type( $post->ID );
+      return home_url( $type . '/' . $post->post_name . '.html' );
+    }
     
+}
+
+// add .html for taxonomy
+add_action( 'registered_taxonomy', 'taxonomy_html', 10, 3 );
+function taxonomy_html( $taxonomy, $object_type, $args ) {
+  $array_tax = array('category','apartment');
+  foreach($array_tax as $at){
+    if($taxonomy === $at)
+      add_permastruct( $taxonomy, "{$args['rewrite']['slug']}/%$taxonomy%.html", $args['rewrite'] );
+  }
 }
 
 function hotel_center_lite_child_setup() {

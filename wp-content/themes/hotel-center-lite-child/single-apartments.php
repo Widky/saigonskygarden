@@ -15,7 +15,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 ?>
 </style>
 <?php 
-$terms = wp_get_object_terms( get_the_ID(), 'apartment-category');
+$terms = wp_get_object_terms( get_the_ID(), 'apartment');
 // var_dump($terms);
 $term_name = $terms[0]->name;
 $term_des = $terms[0]->description;
@@ -362,11 +362,19 @@ $term_des = $terms[0]->description;
                     <div class="owl-carousel owl-theme">
                         <?php 
                         $args = array(
-                            'post_type'     =>      'apartment',
+                            'post_type'     =>      'apartments',
                             'orderby'       =>      'date',
                             'order'         =>      'DESC',
                             'post_status'   =>      'publish',
-                            'posts_per_page'=>      12
+                            'posts_per_page'=>      -1,
+                            // 'tax_query'         =>  array(
+                            //     array(
+                            //         'taxonomy'      =>  'apartment',
+                            //         'field'         =>  'slug',
+                            //         'terms'         =>  $terms[0]->slug,
+                            //         'operator'      =>  'NOT IN'
+                            //     ),
+                            // )
                         );
                         $query = new WP_Query($args);
                         $myPosts = $query->get_posts();
@@ -385,7 +393,7 @@ $term_des = $terms[0]->description;
                                         <?php endif; ?>
                                         <div class="apd-cat">
                                             <?php 
-                                            $getCat = get_the_terms($v->ID,'apartment-category');
+                                            $getCat = get_the_terms($v->ID,'apartment');
                                             // var_dump($getCat);
                                             foreach($getCat as $kCat=>$vCat){
                                                 echo $vCat->name;

@@ -18,7 +18,7 @@ switch($currentLang)
 ?>
 <div class="apartment-wrap container">
     <h2 class="cl-title text-center">
-        <span class="cl-main-title"><?php echo _e('APARTMENT','hotel-center-lite-child') ?></span>
+        <span class="cl-main-title"><?php echo _e('アパート','hotel-center-lite-child') ?></span>
         <span class="cl-sub-title"><?php echo _e('アパート','hotel-center-lite-child') ?></span>
     </h2>
     <div class="aparment-posts">
@@ -29,14 +29,14 @@ switch($currentLang)
             </div>
             <?php 
             $args = array(
-                'post_type'         =>  'apartment',
+                'post_type'         =>  'apartments',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  1,
                 'tax_query'         =>  array(
                     array(
-                        'taxonomy'      =>  'apartment-category',
+                        'taxonomy'      =>  'apartment',
                         'field'         =>  'slug',
                         'terms'         =>  $the_cat,
                         'operator'      =>  'IN'
@@ -100,7 +100,7 @@ switch($currentLang)
                     </div>
                     <div class="csti-content post-content">
                         <div class="csti-content-wrap">
-                            <a href="<?php echo $my_posts[0]->guid; ?>">
+                            <a href="<?php echo $my_posts[0]->post_type . '/' .$my_posts[0]->post_name ?>.html">
                                 <h3 class="post-title"><?php echo $my_posts[0]->post_title; ?></h3>
                                 <pre class="post-excerpt"><?php echo $my_posts[0]->post_excerpt; ?></pre>
                                 <div class="post-price">
@@ -142,14 +142,14 @@ switch($currentLang)
             <div class="cat-bed-items">
                 <?php 
                 $args_bed_one = array(
-                    'post_type'         =>  'apartment',
+                    'post_type'         =>  'apartments',
                     'orderby'           =>  'date',
                     'order'             =>  'DESC',
                     'post_status'       =>  'publish',
                     'posts_per_page'    =>  1,
                     'tax_query'         =>  array(
                         array(
-                            'taxonomy'      =>  'apartment-category',
+                            'taxonomy'      =>  'apartment',
                             'field'         =>  'slug',
                             'terms'         =>  $the_cat_bed_one,
                             'operator'      =>  'IN'
@@ -221,7 +221,7 @@ switch($currentLang)
                         </div>
                         <div class="cb-content post-content">
                             <div class="cb-content-wrap">
-                                <a href="<?php echo $v->guid; ?>">
+                                <a href="<?php echo $v->post_type . '/' .$v->post_name ?>.html">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                     <div class="post-price">
@@ -268,14 +268,14 @@ switch($currentLang)
             <div class="cat-bed-items">
                 <?php 
                 $args_bed_two = array(
-                    'post_type'         =>  'apartment',
+                    'post_type'         =>  'apartments',
                     'orderby'           =>  'date',
                     'order'             =>  'DESC',
                     'post_status'       =>  'publish',
                     'posts_per_page'    =>  1,
                     'tax_query'         =>  array(
                         array(
-                            'taxonomy'      =>  'apartment-category',
+                            'taxonomy'      =>  'apartment',
                             'field'         =>  'slug',
                             'terms'         =>  $the_cat_bed_two,
                             'operator'      =>  'IN'
@@ -347,7 +347,7 @@ switch($currentLang)
                         </div>
                         <div class="cb-content post-content">
                             <div class="cb-content-wrap">
-                                <a href="<?php echo $my_posts[0]->guid; ?>">
+                                <a href="<?php echo $v->post_type . '/' .$v->post_name ?>.html">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                     <div class="post-price">
@@ -394,14 +394,14 @@ switch($currentLang)
             <div class="cat-bed-items">
                 <?php 
                 $args_bed_three = array(
-                    'post_type'         =>  'apartment',
+                    'post_type'         =>  'apartments',
                     'orderby'           =>  'date',
                     'order'             =>  'DESC',
                     'post_status'       =>  'publish',
                     'posts_per_page'    =>  1,
                     'tax_query'         =>  array(
                         array(
-                            'taxonomy'      =>  'apartment-category',
+                            'taxonomy'      =>  'apartment',
                             'field'         =>  'slug',
                             'terms'         =>  $the_cat_bed_three,
                             'operator'      =>  'IN'
@@ -473,7 +473,7 @@ switch($currentLang)
                         </div>
                         <div class="cb-content post-content">
                             <div class="cb-content-wrap">
-                                <a href="<?php echo $my_posts[0]->guid; ?>">
+                                <a href="<?php echo $v->post_type . '/' .$v->post_name ?>.html">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                     <div class="post-price">

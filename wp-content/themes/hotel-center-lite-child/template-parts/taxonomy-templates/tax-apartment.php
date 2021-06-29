@@ -1,18 +1,25 @@
 <?php 
 /**
- * Template Name: アパートメント - Page Apartment
+ * The Template for displaying taxonomy posts.
+ *
+ * @package Hotel Center Lite
  */
 
 get_header();
 
-include dirname( __FILE__ ) . '/inc/lang/translate.php';
+include get_stylesheet_directory() . '/inc/lang/translate.php';
 
 ?>
 <style>
-<?php include dirname(__FILE__) . '/assets/css/page-apartment.css';
+<?php include get_stylesheet_directory() . '/assets/css/page-apartment.css';
 ?>
 </style>
 <?php 
+// var_dump($queried_object);
+$term_name = $queried_object->name;
+$term_des = $queried_object->description;
+$term_id = $queried_object->term_id;
+
 $args = array(
     'post_type'         =>  'apartments',
     'orderby'           =>  'date',
@@ -22,8 +29,8 @@ $args = array(
     'tax_query'         =>  array(
         array(
             'taxonomy'      =>  'apartment',
-            'field'         =>  'slug',
-            'terms'         =>  $strTheCat,
+            'field'         =>  'id',
+            'terms'         =>  $term_id,
             'operator'      =>  'IN'
         ),
     )
@@ -32,10 +39,6 @@ $query = new WP_Query($args);
 $my_posts = $query->get_posts();
 // echo "<pre>";print_r($my_post);exit;
 if( $my_posts ) :
-    $terms = wp_get_object_terms( $my_posts[0]->ID, 'apartment');
-    // var_dump($terms);
-    $term_name = $terms[0]->name;
-    $term_des = $terms[0]->description;
 ?>
 <div class="apartment-detail">
     <div class="apartment-detail-wrap">
@@ -346,6 +349,7 @@ if( $my_posts ) :
 </div>
 <?php endif; ?>
 
+
 <section class="apd-tax-other-room">
     <div class="apd-tax-other-room-wrap">
         <h2 class="ap-title cl-title text-center">
@@ -357,23 +361,31 @@ if( $my_posts ) :
                 <div id="multi-carousel-apartment" class="apartment-carousel">
                     <div class="owl-carousel owl-theme">
                         <?php 
-                        $args = array(
-                            'post_type'     =>      'apartments',
-                            'orderby'       =>      'date',
-                            'order'         =>      'DESC',
-                            'post_status'   =>      'publish',
-                            'posts_per_page'=>      -1
-                        );
-                        $query = new WP_Query($args);
-                        $myPosts = $query->get_posts();
-                        // echo "<pre>";print_r($myPosts);exit;
-                        foreach($myPosts as $k=>$v) :
-                        ?>
+                    $args = array(
+                        'post_type'     =>      'apartments',
+                        'orderby'       =>      'date',
+                        'order'         =>      'DESC',
+                        'post_status'   =>      'publish',
+                        'posts_per_page'=>      -1,
+                        // 'tax_query'         =>  array(
+                        //     array(
+                        //         'taxonomy'      =>  'apartment',
+                        //         'field'         =>  'slug',
+                        //         'terms'         =>  $terms[0]->slug,
+                        //         'operator'      =>  'NOT IN'
+                        //     ),
+                        // )
+                    );
+                    $query = new WP_Query($args);
+                    $myPosts = $query->get_posts();
+                    // echo "<pre>";print_r($myPosts);exit;
+                    foreach($myPosts as $k=>$v) :
+                    ?>
                         <div class="item">
                             <div class="panel panel-default">
                                 <div class="panel-thumbnail">
-                                    <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html" title="<?php echo $v->post_title; ?>"
-                                        class="thumb">
+                                    <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html"
+                                        title="<?php echo $v->post_title; ?>" class="thumb">
                                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
                                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                                         <img src="<?php echo $image[0]; ?>"
@@ -381,35 +393,35 @@ if( $my_posts ) :
                                         <?php endif; ?>
                                         <div class="apd-cat">
                                             <?php 
-                                            $getCat = get_the_terms($v->ID,'apartment');
-                                            // var_dump($getCat);
-                                            foreach($getCat as $kCat=>$vCat){
-                                                echo $vCat->name;
-                                                break;
-                                            }
-                                            ?>
+                                        $getCat = get_the_terms($v->ID,'apartment');
+                                        // var_dump($getCat);
+                                        foreach($getCat as $kCat=>$vCat){
+                                            echo $vCat->name;
+                                            break;
+                                        }
+                                        ?>
                                         </div>
                                         <div class="apd-content post-content">
                                             <h3 class="apd-title"><?php echo $v->post_title; ?></h3>
                                             <div class="post-price">
                                                 <?php 
-                                                $priceDollar = get_post_meta($v->ID,'price_dollar', true);
-                                                $currentConversionRateToVND = get_post_meta($v->ID,'currency_conversion_rate_to_vnd', true);
-                                                $currentConversionUnit = get_post_meta($v->ID, $strCurrentConversionUnit, true);
-                                                $leaseTerm = get_post_meta($v->ID, $strLeaseTerm, true);
-                                                ?>
+                                            $priceDollar = get_post_meta($v->ID,'price_dollar', true);
+                                            $currentConversionRateToVND = get_post_meta($v->ID,'currency_conversion_rate_to_vnd', true);
+                                            $currentConversionUnit = get_post_meta($v->ID, $strCurrentConversionUnit, true);
+                                            $leaseTerm = get_post_meta($v->ID, $strLeaseTerm, true);
+                                            ?>
                                                 <span class="pp-dollar">
                                                     <?php echo '$'.$priceDollar; ?>
                                                 </span>
                                                 <span class="pp-vnd">
                                                     <?php 
-                                                    $priceVND = get_post_meta($v->ID,'price_vnd', true);
-                                                    if($priceVND != ''){
-                                                        echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
-                                                    }else{
-                                                        echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
-                                                    }
-                                                    ?>
+                                                $priceVND = get_post_meta($v->ID,'price_vnd', true);
+                                                if($priceVND != ''){
+                                                    echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
+                                                }else{
+                                                    echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
+                                                }
+                                                ?>
                                                 </span>
                                             </div>
                                         </div>
@@ -424,6 +436,7 @@ if( $my_posts ) :
         </div>
     </div>
 </section>
+
 <?php
 
 get_footer();
