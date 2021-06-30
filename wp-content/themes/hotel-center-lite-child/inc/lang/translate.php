@@ -41,7 +41,7 @@ switch($currentLang)
         $strOpeningHours = 'Opening Hours:';
 
         // attractions
-        $theAttractionsAbout = 'gioi-thieu';
+        $theAttractionsAbout = 'introduce';
         $theAttractionsTourist = 'tourist-attractions';
         $theAttractionsRestaurant = 'restaurant';
         $theAttractionsBar = 'bar';

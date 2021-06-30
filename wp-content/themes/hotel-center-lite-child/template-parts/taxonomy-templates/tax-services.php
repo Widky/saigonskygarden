@@ -5,13 +5,27 @@
 
 get_header();
 
-include dirname( __FILE__ ) . '/inc/lang/translate.php';
+include get_stylesheet_directory() . '/inc/lang/translate.php';
 
 ?>
 <style>
-<?php include dirname(__FILE__) . '/assets/css/page-service.css';
+<?php include get_stylesheet_directory() . '/assets/css/page-service.css';
 ?>
 </style>
+<?php 
+// var_dump($queried_object);
+$term_name = $queried_object->name;
+$term_des = $queried_object->description;
+$term_id = $queried_object->term_id;
+
+$pageTitle = $term_name;
+
+$pageSubTitle = $term_name;
+
+$imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-services.png';
+// Call function breadcrumb
+breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
+?>
 <div id="pService">
 
     <div class="container">
@@ -19,7 +33,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             <div class="sr-title-wrap container">
                 <h2 class="cl-title text-center">
                     <span class="cl-main-title change-cl"><?php echo _e('サービス','hotel-center-lite-child') ?></span>
-                    <span class="cl-sub-title"><?php echo _e('サービス','hotel-center-lite-child') ?></span>
+                    <span class="cl-sub-title"><?php echo $term_name; ?></span>
                 </h2>
                 <div class="cl-tax-share">
                     <a href="#">
@@ -37,6 +51,14 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  -1,
+                'tax_query'         =>  array(
+                    array(
+                        'taxonomy'      =>  'services',
+                        'field'         =>  'id',
+                        'terms'         =>  $term_id,
+                        'operator'      =>  'IN'
+                    ),
+                )
             );
             $query = new WP_Query($args);
             $my_posts = $query->get_posts();

@@ -15,10 +15,18 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 ?>
 </style>
 <?php
-$terms = wp_get_object_terms( get_the_ID(), 'service-category');
+$terms = wp_get_object_terms( get_the_ID(), 'services');
 // var_dump($terms);exit;
 $term_name = $terms[0]->name;
 $term_des = $terms[0]->description;
+
+$pageTitle = $term_name;
+
+$pageSubTitle = $term_name;
+
+$imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-services.png';
+// Call function breadcrumb
+breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 ?>
 <div id="sService">
     <div class="container css">
@@ -189,7 +197,7 @@ $term_des = $terms[0]->description;
                                                 <div class="sw-content post-content">
                                                     <div class="sw-cat text-center">
                                                         <?php 
-                                                            $getCat = get_the_terms($v->ID,'service-category');
+                                                            $getCat = get_the_terms($v->ID,'services');
                                                             foreach($getCat as $kCat=>$vCat){
                                                                 echo $vCat->name;
                                                                 break;

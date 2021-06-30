@@ -212,7 +212,7 @@ function add_register_post_type(){
     'menu_position'      => 22,
     'menu_icon'          => 'dashicons-email-alt2',
     'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','custom-fields' ),
-    'taxonomies'         => array(  'service-category' )
+    'taxonomies'         => array(  'services' )
   );
   register_post_type( 'service', $argsService );
 
@@ -406,11 +406,11 @@ function add_register_taxonomies(){
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'service-category' ),
+        'rewrite'           => array( 'slug' => 'services' ),
         'sort'              => true
     );
 
-    register_taxonomy( 'service-category', array( 'service' ), $args );
+    register_taxonomy( 'services', array( 'service' ), $args );
 
     unset($labels);
     unset($args);
@@ -675,7 +675,7 @@ function custom_post_permalink ( $post_link ) {
 // add .html for taxonomy
 add_action( 'registered_taxonomy', 'taxonomy_html', 10, 3 );
 function taxonomy_html( $taxonomy, $object_type, $args ) {
-  $array_tax = array('category','apartment','facilities','attractions');
+  $array_tax = array('category','apartment','facilities','attractions','services');
   foreach($array_tax as $at){
     if($taxonomy === $at)
       add_permastruct( $taxonomy, "{$args['rewrite']['slug']}/%$taxonomy%.html", $args['rewrite'] );

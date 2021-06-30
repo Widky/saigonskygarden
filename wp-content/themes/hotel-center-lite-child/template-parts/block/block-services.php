@@ -8,7 +8,7 @@
             <ul class="nav nav-tabs" id="serviceTab" role="tablist">
                 <?php
                 $argsCat = array(
-                    'taxonomy'          =>  'service-category',
+                    'taxonomy'          =>  'services',
                     'orderby'           =>  'term_order',
                     'order'             =>  'ASC',
                     'hide_empty'        =>  false
@@ -51,7 +51,7 @@
                             'posts_per_page'    =>  1,
                             'tax_query'         =>  array(
                                 array(
-                                    'taxonomy'      =>  'service-category',
+                                    'taxonomy'      =>  'services',
                                     'field'         =>  'id',
                                     'terms'         =>  $vCat->term_id,
                                     'operator'      => 'IN'
