@@ -7,14 +7,14 @@
         <div class="facilities-items row">
             <?php 
             $args = array(
-                'post_type'     =>      'facilities',
+                'post_type'     =>      'facility',
                 'orderby'       =>      'date',
                 'order'         =>      'DESC',
                 'post_status'   =>      'publish',
                 'posts_per_page'=>      7,
                 'tax_query'         =>  array(
                     array(
-                        'taxonomy'      =>  'facilities-category',
+                        'taxonomy'      =>  'facilities',
                         'field'         =>  'slug',
                         'terms'         =>  $strCatFacilities,
                         'operator'      =>  'IN'

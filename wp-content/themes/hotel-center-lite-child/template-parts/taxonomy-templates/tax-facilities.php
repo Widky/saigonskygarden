@@ -1,25 +1,42 @@
 <?php 
 /**
- * Template Name: ページ設備 - Page Facilities
+ * The Template for displaying taxonomy posts.
+ *
+ * @package Hotel Center Lite
  */
 
 get_header();
 
-include dirname( __FILE__ ) . '/inc/lang/translate.php';
+include get_stylesheet_directory() . '/inc/lang/translate.php';
 
 $showHomePage = get_field('show_home_page');
 $showAboutPage = get_field('show_about_page');
+
+$term_name = $queried_object->name;
+$term_des = $queried_object->description;
+$term_id = $queried_object->term_id;
+
 ?>
 <style>
-<?php include dirname(__FILE__) . '/assets/css/page-facilities.css';
+<?php include get_stylesheet_directory() . '/assets/css/page-facilities.css';
 ?>
 </style>
+<?php 
+
+$pageTitle = $bcFacilities;
+
+$pageSubTitle = $bcFacilities;
+
+$imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-facilities.png';
+// Call function breadcrumb
+breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
+?>
 <div id="pFacilities">
     <div class="sr-title">
         <div class="sr-title-wrap container">
             <h2 class="cl-title text-center">
-                <span class="cl-main-title change-cl"><?php echo _e('Facilities','hotel-center-lite-child') ?></span>
-                <span class="cl-sub-title"><?php echo _e('特色','hotel-center-lite-child') ?></span>
+                <span class="cl-main-title change-cl"><?php echo _e('特色','hotel-center-lite-child') ?></span>
+                <span class="cl-sub-title"><?php echo _e($term_name,'hotel-center-lite-child') ?></span>
             </h2>
             <div class="cl-tax-share">
                 <a href="#">
@@ -34,19 +51,19 @@ $showAboutPage = get_field('show_about_page');
 
             <?php      
             $args = array(
-                'post_type'         =>  'facilities',
+                'post_type'         =>  'facility',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  12,
-                // 'tax_query'         =>  array(
-                //     array(
-                //         'taxonomy'      =>  'facilities-category',
-                //         'field'         =>  'slug',
-                //         'terms'         =>  $strCatFacilities,
-                //         'operator'      =>  'NOT IN'
-                //     ),
-                // )
+                'tax_query'         =>  array(
+                    array(
+                        'taxonomy'      =>  'facilities',
+                        'field'         =>  'id',
+                        'terms'         =>  $term_id,
+                        'operator'      =>  'IN'
+                    ),
+                )
             );
             $query = new WP_Query($args);
             $my_posts = $query->get_posts();
@@ -58,10 +75,13 @@ $showAboutPage = get_field('show_about_page');
                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                         <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>" alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
 
-                        <?php $note = get_field('note', $v->ID); ?>
-                        <?php if($note != '') { ?>
-                        <div class="pfnote"><?php echo $note; ?></div>
-                        <?php } ?>
+                        <?php 
+                            $getCat = get_the_terms($v->ID,'facilities');
+                            foreach($getCat as $kCat=>$vCat){
+                                echo '<div class="pfnote">'.$vCat->name.'</div>';
+                                break;
+                            }
+                        ?>
                     </div>
                     <div class="pfacilities-body">
                         <div class="pfcontent">

@@ -47,6 +47,9 @@ switch($currentLang)
         $theAttractionsBar = 'bar';
         $theAttractionsCoffee = 'coffee';
         $theAttractionsFesRes = 'festiva-restaurant';
+
+        // breadcrumb
+        $bcFacilities = 'Facilities';
         break;
     default:
         $the_cat = 'スタジオ';
@@ -92,6 +95,9 @@ switch($currentLang)
         $theAttractionsBar = 'バール';
         $theAttractionsCoffee = 'コーヒー';
         $theAttractionsFesRes = 'お祝いレストラン';
+
+        // breadcrumb
+        $bcFacilities = '施設';
         break;
 }
 ?>

@@ -289,6 +289,7 @@ ul {
 #navbar-nav-header li ul.sub-menu {
     display: none;
     position: absolute;
+    left: -30px;
     z-index: 10;
     min-width: 300px;
 }

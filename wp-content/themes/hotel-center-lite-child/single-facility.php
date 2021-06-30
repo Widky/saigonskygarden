@@ -13,6 +13,16 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 <?php include dirname(__FILE__) . '/assets/css/single-facilities.css';
 ?>
 </style>
+<?php 
+
+$pageTitle = $bcFacilities;
+
+$pageSubTitle = $bcFacilities;
+
+$imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-facilities.png';
+// Call function breadcrumb
+breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
+?>
 <div class="container">
     <div id="pagelayout_area">
         <section class="singlesite-maincontentarea">
@@ -26,7 +36,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 <div class="block-carousel-facilities-about">
     <div class="block-carousel-facilities-about-wrap container">
         <h2 class="cl-title text-center">
-            <span class="cl-main-title"><?php echo _e('FACILITIES','hotel-center-lite-child') ?></span>
+            <span class="cl-main-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
             <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
         </h2>
         <div class="carousel-facilities-about">
@@ -35,7 +45,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                     <div class="carousel-inner">
                         <?php 
                     $args = array(
-                        'post_type'     =>      'facilities',
+                        'post_type'     =>      'facility',
                         'orderby'       =>      'date',
                         'order'         =>      'DESC',
                         'post_status'   =>      'publish',

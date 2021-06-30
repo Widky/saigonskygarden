@@ -147,7 +147,7 @@ function add_register_post_type(){
   // Facilities
   $labelFacilities = array(
     'name'                  => _x( 'Facilities', 'Facilities', 'hotel-center-lite-child' ),
-    'singular_name'         => _x( 'Apartment', 'Apartment', 'hotel-center-lite-child' ),
+    'singular_name'         => _x( 'Facilities', 'Facilities', 'hotel-center-lite-child' ),
     'menu_name'             => _x( 'Facilities', 'Facilities', 'hotel-center-lite-child' ),
     'name_admin_bar'        => _x( 'Facilities', 'Facilities', 'hotel-center-lite-child' ),
     'add_new'               => __( 'Add New', 'hotel-center-lite-child' ),
@@ -169,15 +169,16 @@ function add_register_post_type(){
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'facilities' ),
+    'rewrite'            => array( 'slug' => 'facility' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => 21,
     'menu_icon'          => 'dashicons-rss',
     'supports'           => array( 'title', 'editor','thumbnail', 'excerpt'),
+    'taxonomies'         => array(  'facilities' )
   );
-  register_post_type( 'facilities', $argsFacilities );
+  register_post_type( 'facility', $argsFacilities );
 
   // Service
   $labelsService = array(
@@ -465,11 +466,11 @@ function add_register_taxonomies(){
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'facilities-category' ),
+        'rewrite'           => array( 'slug' => 'facilities' ),
         'sort'              => true
     );
 
-    register_taxonomy( 'facilities-category', array( 'facilities' ), $args );
+    register_taxonomy( 'facilities', array( 'facility' ), $args );
 
     // Attractions
     unset($labels);
@@ -674,7 +675,7 @@ function custom_post_permalink ( $post_link ) {
 // add .html for taxonomy
 add_action( 'registered_taxonomy', 'taxonomy_html', 10, 3 );
 function taxonomy_html( $taxonomy, $object_type, $args ) {
-  $array_tax = array('category','apartment');
+  $array_tax = array('category','apartment','facilities');
   foreach($array_tax as $at){
     if($taxonomy === $at)
       add_permastruct( $taxonomy, "{$args['rewrite']['slug']}/%$taxonomy%.html", $args['rewrite'] );

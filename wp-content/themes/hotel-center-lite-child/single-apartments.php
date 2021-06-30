@@ -19,6 +19,14 @@ $terms = wp_get_object_terms( get_the_ID(), 'apartment');
 // var_dump($terms);
 $term_name = $terms[0]->name;
 $term_des = $terms[0]->description;
+
+$pageTitle = $term_name;
+
+$pageSubTitle = $term_name;
+
+$imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-apartment.png';
+// Call function breadcrumb
+breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 ?>
 <div class="apartment-detail">
     <div class="apartment-detail-wrap">

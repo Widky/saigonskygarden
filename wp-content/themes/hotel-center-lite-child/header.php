@@ -77,15 +77,12 @@
     </header>
     <div class="page-wrap">
         <?php 
-    if(!is_home() && !is_front_page()){
+    if(!is_front_page() && is_page()){
         include dirname( __FILE__ ) . '/inc/lang/translate.php';
 
         $page_id = get_queried_object_id();
 
         $pageTitle = get_field($pageTitle, $page_id);
-        if(is_single()){
-            $pageTitle = '<a href="/"><i class="fas fa-home"></i></a>';
-        }
 
         $pageSubTitle = get_the_title();
 

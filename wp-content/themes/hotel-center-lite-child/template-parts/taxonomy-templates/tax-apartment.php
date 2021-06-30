@@ -20,6 +20,14 @@ $term_name = $queried_object->name;
 $term_des = $queried_object->description;
 $term_id = $queried_object->term_id;
 
+$pageTitle = $term_name;
+
+$pageSubTitle = $term_name;
+
+$imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-apartment.png';
+// Call function breadcrumb
+breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
+
 $args = array(
     'post_type'         =>  'apartments',
     'orderby'           =>  'date',

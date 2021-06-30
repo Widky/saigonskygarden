@@ -37,6 +37,15 @@
     width: 230px;
 }
 
+.pfacilities-item .pfacilities-img .pfnote a {
+    font: normal 15px 'Yu Gothic Medium', 'sans-serif';
+    color: #FFFFFF;
+}
+
+.pfacilities-item .pfacilities-img .pfnote:hover a {
+    color: #2398a9;
+}
+
 .pfacilities-item .pftitle {
     font: normal bold 24px 'Yu Gothic Bold', 'sans-serif';
     color: #333333;

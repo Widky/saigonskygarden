@@ -99,7 +99,7 @@
     <div class="footer-absolute">
         <div class="footer-absolute-wrap">
             <div class="footer-absolute-content text-center">
-                Copyright(c) <?php echo date('Y'); ?> by <a href="/">Saigon Sky Garden</a>. <?php _e('全著作権所有。','hotel-center-lite-child') ?>
+                Copyright(c) <?php echo date('Y'); ?> by <a href="/">Saigon Sky Garden</a>. All rights reserved.
             </div>
         </div>
     </div>
