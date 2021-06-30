@@ -277,16 +277,16 @@ function add_register_post_type(){
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'attractions' ),
+    'rewrite'            => array( 'slug' => 'attraction' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => 20,
     'menu_icon'          => 'dashicons-palmtree',
     'supports'           => array( 'title', 'editor','thumbnail', 'excerpt'),
-    'taxonomies'         => array(  'attractions-category' )
+    'taxonomies'         => array(  'attractions' )
   );
-  register_post_type( 'attractions', $argsAttractions );
+  register_post_type( 'attraction', $argsAttractions );
 
     // add review post type
   $labelReviews = array(
@@ -496,11 +496,11 @@ function add_register_taxonomies(){
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'attractions-category' ),
+        'rewrite'           => array( 'slug' => 'attractions' ),
         'sort'              => true
     );
 
-    register_taxonomy( 'attractions-category', array( 'attractions' ), $args );
+    register_taxonomy( 'attractions', array( 'attraction' ), $args );
 
      // Review category
     unset($labels);
@@ -675,7 +675,7 @@ function custom_post_permalink ( $post_link ) {
 // add .html for taxonomy
 add_action( 'registered_taxonomy', 'taxonomy_html', 10, 3 );
 function taxonomy_html( $taxonomy, $object_type, $args ) {
-  $array_tax = array('category','apartment','facilities');
+  $array_tax = array('category','apartment','facilities','attractions');
   foreach($array_tax as $at){
     if($taxonomy === $at)
       add_permastruct( $taxonomy, "{$args['rewrite']['slug']}/%$taxonomy%.html", $args['rewrite'] );

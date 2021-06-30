@@ -14,10 +14,18 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 ?>
 </style>
 <?php
-$terms = wp_get_object_terms( get_the_ID(), 'attractions-category');
+$terms = wp_get_object_terms( get_the_ID(), 'attractions');
 // var_dump($terms);
 $term_name = $terms[0]->name;
 $term_des = $terms[0]->description;
+
+$pageTitle = $term_name;
+
+$pageSubTitle = $term_name;
+
+$imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-attractions.png';
+// Call function breadcrumb
+breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 ?>
 <div class="single-pAttractions">
     <div class="container">
@@ -56,14 +64,14 @@ $term_des = $terms[0]->description;
             </div>
             <?php 
             $args = array(
-                'post_type'         =>  'attractions',
+                'post_type'         =>  'attraction',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  2,
                 'tax_query'         =>  array(
                     array(
-                        'taxonomy'      =>  'attractions-category',
+                        'taxonomy'      =>  'attractions',
                         'field'         =>  'slug',
                         'terms'         =>  $terms[0]->slug,
                         'operator'      =>  'NOT IN'
@@ -117,7 +125,7 @@ $term_des = $terms[0]->description;
                             <div class="owl-carousel owl-theme">
                                 <?php 
                         $args = array(
-                            'post_type'     =>      'attractions',
+                            'post_type'     =>      'attraction',
                             'orderby'       =>      'date',
                             'order'         =>      'DESC',
                             'post_status'   =>      'publish',
@@ -167,14 +175,14 @@ $term_des = $terms[0]->description;
         <div class="festiva-restaurant-wrap">
             <?php 
             $args = array(
-                'post_type'         =>  'attractions',
+                'post_type'         =>  'attraction',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  1,
                 'tax_query'         =>  array(
                     array(
-                        'taxonomy'      =>  'attractions-category',
+                        'taxonomy'      =>  'attractions',
                         'field'         =>  'slug',
                         'terms'         =>  $theAttractionsFesRes,
                         'operator'      =>  'IN'

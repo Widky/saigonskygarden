@@ -14,17 +14,16 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 </style>
 <div class="pAttractions">
     <div class="container">
-        <div class="attractions-about row">
             <?php 
             $args = array(
-                'post_type'         =>  'attractions',
+                'post_type'         =>  'attraction',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  1,
                 'tax_query'         =>  array(
                     array(
-                        'taxonomy'      =>  'attractions-category',
+                        'taxonomy'      =>  'attractions',
                         'field'         =>  'slug',
                         'terms'         =>  $theAttractionsAbout,
                         'operator'      =>  'IN'
@@ -35,6 +34,8 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             $my_posts = $query->get_posts();
             if($my_posts) :
             ?>
+        <div class="attractions-about row">
+
             <div class="col-lg-7 col-md-12">
                 <div class="aimage">
                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
@@ -57,7 +58,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
         <div class="attractions-items row">
             <?php 
             $terms = get_terms(array(
-                'taxonomy'  => 'attractions-category',
+                'taxonomy'  => 'attractions',
                 'order'     => 'DESC'
             )); 
             // echo "<pre>"; var_dump($terms); exit;
@@ -72,14 +73,14 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             </div>
             <?php 
             $args = array(
-                'post_type'         =>  'attractions',
+                'post_type'         =>  'attraction',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  3,
                 'tax_query'         =>  array(
                     array(
-                        'taxonomy'      =>  'attractions-category',
+                        'taxonomy'      =>  'attractions',
                         'field'         =>  'slug',
                         'terms'         =>  $v->slug,
                         'operator'      =>  'IN'
@@ -127,14 +128,14 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
         <div class="festiva-restaurant-wrap">
             <?php 
             $args = array(
-                'post_type'         =>  'attractions',
+                'post_type'         =>  'attraction',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  1,
                 'tax_query'         =>  array(
                     array(
-                        'taxonomy'      =>  'attractions-category',
+                        'taxonomy'      =>  'attractions',
                         'field'         =>  'slug',
                         'terms'         =>  $theAttractionsFesRes,
                         'operator'      =>  'IN'
