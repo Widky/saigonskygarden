@@ -13,13 +13,8 @@ $url =  (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$
 $url_arr = explode('?', $url);
 $url = $url_arr[0];
 $locale = get_locale();
-if($locale == 'ja'){
-    $trans_post_id = pll_get_post(get_the_ID(), 'en_US');
-    $sub_title = get_the_title($trans_post_id);
-}else{
-    $trans_post_id = pll_get_post(get_the_ID(), 'ja');
-    $sub_title = get_the_title($trans_post_id);
-}
+$sub_title = get_post_meta(get_the_ID(),'sub_title',true);
+
 ?>
     <div class="container">
         <div id="page_content_area">
@@ -90,7 +85,20 @@ if($locale == 'ja'){
                                                             </a>
                                                         </h3>
                                                         <div class="event_excerpt">
-                                                            <?php echo substr(get_the_excerpt(), 0, 200);?>
+                                                            <?php
+                                                                $event_len = mb_strlen(get_the_excerpt(),'UTF-8');
+                                                                if($locale == 'ja'){
+                                                                    echo mb_substr(get_the_excerpt(), 0, 50,'UTF-8');
+                                                                        if($event_len > 50 ){
+                                                                            echo '[...]';
+                                                                        }
+                                                                }else{
+                                                                    echo mb_substr(get_the_excerpt(), 0, 100,'UTF-8');
+                                                                        if($event_len > 100 ){
+                                                                            echo '[...]';
+                                                                        }    
+                                                                } 
+                                                            ?>
                                                             <p class="mt-2">
                                                                 <a href="<?php the_permalink(); ?>">
                                                                 <span><?php echo __('View More','hotel-center-lite-child') ?></span>

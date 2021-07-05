@@ -14,13 +14,9 @@ $url =  (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$
 $url_arr = explode('?', $url);
 $url = $url_arr[0];
 $locale = get_locale();
-if($locale == 'ja'){
-    $trans_post_id = pll_get_post(get_the_ID(), 'en_US');
-    $sub_title = get_the_title($trans_post_id);
-}else{
-    $trans_post_id = pll_get_post(get_the_ID(), 'ja');
-    $sub_title = get_the_title($trans_post_id);
-}
+
+$sub_title = get_post_meta(get_the_ID(),'sub_title',true);
+
 ?>
     <div class="container">
         <div id="page_content_area">
@@ -93,7 +89,10 @@ if($locale == 'ja'){
                                                         <?php } ?>    
                                                         <span class="align-middle"><?php echo number_format($stars,1) ?></span>
                                                     </div>
-                                                    <div class="review_date d-inline-block align-bottom"><?php echo $review_date; ?></div>
+                                                    <div class="review_date d-inline-block align-bottom">
+                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/border_date.png">
+                                                        <?php echo $review_date; ?>
+                                                    </div>
                                                 </div>
                                                 <div class="wrap_content">
                                                     <div class="reivew_content my-3  d_block "><?php echo $substring ; ?> <?php if($review_len > $len) { ?><span class="load_more">...<?php echo __('More','hotel-center-lite-child') ?></span><?php } ?></div>
