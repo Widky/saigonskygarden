@@ -28,7 +28,7 @@
             ?>
             <div class="facilities-item col-md-4 col-sm-6 col-12">
                 <div class="facilities-item-wrap">
-                    <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html">
+                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                         <div class="fiw-img">
                             <?php 
                             $showHome = get_field('show_home', $v->ID);

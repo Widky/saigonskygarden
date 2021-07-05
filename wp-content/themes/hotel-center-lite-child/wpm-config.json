@@ -1,0 +1,30 @@
+{
+    "post_types": {
+        "post": {},
+        "page": {},
+        "apartments": {},
+        "facility": {},
+        "service": {},
+        "event": {},
+        "attraction": {}
+    },
+    "post_fields": {
+        "sub_title": {},
+        "sub_title_2": {},
+        "currency_conversion_unit": {},
+        "lease_term": {},
+        "bed_type": {},
+        "maximum_number_of_people_in_a_room": {},
+        "page_title": {},
+        "show_home_page": {},
+        "show_about_page": {}
+    },
+    "taxonomies": {
+        "apartment": {},
+        "utilities-category": {},
+        "facilities": {},
+        "services": {},
+        "events": {},
+        "attractions": {}
+    }
+}

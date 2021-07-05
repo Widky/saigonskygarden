@@ -14,7 +14,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 </style>
 <div class="pAttractions">
     <div class="container">
-            <?php 
+        <?php 
             $args = array(
                 'post_type'         =>  'attraction',
                 'orderby'           =>  'date',
@@ -59,11 +59,12 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             <?php 
             $terms = get_terms(array(
                 'taxonomy'  => 'attractions',
-                'order'     => 'DESC'
+                'orderby'   =>  'date',
+                'order'     => 'ASC'
             )); 
             // echo "<pre>"; var_dump($terms); exit;
             foreach($terms as $k=>$v) :
-                if(str_replace(' ','-',$v->name) != $theAttractionsAbout && str_replace(' ','-',$v->name) != $theAttractionsFesRes) :
+                if($v->slug != $theAttractionsAbout && $v->slug != $theAttractionsFesRes) :
                 ?>
             <div class="col-12">
                 <h2 class="cl-title text-center">
@@ -94,7 +95,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                 foreach($my_posts as $kp=>$vp) :
             ?>
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="<?php echo $vp->post_type . '/' .$vp->post_name ?>.html">
+                <a href="<?php echo home_url($vp->post_type . '/' .$vp->post_name . '.html'); ?>">
                     <div class="attractions-item">
                         <div class="attractions-item-wrap">
                             <div class="aiw-img">

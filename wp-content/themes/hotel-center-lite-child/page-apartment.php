@@ -55,6 +55,12 @@ if( $my_posts ) :
             </div>
             <div class="apd-tax-slide">
                 <div class="csti-img">
+                    <div class="apd-info-img">
+                        <?php 
+                            $basicInformation = get_field('basic_infomation', $my_posts[0]->ID);
+                        ?>
+                        <h3 class="apdii-content"><?php echo $basicInformation['bed_type']; ?>(<?php echo $basicInformation['maximum_number_of_people_in_a_room']; ?>)</h3>
+                    </div>
                     <?php
                         $sliderCat = get_field('slide_thumbnail', $my_posts[0]->ID);
                         $lengthArray = count($sliderCat);
@@ -229,7 +235,7 @@ if( $my_posts ) :
                     </div>
                     <div class="col-lg-6 col-md-5 col-12">
                         <div class="tax-btn-contact">
-                            <a href="/<?php echo $strLinkContact; ?>.html"><?php echo $strTextContact; ?></a>
+                            <a href="<?php echo home_url($strLinkContact . '.html'); ?>"><?php echo $strTextContact; ?></a>
                         </div>
                     </div>
                 </div>
@@ -261,24 +267,16 @@ if( $my_posts ) :
                                     <?php 
                                     $priceDollar = get_post_meta($my_posts[0]->ID,'price_dollar', true);
                                     $currentConversionRateToVND = get_post_meta($my_posts[0]->ID,'currency_conversion_rate_to_vnd', true);
-                                    switch($currentLang)
-                                    {
-                                        case 'en_US':
-                                            $currentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit_for_english', true);
-                                            $leaseTerm = get_post_meta($my_posts[0]->ID,'lease_term_for_english', true);
-                                            break;
-                                        default:
-                                            $currentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit', true);
-                                            $leaseTerm = get_post_meta($my_posts[0]->ID,'lease_term', true);
-                                            break;
-                                    }
-                                                    ?>
+                                    
+                                    $strCurrentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit', true);
+                                    $strLeaseTerm = get_post_meta($my_posts[0]->ID,'lease_term', true);
+                                    ?>
                                     <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
                                     <span class="pp-vnd">
                                         <?php 
                                         $priceVND = get_post_meta($my_posts[0]->ID,'price_vnd', true);
                                         if($priceVND != ''){
-                                            echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
+                                            echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $strCurrentConversionUnit .')' . ' ' .  $strLeaseTerm;
                                         }else{
                                             echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
                                         }
@@ -340,6 +338,11 @@ if( $my_posts ) :
                     </div>
                 </div>
                 <div class="line-color opacity"></div>
+                <div class="apd-button">
+                    <a href="#" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
+                    <a href="#"><?php _e('長期ご契約 お問合せ ', 'hotel-center-lite-child'); ?></a>
+                </div>
+                <div class="clear"></div>
             </div>
         </div>
     </div>
@@ -349,7 +352,7 @@ if( $my_posts ) :
 <section class="apd-tax-other-room">
     <div class="apd-tax-other-room-wrap">
         <h2 class="ap-title cl-title text-center">
-            <span class="cl-main-title change-cl"><?php echo _e('他の部屋', 'hotel-center-lite-child') ?></span>
+            <span class="cl-main-title change-cl"><?php echo _e('Other Apartment', 'hotel-center-lite-child') ?></span>
             <span class="cl-sub-title"><?php echo _e('施設', 'hotel-center-lite-child') ?></span>
         </h2>
         <div class="apd-tax-other-room-carousel">

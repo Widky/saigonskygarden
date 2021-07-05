@@ -1,31 +1,19 @@
 <?php
-$currentLang = get_locale();
-switch($currentLang)
-{
-    case 'en_US':
-        $the_cat = 'studio-apartment';
-        $the_cat_bed_one = 'one-bed-room';
-        $the_cat_bed_two = 'two-bed-room';
-        $the_cat_bed_three = 'three-bed-room';
-        break;
-    default:
-        $the_cat = 'スタジオ';
-        $the_cat_bed_one = '1ベッドルーム';
-        $the_cat_bed_two = '2ベッドルーム';
-        $the_cat_bed_three = '3ベッドルーム';
-        break;
-}
+$the_cat = 'studio-apartment';
+$the_cat_bed_one = 'one-bed-room';
+$the_cat_bed_two = 'two-bed-rooms';
+$the_cat_bed_three = 'three-bed-rooms';
 ?>
 <div class="apartment-wrap container">
     <h2 class="cl-title text-center">
-        <span class="cl-main-title"><?php echo _e('アパート','hotel-center-lite-child') ?></span>
+        <span class="cl-main-title"><?php echo _e('APARTMENT','hotel-center-lite-child') ?></span>
         <span class="cl-sub-title"><?php echo _e('アパート','hotel-center-lite-child') ?></span>
     </h2>
     <div class="aparment-posts">
         <div class="cat-studio">
             <div class="cat-main-title cat-studio-main-title">
                 <div class="cat-line cat-studio-line"></div>
-                <h3 class="cat-title cat-studio-title"><?php _e('スタジオ','hotel-center-lite-child'); ?></h3>
+                <h3 class="cat-title cat-studio-title"><?php _e('Studio Apartment','hotel-center-lite-child'); ?></h3>
             </div>
             <?php 
             $args = array(
@@ -100,24 +88,15 @@ switch($currentLang)
                     </div>
                     <div class="csti-content post-content">
                         <div class="csti-content-wrap">
-                            <a href="<?php echo $my_posts[0]->post_type . '/' .$my_posts[0]->post_name ?>.html">
+                            <a href="<?php echo home_url($my_posts[0]->post_type . '/' .$my_posts[0]->post_name .'.html'); ?>">
                                 <h3 class="post-title"><?php echo $my_posts[0]->post_title; ?></h3>
                                 <pre class="post-excerpt"><?php echo $my_posts[0]->post_excerpt; ?></pre>
                                 <div class="post-price">
                                     <?php 
                                     $priceDollar = get_post_meta($my_posts[0]->ID,'price_dollar', true);
                                     $currentConversionRateToVND = get_post_meta($my_posts[0]->ID,'currency_conversion_rate_to_vnd', true);
-                                    switch($currentLang)
-                                    {
-                                        case 'en_US':
-                                            $currentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit_for_english', true);
-                                            $leaseTerm = get_post_meta($my_posts[0]->ID,'lease_term_for_english', true);
-                                            break;
-                                        default:
-                                            $currentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit', true);
-                                            $leaseTerm = get_post_meta($my_posts[0]->ID,'lease_term', true);
-                                            break;
-                                    }
+                                    $currentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit', true);
+                                    $leaseTerm = get_post_meta($my_posts[0]->ID,'lease_term', true);
                                     ?>
                                     <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
                                     <span class="pp-vnd">
@@ -166,7 +145,7 @@ switch($currentLang)
                 <div class="cat-bed-items-wrap">
                     <div class="cat-main-title cat-bed-title">
                         <h3 class="cat-title">
-                            <?php echo "<span class='cat-title-number'>".$i."</span>"; _e('ベッドルーム', 'hotel-center-lite-child'); ?>
+                            <?php echo "<span class='cat-title-number'>".$i."</span>"; _e('Bed Room', 'hotel-center-lite-child'); ?>
                         </h3>
                         <div class="cat-line <?php echo 'mgl'; ?>"></div>
                     </div>
@@ -221,7 +200,7 @@ switch($currentLang)
                         </div>
                         <div class="cb-content post-content">
                             <div class="cb-content-wrap">
-                                <a href="<?php echo $v->post_type . '/' .$v->post_name ?>.html">
+                                <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                     <div class="post-price">
@@ -232,17 +211,8 @@ switch($currentLang)
                                         if($slider){
                                             echo do_shortcode($slider);
                                         }
-                                        switch($currentLang)
-                                        {
-                                            case 'en_US':
-                                                $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit_for_english', true);
-                                                $leaseTerm = get_post_meta($v->ID,'lease_term_for_english', true);
-                                                break;
-                                            default:
-                                                $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit', true);
-                                                $leaseTerm = get_post_meta($v->ID,'lease_term', true);
-                                                break;
-                                        }
+                                        $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit', true);
+                                        $leaseTerm = get_post_meta($v->ID,'lease_term', true);
                                         ?>
                                         <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
                                         <span class="pp-vnd">
@@ -293,7 +263,7 @@ switch($currentLang)
                     <div class="cat-main-title cat-bed-title">
                         <div class="cat-line mgr"></div>
                         <h3 class="cat-title">
-                            <?php echo "<span class='cat-title-number'>".$i."</span>"; _e('ベッドルーム', 'hotel-center-lite-child'); ?>
+                            <?php echo "<span class='cat-title-number'>".$i."</span>"; _e('Bed Rooms', 'hotel-center-lite-child'); ?>
                         </h3>
                     </div>
                     <div class="cb-item island">
@@ -347,7 +317,7 @@ switch($currentLang)
                         </div>
                         <div class="cb-content post-content">
                             <div class="cb-content-wrap">
-                                <a href="<?php echo $v->post_type . '/' .$v->post_name ?>.html">
+                                <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                     <div class="post-price">
@@ -358,17 +328,9 @@ switch($currentLang)
                                         if($slider){
                                             echo do_shortcode($slider);
                                         }
-                                        switch($currentLang)
-                                        {
-                                            case 'en_US':
-                                                $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit_for_english', true);
-                                                $leaseTerm = get_post_meta($v->ID,'lease_term_for_english', true);
-                                                break;
-                                            default:
-                                                $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit', true);
-                                                $leaseTerm = get_post_meta($v->ID,'lease_term', true);
-                                                break;
-                                        }
+                                        
+                                        $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit', true);
+                                        $leaseTerm = get_post_meta($v->ID,'lease_term', true);
                                         ?>
                                         <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
                                         <span class="pp-vnd">
@@ -418,7 +380,7 @@ switch($currentLang)
                 <div class="cat-bed-items-wrap">
                     <div class="cat-main-title cat-bed-title">
                         <h3 class="cat-title">
-                            <?php echo "<span class='cat-title-number'>".$i."</span>"; _e('ベッドルーム', 'hotel-center-lite-child'); ?>
+                            <?php echo "<span class='cat-title-number'>".$i."</span>"; _e('Bed Rooms', 'hotel-center-lite-child'); ?>
                         </h3>
                         <div class="cat-line mgl"></div>
                     </div>
@@ -473,7 +435,7 @@ switch($currentLang)
                         </div>
                         <div class="cb-content post-content">
                             <div class="cb-content-wrap">
-                                <a href="<?php echo $v->post_type . '/' .$v->post_name ?>.html">
+                                <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                     <div class="post-price">
@@ -484,17 +446,9 @@ switch($currentLang)
                                         if($slider){
                                             echo do_shortcode($slider);
                                         }
-                                        switch($currentLang)
-                                        {
-                                            case 'en_US':
-                                                $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit_for_english', true);
-                                                $leaseTerm = get_post_meta($v->ID,'lease_term_for_english', true);
-                                                break;
-                                            default:
-                                                $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit', true);
-                                                $leaseTerm = get_post_meta($v->ID,'lease_term', true);
-                                                break;
-                                        }
+                                        
+                                        $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit', true);
+                                        $leaseTerm = get_post_meta($v->ID,'lease_term', true);
                                         ?>
                                         <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
                                         <span class="pp-vnd">

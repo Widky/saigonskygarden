@@ -1,8 +1,23 @@
 <?php
-$currentLang = get_locale();
+$pageAboutSub2Title = 'sub_title_2';
+
+$strCatFeatures = 'feature';
+$strCatFacilities = 'post-home';
+$strCurrentConversionUnit = 'currency_conversion_unit';
+$strLeaseTerm = 'lease_term';
+$strPageAboutDesFeature = 'description_feature_about';
+$strTheCat = 'studio-apartment';
+$strLinkContact = 'contact';
+
+$theAttractionsAbout = 'introduce';
+$theAttractionsFesRes = 'festiva-restaurant';
+
+
+$currentLang = get_bloginfo("language");
+// var_dump($currentLang);
 switch($currentLang)
 {
-    case 'en_US':
+    case 'en-US':
         $the_cat = 'studio-apartment';
         $the_cat_bed_one = 'one-bed-room';
         $the_cat_bed_two = 'two-bed-room';
@@ -12,16 +27,12 @@ switch($currentLang)
         $pageTitle = 'page_title_english';
 
         // about us
-        $pageAboutSub2Title = 'sub_title_2_english';
         $strPageAboutFeature = 'Features';
-        $strPageAboutDesFeature = 'description_feature_about_english';
 
         // Apartment
-        $strCurrentConversionUnit = 'currency_conversion_unit_for_english';
-        $strLeaseTerm = 'lease_term_for_english';
         $strButtonShare = 'Share';
-        $strTheCat = 'studio-apartment';
-        $strLinkContact = 'contact-us';
+        
+        
         $strTextContact = 'Contact Us';
         $strArea = 'Area:';
         $strCheckIn = 'Check-in:';
@@ -30,23 +41,17 @@ switch($currentLang)
         $strBedType = 'Bed Type:';
         $strMaximumNumberPeople = 'Maximum number of people in a room:';
 
-        // feature
-        $strCatFeatures = 'features';
-
-        // facilities
-        $strCatFacilities = 'post-home';
         // single facilities
         $strCapacity = 'Capacity:';
         $strLocation = 'Location:';
         $strOpeningHours = 'Opening Hours:';
 
         // attractions
-        $theAttractionsAbout = 'introduce';
         $theAttractionsTourist = 'tourist-attractions';
         $theAttractionsRestaurant = 'restaurant';
         $theAttractionsBar = 'bar';
         $theAttractionsCoffee = 'coffee';
-        $theAttractionsFesRes = 'festiva-restaurant';
+        
 
         // breadcrumb
         $bcFacilities = 'Facilities';
@@ -60,16 +65,11 @@ switch($currentLang)
         $pageTitle = 'page_title';
 
         // about us
-        $pageAboutSub2Title = 'sub_title_2';
         $strPageAboutFeature = '特徴';
-        $strPageAboutDesFeature = 'description_feature_about';
 
         // Apartment
-        $strCurrentConversionUnit = 'currency_conversion_unit';
-        $strLeaseTerm = 'lease_term';
+        
         $strButtonShare = 'シェア';
-        $strTheCat = 'スタジオ';
-        $strLinkContact = 'お問い合わせ';
         $strTextContact = 'お問い合わせ';
         $strArea = '面積:';
         $strCheckIn = 'チェックイン:';
@@ -78,23 +78,16 @@ switch($currentLang)
         $strBedType = 'ベッドタイプ:';
         $strMaximumNumberPeople = '一部屋の最大人数:';
 
-        // feature
-        $strCatFeatures = '特色';
-
-        // facilities
-        $strCatFacilities = 'ポストホーム';
         // single facilities
         $strCapacity = '容量:';
         $strLocation = '場所:';
         $strOpeningHours = '営業時間:';
 
         // attractions
-        $theAttractionsAbout = '導入する';
         $theAttractionsTourist = '観光名所';
         $theAttractionsRestaurant = 'レストラン';
         $theAttractionsBar = 'バール';
         $theAttractionsCoffee = 'コーヒー';
-        $theAttractionsFesRes = 'お祝いレストラン';
 
         // breadcrumb
         $bcFacilities = '施設';

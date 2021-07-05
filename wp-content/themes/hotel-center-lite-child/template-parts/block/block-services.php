@@ -10,7 +10,7 @@
                 $argsCat = array(
                     'taxonomy'          =>  'services',
                     'orderby'           =>  'term_order',
-                    'order'             =>  'ASC',
+                    'order'             =>  'DESC',
                     'hide_empty'        =>  false
                 );
                 $cats = get_categories($argsCat);
@@ -75,8 +75,7 @@
                                 <h3 class="spw-title"><?php echo $v->post_title; ?></h3>
                                 <?php if($v->post_excerpt != '') echo '<pre class="spw-excerpt sdes">'.$v->post_excerpt.'</pre><p class="spw-excerpt d-none smo">'.$v->post_excerpt.'</p>'; ?>
                                 <div class="spw-btn-direct btn-direct">
-                                    <a
-                                        href="<?php echo $v->guid; ?>"><?php _e('もっと見る', 'hotel-center-lite-child'); ?></a>
+                                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"><?php _e('もっと見る', 'hotel-center-lite-child'); ?></a>
                                 </div>
                             </div>
                         </div>

@@ -54,8 +54,9 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                 <?php echo get_the_excerpt(); ?></div><?php } ?>
                             <p class="saiw-content"><?php echo get_the_content(); ?></p>
                             <div class="saiw-footer">
-                                <a
-                                    href="#"><?php _e('Googlemap','hotel-center-lite-child') ?></a><?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?>
+                                <?php $ggmap = get_field('google_maps',get_the_ID()); ?>
+                                <a href="<?php echo $ggmap; ?>" target="_blank"
+                                    rel="noopener noreferrer"><?php _e('Googlemap','hotel-center-lite-child') ?></a><?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?>
                             </div>
                         </div>
 
@@ -69,12 +70,13 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  2,
+                'post__not_in'      =>  array(get_the_ID()),
                 'tax_query'         =>  array(
                     array(
                         'taxonomy'      =>  'attractions',
                         'field'         =>  'slug',
                         'terms'         =>  $terms[0]->slug,
-                        'operator'      =>  'NOT IN'
+                        'operator'      =>  'IN'
                     ),
                 )
             );
@@ -102,8 +104,9 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                 <?php echo $vp->post_excerpt; ?></div><?php } ?>
                             <p class="saiw-content"><?php echo $vp->post_content; ?></p>
                             <div class="saiw-footer">
-                                <a
-                                    href="#"><?php _e('Googlemap','hotel-center-lite-child') ?></a><?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?>
+                                <?php $ggmap = get_field('google_maps',$vp->ID); ?>
+                                <a href="<?php echo $ggmap; ?>" target="_blank"
+                                    rel="noopener noreferrer"><?php _e('Googlemap','hotel-center-lite-child') ?></a><?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?>
                             </div>
                         </div>
 
@@ -116,7 +119,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
         <section class="attractions">
             <div class="attractions-wrap">
                 <h2 class="ap-title cl-title text-center">
-                    <span class="cl-main-title change-cl"><?php _e('その他の魅力', 'hotel-center-lite-child') ?></span>
+                    <span
+                        class="cl-main-title change-cl"><?php _e('Other attractions', 'hotel-center-lite-child') ?></span>
                     <span class="cl-sub-title"><?php _e('その他の魅力', 'hotel-center-lite-child') ?></span>
                 </h2>
                 <div class="attractions-carousel">
@@ -129,7 +133,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             'orderby'       =>      'date',
                             'order'         =>      'DESC',
                             'post_status'   =>      'publish',
-                            'posts_per_page'=>      12
+                            'posts_per_page'=>      12,
+                            'post__not_in'  =>      array(get_the_ID())
                         );
                         $query = new WP_Query($args);
                         $myPosts = $query->get_posts();
@@ -139,7 +144,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                 <div class="item">
                                     <div class="panel panel-default">
                                         <div class="panel-thumbnail">
-                                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html"
+                                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"
                                                 title="<?php echo $v->post_title; ?>" class="thumb">
                                                 <h3 class="att-title"><span
                                                         class="cat-line cat-attractions-line"></span><?php echo $v->post_title; ?>

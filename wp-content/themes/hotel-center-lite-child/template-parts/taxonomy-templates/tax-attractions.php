@@ -41,7 +41,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
-                'posts_per_page'        =>  3,
+                'posts_per_page'        =>  -1,
                 'tax_query'         =>  array(
                     array(
                         'taxonomy'      =>  'attractions',
@@ -58,7 +58,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 foreach($my_posts as $kp=>$vp) :
             ?>
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="<?php echo $vp->post_type . '/' .$vp->post_name ?>.html">
+                <a href="<?php echo home_url($vp->post_type . '/' .$vp->post_name . '.html'); ?>">
                     <div class="attractions-item">
                         <div class="attractions-item-wrap">
                             <div class="aiw-img">

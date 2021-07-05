@@ -46,6 +46,14 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             </div>
             <div class="apd-tax-slide">
                 <div class="csti-img">
+                    <div class="apd-info-img">
+                        <?php 
+                            $basicInformation = get_field('basic_infomation', get_the_ID());
+                        ?>
+                        <h3 class="apdii-content">
+                            <?php echo $basicInformation['bed_type']; ?>(<?php echo $basicInformation['maximum_number_of_people_in_a_room']; ?>)
+                        </h3>
+                    </div>
                     <?php
                         $sliderCat = get_field('slide_thumbnail', get_the_ID());
                         $lengthArray = count($sliderCat);
@@ -353,6 +361,11 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 </div>
                 <?php endif; ?>
                 <div class="line-color opacity"></div>
+                <div class="apd-button">
+                    <a href="#" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
+                    <a href="#"><?php _e('長期ご契約 お問合せ ', 'hotel-center-lite-child'); ?></a>
+                </div>
+                <div class="clear"></div>
             </div>
         </div>
     </div>
@@ -361,7 +374,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 <section class="apd-tax-other-room">
     <div class="apd-tax-other-room-wrap">
         <h2 class="ap-title cl-title text-center">
-            <span class="cl-main-title change-cl"><?php echo _e('他の部屋', 'hotel-center-lite-child') ?></span>
+            <span class="cl-main-title change-cl"><?php echo _e('Other Apartment', 'hotel-center-lite-child') ?></span>
             <span class="cl-sub-title"><?php echo _e('施設', 'hotel-center-lite-child') ?></span>
         </h2>
         <div class="apd-tax-other-room-carousel">

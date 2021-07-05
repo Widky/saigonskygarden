@@ -248,7 +248,7 @@ function add_register_post_type(){
     'menu_position'      => 21,
     'menu_icon'          => 'dashicons-money',
     'supports'           => array( 'title', 'editor','thumbnail', 'excerpt'),
-    'taxonomies'         => array(  'event-category' )
+    'taxonomies'         => array(  'events' )
   );
   register_post_type( 'event', $argsEvent );
 
@@ -436,11 +436,11 @@ function add_register_taxonomies(){
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'event-category' ),
+        'rewrite'           => array( 'slug' => 'events' ),
         'sort'              => true
     );
 
-    register_taxonomy( 'event-category', array( 'event' ), $args );
+    register_taxonomy( 'events', array( 'event' ), $args );
 
     // Facilities
     unset($labels);
@@ -675,7 +675,7 @@ function custom_post_permalink ( $post_link ) {
 // add .html for taxonomy
 add_action( 'registered_taxonomy', 'taxonomy_html', 10, 3 );
 function taxonomy_html( $taxonomy, $object_type, $args ) {
-  $array_tax = array('category','apartment','facilities','attractions','services');
+  $array_tax = array('category','apartment','facilities','attractions','services','events');
   foreach($array_tax as $at){
     if($taxonomy === $at)
       add_permastruct( $taxonomy, "{$args['rewrite']['slug']}/%$taxonomy%.html", $args['rewrite'] );

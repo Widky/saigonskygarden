@@ -1,0 +1,19 @@
+#single_area {
+    margin-top: 136px;
+    margin-bottom: 123px;
+}
+
+
+/* .single-content .post-thumb img {
+    margin: auto;
+    display: block;
+} */
+
+.single-content .entry-header {
+    margin: 26px 0;
+}
+
+.single-content .entry-header .single-title {
+    font: normal 24px 'Yu Gothic Medium', 'sans-serif';
+    color: #333333;
+}

@@ -1,19 +1,9 @@
-<?php
-$currentLang = get_locale();
-switch($currentLang)
-{
-    case 'en_US':
-        $the_cat = 'features';
-        break;
-    default:
-        $the_cat = '特色';
-        break;
-}
-?>
+<?php $the_cat = 'post-home'; ?>
+
 <div class="features-wrap container">
     <h2 class="cl-title text-center">
-        <span class="cl-main-title"><?php echo _e('FEATURES','hotel-center-lite-child') ?></span>
-        <span class="cl-sub-title"><?php echo _e('特色','hotel-center-lite-child') ?></span>
+        <span class="cl-main-title"><?php _e('Feature','hotel-center-lite-child') ?></span>
+        <span class="cl-sub-title"><?php _e('特色','hotel-center-lite-child') ?></span>
     </h2>
     <?php 
         $args = array(
@@ -42,15 +32,22 @@ switch($currentLang)
                 foreach($my_posts as $k=>$v) : 
                 ?>
             <div class="fw-items-wrap col-md-4 col-sm-12 col-12">
-                <a href="<?php echo $v->guid; ?>">
+                <a href="<?php echo home_url( $v->post_name .'.html' ); ?>">
                     <div class="fw-img <?php if($i == 3) echo 'fw-set-orverlay'; ?>">
-                        <?php if (has_post_thumbnail( $v->ID ) ): ?>
-                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                        <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
-                        <?php endif; ?>
 
-                        <?php $overlayImage = get_field('overlay_image', $v->ID); ?>
-                        <?php if($i == 3 && $overlayImage) {$overlayImage = $overlayImage['url']; echo "<div class='fw-img-orverlay' style='background: url(".$overlayImage.")'></div>";} ?>
+                        <?php 
+                            $showHome = get_field('show_home', $v->ID);
+                            // echo "<pre>";var_dump($showHome);
+                            if($showHome && $showHome != NULL){ ?>
+
+                        <img src="<?php echo $showHome['image_for_post_page']['url']; ?>"
+                            alt="<?php custom_the_post_thumbnail_caption(); ?>">
+
+                        <?php 
+                            $overlayImage = $showHome['overlay_image'];
+                            if($i == 3 && $overlayImage ) {$overlayImage = $overlayImage['url']; echo "<div class='fw-img-orverlay' style='background: url(".$overlayImage.")'></div>";}
+                            ?>
+                        <?php } ?>
                     </div>
                     <div class="fw-content post-content">
                         <div class="fw-content-wrap">
@@ -67,6 +64,6 @@ switch($currentLang)
         </div>
     </div>
     <div class="fw-btn-direct btn-direct">
-        <a href="<?php echo home_url().'/'.$the_cat; ?>" target="_blank" rel="noopener noreferrer">もっと見る</a>
+        <a href="<?php echo home_url('category/feature.html'); ?>" target="_blank" rel="noopener noreferrer">もっと見る</a>
     </div>
 </div>

@@ -32,53 +32,56 @@ $showAboutPage = get_field('show_about_page');
 <div class="page-about-block-feature container">
     <div class="page-about-block-feature-wrap ">
         <div class="about-feature-lists row">
+            <?php 
+            $args = array(
+                'post_type'         =>  'post',
+                'orderby'           =>  'date',
+                'order'             =>  'DESC',
+                'post_status'       =>  'publish',
+                'posts_per_page'        =>  3,
+                'tax_query'         =>  array(
+                    array(
+                        'taxonomy'      =>  'category',
+                        'field'         =>  'slug',
+                        'terms'         =>  $strCatFeatures,
+                        'operator'      =>  'IN'
+                    ),
+                )
+            );
+            $query = new WP_Query($args);
+            $my_posts = $query->get_posts();
+            // echo "<pre>";print_r($my_post);exit;
+            if( $my_posts ) :
+                foreach($my_posts as $k=>$v) : 
+            ?>
             <div class="about-feature-item col-md-4 col-12">
                 <div class="about-feature-item-wrap">
-                    <a href="#">
+                    <a href="<?php echo home_url( $v->post_name . '.html'); ?>" title="<?php echo $v->post_title; ?>"
+                        class="thumb">
                         <div class="afi-img">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pages/page-about/Restaurants-Services.png"
-                                alt="">
+                            <?php if (has_post_thumbnail( $v->ID ) ): ?>
+
+                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                            <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
+
+                            <?php else : ?>
+
+                            <img src="" alt="<?php _e('No Image.','hotel-center-lite-child'); ?>">
+
+                            <?php endif; ?>
                         </div>
                         <div class="afi-content">
-                            <h3 class="afi-title">Restaurants Services</h3>
+                            <h3 class="afi-title"><?php _e('施設','hotel-center-lite-child') ?></h3>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="about-feature-item col-md-4 col-12">
-                <div class="about-feature-item-wrap">
-                    <a href="#">
-                        <div class="afi-img">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pages/page-about/Spa-Sport.png"
-                                alt="">
-                        </div>
-                        <div class="afi-content">
-                            <h3 class="afi-title">Spa & Sport</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="about-feature-item col-md-4 col-12">
-                <div class="about-feature-item-wrap">
-                    <a href="#">
-                        <div class="afi-img">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pages/page-about/Event-Party.png"
-                                alt="">
-                        </div>
-                        <div class="afi-content">
-                            <h3 class="afi-title">Event & Party</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
-<?php if($showAboutPage['video_about']) : ?>
-<div class="about-video">
-    <?php echo $showAboutPage['video_about'] ?>
-</div>
-<?php endif; ?>
+
 <div class="block-carousel-facilities-about">
     <div class="block-carousel-facilities-about-wrap container">
         <h2 class="cl-title text-center">
@@ -125,6 +128,31 @@ $showAboutPage = get_field('show_about_page');
                     </a>
                 </div>
                 <div class="quote-orverlay"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popular-video">
+    <div class="container">
+        <h2 class="cl-title text-center">
+            <span class="cl-main-title change-cl"><?php echo _e('POPULAR VIDEO','hotel-center-lite-child') ?></span>
+            <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
+        </h2>
+        <div class="row rvideo">
+            <div class="col-lg-6 col-md-12">
+                <?php if($showAboutPage['video_about']) : ?>
+                <div class="about-video">
+                    <?php echo $showAboutPage['video_about'] ?>
+                </div>
+                <?php endif; ?>
+            </div>
+            <div class="col-lg-6 col-md-12 change-mgt">
+                <?php if($showAboutPage['video_about_2']) : ?>
+                <div class="about-video">
+                    <?php echo $showAboutPage['video_about_2'] ?>
+                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

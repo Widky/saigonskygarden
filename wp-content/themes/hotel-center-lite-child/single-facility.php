@@ -36,7 +36,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 <div class="block-carousel-facilities-about">
     <div class="block-carousel-facilities-about-wrap container">
         <h2 class="cl-title text-center">
-            <span class="cl-main-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
+            <span class="cl-main-title"><?php echo _e('Facilities','hotel-center-lite-child') ?></span>
             <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
         </h2>
         <div class="carousel-facilities-about">
@@ -57,7 +57,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     foreach($myPosts as $k=>$v) : ?>
                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
                         <div class="carousel-item <?php if($i == 0) echo 'active'; ?>">
-                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html">
+                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html');?>">
                                 <div class="fiw-img">
                                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                                     <img src="<?php echo $image[0]; ?>"

@@ -66,8 +66,27 @@ if($note == '' || $note == NUll){
         <?php else :?>
 
         <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
+
         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
         <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
+
+        <?php else :?>
+
+        <?php $image = get_field('show_home', get_the_ID()); ?>
+
+        <?php $image = $image['image']; ?>
+
+        <?php if( !empty( $image ) ){ ?>
+
+        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
+            title="<?php echo get_the_title(); ?>" />
+
+        <?php }else{ ?>
+
+        <img src="" alt="<?php _e('No Image.','hotel-center-lite-child'); ?>">
+
+        <?php } ?>
+
         <?php endif;?>
 
         <?php endif; ?>

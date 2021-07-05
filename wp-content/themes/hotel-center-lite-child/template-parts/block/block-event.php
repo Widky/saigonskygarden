@@ -24,7 +24,7 @@
                         <div class="item">
                             <div class="panel panel-default">
                                 <div class="panel-thumbnail">
-                                    <a href="<?php echo $v->guid; ?>" title="<?php echo $v->post_title; ?>"
+                                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>"
                                         class="thumb">
                                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
                                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
@@ -33,7 +33,7 @@
                                         <?php endif; ?>
                                         <div class="evc-cat" style="<?php if(get_field('change_color',$v->ID) != '') echo 'background-color:'.get_field('change_color',$v->ID)  ?>">
                                             <?php 
-                                                $getCat = get_the_terms($v->ID,'event-category');
+                                                $getCat = get_the_terms($v->ID,'events');
                                                 foreach($getCat as $kCat=>$vCat){
                                                     echo $vCat->name;
                                                     break;

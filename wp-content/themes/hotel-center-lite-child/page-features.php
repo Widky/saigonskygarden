@@ -15,7 +15,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
     <div class="sr-title">
         <div class="sr-title-wrap container">
             <h2 class="cl-title text-center">
-                <span class="cl-main-title change-cl"><?php echo _e('Features','hotel-center-lite-child') ?></span>
+                <span class="cl-main-title change-cl"><?php echo _e('Feature','hotel-center-lite-child') ?></span>
                 <span class="cl-sub-title"><?php echo _e('特色','hotel-center-lite-child') ?></span>
             </h2>
             <div class="cl-tax-share">
@@ -35,7 +35,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
-                'posts_per_page'        =>  3,
+                'posts_per_page'        =>  -1,
                 'tax_query'         =>  array(
                     array(
                         'taxonomy'      =>  'category',
@@ -47,23 +47,34 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             );
             $query = new WP_Query($args);
             $my_posts = $query->get_posts();
-            // echo "<pre>";print_r($my_posts);exit;         
+            // echo "<pre>";print_r($my_posts);exit; 
+            if($my_posts) :   
+
             foreach($my_posts as $k=>$v) : ?>
             <div class="pfeatures-item">
                 <div class="pfeatures-img">
-                    <?php
-                    $image = get_field('image_for_post_page', $v->ID);
-                    if( !empty( $image ) ): ?>
+
+                    <?php if (has_post_thumbnail( $v->ID ) ): ?>
+
+                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                    <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
+
+                    <?php else : ?>
+
+                    <?php $image = get_field('show_home', $v->ID); ?>
+
+                    <?php $image = $image['image_for_post_page']; ?>
+
+                    <?php if( !empty( $image ) ){ ?>
 
                     <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
                         title="<?php echo $v->post_title; ?>" />
 
-                    <?php else : ?>
+                    <?php }else{ ?>
 
-                    <?php if (has_post_thumbnail( $v->ID ) ): ?>
-                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                    <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
-                    <?php endif; ?>
+                    <img src="" alt="<?php _e('No Image.','hotel-center-lite-child'); ?>">
+
+                    <?php } ?>
 
                     <?php endif; ?>
                 </div>
@@ -79,13 +90,19 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                 </div>
             </div>
             <?php endforeach; ?>
+
+            <?php else : ?>
+
+            <?php require_once(get_stylesheet_directory() . '/template-parts/contents/content-none.php'); ?>
+
+            <?php endif; ?>
         </div>
     </div>
 </div>
 <section class="tax-other">
     <div class="tax-other-wrap">
         <h2 class="cl-title text-center">
-            <span class="cl-main-title change-cl"><?php echo _e('サービス','hotel-center-lite-child') ?></span>
+            <span class="cl-main-title change-cl"><?php echo _e('Services','hotel-center-lite-child') ?></span>
             <span class="cl-sub-title"><?php echo _e('サービス','hotel-center-lite-child') ?></span>
         </h2>
         <div class="tax-other-items container">
@@ -106,7 +123,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                 <div class="col-md-6 col-12">
                     <div class="item">
                         <div class="item-wrap">
-                            <a href="<?php echo $v->guid; ?>" title="<?php echo $v->post_title; ?>" class="thumb">
+                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>" title="<?php echo $v->post_title; ?>" class="thumb">
 
                                 <?php if (has_post_thumbnail( $v->ID ) ): ?>
                                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>

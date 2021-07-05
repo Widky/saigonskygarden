@@ -273,7 +273,7 @@
 }
 
 .apd-basic .apd-basic-item:nth-child(3n + 1) {
-    min-width: 202px;
+    min-width: 295px;
 }
 
 .apd-basic .apd-basic-item:nth-child(3n + 2) {
@@ -287,6 +287,7 @@
 .apd-basic .apd-basic-item:nth-child(4),
 .apd-basic .utilities-item:nth-child(7) {
     padding-left: 0;
+    clear: both;
 }
 
 .apd-convenience .utilities-item .utilities-icon {
@@ -299,6 +300,30 @@
 
 .apd-info .apd-info-content p {
     line-height: 28px;
+}
+
+.apd-button {
+    margin-top: 69px;
+}
+
+.apd-button a {
+    background-color: #DFE5E8;
+    padding: 15px;
+    font: normal 20px 'Yu Gothic Medium', 'sans-serif';
+    color: #3E3E3E;
+    border-radius: 5px;
+    box-shadow: 0 3px 0 #00000014;
+    float: right;
+}
+
+.apd-button a.change-cl {
+    background-color: #2398A9;
+    margin-left: 10px;
+    color: #FFFFFF;
+}
+
+.clear {
+    clear: both;
 }
 
 
@@ -424,6 +449,7 @@
     font: normal 24px 'Yu Gothic Medium', 'sans-serif';
     line-height: 30px;
     line-height: 61px;
+    padding: 0 15px;
 }
 
 #multi-carousel-apartment .item .apd-title {
@@ -474,6 +500,21 @@
 
 .apd-tax-slide .csti-img {
     position: relative;
+}
+
+.apd-tax-slide .csti-img .apd-info-img {
+    position: absolute;
+    bottom: 22px;
+    left: 40%;
+    z-index: 10;
+    background-color: #2398A9;
+    opacity: 78%;
+}
+
+.apd-tax-slide .csti-img .apd-info-img .apdii-content {
+    font: normal 24px 'Yu Gothic Medium', 'sans-serif';
+    color: #FFFFFF;
+    padding: 15px;
 }
 
 .apd-tax-slide-lightbox {
@@ -559,6 +600,9 @@
     #multi-carousel-apartment .owl-carousel {
         width: 834px;
     }
+    .apd-tax-slide .csti-img .apd-info-img {
+        left: 35%;
+    }
 }
 
 
@@ -618,6 +662,13 @@
     }
     #multi-carousel-apartment .owl-prev {
         left: -40px;
+    }
+    .apd-tax-slide .csti-img .apd-info-img {
+        left: 30%;
+    }
+    .apd-basic .apd-basic-item:nth-child(4),
+    .apd-basic .utilities-item:nth-child(7) {
+        clear: none;
     }
 }
 
@@ -692,6 +743,9 @@
     #carouselImgSlideModal .carousel-control {
         top: 124px !important;
     }
+    .apd-tax-slide .csti-img .apd-info-img {
+        left: 22%;
+    }
 }
 
 
@@ -733,5 +787,19 @@
         top: 97px;
         font-size: 18px;
         min-width: 160px;
+    }
+    .apd-tax-slide .csti-img .apd-info-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 424.98px) {
+    .apd-button a {
+        float: none;
+        display: block;
+    }
+    .apd-button a.change-cl {
+        margin-left: 0;
+        margin-bottom: 15px;
     }
 }

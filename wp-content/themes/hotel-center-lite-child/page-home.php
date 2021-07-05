@@ -2,6 +2,7 @@
 /**
  * Template Name: ホーム - Home 
  */
+
 ?>
 <?php get_header(); ?>
 <?php include dirname( __FILE__ ) . '/inc/lang/translate.php'; ?>

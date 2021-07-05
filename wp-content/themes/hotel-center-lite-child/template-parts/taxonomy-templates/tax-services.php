@@ -1,7 +1,4 @@
 <?php 
-/**
- * Template Name: ページサービス - Page Service
- */
 
 get_header();
 
@@ -32,7 +29,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
         <div class="sr-title">
             <div class="sr-title-wrap container">
                 <h2 class="cl-title text-center">
-                    <span class="cl-main-title change-cl"><?php echo _e('サービス','hotel-center-lite-child') ?></span>
+                    <span class="cl-main-title change-cl"><?php echo _e('Services','hotel-center-lite-child') ?></span>
                     <span class="cl-sub-title"><?php echo $term_name; ?></span>
                 </h2>
                 <div class="cl-tax-share">
@@ -90,7 +87,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         </div>
                         <p class="si-excerpt"><?php echo $v->post_excerpt; ?></p>
                         <div class="btn-direct">
-                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html">もっと見る</a>
+                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">もっと見る</a>
                         </div>
                     </div>
                 </div>
