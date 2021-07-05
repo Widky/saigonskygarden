@@ -6,15 +6,10 @@
 
 get_header();
 $locale = get_locale();
-    if($locale == 'ja'){
-        $trans_post_id = pll_get_post(get_the_ID(), 'en_US');
-        $sub_title = get_the_title($trans_post_id);
-        $list_url = "/イベント.html";
-    }else{
-        $trans_post_id = pll_get_post(get_the_ID(), 'ja');
-        $sub_title = get_the_title($trans_post_id);
-        $list_url = "/event.html";
-    } 
+    
+$sub_title = get_post_meta(get_the_ID(),'sub_title',true);
+$list_url = "/event.html";
+    
 
 $day_of_event = get_post_meta( get_the_ID(), 'day_of_the_event',true );
 
@@ -119,7 +114,22 @@ $event_cats = get_terms( array(
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h3>
                                     <div class="event_excerpt">
-                                        <p><?php echo substr(get_the_excerpt(), 0, 200);?></p>                                        
+                                        <p>
+                                            <?php
+                                                $event_len = mb_strlen(get_the_excerpt(),'UTF-8');
+                                                if($locale == 'ja'){
+                                                    echo mb_substr(get_the_excerpt(), 0, 50,'UTF-8');
+                                                        if($event_len > 50 ){
+                                                            echo '[...]'; 
+                                                        }
+                                                }else{
+                                                    echo mb_substr(get_the_excerpt(), 0, 100,'UTF-8');
+                                                        if($event_len > 100 ){
+                                                            echo '[...]';
+                                                        }    
+                                                } 
+                                            ?>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
