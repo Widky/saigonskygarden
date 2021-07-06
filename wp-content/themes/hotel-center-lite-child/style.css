@@ -867,14 +867,19 @@ ul {
 }
 
 @media screen and (max-width: 1919.98px) {
-    .navbar-main {
-        display: none;
-    }
     .block-carousel-facilities-about .carousel-control-prev {
         left: 30px;
     }
     .block-carousel-facilities-about .carousel-control-next {
         right: 30px;
+    }
+    /* menu */
+    .header .navbar-main,
+    .header .navbar-main-wrap {
+        width: 100%;
+    }
+    .header .lang-btn-book {
+        float: none;
     }
 }
 
@@ -882,6 +887,9 @@ ul {
 /* size LG - < 1200px */
 
 @media screen and (max-width: 1199.98px) {
+    .navbar-main {
+        display: none;
+    }
     .navbar-main.desktop {
         display: none;
     }

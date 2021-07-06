@@ -22,13 +22,3 @@ if($my_posts) :
 </div>
 
 <?php endif; ?>
-
-<style>
-.home-video{
-    margin-top: 125px
-}
-.home-video iframe{
-    width: 100%;
-    height: 550px;
-}
-</style>
