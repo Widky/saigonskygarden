@@ -285,6 +285,25 @@ opacity: 1;
     max-width: 100%;
     margin: 0 auto !important;
 }
+.single-event .nextend-arrow img{
+    width: 55% !important;
+    top: 25%;
+    left: 25%; 
+}
+.single-event .nextend-arrow-previous{
+    opacity: 0.4 !important;
+    background: #000000 !important;
+    width: 55px !important;
+    height: 55px !important;
+    left: 0px !important;
+}
+.single-event .nextend-arrow-next{
+    opacity: 0.4 !important;
+    background: #000000 !important;
+    width: 55px !important;
+    height: 55px !important;
+    right: 0px !important;
+}
 
 
 /* @media (min-width: 1920px){

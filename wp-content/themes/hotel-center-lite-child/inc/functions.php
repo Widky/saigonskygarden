@@ -248,7 +248,7 @@ function add_register_post_type(){
     'menu_position'      => 21,
     'menu_icon'          => 'dashicons-money',
     'supports'           => array( 'title', 'editor','thumbnail', 'excerpt'),
-    'taxonomies'         => array(  'events' )
+    'taxonomies'         => array(  'event-category' )
   );
   register_post_type( 'event', $argsEvent );
 
@@ -436,11 +436,11 @@ function add_register_taxonomies(){
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'events' ),
+        'rewrite'           => array( 'slug' => 'event-category' ),
         'sort'              => true
     );
 
-    register_taxonomy( 'events', array( 'event' ), $args );
+    register_taxonomy( 'event-category', array( 'event' ), $args );
 
     // Facilities
     unset($labels);
@@ -717,3 +717,4 @@ add_action( 'reviews-category_add_form', function( $taxonomy )
 {
     ?><style>.term-description-wrap,.term-parent-wrap{display:none;}</style><?php
 }, 10, 2 );
+

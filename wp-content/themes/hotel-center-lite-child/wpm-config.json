@@ -6,7 +6,9 @@
         "facility": {},
         "service": {},
         "event": {},
-        "attraction": {}
+        "attraction": {},
+        "review":{},
+        "wpcf7_contact_form":{}
     },
     "post_fields": {
         "sub_title": {},
@@ -17,14 +19,31 @@
         "maximum_number_of_people_in_a_room": {},
         "page_title": {},
         "show_home_page": {},
-        "show_about_page": {}
+        "show_about_page": {},
+        "sub_title3": {},
+        "like_number": {},
+        "reviewer_photo":{},
+        "review_number":{},
+        "stars":{},
+        "review_date":{},
+        "review_content":{},
+        "like_number":{},
+        "response_content":{},
+        "contact_map_url":{},
+        "contact_address":{},
+        "contact_tel":{},
+        "contact_fax":{},
+        "contact_site_url":{},
+        "contact_email":{},
+        "contact_url2":{}
     },
     "taxonomies": {
         "apartment": {},
         "utilities-category": {},
         "facilities": {},
         "services": {},
-        "events": {},
-        "attractions": {}
+        "event-category": {},
+        "attractions": {},
+        "reviews-category":{}
     }
 }

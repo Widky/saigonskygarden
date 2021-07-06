@@ -8,7 +8,11 @@ get_header();
 $locale = get_locale();
     
 $sub_title = get_post_meta(get_the_ID(),'sub_title',true);
-$list_url = "/event.html";
+if($locale == 'ja'){
+   $list_url = "/event.html";
+}else{
+    $list_url = "/en/event.html";
+}
     
 
 $day_of_event = get_post_meta( get_the_ID(), 'day_of_the_event',true );
