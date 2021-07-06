@@ -64,7 +64,7 @@ get_header();
                         </div>
                     <?php } ?>
                 </div>
-                <div class="col-12 col-xl-6 p-xl-0">
+                <div class="col-12 col-xl-6 p-xl-0 ">
                     <?php if(!empty($contact_url)) {?>
                         <div class="mb-3 d-block  url">
                             <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/contact/url_icon.png">
