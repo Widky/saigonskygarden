@@ -32,7 +32,7 @@
                                             alt="<?php custom_the_post_thumbnail_caption(); ?>">
                                         <?php endif; ?>
                                         
-                                        <?php $getCat = get_the_terms($v->ID,'events');
+                                        <?php $getCat = get_the_terms($v->ID,'event-category');
                                             if($getCat != false){ ?>
                                         <div class="evc-cat"
                                             style="<?php if(get_field('change_color',$v->ID) != '') echo 'background-color:'.get_field('change_color',$v->ID)  ?>">
