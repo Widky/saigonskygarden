@@ -84,6 +84,17 @@ get_header();
                     <?php } ?>
                 </div>
             </div>
+            <div class="row contact-button ">
+                <div class="col-12 text-left text-xl-right">
+                    <!-- <a class="contact_btn btn_cls d-inline-block" href="#">
+                    <?php //echo __('長期ご契約 お問合せ','hotel-center-lite-child'); ?>
+                    </a> -->
+                    <a class="booking_btn btn_cls d-inline-block" target="_blank" href="https://www.booking.com/">
+                        <?php echo __('短期宿泊','hotel-center-lite-child'); ?>
+                    </a>
+                </div>
+                
+            </div>
 
 
 
