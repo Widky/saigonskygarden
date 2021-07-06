@@ -34,7 +34,8 @@
         "contact_fax": {},
         "contact_site_url": {},
         "contact_email": {},
-        "contact_url2": {}
+        "contact_url2": {},
+        "day_of_the_event": {}
     },
     "taxonomies": {
         "apartment": {},
