@@ -289,7 +289,7 @@ section .cl-sub-title,
 }
 
 .cat-studio-items .csti-item .csti-content-wrap {
-    padding: 49px 63px 0;
+    padding: 49px 63px;
     width: 100%;
     background-color: #FFFFFF;
     margin-top: -64px;
@@ -408,7 +408,7 @@ section .cl-sub-title,
 }
 
 .cat-bed-items .cb-item .cb-content-wrap {
-    padding: 50px 60px 0;
+    padding: 50px 60px;
     background-color: #FFFFFF;
 }
 
@@ -1044,7 +1044,7 @@ section .cl-sub-title,
 }
 
 .quote-customer-wrap {
-    width: 1920px;
+    width: 100%;
     height: 505px;
 }
 

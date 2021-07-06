@@ -88,28 +88,10 @@ $the_cat_bed_three = 'three-bed-rooms';
                     </div>
                     <div class="csti-content post-content">
                         <div class="csti-content-wrap">
-                            <a href="<?php echo home_url($my_posts[0]->post_type . '/' .$my_posts[0]->post_name .'.html'); ?>">
+                            <a
+                                href="<?php echo home_url($my_posts[0]->post_type . '/' .$my_posts[0]->post_name .'.html'); ?>">
                                 <h3 class="post-title"><?php echo $my_posts[0]->post_title; ?></h3>
                                 <pre class="post-excerpt"><?php echo $my_posts[0]->post_excerpt; ?></pre>
-                                <div class="post-price">
-                                    <?php 
-                                    $priceDollar = get_post_meta($my_posts[0]->ID,'price_dollar', true);
-                                    $currentConversionRateToVND = get_post_meta($my_posts[0]->ID,'currency_conversion_rate_to_vnd', true);
-                                    $currentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit', true);
-                                    $leaseTerm = get_post_meta($my_posts[0]->ID,'lease_term', true);
-                                    ?>
-                                    <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
-                                    <span class="pp-vnd">
-                                        <?php 
-                                        $priceVND = get_post_meta($my_posts[0]->ID,'price_vnd', true);
-                                        if($priceVND != ''){
-                                            echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
-                                        }else{
-                                            echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
-                                        }
-                                        ?>
-                                    </span>
-                                </div>
                             </a>
                         </div>
                     </div>
@@ -203,29 +185,6 @@ $the_cat_bed_three = 'three-bed-rooms';
                                 <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
-                                    <div class="post-price">
-                                        <?php 
-                                        $priceDollar = get_post_meta($v->ID,'price_dollar', true);
-                                        $currentConversionRateToVND = get_post_meta($v->ID,'currency_conversion_rate_to_vnd', true);
-                                        $slider = get_field("slide_thumbnail");
-                                        if($slider){
-                                            echo do_shortcode($slider);
-                                        }
-                                        $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit', true);
-                                        $leaseTerm = get_post_meta($v->ID,'lease_term', true);
-                                        ?>
-                                        <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
-                                        <span class="pp-vnd">
-                                            <?php 
-                                            $priceVND = get_post_meta($v->ID,'price_vnd', true);
-                                            if($priceVND != ''){
-                                                echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
-                                            }else{
-                                                echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
-                                            }
-                                            ?>
-                                        </span>
-                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -320,30 +279,6 @@ $the_cat_bed_three = 'three-bed-rooms';
                                 <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
-                                    <div class="post-price">
-                                        <?php 
-                                        $priceDollar = get_post_meta($v->ID,'price_dollar', true);
-                                        $currentConversionRateToVND = get_post_meta($v->ID,'currency_conversion_rate_to_vnd', true);
-                                        $slider = get_field("slide_thumbnail");
-                                        if($slider){
-                                            echo do_shortcode($slider);
-                                        }
-                                        
-                                        $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit', true);
-                                        $leaseTerm = get_post_meta($v->ID,'lease_term', true);
-                                        ?>
-                                        <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
-                                        <span class="pp-vnd">
-                                            <?php 
-                                            $priceVND = get_post_meta($v->ID,'price_vnd', true);
-                                            if($priceVND != ''){
-                                                echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
-                                            }else{
-                                                echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
-                                            }
-                                            ?>
-                                        </span>
-                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -438,30 +373,6 @@ $the_cat_bed_three = 'three-bed-rooms';
                                 <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                                     <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                     <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
-                                    <div class="post-price">
-                                        <?php 
-                                        $priceDollar = get_post_meta($v->ID,'price_dollar', true);
-                                        $currentConversionRateToVND = get_post_meta($v->ID,'currency_conversion_rate_to_vnd', true);
-                                        $slider = get_field("slide_thumbnail");
-                                        if($slider){
-                                            echo do_shortcode($slider);
-                                        }
-                                        
-                                        $currentConversionUnit = get_post_meta($v->ID,'currency_conversion_unit', true);
-                                        $leaseTerm = get_post_meta($v->ID,'lease_term', true);
-                                        ?>
-                                        <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
-                                        <span class="pp-vnd">
-                                            <?php 
-                                            $priceVND = get_post_meta($v->ID,'price_vnd', true);
-                                            if($priceVND != ''){
-                                                echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
-                                            }else{
-                                                echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
-                                            }
-                                            ?>
-                                        </span>
-                                    </div>
                                 </a>
                             </div>
                         </div>
