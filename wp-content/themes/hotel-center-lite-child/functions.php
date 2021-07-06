@@ -26,7 +26,7 @@ if(! function_exists('the_list_lang')){
         foreach($listLang as $k=>$v){ 
             $vLocale = str_replace('-','_',$v['locale']);
             if($vLocale == $currentLang){ ?>
-        <a href="<?php echo home_url(); ?>">
+        <a href="<?php echo esc_url( wpm_translate_current_url( $k ) ); ?>">
             <img src="<?php echo $flagUrl ?>" alt="<?php echo strtoupper($vLocale) ?>">
             <span class="lang-name"><?php echo substr(strtoupper($vLocale), 0, 2) ?></span>
         </a>
@@ -39,7 +39,7 @@ if(! function_exists('the_list_lang')){
                 if($subvLocale != $currentLang){ 
             ?>
             <li class="lbb-lang-subitem">
-                <a href="<?php echo '/' . $subk; ?>">
+                <a href="<?php echo esc_url( wpm_translate_current_url( $subk ) ); ?>">
                     <img src="/wp-content/plugins/wp-multilang/flags/<?php echo $subv['flag']; ?>" alt="<?php echo strtoupper($subvLocale) ?>">
                     <span class="lang-name"><?php echo substr(strtoupper($subvLocale), 0, 2) ?></span>
                 </a>
