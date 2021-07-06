@@ -13,7 +13,7 @@ $url =  (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$
 $url_arr = explode('?', $url);
 $url = $url_arr[0];
 $locale = get_locale();
-$sub_title = get_post_meta(get_the_ID(),'sub_title',true);
+$sub_title = get_post_meta(get_the_ID(),'sub_title3',true);
 
 ?>
     <div class="container">

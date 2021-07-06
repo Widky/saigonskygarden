@@ -7,7 +7,7 @@
 get_header();
 $locale = get_locale();
     
-$sub_title = get_post_meta(get_the_ID(),'sub_title',true);
+$sub_title = get_post_meta(get_the_ID(),'sub_title3',true);
 if($locale == 'ja'){
    $list_url = "/event.html";
 }else{
