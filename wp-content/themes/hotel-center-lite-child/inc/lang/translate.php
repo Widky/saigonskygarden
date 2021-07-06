@@ -1,5 +1,7 @@
 <?php
 $pageAboutSub2Title = 'sub_title_2';
+$pageTitle = 'page_title';
+
 
 $strCatFeatures = 'feature';
 $strCatFacilities = 'post-home';
@@ -11,21 +13,23 @@ $strLinkContact = 'contact';
 
 $theAttractionsAbout = 'introduce';
 $theAttractionsFesRes = 'festiva-restaurant';
-
+// apartment
+$the_cat = 'studio-apartment';
+$the_cat_bed_one = 'one-bed-room';
+$the_cat_bed_two = 'two-bed-rooms';
+$the_cat_bed_three = 'three-bed-rooms';
+// attractions
+$theAttractionsTourist = 'recommend-tourist-spots';
+$theAttractionsRestaurant = 'recommend-restaurant';
+$theAttractionsBar = 'recommend-bar';
+$theAttractionsCoffee = 'recommend-coffee';
+$theAttractionsOffice = 'recommend-office';
 
 $currentLang = get_bloginfo("language");
 // var_dump($currentLang);
 switch($currentLang)
 {
     case 'en-US':
-        $the_cat = 'studio-apartment';
-        $the_cat_bed_one = 'one-bed-room';
-        $the_cat_bed_two = 'two-bed-room';
-        $the_cat_bed_three = 'three-bed-room';
-
-        // page title
-        $pageTitle = 'page_title_english';
-
         // about us
         $strPageAboutFeature = 'Features';
 
@@ -45,25 +49,11 @@ switch($currentLang)
         $strCapacity = 'Capacity:';
         $strLocation = 'Location:';
         $strOpeningHours = 'Opening Hours:';
-
-        // attractions
-        $theAttractionsTourist = 'tourist-attractions';
-        $theAttractionsRestaurant = 'restaurant';
-        $theAttractionsBar = 'bar';
-        $theAttractionsCoffee = 'coffee';
         
-
         // breadcrumb
         $bcFacilities = 'Facilities';
         break;
     default:
-        $the_cat = 'スタジオ';
-        $the_cat_bed_one = '1ベッドルーム';
-        $the_cat_bed_two = '2ベッドルーム';
-        $the_cat_bed_three = '3ベッドルーム';
-        // page title
-        $pageTitle = 'page_title';
-
         // about us
         $strPageAboutFeature = '特徴';
 
@@ -82,12 +72,6 @@ switch($currentLang)
         $strCapacity = '容量:';
         $strLocation = '場所:';
         $strOpeningHours = '営業時間:';
-
-        // attractions
-        $theAttractionsTourist = '観光名所';
-        $theAttractionsRestaurant = 'レストラン';
-        $theAttractionsBar = 'バール';
-        $theAttractionsCoffee = 'コーヒー';
 
         // breadcrumb
         $bcFacilities = '施設';

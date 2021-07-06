@@ -31,15 +31,20 @@
                                         <img src="<?php echo $image[0]; ?>"
                                             alt="<?php custom_the_post_thumbnail_caption(); ?>">
                                         <?php endif; ?>
-                                        <div class="evc-cat" style="<?php if(get_field('change_color',$v->ID) != '') echo 'background-color:'.get_field('change_color',$v->ID)  ?>">
+                                        
+                                        <?php $getCat = get_the_terms($v->ID,'events');
+                                            if($getCat != false){ ?>
+                                        <div class="evc-cat"
+                                            style="<?php if(get_field('change_color',$v->ID) != '') echo 'background-color:'.get_field('change_color',$v->ID)  ?>">
                                             <?php 
-                                                $getCat = get_the_terms($v->ID,'events');
-                                                foreach($getCat as $kCat=>$vCat){
-                                                    echo $vCat->name;
-                                                    break;
-                                                }
+                                            foreach($getCat as $kCat=>$vCat){
+                                                echo $vCat->name;
+                                                break;
+                                            }
                                             ?>
                                         </div>
+                                        <?php } ?>
+
                                         <div class="evc-content">
                                             <h3 class="evc-title"><?php echo $v->post_title; ?></h3>
                                             <?php if($v->post_excerpt != '') echo '<pre class="evc-excerpt">'.$v->post_excerpt.'</pre>'; ?>

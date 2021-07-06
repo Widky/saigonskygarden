@@ -26,6 +26,8 @@
     <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-features.php'); ?>
 </section>
 
+<?php require_once(get_stylesheet_directory() . '/template-parts/block/block-video.php'); ?>
+
 <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-facilities.php'); ?>
 
 <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-services.php'); ?>
