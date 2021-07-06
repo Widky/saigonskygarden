@@ -318,7 +318,7 @@ function add_register_post_type(){
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => 20,
-    'menu_icon'          => 'dashicons-palmtree',
+    'menu_icon'          => 'dashicons-star-filled',
     'supports'           => array( 'title','thumbnail'),
     'taxonomies'         => array(  'reviews-category' )
   );
@@ -536,6 +536,29 @@ function add_register_taxonomies(){
 }
 add_action('init', 'add_register_taxonomies');
 
+// register widget
+function wk_widget_init() {
+  register_sidebar( array(
+     'name'          => 'Footer Menu 1',
+     'id'            => 'footer_menu_1',
+     'class'         => 'fm-items',
+     'before_widget' => '',
+     'after_widget'  => '',
+     'before_title'  => '<h4 class="fm-title">',
+     'after_title'   => '</h4>',
+     'before_sidebar' => '<div class="fm-items">',
+     'after_sidebar'  => '</div>'
+  ) );
+  register_sidebar( array(
+    'name'          => 'Footer Menu 2',
+    'id'            => 'footer_menu_2',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<h4 class="fm-title">',
+    'after_title'   => '</h4>'
+ ) );
+}
+add_action('widgets_init', 'wk_widget_init');
 
 // add menu
 if ( ! function_exists( 'mytheme_register_nav_menu' ) ) {

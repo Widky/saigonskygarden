@@ -7,8 +7,8 @@
         "service": {},
         "event": {},
         "attraction": {},
-        "review":{},
-        "wpcf7_contact_form":{}
+        "review": {},
+        "wpcf7_contact_form": {}
     },
     "post_fields": {
         "sub_title": {},
@@ -21,21 +21,20 @@
         "show_home_page": {},
         "show_about_page": {},
         "sub_title3": {},
+        "reviewer_photo": {},
+        "review_number": {},
+        "stars": {},
+        "review_date": {},
+        "review_content": {},
         "like_number": {},
-        "reviewer_photo":{},
-        "review_number":{},
-        "stars":{},
-        "review_date":{},
-        "review_content":{},
-        "like_number":{},
-        "response_content":{},
-        "contact_map_url":{},
-        "contact_address":{},
-        "contact_tel":{},
-        "contact_fax":{},
-        "contact_site_url":{},
-        "contact_email":{},
-        "contact_url2":{}
+        "response_content": {},
+        "contact_map_url": {},
+        "contact_address": {},
+        "contact_tel": {},
+        "contact_fax": {},
+        "contact_site_url": {},
+        "contact_email": {},
+        "contact_url2": {}
     },
     "taxonomies": {
         "apartment": {},
@@ -44,6 +43,6 @@
         "services": {},
         "event-category": {},
         "attractions": {},
-        "reviews-category":{}
+        "reviews-category": {}
     }
 }
