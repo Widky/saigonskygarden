@@ -694,6 +694,7 @@ ul {
 .navbar-main-collapse-btn {
     float: left;
     line-height: 110px;
+    display: none;
 }
 
 .navbar-main-collapse-btn .btn-collapse {
@@ -919,15 +920,39 @@ ul {
     .block-carousel-facilities-about .carousel-control-next {
         right: 30px;
     }
-    /* menu */
-    .header .navbar-main,
-    .header .navbar-main-wrap {
+}
+
+@media screen and (max-width: 1680.98px) {
+    /* header */
+    .header .logo {
+        margin-right: 15px;
+    }
+    .header .logo,
+    .header .logo-wrap {
+        max-width: 170px;
         width: 100%;
     }
-    .header .lang-btn-book {
-        float: none;
+    #navbar-nav-header li,
+    #lbb-lang-lists li a,
+    #lbb-lang-lists li ul a,
+    .header .lbb-wrap .lbb-book .lbbb-btn {
+        font-size: 13px;
+    }
+    .header .lbb-wrap .lbb-lang>ul>li>a>img {
+        width: 25px;
+        height: 25px;
+    }
+    .header .lbb-wrap .lbb-book {
+        width: 100px;
+        height: 31px;
+        margin: auto;
+    }
+    .header .lbb-wrap .lbb-lang {
+        margin-right: 0;
     }
 }
+
+@media screen and (max-width: 1439.98px) {}
 
 
 /* size LG - < 1200px */
@@ -940,6 +965,9 @@ ul {
         display: none;
     }
     /* header */
+    .navbar-main-collapse-btn {
+        display: block;
+    }
     .section-breadcrumb .sb-title-wrap {
         left: auto;
     }
@@ -1101,5 +1129,11 @@ ul {
     .block-carousel-facilities-about .carousel-control-prev,
     .block-carousel-facilities-about .carousel-control-next {
         top: 82px;
+    }
+}
+
+@media screen and (max-width: 424.98px) {
+    .cat-title {
+        font-size: 25px !important;
     }
 }
