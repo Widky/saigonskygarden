@@ -2,26 +2,35 @@
     <div class="quote-customer-wrap">
         <div id="carouselQuote" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselQuote" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselQuote" data-slide-to="1"></li>
-                <li data-target="#carouselQuote" data-slide-to="2"></li>
+                <?php
+                $reviews = get_terms( array(
+                    'taxonomy' => 'reviews-category',
+                    'hide_empty' => false,
+                     //'parent'   => 0
+                ) );
+                $i = 0;
+                if(!empty($reviews)){ 
+                    foreach($reviews as $review) { ?>
+                <li data-target="#carouselQuote" data-slide-to="<?php echo $i; ?>"
+                    class="<?php if($i==0) echo 'active'; $i++; ?>"></li>
+                <?php } ?>
+                <?php } ?>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <p class="quote-content"><q><?php _e('清潔、整った設備、良いインターネット接続、良い場所、.
-                            親切なスタッフ。少し古くなっていますが、それは価格に反映されています。絶対におすすめ。', 'hotel-center-lite-child')?></q></p>
-                    <div class="quote-author">- バオ氏 -</div>
+                <?php 
+                $i = 0;
+                if(!empty($reviews)){ 
+                    foreach($reviews as $review) { 
+                        $review_id = $review->term_id;
+                        $review_content =  get_field('review_content',$review->taxonomy.'_'.$review_id) ;
+                        ?>
+                <div class="carousel-item <?php if($i==0) echo 'active'; $i++; ?>">
+                    <p class="quote-content"><q><?php echo $review_content ; ?></q></p>
+                    <div class="quote-author"><?php echo $review->name; ?></div>
                 </div>
-                <div class="carousel-item">
-                    <p class="quote-content"><q><?php _e('清潔、整った設備、良いインターネット接続、良い場所、.
-                            親切なスタッフ。少し古くなっていますが、それは価格に反映されています。絶対におすすめ。', 'hotel-center-lite-child')?></q></p>
-                    <div class="quote-author">- バオ氏 -</div>
-                </div>
-                <div class="carousel-item">
-                    <p class="quote-content"><q><?php _e('清潔、整った設備、良いインターネット接続、良い場所、.
-                            親切なスタッフ。少し古くなっていますが、それは価格に反映されています。絶対におすすめ。', 'hotel-center-lite-child')?></q></p>
-                    <div class="quote-author">- バオ氏 -</div>
-                </div>
+                <?php } ?>
+                <?php } ?>
+
             </div>
         </div>
         <div class="quote-orverlay"></div>

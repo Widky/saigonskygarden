@@ -242,6 +242,52 @@ ul {
     text-transform: uppercase;
 }
 
+#lbb-lang-lists li a,
+#lbb-lang-lists li ul a {
+    text-decoration: none;
+    font: normal bold 16px 'Malgun Gothic', 'san-serif';
+    color: #333333;
+    line-height: 24px;
+}
+
+#lbb-lang-lists li ul a {
+    font-size: 16px !important;
+    padding-left: 0;
+    background: none;
+}
+
+#lbb-lang-lists li a:hover {
+    color: #2398A9;
+}
+
+#lbb-lang-lists>li>a:hover>span.lang-name::after {
+    border-color: #2398A9;
+}
+
+#lbb-lang-lists>li>a>span.lang-name::after {
+    content: "";
+    border: solid #333333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin: 4px;
+}
+
+#lbb-lang-lists .lbb-lang-sublists {
+    display: none;
+    background-color: #FFFFFF;
+}
+
+#lbb-lang-lists .lbb-lang-sublists img {
+    margin-left: -12px;
+}
+
+#lbb-lang-lists li:hover .lbb-lang-sublists {
+    display: block;
+}
+
 
 /* main menu */
 

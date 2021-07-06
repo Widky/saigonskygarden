@@ -25,35 +25,19 @@
             </div>
             <div class="footer-main-column footer-main-column2 col-xl-1 col-lg-1 col-md-3 col-6">
                 <div class="fmc2-wrap">
-                    <h4 class="fm-title">情報</h4>
-                    <ul class="fm-items">
-                        <li class="fm-item"><a href="#">会社概要</a></li>
-                        <li class="fm-item"><a href="#">特色</a></li>
-                        <li class="fm-item"><a href="#">アパート</a></li>
-                        <li class="fm-item"><a href="#">サービス</a></li>
-                        <li class="fm-item"><a href="#">イベント</a></li>
-                        <li class="fm-item"><a href="#">お問い合わせ</a></li>
-                    </ul>
+                    <?php dynamic_sidebar( 'footer_menu_1' ); ?>
+                    <!--fm-items -->
                 </div>
             </div>
             <div class="footer-main-column footer-main-column3 col-xl-2 col-lg-2 col-md-4 col-6">
                 <div class="fmc3-wrap">
-                    <h4 class="fm-title">施設</h4>
-                    <ul class="fm-items">
-                        <li class="fm-item"><a href="#">スイミングプール</a></li>
-                        <li class="fm-item"><a href="#">スチームサウナ＆ジャグジー</a></li>
-                        <li class="fm-item"><a href="#">スポーツエリア</a></li>
-                        <li class="fm-item"><a href="#">プレイルーム</a></li>
-                        <li class="fm-item"><a href="#">ジム</a></li>
-                        <li class="fm-item"><a href="#">クラスルーム</a></li>
-                        <li class="fm-item"><a href="#">マルチファンクションルーム</a></li>
-                        <li class="fm-item"><a href="#">ピアノルーム＆麻雀ルーム</a></li>
-                    </ul>
+                    <?php dynamic_sidebar( 'footer_menu_2' ); ?>
+                    <!--fm-items -->
                 </div>
             </div>
             <div class="footer-main-column footer-main-column4 col-xl-3 col-lg-3 col-md-5 col-12">
                 <div class="fmc4-wrap">
-                    <h4 class="fm-title">お問い合わせ</h4>
+                    <h4 class="fm-title"><?php _e('お問い合わせ', 'hotel-center-lite-child') ?></h4>
                     <?php 
                         $linkAddress = get_option('address');
                         $linkPhone = get_option('phone');
@@ -70,10 +54,10 @@
                         <i class="fas fa-phone"></i>
                         <div class="fmc4-content">
                             <div class="fmc4-line1">
-                                <pre>電話番号:    <a href="tel:+<?php echo $linkPhone; ?>"><?php echo $linkPhone; ?></a></pre>
+                                <pre><?php _e('電話番号: ', 'hotel-center-lite-child') ?><a href="tel:+<?php echo $linkPhone; ?>"><?php echo $linkPhone; ?></a></pre>
                             </div>
                             <div class="fmc4-line2">
-                                <pre>ファックス: <?php echo $linkFax; ?></pre>
+                                <pre><?php _e('ファックス: ', 'hotel-center-lite-child') ?><?php echo $linkFax; ?></pre>
                             </div>
                         </div>
                     </div>
@@ -89,8 +73,6 @@
             </div>
             <div class="footer-main-column footer-main-column5 col-xl-3 col-lg-3 col-md-7 col-12">
                 <div class="fmc5-wrap">
-                    <h4 class="fm-title">サイゴンスカイガーデンニュースレター</h4>
-                    <p>自然と調和した現代的なデザインで、サイゴンスカイガーデンは1 一つとなっています。</p>
                     <?php echo do_shortcode('[contact-form-7 id="61" title="ニュースを購読する - Subscribe to news"]'); ?>
                 </div>
             </div>
