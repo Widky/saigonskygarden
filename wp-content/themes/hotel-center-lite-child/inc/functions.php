@@ -573,6 +573,7 @@ if ( ! function_exists( 'mytheme_register_nav_menu' ) ) {
 // Add theme options
 add_action('admin_init','custom_theme_options_register_settings');
 function custom_theme_options_register_settings(){
+  register_setting('options_group', 'booking');
   register_setting('options_group', 'address');
   register_setting('options_group', 'phone');
   register_setting('options_group', 'fax');
@@ -601,6 +602,11 @@ if(!function_exists('custom_theme_options_callback')){
         <?php settings_fields( 'options_group' ); ?>
         <table class="form-table" role="presentation">
             <tbody>
+                <tr>
+                    <th scope="row"><label for="booking"><?php _e('URL Booking','hotel-center-lite-child') ?></label></th>
+                    <td><input type="text" name="booking" value="<?php echo get_option('booking')?>"
+                            class="regular-text" /></td>
+                </tr>
                 <tr>
                     <th scope="row"><label for="address"><?php _e('Address','hotel-center-lite-child') ?></label></th>
                     <td><input type="text" name="address" value="<?php echo get_option('address')?>"
@@ -730,7 +736,12 @@ function review_menu(){
 add_action( "reviews-category_edit_form", function( $tag, $taxonomy )
 { 
     ?>
-    <style>.term-description-wrap,.term-parent-wrap{display:none;} </style><?php
+<style>
+.term-description-wrap,
+.term-parent-wrap {
+    display: none;
+}
+</style><?php
 }, 10, 2 );
 
 /**
@@ -738,6 +749,10 @@ add_action( "reviews-category_edit_form", function( $tag, $taxonomy )
  */
 add_action( 'reviews-category_add_form', function( $taxonomy )
 {
-    ?><style>.term-description-wrap,.term-parent-wrap{display:none;}</style><?php
+    ?><style>
+.term-description-wrap,
+.term-parent-wrap {
+    display: none;
+}
+</style><?php
 }, 10, 2 );
-

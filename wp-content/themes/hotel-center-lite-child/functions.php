@@ -26,7 +26,7 @@ if(! function_exists('the_list_lang')){
         foreach($listLang as $k=>$v){ 
             $vLocale = str_replace('-','_',$v['locale']);
             if($vLocale == $currentLang){ ?>
-        <a href="<?php echo esc_url( wpm_translate_current_url( $k ) ); ?>">
+        <a>
             <img src="<?php echo $flagUrl ?>" alt="<?php echo strtoupper($vLocale) ?>">
             <span class="lang-name"><?php echo substr(strtoupper($vLocale), 0, 2) ?></span>
         </a>
