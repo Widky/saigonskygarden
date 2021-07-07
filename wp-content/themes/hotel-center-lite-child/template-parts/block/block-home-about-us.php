@@ -28,14 +28,14 @@ $my_posts = $query->get_posts();
         ?>
             <div class="sha-column-left col-lg-6 col-md-12 col-12">
                 <h3 class="sha-title cl-title text-center">
-                    <span class="cl-main-title"><?php echo $my_posts[0]->post_title; ?></span>
+                    <span class="cl-main-title change-cl change-font"><?php echo $my_posts[0]->post_title; ?></span>
                     <span class="sha-sub-title cl-sub-title"><?php echo $subTitle; ?></span>
                 </h3>
                 <div class="sha-sub-title-2 text-center">
                     <?php echo $subTitle2; ?>
                 </div>
                 <div class="sha-excerpt">
-                    <pre><?php echo $my_posts[0]->post_excerpt; ?></pre>
+                    <?php echo wpautop($my_posts[0]->post_excerpt); ?>
                 </div>
                 <div class="sha-more text-center">
                     <a href="<?php echo home_url( $my_posts[0]->post_name .'.html' ); ?>" target="_blank"

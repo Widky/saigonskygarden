@@ -70,8 +70,14 @@
     width: 644px;
 }
 
+.section-home-about .sha-wrap .sha-column-left .change-font {
+    font-family: 'Buenard Bold', 'sans-serif';
+    font-weight: bold;
+}
+
 .section-home-about .sha-wrap .sha-column-left .sha-title {
     font-family: 'Buenard Bold', 'sans-serif';
+    font-weight: bold;
     color: #2398A9;
 }
 
@@ -79,6 +85,7 @@
 .section-home-about .sha-wrap .sha-column-left .sha-sub-title-2 {
     font-family: 'Yu Gothic Bold', 'sans-serif';
     color: #333333;
+    font-weight: bold;
     display: block;
 }
 
@@ -94,11 +101,6 @@ section .cl-title {
 
 section .cl-title span {
     line-height: 25px;
-}
-
-section .cl-title .cl-sub-title {
-    margin-top: 22px;
-    display: block;
 }
 
 section .cl-sub-title,
@@ -1150,8 +1152,6 @@ section .cl-sub-title,
 
 /* responsive */
 
-@media screen and (min-width: 1920px) {}
-
 @media screen and (max-width: 1919.98px) {
     .apartment-wrap.container,
     .features-wrap.container,
@@ -1175,9 +1175,10 @@ section .cl-sub-title,
     }
     .section-home-about {
         padding: 146px 0;
-    }
-    .section-home-about {
         margin: 0 15px;
+    }
+    .section-home-about .container {
+        max-width: calc(100% - 300px);
     }
     .section-home-about .sha-wrap .sha-column-right {
         width: 100%;
@@ -1264,7 +1265,6 @@ section .cl-sub-title,
     }
     .section-home-about .sha-wrap .sha-column-left .sha-sub-title-2 {
         margin-top: 18px;
-        margin-bottom: 12px;
     }
     .section-home-about .sha-wrap .sha-column-left .sha-more {
         margin-top: 39px;
@@ -1315,6 +1315,10 @@ section .cl-sub-title,
 }
 
 @media screen and (max-width: 1680.98px) {
+    /* home about us */
+    .section-home-about .sha-wrap .sha-column-left .sha-excerpt p>br:nth-child(2n+1) {
+        display: none;
+    }
     /* home page */
     .fw-items .fw-items-wrap .fw-img {
         height: 375px;
@@ -1325,6 +1329,10 @@ section .cl-sub-title,
 }
 
 @media screen and (max-width: 1439.98px) {
+    /* home about us */
+    .section-home-about .sha-wrap .sha-column-left .sha-excerpt p>br {
+        display: none;
+    }
     .cat-bed-items .cat-bed-items-wrap {
         width: calc(100% - 218px);
         margin: auto;
@@ -1422,10 +1430,13 @@ section .cl-sub-title,
         margin-top: 11px;
     }
     .section-home-about {
-        padding: 146px 0;
+        padding: 104px 0;
     }
     .section-home-about {
         margin: 0;
+    }
+    .section-home-about .container {
+        max-width: 992px;
     }
     .section-home-about .sha-wrap .sha-column-right {
         width: 100%;

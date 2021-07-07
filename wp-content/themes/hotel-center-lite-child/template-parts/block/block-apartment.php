@@ -7,13 +7,13 @@ $the_cat_bed_three = 'three-bed-rooms';
 <div class="apartment-wrap container">
     <h2 class="cl-title text-center">
         <span class="cl-main-title"><?php echo _e('APARTMENT','hotel-center-lite-child') ?></span>
-        <span class="cl-sub-title"><?php echo _e('アパート','hotel-center-lite-child') ?></span>
+        <span class="cl-sub-title"><?php echo _e('お部屋案内','hotel-center-lite-child') ?></span>
     </h2>
     <div class="aparment-posts">
         <div class="cat-studio">
             <div class="cat-main-title cat-studio-main-title">
                 <div class="cat-line cat-studio-line"></div>
-                <h3 class="cat-title cat-studio-title"><?php _e('Studio Apartment','hotel-center-lite-child'); ?></h3>
+                <h3 class="cat-title cat-studio-title"><?php _e('Studio','hotel-center-lite-child'); ?></h3>
             </div>
             <?php 
             $args = array(
