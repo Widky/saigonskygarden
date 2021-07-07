@@ -30,6 +30,7 @@ $currentLang = get_bloginfo("language");
 switch($currentLang)
 {
     case 'en-US':
+        $strBooking = 'Book now';
         // about us
         $strPageAboutFeature = 'Features';
 
@@ -54,6 +55,7 @@ switch($currentLang)
         $bcFacilities = 'Facilities';
         break;
     default:
+        $strBooking = '今すぐ予約する';
         // about us
         $strPageAboutFeature = '特徴';
 

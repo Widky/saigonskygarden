@@ -11,6 +11,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+    <?php include dirname( __FILE__ ) . '/inc/lang/translate.php'; ?>
     <header>
         <div class="header">
             <div class="header-wrap">
@@ -66,8 +68,9 @@
                             <?php the_list_lang(); ?>
                         </div>
                         <div class="lbb-book">
-                            <button
-                                class="lbbb-btn bg-color-2398A9"><?php _e('お問い合わせ', 'hotel-center-lite-child') ?></button>
+                            <a href="<?php echo get_option('booking'); ?>">
+                                <div class="lbbb-btn bg-color-2398A9"><span><?php echo $strBooking; ?></span></div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -78,8 +81,6 @@
     <div class="page-wrap">
         <?php 
     if(!is_front_page() && is_page()){
-        include dirname( __FILE__ ) . '/inc/lang/translate.php';
-
         $page_id = get_queried_object_id();
 
         $pageTitle = get_field($pageTitle, $page_id);
