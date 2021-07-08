@@ -1,0 +1,71 @@
+#navbar-main-mobi{
+	background: #FFFFFF;
+	width: 300px;
+    position: fixed;
+    top: 0;
+    left:0px;
+    height: 100vh;
+    z-index: 999;
+    background: #FFFFFF;
+    color: #2398A9;
+    transition: all 0.3s;
+    overflow-y: scroll !important;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+    display: none;
+}
+.wrap-menu-mobi{
+	margin-top:55px;
+}
+
+#navbar-main-mobi li a:hover, #navbar-main-mobi li.current-menu-item a {
+    color: #2398A9;
+}
+#navbar-main-mobi li a {
+    text-decoration: none;
+    /*display: block;*/
+    color: #333333;
+}
+#navbar-main-mobi li a:hover, #navbar-main-mobi li.current-menu-item a {
+    color: #2398A9;
+}
+#navbar-main-mobi li {
+    font: normal bold 16px 'Yu Gothic Bold', 'sans-serif';
+    line-height: 24px;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    color: #333333;
+    padding: 8px 25px 8px 15px;
+    border-bottom: 1px solid #cccccc75;
+    position: relative;
+}
+#navbar-main-mobi li ul li{
+	padding: 8px 15px;
+	float: none;
+}
+#navbar-main-mobi li ul li a,#navbar-main-mobi li ul a:hover, #navbar-main-mobi li.current-menu-item ul a{
+	background: none;
+	color: #FFFFFF;
+}
+#navbar-main-mobi li ul{
+	background: #2398A9;
+	display: none;
+}
+#navbar-main-mobi li.menu-item-has-children .arrow{
+	position: relative;
+	width: 16px;
+	height: 16px;
+	display:inline-block;
+	float: right;
+	background: url("../images/arrow-up.png") no-repeat center;
+}
+#navbar-main-mobi li.menu-item-has-children ul li .arrow{
+	display: none;
+}
+
+#navbar-main-mobi li.menu-item-has-children:not(.open-sub) .arrow {
+ 	background: url("../images/arrow-down.png") no-repeat center;
+
+ }
+
+ 

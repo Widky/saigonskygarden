@@ -32,7 +32,7 @@ jQuery(document).ready(function() {
         centerMode: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerPadding: '25%',
+        centerPadding: '20%',
         appendArrows: jQuery('.arrows_custom'),
         responsive: [{
                 breakpoint: 768,
@@ -40,7 +40,7 @@ jQuery(document).ready(function() {
                     arrows: true,
                     centerMode: true,
                     slidesToShow: 1,
-                    centerPadding: '25%',
+                    centerPadding: '20%',
                 }
             },
             {

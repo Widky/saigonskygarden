@@ -9,9 +9,9 @@ $locale = get_locale();
     
 $sub_title = get_post_meta(get_the_ID(),'sub_title3',true);
 if($locale == 'ja'){
-   $list_url = "/event.html";
+   $list_url = "/events.html";
 }else{
-    $list_url = "/en/event.html";
+    $list_url = "/en/events.html";
 }
     
 

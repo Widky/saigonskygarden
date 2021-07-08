@@ -1,6 +1,6 @@
 <?php
     $args_acc = array(
-        'post_type'       => 'facilities',
+        'post_type'       => 'facility',
         'post_status'     => 'publish',
         'meta_key' => '_is_ns_featured_post',
         'meta_value' => 'yes'
@@ -19,14 +19,15 @@
                     <?php if( $facilities->have_posts() ):
                             while($facilities->have_posts()) : $facilities->the_post();
                                 $img_id = get_post_meta(get_the_ID(),'image_show_in_event_page',true);
-                                $img_url = wp_get_attachment_url($img_id);
+                                if($img_id):
+                                    $img_url = wp_get_attachment_url($img_id);
                                 ?>
-                                 <div class="fa_img">
-                                    <a href="<?php echo get_permalink() ?>" target="_blank" >
-                                        <img src="<?php echo  $img_url; ?>">
-                                    </a>
-                                </div>
-                            <?php endwhile; endif; ?>
+                                    <div class="fa_img">
+                                        <a href="<?php echo get_permalink() ?>" target="_blank" >
+                                            <img src="<?php echo  $img_url; ?>">
+                                        </a>
+                                    </div>
+                            <?php endif;endwhile; endif; ?>
                         <?php wp_reset_postdata(); ?>
                         
                 </div>

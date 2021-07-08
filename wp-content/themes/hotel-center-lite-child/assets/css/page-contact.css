@@ -142,6 +142,7 @@ a.contact_url:hover{
     box-shadow: 0 3px 0 #00000014;
     font-size: 20px;
 }
+
 .contact_btn:hover{
     background: #d4dee3;
 }
@@ -151,9 +152,13 @@ a.contact_url:hover{
     margin-left: 10px;
     color: #FFFFFF;
 }
-.booking_btn:hover{
+
+.booking_btn:hover {
    opacity: 0.8;
-   color: #ffffff;
+   color: #ffffff !important;
+}
+.booking_btn:focus{
+     color: #ffffff !important;
 }
 @media(min-width:1200px) {
 .contact-details .address {

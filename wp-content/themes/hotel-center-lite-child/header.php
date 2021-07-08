@@ -22,23 +22,34 @@
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
-                <div id="navbar-main" class="navbar-main-collapse">
-                    <div class="navbar-main-collapse-wrap">
+                <div id="navbar-main-mobi">
+                    <div id="dismiss">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                    <div class="wrap-menu-mobi">
+                        <?php
+                            $args = array('after'    => '<span class="arrow"></span>',);
+                            wp_nav_menu($args);
+                        ?>
+                    </div>                    
+                </div>
+                <!-- <div id="navbar-main" class="navbar-main-collapse1">
+                    <div class="navbar-main-collapse-wrap1">
                         <div id="dismiss">
                             <i class="fas fa-arrow-left"></i>
                         </div>
                         <?php
-                        $args = array(
-                            'menu_id'           =>  'navbar-nav-header-collapse',
-                            'menu_class'        =>  'navbar-nav-collapse',
-                            'container'         =>  false,
-                            'theme_location'    =>  'mobile_menu',
-                            // 'depth'             =>  1
-                        );
-                        wp_nav_menu($args);
+                        // $args = array(
+                        //     'menu_id'           =>  'navbar-nav-header-collapse1',
+                        //     'menu_class'        =>  'navbar-nav-collapse1',
+                        //     //'container'         =>  false,
+                        //     //'theme_location'    =>  'mobile_menu',
+                        //     // 'depth'             =>  1
+                        // );
+                        // wp_nav_menu($args);
                         ?>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="logo">
                     <div class="logo-wrap">

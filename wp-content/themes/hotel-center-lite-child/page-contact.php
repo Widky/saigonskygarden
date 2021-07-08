@@ -20,8 +20,13 @@ get_header();
                 <?php the_content() ?>
             </div>
             <div class="contact-form mb-5">
-                <?php                    
-                    echo do_shortcode ( '[cf7form cf7key="contact"]' );
+                <?php 
+                    $locale = get_locale();
+                    if($locale == 'ja'){
+                        echo do_shortcode ( '[cf7form cf7key="contact"]' );
+                    }else{
+                        echo do_shortcode ( '[cf7form cf7key="contact_en"]' );
+                    }                     
                 ?>
                     
             </div>
