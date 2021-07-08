@@ -14,12 +14,14 @@ if($my_posts) :
 ?>
 <div class="row position-relative">
     <div class="col-12 p-0">
-        <div class="home-video">
-            <?php if($showAboutPage['video_about']) : ?>
+    <div class="home-video">
             <div class="about-video">
-                <?php echo $showAboutPage['video_about'] ?>
+                <?php if($showAboutPage['video_about']['url']) : ?>
+                    <iframe width="560" height="315"
+                        src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0" frameborder="0"
+                        allowfullscreen="allowfullscreen"></iframe>
+                <?php endif; ?>
             </div>
-            <?php endif; ?>
         </div>
     </div>
 </div>
