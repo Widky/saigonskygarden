@@ -1,9 +1,15 @@
-<section class="facilities">
-    <div class="facilities-wrap container-fluid">
-        <h2 class="cl-title text-center">
+<div class="row position-relative">
+    <div class="bg-facilities bg-facilities-top"></div>
+    <div class="col-12 p-0">
+        <h2 class="cl-title text-center facilites-title">
             <span class="cl-main-title change-cl"><?php echo _e('FACILITIES','hotel-center-lite-child') ?></span>
             <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
         </h2>
+    </div>    
+</div>
+<div class="row position-relative facilities_block ">
+    <div class="container p-0">
+        
         <div class="facilities-items row">
             <?php 
             $args = array(
@@ -59,7 +65,8 @@
             endforeach;
         ?>
         </div>
-        <div class="bg-facilities bg-facilities-top"></div>
+        
         <div class="bg-facilities bg-facilities-bottom"></div>
     </div>
-</section>
+</div>
+

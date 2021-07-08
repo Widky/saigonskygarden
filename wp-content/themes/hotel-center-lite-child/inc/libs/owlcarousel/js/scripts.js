@@ -9,7 +9,7 @@ jQuery(document).ready(function() {
                 items: 1
             },
             768: {
-                items: 2,
+                items: 3,
                 margin: 28,
             },
             1440: {

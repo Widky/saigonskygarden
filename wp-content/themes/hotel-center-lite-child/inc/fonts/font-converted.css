@@ -10,7 +10,6 @@
 }
 
 
-
 @font-face {
     font-family: 'yu-gothic-bold';
     src: url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.eot);
@@ -23,7 +22,7 @@
 }
 
 @font-face {
-    font-family: 'yu-gothic-ligt';
+    font-family: 'yu-gothic-light';
     src: url(../../assets/fonts/font-converted/yu-gothic/yugothil.eot);
     src: url(../../assets/fonts/font-converted/yu-gothic/yugothil.eot?#iefix) format('embedded-opentype'),
     url(../../assets/fonts/font-converted/yu-gothic/yugothil.otf) format('otf'),
