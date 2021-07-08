@@ -6,7 +6,7 @@
 ?>
 <?php get_header(); ?>
 <?php include dirname( __FILE__ ) . '/inc/lang/translate.php'; ?>
-
+<div class="container-fluid">
 <section class="slider-home">
     <?php echo do_shortcode('[smartslider3 slider="2"]'); ?>
     <div class="scroll-bar">
@@ -20,6 +20,7 @@
 </section>
 
 <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-home-about-us.php'); ?>
+
 
 <section class="group-block">
     <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-apartment.php'); ?>
@@ -35,5 +36,5 @@
 <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-event.php'); ?>
 
 <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-quote-customer.php'); ?>
-
+</div>
 <?php get_footer(); ?>

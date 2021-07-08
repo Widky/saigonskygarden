@@ -71,6 +71,7 @@ function add_theme_styles(){
       wp_enqueue_style('slick-style', get_stylesheet_directory_uri() . '/inc/libs/slick/slick.css',false);
       wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/inc/libs/slick/slick-theme.css',false);
     }
+    wp_enqueue_style('mobi-menu', get_stylesheet_directory_uri() . '/assets/css/menu-mobi.css',false);
 
 }
 add_action('wp_enqueue_scripts','add_theme_styles');
