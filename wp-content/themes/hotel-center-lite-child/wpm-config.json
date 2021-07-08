@@ -34,7 +34,9 @@
         "contact_fax": {},
         "contact_site_url": {},
         "contact_email": {},
-        "contact_url2": {}
+        "contact_url2": {},
+        "video_name": {},
+        "video_description": {}
     },
     "taxonomies": {
         "apartment": {},

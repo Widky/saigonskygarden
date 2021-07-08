@@ -55,7 +55,7 @@ switch($currentLang)
         $bcFacilities = 'Facilities';
         break;
     default:
-        $strBooking = '今すぐ予約する';
+        $strBooking = 'お問い合わせ';
         // about us
         $strPageAboutFeature = '特徴';
 

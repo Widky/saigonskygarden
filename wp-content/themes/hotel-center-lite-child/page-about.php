@@ -32,43 +32,27 @@ $showAboutPage = get_field('show_about_page');
 <div class="page-about-block-feature container">
     <div class="page-about-block-feature-wrap ">
         <div class="about-feature-lists row">
-            <?php 
-            $args = array(
-                'post_type'         =>  'post',
-                'orderby'           =>  'date',
-                'order'             =>  'DESC',
-                'post_status'       =>  'publish',
-                'posts_per_page'        =>  3,
-                'tax_query'         =>  array(
-                    array(
-                        'taxonomy'      =>  'category',
-                        'field'         =>  'slug',
-                        'terms'         =>  $strCatFeatures,
-                        'operator'      =>  'IN'
-                    ),
-                )
-            );
-            $query = new WP_Query($args);
-            $my_posts = $query->get_posts();
-            // echo "<pre>";print_r($my_post);exit;
-            if( $my_posts ) :
-                foreach($my_posts as $k=>$v) : 
-            ?>
             <div class="about-feature-item col-md-4 col-12">
                 <div class="about-feature-item-wrap">
-                    <a href="<?php echo home_url( $v->post_name . '.html'); ?>" title="<?php echo $v->post_title; ?>"
+                    <a href="<?php echo home_url('feature.html'); ?>"
                         class="thumb">
                         <div class="afi-img">
-                            <?php if (has_post_thumbnail( $v->ID ) ): ?>
-
-                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                            <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
-
-                            <?php else : ?>
-
-                            <img src="" alt="<?php _e('No Image.','hotel-center-lite-child'); ?>">
-
-                            <?php endif; ?>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/about/feature.png"
+                                alt="<?php echo $v->post_title; ?>">
+                        </div>
+                        <div class="afi-content">
+                            <h3 class="afi-title"><?php _e('特徴','hotel-center-lite-child') ?></h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="about-feature-item col-md-4 col-12">
+                <div class="about-feature-item-wrap">
+                    <a href="<?php echo home_url('facilities.html'); ?>" 
+                        class="thumb">
+                        <div class="afi-img">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/about/facilities.png"
+                                alt="<?php echo $v->post_title; ?>">
                         </div>
                         <div class="afi-content">
                             <h3 class="afi-title"><?php _e('施設','hotel-center-lite-child') ?></h3>
@@ -76,8 +60,21 @@ $showAboutPage = get_field('show_about_page');
                     </a>
                 </div>
             </div>
-            <?php endforeach; ?>
-            <?php endif; ?>
+            <div class="about-feature-item col-md-4 col-12">
+                <div class="about-feature-item-wrap">
+                    <a href="<?php echo home_url('attractions.html'); ?>"
+                        class="thumb">
+                        <div class="afi-img">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/about/attractions.png"
+                                alt="<?php echo $v->post_title; ?>">
+                        </div>
+                        <div class="afi-content">
+                            <h3 class="afi-title"><?php _e('魅力 ','hotel-center-lite-child') ?></h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -106,7 +103,7 @@ $showAboutPage = get_field('show_about_page');
                     foreach($myPosts as $k=>$v) :
                         if (has_post_thumbnail( $v->ID ) ): ?>
                         <div class="carousel-item <?php if($i == 0) echo 'active'; ?>">
-                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html">
+                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
                                 <div class="fiw-img">
                                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                                     <img src="<?php echo $image[0]; ?>"
@@ -141,18 +138,34 @@ $showAboutPage = get_field('show_about_page');
         </h2>
         <div class="row rvideo">
             <div class="col-lg-6 col-md-12">
-                <?php if($showAboutPage['video_about']) : ?>
-                <div class="about-video">
-                    <?php echo $showAboutPage['video_about'] ?>
+                <div class="card about-video">
+                    <?php if($showAboutPage['video_about']['url']) : ?>
+                    <div class="card-img-top">
+                        <iframe width="560" height="315"
+                            src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0" frameborder="0"
+                            allowfullscreen="allowfullscreen"></iframe>
+                    </div>
+                    <?php endif; ?>
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $showAboutPage['video_about']['video_name']; ?></h5>
+                        <p class="card-text"><?php echo $showAboutPage['video_about']['video_description']; ?></p>
+                    </div>
                 </div>
-                <?php endif; ?>
             </div>
             <div class="col-lg-6 col-md-12 change-mgt">
-                <?php if($showAboutPage['video_about_2']) : ?>
-                <div class="about-video">
-                    <?php echo $showAboutPage['video_about_2'] ?>
+                <div class="card about-video">
+                    <?php if($showAboutPage['video_about_2']['url']) : ?>
+                    <div class="card-img-top">
+                        <iframe width="560" height="315"
+                            src="<?php echo $showAboutPage['video_about_2']['url']; ?>&showinfo=0&rel=0" frameborder="0"
+                            allowfullscreen="allowfullscreen"></iframe>
+                    </div>
+                    <?php endif; ?>
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $showAboutPage['video_about_2']['video_name']; ?></h5>
+                        <p class="card-text"><?php echo $showAboutPage['video_about_2']['video_description']; ?></p>
+                    </div>
                 </div>
-                <?php endif; ?>
             </div>
         </div>
     </div>
