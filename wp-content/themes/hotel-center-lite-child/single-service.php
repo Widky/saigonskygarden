@@ -20,9 +20,9 @@ $terms = wp_get_object_terms( get_the_ID(), 'services');
 $term_name = $terms[0]->name;
 $term_des = $terms[0]->description;
 
-$pageTitle = $term_name;
+$pageTitle = 'Services';
 
-$pageSubTitle = $term_name;
+$pageSubTitle = 'サービス';
 
 $imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-services.png';
 // Call function breadcrumb
@@ -33,7 +33,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
         <div class="spost">
             <div class="sp-header">
                 <div class="sp-header-wrap">
-                    <h3 class="sp-cat-title text-center"><?php echo $term_name; ?></h3>
+                    <h3 class="sp-cat-title text-center"><?php the_title(); ?></h3>
                     <div class="sp-share">
                         <a href="#">
                             <i class="fas fa-share-alt"></i>
@@ -41,10 +41,10 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         </a>
                     </div>
                 </div>
-                <p class="sp-excerpt"><?php echo get_the_excerpt(); ?></p>
+                <p class="sp-excerpt"><?php echo get_the_content(); ?></p>
             </div>
             <div class="sp-body">
-                <h3 class="sp-title"><?php the_title(); ?></h3>
+                <h3 class="sp-title"><?php echo $term_name; ?></h3>
                 <div class="sp-img">
                     <?php
                     $sliderCat = get_field('slide_thumbnail', get_the_ID());
@@ -122,7 +122,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <!-- end slide imgage -->
 
                 <?php $basicInformation = get_field('basic_information', get_the_ID()); ?>
-                <?php if($basicInformation != NULL && $basicInformation['location'] != '') :?>
+                <?php if($basicInformation != NULL) :?>
                 <div class="sprow-utilities sm-basic row">
                     <div class="sprow-title col-md-4">
                         <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
@@ -134,19 +134,17 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/services/is.png"
                                     alt="">
                                 <div class="sprow-text"><?php echo $strLocation; ?></div>
-                                <div class="sprow-value"><?php echo $basicInformation['location']; ?>
-                                </div>
+                                <div class="sprow-value"><?php echo $basicInformation['location']; ?></div>
                             </div>
                             <?php } ?>
-                            <?php if($basicInformation['opening_hours'] != ''){ ?>
                             <div class="sprow-item col-md-6">
                                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f3.png"
                                     alt="">
                                 <div class="sprow-text"><?php echo $strOpeningHours; ?></div>
-                                <div class="sprow-value"><?php echo $basicInformation['opening_hours']; ?>
-                                </div>
+                                <?php if($basicInformation['opening_hours'] != ''){ ?>
+                                <div class="sprow-value"><?php echo $basicInformation['opening_hours']; ?></div>
+                                <?php } ?>
                             </div>
-                            <?php } ?>
                         </div>
                     </div>
                 </div>

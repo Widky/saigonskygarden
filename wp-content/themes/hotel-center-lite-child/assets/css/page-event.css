@@ -136,3 +136,17 @@ body, pre, p {
 	}
 
 /*end pagination */
+
+
+.item_wrap{
+	position: relative;
+	padding-bottom: 35px;
+}
+.event_more span{
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+}
+.event_item{
+	padding-bottom: 28px;
+}

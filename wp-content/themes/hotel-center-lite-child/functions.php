@@ -40,7 +40,8 @@ if(! function_exists('the_list_lang')){
             ?>
             <li class="lbb-lang-subitem">
                 <a href="<?php echo esc_url( wpm_translate_current_url( $subk ) ); ?>">
-                    <img src="/wp-content/plugins/wp-multilang/flags/<?php echo $subv['flag']; ?>" alt="<?php echo strtoupper($subvLocale) ?>">
+                    <img src="/wp-content/plugins/wp-multilang/flags/<?php echo $subv['flag']; ?>"
+                        alt="<?php echo strtoupper($subvLocale) ?>">
                     <span class="lang-name"><?php echo substr(strtoupper($subvLocale), 0, 2) ?></span>
                 </a>
             </li>
@@ -68,6 +69,64 @@ if(! function_exists('breadcrumb_header')){
         </div>
     </div>
 </section>
+<div class="hierarchical-breadcrumb">
+    <div class="container">
+        <?php hierarchical_breadcrumb(); ?>
+    </div>
+</div>
 <?php
+    }
+}
+// Phân cấp breadcrumb
+if(! function_exists('hierarchical_breadcrumb')){
+    function hierarchical_breadcrumb(){
+        if ( function_exists('yoast_breadcrumb') ) :
+            
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+
+        else: 
+            if(!is_front_page() && is_single()) : 
+
+                echo '<p id="breadcrumbs">';
+                    global $post;
+                    $delimiter = ' » ';
+                    $spanBefore = '<span>';
+                    $spanAfter = '</span>';
+                    echo $spanBefore . $spanBefore;
+                    echo '<a href="' . home_url() . '">' . __('Home', 'hotel-center-lite-child') . '</a>' . $delimiter;
+                        echo $spanBefore;
+                        $postType = get_post_type();
+                        if($postType == 'post'){
+                            $cat = get_the_category(); $cat = $cat[0];
+                            echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+                        } else{
+                            switch($postType){
+                                case 'apartments':
+                                    $terms = get_the_terms($post->ID,'apartment');
+                                    break;
+                                case 'facility':
+                                    $terms = get_the_terms($post->ID,'facilities');
+                                    break;
+                                case 'service':
+                                    $terms = get_the_terms($post->ID,'services');
+                                    break;
+                                default:
+                                    $terms = get_the_terms($post->ID,'attractions');
+                                    break;
+                            }
+                            // var_dump($terms);
+                            $term_name = $terms[0]->name;
+                            $term_url = $terms[0]->taxonomy .'/' . $terms[0]->slug . '.html';
+                            echo '<a href="' . home_url($term_url) . '">' . $term_name . '</a>' . $delimiter;
+                        }
+                        echo '<span class="breadcrumb_last">';
+                            echo $post->post_title;
+                        echo $spanAfter;
+                    echo $spanAfter . $spanAfter;
+                echo '</p>'; 
+
+            endif;
+            
+        endif;
     }
 }

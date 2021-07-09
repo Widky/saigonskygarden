@@ -79,7 +79,7 @@ include get_stylesheet_directory() . '/assets/css/category.css';
                             foreach($getCat as $kCat=>$vCat){
                                 ?>
                         <div class="pfnote">
-                            <a href="/<?php echo $vCat->taxonomy; ?>/<?php echo $vCat->slug; ?>.html" target="_blank"
+                            <a href="<?php echo home_url($vCat->taxonomy . '/' . $vCat->slug.'.html'); ?>" target="_blank"
                                 rel="noopener noreferrer"><?php echo $vCat->name; ?></a>
                         </div>
                         <?php

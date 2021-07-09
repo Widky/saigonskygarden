@@ -30,38 +30,81 @@
             $query = new WP_Query($args);
             $myPosts = $query->get_posts();
             // echo "<pre>";print_r($myPosts);
+            $i = 0;
             foreach($myPosts as $k=>$v) :
             ?>
-            <div class="facilities-item col-md-4 col-sm-6 col-12">
-                <div class="facilities-item-wrap">
-                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
-                        <div class="fiw-img">
-                            <?php 
-                            $showHome = get_field('show_home', $v->ID);
-                            // echo "<pre>";var_dump($showHome);
-                            if($showHome && $showHome != NULL){ ?>
-                            <img src="<?php echo $showHome['image']['url']; ?>"
-                                alt="<?php custom_the_post_thumbnail_caption(); ?>">
-                            <?php 
-                            $imgOrverlay = $showHome['background_overlay_for_images'];
-                            if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).")'></div>"; ?>
-                            <?php } ?>
-                        </div>
-                        <div class="fiw-content">
-                            <?php
-                            $iconPost = $showHome['icon_title'];
-                            // echo "<pre>";var_dump($iconPost);
-                            if($iconPost != NULL){
-                                echo '<img src="'.esc_url($iconPost['url']).'" alt="'.esc_attr($iconPost['alt']).'"/>';
-                            }
-                            ?>
-                            <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
-                            <?php if($v->post_excerpt != '') echo '<pre class="fiw-excerpt">'.$v->post_excerpt.'</pre>'; ?>
-                        </div>
-                    </a>
+            <?php if($i == 0) { ?>
+                <div class="facilities-item col-xl-3 col-sm-6 col-12">
+                    <div class="facilities-item-wrap">
+                        <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
+                            <div class="fiw-img">
+                                <?php 
+                                $showHome = get_field('show_home', $v->ID);
+                                // echo "<pre>";var_dump($showHome);
+                                if($showHome && $showHome != NULL){ ?>
+                                <img src="<?php echo $showHome['image']['url']; ?>"
+                                    alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                <?php 
+                                $imgOrverlay = $showHome['background_overlay_for_images'];
+                                if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).")'></div>"; ?>
+                                <?php } ?>
+                            </div>
+                            <div class="fiw-content">
+                                <?php
+                                $iconPost = $showHome['icon_title'];
+                                // echo "<pre>";var_dump($iconPost);
+                                if($iconPost != NULL){
+                                    echo '<img src="'.esc_url($iconPost['url']).'" alt="'.esc_attr($iconPost['alt']).'"/>';
+                                }
+                                ?>
+                                <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
+                                <?php if($v->post_excerpt != '') echo '<pre class="fiw-excerpt">'.$v->post_excerpt.'</pre>'; ?>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            <?php }else{ ?>
+                <?php if($i == 1) { ?>
+                    <div class="col-12 col-xl-9 col-12">
+                        <div class="row">
+                <?php } ?> 
+                    <div class="facilities-item col-xl-4 col-sm-6 col-12">
+                        <div class="facilities-item-wrap">
+                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
+                                <div class="fiw-img">
+                                    <?php 
+                                    $showHome = get_field('show_home', $v->ID);
+                                    // echo "<pre>";var_dump($showHome);
+                                    if($showHome && $showHome != NULL){ ?>
+                                    <img src="<?php echo $showHome['image']['url']; ?>"
+                                        alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                    <?php 
+                                    $imgOrverlay = $showHome['background_overlay_for_images'];
+                                    if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).")'></div>"; ?>
+                                    <?php } ?>
+                                </div>
+                                <div class="fiw-content">
+                                    <?php
+                                    $iconPost = $showHome['icon_title'];
+                                    // echo "<pre>";var_dump($iconPost);
+                                    if($iconPost != NULL){
+                                        echo '<img src="'.esc_url($iconPost['url']).'" alt="'.esc_attr($iconPost['alt']).'"/>';
+                                    }
+                                    ?>
+                                    <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
+                                    <?php if($v->post_excerpt != '') echo '<pre class="fiw-excerpt">'.$v->post_excerpt.'</pre>'; ?>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                <?php if($i== count($myPosts) - 1){ ?>
+                    </div>
+                </div>    
+                <?php } ?>   
+            <?php } ?>    
+            
             <?php
+            $i = $i + 1;
             endforeach;
         ?>
         </div>

@@ -339,8 +339,8 @@ if( $my_posts ) :
                 </div>
                 <div class="line-color opacity"></div>
                 <div class="apd-button">
-                    <a href="#" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
-                    <a href="#"><?php _e('長期ご契約 お問合せ ', 'hotel-center-lite-child'); ?></a>
+                    <a href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
+                    <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期ご契約 お問合せ ', 'hotel-center-lite-child'); ?></a>
                 </div>
                 <div class="clear"></div>
             </div>

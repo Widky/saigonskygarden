@@ -326,8 +326,9 @@ ul {
 #navbar-nav-header li {
     padding: 0 11px;
 }
-#navbar-nav-header li ul li{
-    padding:0px;
+
+#navbar-nav-header li ul li {
+    padding: 0px;
 }
 
 #navbar-nav-header li a {
@@ -366,15 +367,17 @@ ul {
     display: block;
     margin-left: 0;
 }
-#navbar-nav-header li ul.sub-menu li:first-child{
-    border-bottom:  1px solid #E3E3E3;
+
+#navbar-nav-header li ul.sub-menu li:first-child {
+    border-bottom: 1px solid #E3E3E3;
 }
-#navbar-nav-header li ul.sub-menu li:last-child{
-    border:none;
+
+#navbar-nav-header li ul.sub-menu li:last-child {
+    border: none;
 }
 
 #navbar-nav-header li ul.sub-menu li {
-    border-bottom:  2px solid #E3E3E3;
+    border-bottom: 2px solid #E3E3E3;
     float: none;
 }
 
@@ -451,6 +454,11 @@ ul {
     margin: auto;
     margin-left: 24.5px;
     border-left: 1px solid #FFFFFF;
+    text-transform: uppercase;
+}
+
+.hierarchical-breadcrumb {
+    margin-top: 30px;
     text-transform: uppercase;
 }
 
@@ -931,8 +939,9 @@ ul {
     margin-top: 72px;
     margin-bottom: 82px;
 }
-.header .lbb-wrap .lbb-book{
-    padding:0px 10px;
+
+.header .lbb-wrap .lbb-book {
+    padding: 0px 10px;
     background: #2398A9;
 }
 
@@ -986,7 +995,7 @@ ul {
         margin-right: 15px;
     }
     #navbar-nav-header li:nth-child(n + 2) {
-       /* padding: 0 12.5px;*/
+        /* padding: 0 12.5px;*/
     }
 }
 
@@ -994,13 +1003,13 @@ ul {
     /* header */
     .header,
     .header-wrap {
-       /* height: 97px;*/
+        /* height: 97px;*/
     }
     .header .logo {
         margin-right: 0;
     }
     #navbar-nav-header li:nth-child(n + 2) {
-       /* padding: 0 5px;*/
+        /* padding: 0 5px;*/
     }
     #navbar-nav-header li,
     #lbb-lang-lists li a,
@@ -1011,14 +1020,15 @@ ul {
     .header .lbb-wrap .lbb-lang {
         width: auto;
     }
-    
     .header .lbb-wrap .lbb-book {
-       /* width: 100px;*/
+        /* width: 100px;*/
     }
 }
+
 .header .lbb-wrap .lbb-lang {
-        margin-right: 15px;
+    margin-right: 15px;
 }
+
 
 /* size LG - < 1200px */
 
