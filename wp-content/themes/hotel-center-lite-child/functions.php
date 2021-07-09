@@ -85,7 +85,7 @@ if(! function_exists('hierarchical_breadcrumb')){
             yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 
         else: 
-            if(!is_front_page() && is_single()) : 
+            if(!is_front_page()) : 
 
                 echo '<p id="breadcrumbs">';
                     global $post;
@@ -159,6 +159,7 @@ if(! function_exists('hierarchical_breadcrumb')){
                         } elseif (is_404()){
                             echo '<span class="breadcrumb_last">' . __('Page Not Found', 'hotel-center-lite-child') . $spanAfter;
                         }
+                        echo $spanAfter;
                     echo $spanAfter . $spanAfter;
                 echo '</p>'; 
 
