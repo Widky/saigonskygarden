@@ -131,34 +131,36 @@ $showAboutPage = get_field('show_about_page');
             <span class="cl-main-title change-cl"><?php echo _e('POPULAR VIDEO','hotel-center-lite-child') ?></span>
             <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
         </h2>
-        <div class="row rvideo">
-            <div class="col-lg-6 col-md-12">
-                <div class="card about-video">
-                    <?php if($showAboutPage['video_about']['url']) : ?>
-                    <div class="card-img-top">
-                        <iframe width="560" height="315"
-                            src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0" frameborder="0"
-                            allowfullscreen="allowfullscreen"></iframe>
-                    </div>
-                    <?php endif; ?>
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $showAboutPage['video_about']['video_name']; ?></h5>
-                        <p class="card-text"><?php echo $showAboutPage['video_about']['video_description']; ?></p>
+        <div class="content-popular-video">
+            <div class="row rvideo">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card about-video">
+                        <?php if($showAboutPage['video_about']['url']) : ?>
+                        <div class="card-img-top">
+                            <iframe width="560" height="315"
+                                src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0" frameborder="0"
+                                allowfullscreen="allowfullscreen"></iframe>
+                        </div>
+                        <?php endif; ?>
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $showAboutPage['video_about']['video_name']; ?></h5>
+                            <p class="card-text"><?php echo $showAboutPage['video_about']['video_description']; ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 col-md-12 change-mgt">
-                <div class="card about-video">
-                    <?php if($showAboutPage['video_about_2']['url']) : ?>
-                    <div class="card-img-top">
-                        <iframe width="560" height="315"
-                            src="<?php echo $showAboutPage['video_about_2']['url']; ?>&showinfo=0&rel=0" frameborder="0"
-                            allowfullscreen="allowfullscreen"></iframe>
-                    </div>
-                    <?php endif; ?>
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $showAboutPage['video_about_2']['video_name']; ?></h5>
-                        <p class="card-text"><?php echo $showAboutPage['video_about_2']['video_description']; ?></p>
+                <div class="col-lg-6 col-md-12 change-mgt">
+                    <div class="card about-video">
+                        <?php if($showAboutPage['video_about_2']['url']) : ?>
+                        <div class="card-img-top">
+                            <iframe width="560" height="315"
+                                src="<?php echo $showAboutPage['video_about_2']['url']; ?>&showinfo=0&rel=0" frameborder="0"
+                                allowfullscreen="allowfullscreen"></iframe>
+                        </div>
+                        <?php endif; ?>
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $showAboutPage['video_about_2']['video_name']; ?></h5>
+                            <p class="card-text"><?php echo $showAboutPage['video_about_2']['video_description']; ?></p>
+                        </div>
                     </div>
                 </div>
             </div>
