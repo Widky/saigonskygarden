@@ -20,9 +20,9 @@ $term_name = $queried_object->name;
 $term_des = $queried_object->description;
 $term_id = $queried_object->term_id;
 
-$pageTitle = $term_name;
+$pageTitle = 'Apartment';
 
-$pageSubTitle = $term_name;
+$pageSubTitle = 'お部屋案内';
 
 $imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-apartment.png';
 // Call function breadcrumb

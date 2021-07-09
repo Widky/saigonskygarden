@@ -23,9 +23,9 @@ $term_id = $queried_object->term_id;
 </style>
 <?php 
 
-$pageTitle = $bcFacilities;
+$pageTitle = 'Facilities';
 
-$pageSubTitle = $bcFacilities;
+$pageSubTitle = '施設';
 
 $imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-facilities.png';
 // Call function breadcrumb

@@ -15,9 +15,9 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 </style>
 <?php 
 
-$pageTitle = $bcFacilities;
+$pageTitle = 'Facilities';
 
-$pageSubTitle = $bcFacilities;
+$pageSubTitle = '施設';
 
 $imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-facilities.png';
 // Call function breadcrumb

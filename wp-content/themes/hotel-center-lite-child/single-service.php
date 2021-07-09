@@ -20,9 +20,9 @@ $terms = wp_get_object_terms( get_the_ID(), 'services');
 $term_name = $terms[0]->name;
 $term_des = $terms[0]->description;
 
-$pageTitle = $term_name;
+$pageTitle = 'Services';
 
-$pageSubTitle = $term_name;
+$pageSubTitle = 'サービス';
 
 $imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-services.png';
 // Call function breadcrumb
@@ -33,7 +33,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
         <div class="spost">
             <div class="sp-header">
                 <div class="sp-header-wrap">
-                    <h3 class="sp-cat-title text-center"><?php echo $term_name; ?></h3>
+                    <h3 class="sp-cat-title text-center"><?php the_title(); ?></h3>
                     <div class="sp-share">
                         <a href="#">
                             <i class="fas fa-share-alt"></i>
@@ -44,7 +44,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <p class="sp-excerpt"><?php echo get_the_content(); ?></p>
             </div>
             <div class="sp-body">
-                <h3 class="sp-title"><?php the_title(); ?></h3>
+                <h3 class="sp-title"><?php echo $term_name; ?></h3>
                 <div class="sp-img">
                     <?php
                     $sliderCat = get_field('slide_thumbnail', get_the_ID());
