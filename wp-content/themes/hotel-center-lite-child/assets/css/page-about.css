@@ -41,9 +41,10 @@
 }
 
 .popular-video .rvideo {
+    width: calc(100% - 230px);
     margin: auto;
-    padding: 30px 15px;
-    background: #fff;
+    padding: 30px;
+    border: 3px dotted #707070;
 }
 
 .about-video {
@@ -107,6 +108,7 @@
     color: #FFFFFF;
 }
 
+<<<<<<< HEAD
 .carousel-facilities-about .owl-carousel .fiw-img img{
     height: 534px;
 }
@@ -199,7 +201,8 @@
 
 .popular-video .content-popular-video{
     background-image: linear-gradient(45deg, #dedede 25%, #ffffff 25%, #ffffff 50%, #dedede 50%, #dedede 75%, #ffffff 75%, #ffffff 100%);
-    background-size: 11.31px 11.31px;width: calc(100% - 230px);
+    background-size: 11.31px 11.31px;
+    width: calc(100% - 230px);
     margin: auto;
     padding: 5px; 
 }
@@ -208,6 +211,8 @@
 
 
 
+=======
+>>>>>>> parent of 4fb674d... Merge branch 'master' of https://github.com/Widky/saigonskygarden
 
 /* responsive */
 
@@ -281,6 +286,7 @@
         margin: auto;
         margin-top: 32px;
     }
+<<<<<<< HEAD
 
     .carousel-facilities-about .owl-carousel .fiw-img img{
       height: 174px;
@@ -292,7 +298,12 @@
         position: absolute;
         z-index: -1;
         padding: 0px 20px;
+    }
+    .popular-video .content-popular-video{
+        width: 100%;
     }    
+=======
+>>>>>>> parent of 4fb674d... Merge branch 'master' of https://github.com/Widky/saigonskygarden
 }
 
 
@@ -322,9 +333,5 @@
     }
     .about-video {
         height: 350px;
-    }
-
-    .carousel-facilities-about .owl-carousel .fiw-img img{
-      height: 133px;
     }
 }

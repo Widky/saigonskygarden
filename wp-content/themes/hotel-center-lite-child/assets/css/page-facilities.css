@@ -2,63 +2,79 @@
     margin-bottom: 225px;
 }
 
-.pfacilities-wrap .pfacilities-items>div {
-    margin: 47px auto;
+.pfacilities-wrap .pfacilities-items >div {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.pfacilities-item {
-    max-width: 468px;
-    height: 100%;
-    padding: 30px 20px;
-    background-color: #F9f9f9;
-    box-shadow: 0px 3px 6px #00000016;
-    border-top: 3px solid #166772;
+.pfacilities-wrap .pfacilities-items .card{
+    box-shadow: 0px 2px 2px 2px #eee; 
 }
 
-.pfacilities-item .pfacilities-img {
-    position: relative;
+.pfacilities-wrap .pfacilities-items .card:hover{
+    border-bottom: 2px solid #166772;
 }
 
-.pfacilities-item .pfacilities-img img {
-    width: 100%;
-    height: 271px;
-    display: block;
-}
+   
 
-.pfacilities-item .pfacilities-img .pfnote {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background-color: #202A2B;
-    padding: 10px 24px;
+.pfacilities-wrap .pfacilities-items .pfnote {
     opacity: .9;
     font: normal 15px 'Yu Gothic Medium', 'sans-serif';
-    color: #FFFFFF;
-    width: 230px;
+    top: 200px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    color: #fff !important;
+    position: absolute;
 }
 
-.pfacilities-item .pfacilities-img .pfnote a {
+.pfacilities-wrap .pfacilities-items .pfnote a{
     font: normal 15px 'Yu Gothic Medium', 'sans-serif';
     color: #FFFFFF;
 }
 
-.pfacilities-item .pfacilities-img .pfnote:hover a {
+.pfacilities-wrap .pfacilities-items .top-image{
+    overflow: hidden;
+}
+
+.pfacilities-wrap .pfacilities-items .card-img-top {
+    height: 240px;
+    transition: all 1.2s ease 0s;
+    width: 100%;
+}
+
+.pfacilities-wrap .pfacilities-items .card-img-top:hover {
+    transform: scale(1.3);
+}
+
+
+.pfacilities-wrap .pfacilities-items .pfnote:hover a {
     color: #2398a9;
 }
 
-.pfacilities-item .pftitle {
-    font: normal bold 24px 'Yu Gothic Bold', 'sans-serif';
-    color: #333333;
-    margin-top: 60px;
-    margin-bottom: 17px;
-    text-align: center;
+.pfacilities-items .pftitle:hover {
+    color: #2398a9;
 }
 
-.pfacilities-item .pfexcerpt {
+.pfacilities-items .pftitle {
+    font: normal bold 24px 'Yu Gothic Bold', 'sans-serif';
+    color: #333333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.pfacilities-items .pfexcerpt {
     font: normal 16px 'Yu Gothic Medium', 'sans-serif';
     color: #333333;
-    text-align: center;
     opacity: 90%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 90px;
 }
 
 .pfacilities-item .btn-direct a {
