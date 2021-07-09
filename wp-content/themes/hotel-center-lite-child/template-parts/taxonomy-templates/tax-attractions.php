@@ -18,9 +18,9 @@ $term_name = $queried_object->name;
 $term_des = $queried_object->description;
 $term_id = $queried_object->term_id;
 
-$pageTitle = $term_name;
+$pageTitle = 'Attractions';
 
-$pageSubTitle = $term_name;
+$pageSubTitle = '魅力';
 
 $imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-attractions.png';
 // Call function breadcrumb
