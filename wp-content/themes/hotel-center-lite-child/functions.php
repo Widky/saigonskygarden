@@ -85,7 +85,7 @@ if(! function_exists('hierarchical_breadcrumb')){
             yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 
         else: 
-            if(!is_front_page()) : 
+            if(!is_front_page() && is_single()) : 
 
                 echo '<p id="breadcrumbs">';
                     global $post;
@@ -95,7 +95,6 @@ if(! function_exists('hierarchical_breadcrumb')){
                     echo $spanBefore . $spanBefore;
                     echo '<a href="' . home_url() . '">' . __('Home', 'hotel-center-lite-child') . '</a>' . $delimiter;
                         echo $spanBefore;
-                        
                         if(is_page()){
                             echo '<span class="breadcrumb_last">';
                                 echo $post->post_title;
