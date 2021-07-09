@@ -88,23 +88,23 @@ $sub_title = get_post_meta(get_the_ID(),'sub_title3',true);
                                                             <?php
                                                                 $event_len = mb_strlen(get_the_excerpt(),'UTF-8');
                                                                 if($locale == 'ja'){
-                                                                    echo mb_substr(get_the_excerpt(), 0, 50,'UTF-8');
-                                                                        if($event_len > 50 ){
+                                                                    echo mb_substr(get_the_excerpt(), 0, 25,'UTF-8');
+                                                                        if($event_len > 25 ){
                                                                             echo '[...]';
                                                                         }
                                                                 }else{
-                                                                    echo mb_substr(get_the_excerpt(), 0, 100,'UTF-8');
-                                                                        if($event_len > 100 ){
+                                                                    echo mb_substr(get_the_excerpt(), 0, 50,'UTF-8');
+                                                                        if($event_len > 50 ){
                                                                             echo '[...]';
                                                                         }    
                                                                 } 
                                                             ?>
-                                                            <p class="mt-2">
-                                                                <a href="<?php the_permalink(); ?>">
-                                                                <span><?php echo __('View More','hotel-center-lite-child') ?></span>
-                                                                </a>
-                                                            </p>
                                                         </div>
+                                                        <p class="event_more mt-2">
+                                                            <a href="<?php the_permalink(); ?>">
+                                                            <span><?php echo __('View More','hotel-center-lite-child') ?></span>
+                                                            </a>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
