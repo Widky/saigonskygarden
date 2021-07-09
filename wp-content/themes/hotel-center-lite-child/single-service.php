@@ -41,7 +41,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         </a>
                     </div>
                 </div>
-                <p class="sp-excerpt"><?php echo get_the_excerpt(); ?></p>
+                <p class="sp-excerpt"><?php echo get_the_content(); ?></p>
             </div>
             <div class="sp-body">
                 <h3 class="sp-title"><?php the_title(); ?></h3>
@@ -122,7 +122,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <!-- end slide imgage -->
 
                 <?php $basicInformation = get_field('basic_information', get_the_ID()); ?>
-                <?php if($basicInformation != NULL && $basicInformation['location'] != '') :?>
+                <?php if($basicInformation != NULL) :?>
                 <div class="sprow-utilities sm-basic row">
                     <div class="sprow-title col-md-4">
                         <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
@@ -134,19 +134,17 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/services/is.png"
                                     alt="">
                                 <div class="sprow-text"><?php echo $strLocation; ?></div>
-                                <div class="sprow-value"><?php echo $basicInformation['location']; ?>
-                                </div>
+                                <div class="sprow-value"><?php echo $basicInformation['location']; ?></div>
                             </div>
                             <?php } ?>
-                            <?php if($basicInformation['opening_hours'] != ''){ ?>
                             <div class="sprow-item col-md-6">
                                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f3.png"
                                     alt="">
                                 <div class="sprow-text"><?php echo $strOpeningHours; ?></div>
-                                <div class="sprow-value"><?php echo $basicInformation['opening_hours']; ?>
-                                </div>
+                                <?php if($basicInformation['opening_hours'] != ''){ ?>
+                                <div class="sprow-value"><?php echo $basicInformation['opening_hours']; ?></div>
+                                <?php } ?>
                             </div>
-                            <?php } ?>
                         </div>
                     </div>
                 </div>
