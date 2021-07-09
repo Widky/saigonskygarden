@@ -375,7 +375,7 @@ if( $my_posts ) :
                         <div class="item">
                             <div class="panel panel-default">
                                 <div class="panel-thumbnail">
-                                    <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html" title="<?php echo $v->post_title; ?>"
+                                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>" title="<?php echo $v->post_title; ?>"
                                         class="thumb">
                                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
                                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>

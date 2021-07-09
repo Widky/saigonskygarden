@@ -180,7 +180,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                 <div class="item">
                                     <div class="panel panel-default">
                                         <div class="panel-thumbnail">
-                                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html"
+                                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"
                                                 title="<?php echo $v->post_title; ?>" class="thumb">
 
                                                 <div class="sw-img">

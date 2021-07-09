@@ -62,7 +62,7 @@ $showAboutPage = get_field('show_about_page');
                             foreach($getCat as $kCat=>$vCat){
                         ?>
                                 <div class="pfnote">
-                                <a href="/<?php echo $vCat->taxonomy; ?>/<?php echo $vCat->slug; ?>.html" target="_blank" rel="noopener noreferrer"><?php echo $vCat->name; ?></a>
+                                <a href="<?php echo home_url($vCat->taxonomy .'/'. $vCat->slug .'.html'); ?>" target="_blank" rel="noopener noreferrer"><?php echo $vCat->name; ?></a>
                                 </div>
                         <?php
                                 break;
