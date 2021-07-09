@@ -85,7 +85,7 @@ if(! function_exists('hierarchical_breadcrumb')){
             yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 
         else: 
-            if(!is_front_page() && is_single()) : 
+            if(!is_front_page()) : 
 
                 echo '<p id="breadcrumbs">';
                     global $post;
@@ -95,32 +95,70 @@ if(! function_exists('hierarchical_breadcrumb')){
                     echo $spanBefore . $spanBefore;
                     echo '<a href="' . home_url() . '">' . __('Home', 'hotel-center-lite-child') . '</a>' . $delimiter;
                         echo $spanBefore;
-                        $postType = get_post_type();
-                        if($postType == 'post'){
-                            $cat = get_the_category(); $cat = $cat[0];
-                            echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-                        } else{
-                            switch($postType){
-                                case 'apartments':
-                                    $terms = get_the_terms($post->ID,'apartment');
-                                    break;
-                                case 'facility':
-                                    $terms = get_the_terms($post->ID,'facilities');
-                                    break;
-                                case 'service':
-                                    $terms = get_the_terms($post->ID,'services');
-                                    break;
-                                default:
-                                    $terms = get_the_terms($post->ID,'attractions');
-                                    break;
+                        if(is_page()){
+                            echo '<span class="breadcrumb_last">';
+                                echo $post->post_title;
+                            echo $spanAfter;
+                        }elseif(is_tax()){
+                            $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+                            echo '<span class="breadcrumb_last">';
+                                echo $term->name;
+                            echo $spanAfter;
+                        }elseif (is_category()){
+                            global $wp_query;
+                            $cat_obj = $wp_query->get_queried_object();
+                            $thisCat = $cat_obj->term_id;
+                            $thisCat = get_category($thisCat);
+                            $parentCat = get_category($thisCat->parent);
+                            if($thisCat->parent != 0) echo get_category_parents($parentCat, TRUE, $delimiter);
+                            echo '<span class="breadcrumb_last">';
+                                single_cat_title();
+                            echo $spanAfter;
+            
+                        }elseif(is_single()){
+                            $postType = get_post_type();
+                            if($postType == 'post'){
+                                $cat = get_the_category(); $cat = $cat[0];
+                                echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+                            }else{
+                                switch($postType){
+                                    case 'apartments':
+                                        $terms = get_the_terms($post->ID,'apartment');
+                                        break;
+                                    case 'facility':
+                                        $terms = get_the_terms($post->ID,'facilities');
+                                        break;
+                                    case 'service':
+                                        $terms = get_the_terms($post->ID,'services');
+                                        break;
+                                    case 'event':
+                                        $terms = get_the_terms($post->ID,'event-category');
+                                        break;
+                                    default:
+                                        $terms = get_the_terms($post->ID,'attractions');
+                                        break;
+                                }
+                                // var_dump($terms);
+                                $term_name = $terms[0]->name;
+                                $term_url = $terms[0]->taxonomy .'/' . $terms[0]->slug . '.html';
+                                echo '<a href="' . home_url($term_url) . '">' . $term_name . '</a>' . $delimiter;
+                                echo '<span class="breadcrumb_last">';
+                                    echo $post->post_title;
+                                echo $spanAfter;
                             }
-                            // var_dump($terms);
-                            $term_name = $terms[0]->name;
-                            $term_url = $terms[0]->taxonomy .'/' . $terms[0]->slug . '.html';
-                            echo '<a href="' . home_url($term_url) . '">' . $term_name . '</a>' . $delimiter;
+                        }elseif (is_search()){
+                            echo '<span class="breadcrumb_last">' . __('Search Results for:', 'hotel-center-lite-child'). ' &quot;' . get_search_query() . '&quot;' . $spanAfter;
+                        } elseif (is_tag()){
+                            echo '<span class="breadcrumb_last">' . __('Post Tagged with:', 'hotel-center-lite-child'). ' &quot;';
+                            single_tag_title();
+                            echo '&quot;' . $spanAfter;
+                        } elseif (is_author()) {
+                            global $author;
+                            $userdata = get_userdata($author);
+                            echo '<span class="breadcrumb_last">' . __('Author Archive', 'hotel-center-lite-child') . $spanAfter;
+                        } elseif (is_404()){
+                            echo '<span class="breadcrumb_last">' . __('Page Not Found', 'hotel-center-lite-child') . $spanAfter;
                         }
-                        echo '<span class="breadcrumb_last">';
-                            echo $post->post_title;
                         echo $spanAfter;
                     echo $spanAfter . $spanAfter;
                 echo '</p>'; 

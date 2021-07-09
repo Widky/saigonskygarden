@@ -115,27 +115,4 @@ jQuery(document).ready(function() {
             }
         }
     });
-
-    // about
-    jQuery('.carousel-facilities-about .owl-carousel').owlCarousel({
-        stagePadding: 200,
-        margin: 40,
-        nav: true,
-        navText: ['<span class="prev-icon"></span>', '<span class="next-icon"></span>'],
-        dots: false,
-        loop: true,
-        responsive: {
-          0: {
-            items: 1,
-            stagePadding: 60,
-            margin: 10,
-          },
-          600: {
-            items:1
-          },
-          1000: {
-            items: 1
-          }
-        }
-    })
 });
