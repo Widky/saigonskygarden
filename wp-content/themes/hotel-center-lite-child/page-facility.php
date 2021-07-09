@@ -39,14 +39,14 @@ $showAboutPage = get_field('show_about_page');
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
                 'posts_per_page'        =>  12,
-                'tax_query'         =>  array(
-                    array(
-                        'taxonomy'      =>  'facilities',
-                        'field'         =>  'slug',
-                        'terms'         =>  $strCatFacilities,
-                        'operator'      =>  'NOT IN'
-                    ),
-                )
+                // 'tax_query'         =>  array(
+                //     array(
+                //         'taxonomy'      =>  'facilities',
+                //         'field'         =>  'slug',
+                //         'terms'         =>  $strCatFacilities,
+                //         'operator'      =>  'NOT IN'
+                //     ),
+                // )
             );
             $query = new WP_Query($args);
             $my_posts = $query->get_posts();
@@ -64,7 +64,7 @@ $showAboutPage = get_field('show_about_page');
                             foreach($getCat as $kCat=>$vCat){
                                 ?>
                                 <div class="pfnote">
-                                <a href="/<?php echo $vCat->taxonomy; ?>/<?php echo $vCat->slug; ?>.html" target="_blank" rel="noopener noreferrer"><?php echo $vCat->name; ?></a>
+                                <a href="<?php echo home_url($vCat->taxonomy . '/' .  $vCat->slug . '.html') ?>" target="_blank" rel="noopener noreferrer"><?php echo $vCat->name; ?></a>
                                 </div>
                                 <?php
                                 break;
@@ -77,7 +77,7 @@ $showAboutPage = get_field('show_about_page');
                             <p class="pfexcerpt"><?php echo $v->post_excerpt; ?></p >
                         </div>
                         <div class="pffooter btn-direct">
-                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html"
+                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"
                                 rel="noopener noreferrer"><?php _e('もっと見る','hotel-center-lite-child') ?></a>
                         </div>
                     </div>

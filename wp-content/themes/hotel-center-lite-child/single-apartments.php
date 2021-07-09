@@ -228,7 +228,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     </div>
                     <div class="col-lg-6 col-md-5 col-12">
                         <div class="tax-btn-contact">
-                            <a href="/<?php echo $strLinkContact; ?>.html"><?php echo $strTextContact; ?></a>
+                            <a href="<?php echo home_url($strLinkContact . '.html'); ?>"><?php echo $strTextContact; ?></a>
                         </div>
                     </div>
                 </div>
@@ -362,8 +362,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <?php endif; ?>
                 <div class="line-color opacity"></div>
                 <div class="apd-button">
-                    <a href="#" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
-                    <a href="#"><?php _e('長期ご契約 お問合せ ', 'hotel-center-lite-child'); ?></a>
+                    <a href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
+                    <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期ご契約 お問合せ ', 'hotel-center-lite-child'); ?></a>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -405,7 +405,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         <div class="item">
                             <div class="panel panel-default">
                                 <div class="panel-thumbnail">
-                                    <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html"
+                                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"
                                         title="<?php echo $v->post_title; ?>" class="thumb">
                                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
                                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
