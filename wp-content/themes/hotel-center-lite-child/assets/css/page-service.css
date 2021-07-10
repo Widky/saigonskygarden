@@ -110,7 +110,7 @@
 }
 
 #multi-carousel-service .owl-carousel {
-    width: 1144px;
+    width: 100%;
     margin: auto;
 }
 
@@ -119,7 +119,7 @@
 }
 
 .service-carousel .owl-carousel .owl-item img {
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
     height: 222px;
     border-radius: 5px;
     position: relative;
