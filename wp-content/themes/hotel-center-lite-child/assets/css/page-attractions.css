@@ -40,8 +40,8 @@
 
 .attractions-item .aiw-des {
     color: #161616;
-    font-size: 15px;
-    padding: 13px 17px;
+    font-size: 13px;
+    padding: 5px 15px;
     background-color: #FFFFFF;
     border-radius: 3px;
     position: absolute;
@@ -77,7 +77,7 @@
 }
 
 .aiw-content p {
-    font: normal 16px 'Yu Gothic Medium', 'sans-serif';
+    font: normal 15px 'Yu Gothic Medium', 'sans-serif';
     color: #33333390;
     line-height: 25px;
 }
