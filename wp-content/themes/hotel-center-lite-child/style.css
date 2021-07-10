@@ -226,14 +226,16 @@ ul {
 }
 
 .header .lbb-wrap .lbb-book .lbbb-btn {
-    width: 100%;
-    height: 100%;
+    /*width: 100%;
+    height: 100%;*/
     border: none;
     padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     align-items: center;
+    padding: 15px;
+    margin-top: 27px;    
 }
 
 .header .lbb-wrap .lbb-book .lbbb-btn {
@@ -940,10 +942,10 @@ ul {
     margin-bottom: 82px;
 }
 
-.header .lbb-wrap .lbb-book {
+/*.header .lbb-wrap .lbb-book {
     padding: 0px 10px;
     background: #2398A9;
-}
+}*/
 #navbar-nav-header:not(.nav-en) li, #lbb-lang-lists li a, #lbb-lang-lists li ul a, .header .lbb-wrap .lbb-book .lbbb-btn {
     font-size: 17px !important;
 }
