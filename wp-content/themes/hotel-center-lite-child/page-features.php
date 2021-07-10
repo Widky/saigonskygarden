@@ -26,78 +26,98 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             </div>
         </div>
     </div>
-    <div class="pfeatures-wrap container">
-        <div class="pfeatures-items">
+</div>
+<div class="container-fluid feture_wrap">
+    <div class="row">
+        <div class="col-12 p-xl-0">
+            <div class="feature_bg"></div>
+            <div class="feature_content">
+                <?php      
+                $args = array(
+                    'post_type'         =>  'post',
+                    'orderby'           =>  'date',
+                    'order'             =>  'DESC',
+                    'post_status'       =>  'publish',
+                    'posts_per_page'        =>  -1,
+                    'tax_query'         =>  array(
+                        array(
+                            'taxonomy'      =>  'category',
+                            'field'         =>  'slug',
+                            'terms'         =>  $strCatFeatures,
+                            'operator'      =>  'IN'
+                        ),
+                    )
+                );
+                $query = new WP_Query($args);
+                $my_posts = $query->get_posts();
+                // echo "<pre>";print_r($my_posts);exit; 
+                if($my_posts) :  
+                $i = 0;
+                foreach($my_posts as $k=>$v) :
+                    if($i % 2 == 0){
+                        $class = 'f_even';
+                    }else{
+                        $class = 'f_odd';
+                    }
+                     ?>                    
+                     <div class=" feature_item <?php echo $class; ?>">
+                        <div class="feature_img">
+                            <?php if (has_post_thumbnail( $v->ID ) ): ?>
 
-            <?php      
-            $args = array(
-                'post_type'         =>  'post',
-                'orderby'           =>  'date',
-                'order'             =>  'DESC',
-                'post_status'       =>  'publish',
-                'posts_per_page'        =>  -1,
-                'tax_query'         =>  array(
-                    array(
-                        'taxonomy'      =>  'category',
-                        'field'         =>  'slug',
-                        'terms'         =>  $strCatFeatures,
-                        'operator'      =>  'IN'
-                    ),
-                )
-            );
-            $query = new WP_Query($args);
-            $my_posts = $query->get_posts();
-            // echo "<pre>";print_r($my_posts);exit; 
-            if($my_posts) :   
+                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                            <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
 
-            foreach($my_posts as $k=>$v) : ?>
-            <div class="pfeatures-item">
-                <div class="pfeatures-img">
+                            <?php else : ?>
 
-                    <?php if (has_post_thumbnail( $v->ID ) ): ?>
+                            <?php $image = get_field('show_home', $v->ID); ?>
 
-                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                    <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                            <?php $image = $image['image_for_post_page']; ?>
 
-                    <?php else : ?>
+                            <?php if( !empty( $image ) ){ ?>
 
-                    <?php $image = get_field('show_home', $v->ID); ?>
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
+                                title="<?php echo $v->post_title; ?>" />
 
-                    <?php $image = $image['image_for_post_page']; ?>
+                            <?php }else{ ?>
 
-                    <?php if( !empty( $image ) ){ ?>
+                            <img src="" alt="<?php _e('No Image.','hotel-center-lite-child'); ?>">
 
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
-                        title="<?php echo $v->post_title; ?>" />
+                            <?php } ?>
 
-                    <?php }else{ ?>
+                            <?php endif; ?>
+                        </div>
+                        <div class="feature_body">
+                            <div class="content_wrap">                               
+                                <div class="content_detail">
+                                     <h2 class="f_title">
+                                        <?php echo $v->post_title; ?>
+                                    </h2>
+                                    <div class="f_content">
+                                        <?php echo $v->post_excerpt; ?>
+                                    </div>
+                                    <div class="pfpoint">
+                                        <span class="ptext-point"><?php _e('Point', 'hotel-center-lite-child') ?></span>
+                                        <span class="ptext-num"><span><?php echo $k + 1; ?></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                     </div>
+                <?php
+                    $i +=1;
+                 endforeach;
+                  ?>          
 
-                    <img src="" alt="<?php _e('No Image.','hotel-center-lite-child'); ?>">
+                <?php else : ?>
 
-                    <?php } ?>
+                <?php require_once(get_stylesheet_directory() . '/template-parts/contents/content-none.php'); ?>
 
-                    <?php endif; ?>
-                </div>
-                <div class="pfeatures-body">
-                    <div class="pfpoint">
-                        <span class="ptext-point"><?php _e('Point', 'hotel-center-lite-child') ?></span>
-                        <span class="ptext-num"><span><?php echo $k + 1; ?></span></span>
-                    </div>
-                    <div class="pfcontent">
-                        <h3 class="pftitle"><?php echo $v->post_title; ?></h3>
-                        <pre class="pfexcerpt"><?php echo $v->post_excerpt; ?></pre>
-                    </div>
-                </div>
+                <?php endif; ?>    
             </div>
-            <?php endforeach; ?>
-
-            <?php else : ?>
-
-            <?php require_once(get_stylesheet_directory() . '/template-parts/contents/content-none.php'); ?>
-
-            <?php endif; ?>
         </div>
     </div>
+    
 </div>
 <section class="tax-other">
     <div class="tax-other-wrap">
