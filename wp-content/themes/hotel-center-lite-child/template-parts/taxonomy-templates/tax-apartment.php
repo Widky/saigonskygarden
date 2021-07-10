@@ -362,8 +362,8 @@ if( $my_posts ) :
 <section class="apd-tax-other-room">
     <div class="apd-tax-other-room-wrap">
         <h2 class="ap-title cl-title text-center">
-            <span class="cl-main-title change-cl"><?php echo _e('他の部屋', 'hotel-center-lite-child') ?></span>
-            <span class="cl-sub-title"><?php echo _e('施設', 'hotel-center-lite-child') ?></span>
+            <span class="cl-main-title change-cl"><?php echo _e('Other Room', 'hotel-center-lite-child') ?></span>
+            <span class="cl-sub-title"><?php echo _e('他の部屋', 'hotel-center-lite-child') ?></span>
         </h2>
         <div class="apd-tax-other-room-carousel">
             <div class="container-fluid">
