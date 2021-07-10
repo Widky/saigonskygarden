@@ -7,13 +7,13 @@
 }
 
 .apartment-detail .cat-title {
-    font-size: 60px;
+    font-size: 45px;
     margin-left: 18.5px;
     line-height: normal;
 }
 
 .apartment-detail .cat-des {
-    font: normal bold 24px 'Yu Gothic', 'sans-serif';
+    font: normal bold 20px 'Yu Gothic', 'sans-serif';
     line-height: 30px;
     color: #333333;
     display: inline-block;
