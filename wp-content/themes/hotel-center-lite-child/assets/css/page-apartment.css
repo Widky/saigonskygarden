@@ -75,13 +75,17 @@
 }
 
 .apartment-detail .apd-tax-slide .carousel-control-prev {
-    top: 345px !important;
-    left: 36px !important;
+    /*top: 345px !important;
+    left: 36px !important;*/
+    top: 45%;
+    left: 2%;
 }
 
 .apartment-detail .apd-tax-slide .carousel-control-next {
-    top: 345px !important;
-    right: 36px !important;
+    /*top: 345px !important;
+    right: 36px !important;*/
+    top: 45%;
+    right: 2%;
 }
 
 .apartment-detail .apd-tax-slide .carousel-indicators {
@@ -194,6 +198,7 @@
 
 .apartment-detail .apd-tax-header {
     margin-top: 134px;
+    margin-bottom: 40px;
 }
 
 .apartment-detail .apd-tax-header .post-title {
@@ -221,12 +226,17 @@
 }
 
 .apartment-detail .apd-tax-detail {
-    margin-top: 50px;
-    margin-bottom: 79px;
+   /* margin-top: 50px;
+    margin-bottom: 79px;*/
+    border-top: 1px solid #707070;
+}
+.apartment-detail .first-detail{
+    border-top: 2px solid #707070;
 }
 
+
 .apd-title {
-    min-width: 280px;
+    /*min-width: 280px;*/
 }
 
 .apd-title h4 {
@@ -238,11 +248,10 @@
 .apd-basic,
 .apd-convenience,
 .apd-info {
-    display: -webkit-box;
+    /*display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    padding-top: 50.5px;
-    padding-bottom: 42.5px;
+    display: flex;*/
+    padding:40px 0px;
 }
 
 .apd-basic .apd-basic-item {
@@ -273,21 +282,21 @@
 }
 
 .apd-basic .apd-basic-item:nth-child(3n + 1) {
-    min-width: 295px;
+    /*min-width: 295px;*/
 }
 
 .apd-basic .apd-basic-item:nth-child(3n + 2) {
-    min-width: 288px;
+   /* min-width: 288px;*/
 }
 
 .apd-basic .apd-basic-item:nth-child(n + 2) {
-    padding-left: 79px;
+    /*padding-left: 79px;*/
 }
 
 .apd-basic .apd-basic-item:nth-child(4),
 .apd-basic .utilities-item:nth-child(7) {
-    padding-left: 0;
-    clear: both;
+   /* padding-left: 0;
+    clear: both;*/
 }
 
 .apd-convenience .utilities-item .utilities-icon {
@@ -303,7 +312,7 @@
 }
 
 .apd-button {
-    margin-top: 69px;
+    /*margin-top: 69px;*/
 }
 
 .apd-button a {
@@ -533,6 +542,9 @@
     width: 20px;
     height: 20px;
 }
+.basic_icon{
+    margin-right: 15px;
+}
 
 
 /* Model apartment */
@@ -571,7 +583,7 @@
     #carouselImgSlideModal .carousel-control {
         top: 215px !important;
     }
-    .apartment-detail .apd-tax-slide .carousel-control-next,
+    /*.apartment-detail .apd-tax-slide .carousel-control-next,
     .apartment-detail .apd-tax-slide .carousel-control-prev {
         top: 235px !important;
     }
@@ -593,7 +605,7 @@
     }
     .apd-basic .utilities-item:nth-child(3n + 2) {
         min-width: 210px;
-    }
+    }*/
     #multi-carousel-apartment {
         width: auto;
     }
@@ -609,7 +621,7 @@
 /* size MD - < 991.98px */
 
 @media screen and (max-width: 991.98px) {
-    .apartment-detail .apd-tax-slide .carousel-item {
+    /*.apartment-detail .apd-tax-slide .carousel-item {
         height: 440px !important;
     }
     .apartment-detail .apd-tax-slide .modal-dialog {
@@ -640,7 +652,7 @@
     .apd-basic .apd-basic-item:nth-child(2n + 2) {
         float: none;
         padding-left: 39px;
-    }
+    }*/
     .apd-convenience .utilities-item:nth-child(n + 3) {
         margin-top: 30px;
     }
@@ -676,7 +688,7 @@
 /* size SM - < 767.98px */
 
 @media screen and (max-width: 767.98px) {
-    .container,
+    /*.container,
     .content-area {
         width: auto;
     }
@@ -712,7 +724,7 @@
     }
     .apartment-detail .apd-tax-slide .carousel-control-prev {
         left: 27px !important;
-    }
+    }*/
     .tax-btn-contact a {
         position: unset;
         margin: auto;
@@ -722,7 +734,7 @@
     .apd-info {
         display: block;
     }
-    .apd-basic .apd-basic-item {
+    /*.apd-basic .apd-basic-item {
         float: none !important;
         padding: 0 !important;
         width: auto;
@@ -730,7 +742,7 @@
     }
     .apd-info .apd-info-content {
         margin-top: 30px;
-    }
+    }*/
     #multi-carousel-apartment .owl-carousel {
         width: 400px;
     }
@@ -790,6 +802,9 @@
     }
     .apd-tax-slide .csti-img .apd-info-img {
         display: none;
+    }
+    .apartment-detail .apd-tax-slide .carousel-item{
+        height: 300px !important;
     }
 }
 
