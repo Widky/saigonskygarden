@@ -6,14 +6,14 @@ $the_cat_bed_three = 'three-bed-rooms';
 ?>
 <div class="row position-relative apartment_frame">
     <div class="apratment_bg"></div>
-    <div class="col-12 apartment_block p-0">
+    <div class="col-12 apartment_block p-xl-0">
         <h2 class="cl-title text-center mb-5">
             <span class="cl-main-title"><?php echo _e('APARTMENT','hotel-center-lite-child') ?></span>
             <span class="cl-sub-title"><?php echo _e('お部屋案内','hotel-center-lite-child') ?></span>
         </h2>
         <div class="aparment-posts">
             <div class="row justify-content-center">
-                <div class="container">
+                <div class="container m-md-0 p-md-0">
                     <div class="col-12 col-xl-10 p-0 cat-studio">
                         <div class="cat-main-title cat-studio-main-title">
                             <div class="cat-line cat-studio-line"></div>

@@ -8,7 +8,7 @@
     </div>    
 </div>
 <div class="row position-relative facilities_block ">
-    <div class="container p-0">
+    <div class="container p-md-0">
         
         <div class="facilities-items row">
             <?php 
@@ -31,6 +31,9 @@
             $myPosts = $query->get_posts();
             // echo "<pre>";print_r($myPosts);
             $i = 0;
+             
+            // $_SESSION['myVar'] ;  
+            $w = ( isset($_COOKIE["screen_width"]) && $_COOKIE['screen_width'] != "" )   ? $_COOKIE['screen_width'] : '';
             foreach($myPosts as $k=>$v) :
             ?>
             <?php if($i == 0) { ?>
@@ -63,8 +66,9 @@
                         </a>
                     </div>
                 </div>
-            <?php }else{ ?>
-                <?php if($i == 1) { ?>
+            <?php }else{ 
+                ?>
+                <?php if($i == 1 && $w >= 1200) { ?>
                     <div class="col-12 col-xl-9 col-12">
                         <div class="row">
                 <?php } ?> 
@@ -97,7 +101,7 @@
                             </a>
                         </div>
                     </div>
-                <?php if($i== count($myPosts) - 1){ ?>
+                <?php if(($i== count($myPosts) - 1) && ( $w >=1200 ) ){ ?>
                     </div>
                 </div>    
                 <?php } ?>   
@@ -112,4 +116,9 @@
         <div class="bg-facilities bg-facilities-bottom"></div>
     </div>
 </div>
-
+<script type="text/javascript">
+    jQuery(function() {
+        var scr_width = jQuery(window).width();
+        jQuery.cookie("screen_width", scr_width);
+    });
+</script>
