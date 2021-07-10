@@ -32,10 +32,28 @@
     position: relative;
 }
 
+.attractions-item .aiw-img{
+  overflow: hidden;  
+}
+
 .attractions-item .aiw-img img {
     width: 100%;
     height: 100%;
     display: block;
+    transition: all 1.2s ease 0s;
+}
+
+.attractions-item .aiw-img img:hover {
+    transform: scale(1.3);
+
+}
+
+.attractions-item .attractions-item-wrap h3:hover{
+  color: #2398A9;
+}
+
+.attractions-item .attractions-item-wrap:hover {
+    border-bottom: 2px solid #166772;
 }
 
 .attractions-item .aiw-des {
@@ -47,6 +65,10 @@
     position: absolute;
     top: 18px;
     right: 13px;
+}
+
+.pAttractions .cl-title .cl-main-title {
+    font: normal 45px 'Buenard Regular', 'Arial';
 }
 
 .attractions-item .aiw-body {
