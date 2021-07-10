@@ -107,7 +107,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                                 <div class="aiw-des"><?php echo $vp->post_excerpt; ?></div>
                             </div>
                             <div class="aiw-body">
-                                <h3 class="aiw-title"><?php echo $vp->post_title; ?></h3>
+                                <h3 class="aiw-title" title="<?php echo $vp->post_title; ?>"><?php echo $vp->post_title; ?></h3>
                                 <div class="aiw-line"></div>
                                 <div class="aiw-content"><?php echo wpautop($vp->post_content); ?></div>
                             </div>
