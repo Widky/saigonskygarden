@@ -240,110 +240,114 @@ if( $my_posts ) :
                     </div>
                 </div>
             </div>
-            <div class="apd-tax-detail">
-                <div class="line-color"></div>
-                <div class="apd-basic">
-                    <div class="apd-title apd-basic-title">
-                        <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
-                    </div>
-                    <div class="apd-basic-content">
-                        <?php 
-                        $basicInformation = get_field('basic_infomation', $my_posts[0]->ID);
-                        ?>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strArea; ?></div>
-                            <div class="apd-basic-value"><?php echo $basicInformation['area']; ?>
-                                m<sup>2</sup></div>
-                        </div>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strCheckIn; ?></div>
-                            <div class="apd-basic-value"><?php echo $basicInformation['check_in']; ?>
-                            </div>
-                        </div>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strPriceApartment; ?></div>
-                            <div class="apd-basic-value">
-                                <div class="post-price">
-                                    <?php 
-                                    $priceDollar = get_post_meta($my_posts[0]->ID,'price_dollar', true);
-                                    $currentConversionRateToVND = get_post_meta($my_posts[0]->ID,'currency_conversion_rate_to_vnd', true);
-                                    
-                                    $strCurrentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit', true);
-                                    $strLeaseTerm = get_post_meta($my_posts[0]->ID,'lease_term', true);
-                                    ?>
-                                    <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
-                                    <span class="pp-vnd">
-                                        <?php 
-                                        $priceVND = get_post_meta($my_posts[0]->ID,'price_vnd', true);
-                                        if($priceVND != ''){
-                                            echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $strCurrentConversionUnit .')' . ' ' .  $strLeaseTerm;
-                                        }else{
-                                            echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
-                                        }
-                                        ?>
-                                    </span>
+            <div class="row apd-tax-detail apd-basic">
+                <div class="col-12 col-md-2 apd-title apd-basic-title">
+                    <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
+                </div>
+                <div class="col-12 col-md-10 apd-basic-content">
+                        <div class="row">
+                            <?php 
+                                $basicInformation = get_field('basic_infomation', $my_posts[0]->ID);
+                                ?>
+                                <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                    <div class="apd-basic-text d-inline-block"><?php echo $strArea; ?></div>
+                                    <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['area']; ?>
+                                        m<sup>2</sup></div>
                                 </div>
-                            </div>
+                                <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                    <div class="apd-basic-text d-inline-block"><?php echo $strCheckIn; ?></div>
+                                    <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['check_in']; ?>
+                                    </div>
+                                </div>
+                                <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                    <div class="apd-basic-text d-inline-block"><?php echo $strPriceApartment; ?></div>
+                                    <div class="apd-basic-value d-inline-block">
+                                        <div class="post-price">
+                                            <?php 
+                                            $priceDollar = get_post_meta($my_posts[0]->ID,'price_dollar', true);
+                                            $currentConversionRateToVND = get_post_meta($my_posts[0]->ID,'currency_conversion_rate_to_vnd', true);
+                                            
+                                            $strCurrentConversionUnit = get_post_meta($my_posts[0]->ID,'currency_conversion_unit', true);
+                                            $strLeaseTerm = get_post_meta($my_posts[0]->ID,'lease_term', true);
+                                            ?>
+                                            <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
+                                            <span class="pp-vnd">
+                                                <?php 
+                                                $priceVND = get_post_meta($my_posts[0]->ID,'price_vnd', true);
+                                                if($priceVND != ''){
+                                                    echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $strCurrentConversionUnit .')' . ' ' .  $strLeaseTerm;
+                                                }else{
+                                                    echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
+                                                }
+                                                ?>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                    <div class="apd-basic-text d-inline-block"><?php echo $strBedType; ?></div>
+                                    <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['bed_type']; ?>
+                                    </div>
+                                </div>
+                                <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                    <div class="apd-basic-text d-inline-block"><?php echo $strCheckOut; ?></div>
+                                    <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['check_out']; ?>
+                                    </div>
+                                </div>
+                                <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                    <div class="apd-basic-text d-inline-block"><?php echo $strMaximumNumberPeople; ?></div>
+                                    <div class="apd-basic-value d-inline-block">
+                                        <?php echo $basicInformation['maximum_number_of_people_in_a_room']; ?>
+                                    </div>
+                                </div>
                         </div>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strBedType; ?></div>
-                            <div class="apd-basic-value"><?php echo $basicInformation['bed_type']; ?>
-                            </div>
-                        </div>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strCheckOut; ?></div>
-                            <div class="apd-basic-value"><?php echo $basicInformation['check_out']; ?>
-                            </div>
-                        </div>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strMaximumNumberPeople; ?></div>
-                            <div class="apd-basic-value">
-                                <?php echo $basicInformation['maximum_number_of_people_in_a_room']; ?>
-                            </div>
-                        </div>
-                    </div>
+                        
                 </div>
-                <div class="line-color opacity"></div>
-                <div class="apd-convenience apd-basic">
-                    <div class="apd-title apd-convenience-title">
-                        <h4><?php _e('部屋の利便性', 'hotel-center-lite-child'); ?></h4>
-                    </div>
-                    <div class="apd-basic-utilities">
-                        <?php  
-                        $termsUtilities = wp_get_object_terms( $my_posts[0]->ID, 'utilities-category');
-                        // var_dump($termsUtilities);
-                        foreach($termsUtilities as $kterm=>$vterm) :
-                        ?>
-                        <div class="utilities-item apd-basic-item">
-                            <div class="utilities-icon apd-basic-text">
-                                <?php 
-                                $image = get_field('apartment_image_tax', $vterm->taxonomy . '_' . $vterm->term_id);
-                                if( !empty( $image ) ): ?>
-                                <img src="<?php echo esc_url($image['url']); ?>"
-                                    alt="<?php echo esc_attr($image['alt']); ?>" />
-                                <?php endif; ?>
-                            </div>
-                            <div class="utilities-title apd-basic-value"><?php echo $vterm->name; ?></div>
+                
+            </div>
+            <div class="row apd-tax-detail apd-basic">
+                 <div class="col-12 col-md-2 apd-title apd-basic-title">
+                     <h4><?php _e('部屋の利便性', 'hotel-center-lite-child'); ?></h4>
+                 </div>
+                 <div class="col-12 col-md-10 apd-basic-content">
+                        <div class="row">
+                             <?php  
+                            $termsUtilities = wp_get_object_terms( $my_posts[0]->ID, 'utilities-category');
+                            // var_dump($termsUtilities);
+                            foreach($termsUtilities as $kterm=>$vterm) :
+                            ?>
+                            <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                <div class="apd-basic-text d-inline-block">
+                                    <?php 
+                                    $image = get_field('apartment_image_tax', $vterm->taxonomy . '_' . $vterm->term_id);
+                                    if( !empty( $image ) ): ?>
+                                    <img class="basic_icon" src="<?php echo esc_url($image['url']); ?>"
+                                        alt="<?php echo esc_attr($image['alt']); ?>" />
+                                    <?php endif; ?>                                    
+                                </div>
+                                <div class="apd-basic-value d-inline-block">
+                                    <?php echo $vterm->name; ?>
+                                </div>
+                            </div>                        
+                            <?php endforeach; ?>                        
                         </div>
-                        <?php endforeach; ?>
-                    </div>
                 </div>
-                <div class="line-color opacity"></div>
-                <div class="apd-info">
-                    <div class="apd-title apd-info-title">
-                        <h4><?php _e('情報利用', 'hotel-center-lite-child'); ?></h4>
-                    </div>
-                    <div class="apd-info-content">
-                        <?php echo wpautop($my_posts[0]->post_content); ?>
-                    </div>
+            </div>    
+            <div class="row apd-tax-detail apd-basic">
+                <div class="col-12 col-md-2 apd-title apd-basic-title">
+                    <h4><?php _e('情報利用', 'hotel-center-lite-child'); ?></h4>
                 </div>
-                <div class="line-color opacity"></div>
-                <div class="apd-button">
+                <div class="col-12 col-md-10 apd-basic-content">
+                    <?php echo wpautop($my_posts[0]->post_content); ?>
+                </div>
+            </div> 
+             <div class="row apd-tax-detail apd-basic">
+                <div class="apd-button col-12 text-md-right text-center p-md-0">
                     <a href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
                     <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期ご契約 お問合せ ', 'hotel-center-lite-child'); ?></a>
                 </div>
                 <div class="clear"></div>
-            </div>
+            </div>            
         </div>
     </div>
 </div>
