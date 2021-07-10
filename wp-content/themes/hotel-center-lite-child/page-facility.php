@@ -56,7 +56,7 @@ $showAboutPage = get_field('show_about_page');
                 <div class="card">                    
                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                         <a class="top-image" href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
-                        <img class="card-img-top" src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>" alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>"></a>
+                        <img class="card-img-top " src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>" alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>"></a>
                         <?php 
                             $getCat = get_the_terms($v->ID,'facilities');                            
                             foreach($getCat as $kCat=>$vCat){

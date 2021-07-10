@@ -94,7 +94,7 @@ if($note == '' || $note == NUll){
     <div class="sm-header">
         <div class="row">
             <div class="col-12">
-                <div class="sm-header-content">
+                <div class="sm-header-content mt-3">
                     <div class="line-left space-left"></div>
                     <h3 class="post-title"><?php the_title(); ?></h3>
                     <pre><?php echo get_the_excerpt(); ?></pre>
@@ -108,10 +108,10 @@ if($note == '' || $note == NUll){
         <?php if($basicInformation != Null && $basicInformation['area'] != '') :?>
         <div class="line-color opacity"></div>
         <div class="smrow-utilities sm-basic row">
-            <div class="apd-title smrow-title col-md-4">
+            <div class="apd-title smrow-title col-md-3">
                 <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
             </div>
-            <div class="smrow-basic-utilities col-md-8">
+            <div class="smrow-basic-utilities col-md-9">
                 <div class="row">
                     <?php if($basicInformation['area'] != ''){ ?>
                     <div class="smrow-item col-md-6">
