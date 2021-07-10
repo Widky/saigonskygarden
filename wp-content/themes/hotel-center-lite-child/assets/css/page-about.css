@@ -300,9 +300,27 @@
 }
 
 
-/* size E SM - < 575.98px */
+/* size E SM - < 599px */
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 599px) {
+    .owl-carousel .owl-nav button.owl-next{
+        right: 55px;
+        top: 35%;
+        height: 35px;
+        width: 35px;
+    }
+    .owl-carousel .owl-nav button.owl-prev span{
+        margin-left: 13px;
+    }
+    .owl-carousel .owl-nav button.owl-prev{
+        left: 55px;
+        top: 35%;
+        height: 35px;
+        width: 35px;
+    }
+    .owl-carousel .owl-nav button.owl-next span{
+        margin-left: 4px;
+    }
     .page-about-title .post-title {
         margin: 76px auto 25px auto;
     }
