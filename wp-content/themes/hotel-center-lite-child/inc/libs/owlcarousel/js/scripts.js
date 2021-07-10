@@ -42,8 +42,8 @@ jQuery(document).ready(function() {
                 items: 2,
                 margin: 31,
             },
-            1440: {
-                items: 2,
+            1300: {
+                items: 3,
                 margin: 31
             },
             1920: {

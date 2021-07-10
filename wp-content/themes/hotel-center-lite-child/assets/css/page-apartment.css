@@ -230,6 +230,10 @@
     margin-bottom: 79px;*/
     border-top: 1px solid #707070;
 }
+.apartment-detail .first-detail{
+    border-top: 2px solid #707070;
+}
+
 
 .apd-title {
     /*min-width: 280px;*/

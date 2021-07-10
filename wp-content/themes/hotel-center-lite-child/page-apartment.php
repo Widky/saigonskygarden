@@ -240,7 +240,7 @@ if( $my_posts ) :
                     </div>
                 </div>
             </div>
-            <div class="row apd-tax-detail apd-basic">
+            <div class="row apd-tax-detail apd-basic first-detail">
                 <div class="col-12 col-md-2 apd-title apd-basic-title">
                     <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
                 </div>
