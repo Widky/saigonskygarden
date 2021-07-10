@@ -55,7 +55,7 @@ $showAboutPage = get_field('show_about_page');
                                 alt="<?php echo $v->post_title; ?>">
                         </div>
                         <div class="afi-content">
-                            <h3 class="afi-title"><?php _e('施設','hotel-center-lite-child') ?></h3>
+                            <h3 class="afi-title "><?php _e('施設','hotel-center-lite-child') ?></h3>
                         </div>
                     </a>
                 </div>
