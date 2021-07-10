@@ -50,6 +50,7 @@
                                 $imgOrverlay = $showHome['background_overlay_for_images'];
                                 if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).")'></div>"; ?>
                                 </div>
+                                <div class="mask-img"></div>
                                 <?php } ?>
                             
                             <div class="fiw-content">

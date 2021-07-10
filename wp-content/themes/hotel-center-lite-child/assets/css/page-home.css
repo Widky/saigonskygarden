@@ -1232,6 +1232,17 @@ section .cl-sub-title,
 .pd-0{
     padding: 0px;
 }
+
+.mask-img{
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 80%);
+}
+
 /* responsive */
 
 @media screen and (max-width: 1919.98px) {
@@ -1839,6 +1850,12 @@ section .cl-sub-title,
     }
     .home-contact .hcw-right-phone a {
         font-size: 28px;
+    }
+
+
+    .pd-0{
+       padding-left: 15px;
+       padding-right: 15px;
     }
 }
 
