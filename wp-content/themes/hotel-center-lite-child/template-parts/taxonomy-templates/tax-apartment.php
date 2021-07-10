@@ -54,8 +54,8 @@ if( $my_posts ) :
             <div class="apd-tax">
                 <div class="cat-main-title">
                     <div class="cat-line"></div>
-                    <h3 class="cat-title"><?php echo $term_name; ?></h3>
-                    <div class="cat-des"><?php echo $term_des; ?></div>
+                    <h3 class="cat-title"><?php echo $term_des; ?></h3>
+                    <div class="cat-des"><?php echo $term_name; ?></div>
                 </div>
                 <div class="apd-tax-share">
                     <a href="#">
