@@ -23,18 +23,23 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-main-column footer-main-column2 col-xl-1 col-lg-1 col-md-3 col-6">
-                <div class="fmc2-wrap">
-                    <?php dynamic_sidebar( 'footer_menu_1' ); ?>
-                    <!--fm-items -->
+            <div class="footer-main-column footer-main-column2 col-xl-3 col-lg3 col-md-3 col-6">
+                <div class="row">
+                <div class="footer-main-column footer-main-column2 col-xl-5 col-lg-5 col-md-5 col-12">
+                    <div class="fmc2-wrap">
+                        <?php dynamic_sidebar( 'footer_menu_1' ); ?>
+                        <!--fm-items -->
+                    </div>
+                </div>
+                <div class="footer-main-column footer-main-column3 col-xl-7 col-lg-7 col-md-7 col-12 pd-0">
+                    <div class="fmc3-wrap">
+                        <?php dynamic_sidebar( 'footer_menu_2' ); ?>
+                        <!--fm-items -->
+                    </div>
+                </div>
                 </div>
             </div>
-            <div class="footer-main-column footer-main-column3 col-xl-2 col-lg-2 col-md-4 col-6">
-                <div class="fmc3-wrap">
-                    <?php dynamic_sidebar( 'footer_menu_2' ); ?>
-                    <!--fm-items -->
-                </div>
-            </div>
+            
             <div class="footer-main-column footer-main-column4 col-xl-3 col-lg-3 col-md-5 col-12">
                 <div class="fmc4-wrap">
                     <h4 class="fm-title"><?php _e('お問い合わせ', 'hotel-center-lite-child') ?></h4>
@@ -71,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-main-column footer-main-column5 col-xl-3 col-lg-3 col-md-7 col-12">
+            <div class="footer-main-column footer-main-column5 col-xl-3 col-lg-2 col-md-7 col-12">
                 <div class="fmc5-wrap">
                     <?php echo do_shortcode('[contact-form-7 id="61" title="ニュースを購読する - Subscribe to news"]'); ?>
                 </div>

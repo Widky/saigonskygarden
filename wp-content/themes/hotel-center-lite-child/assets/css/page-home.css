@@ -602,6 +602,8 @@ section .cl-sub-title,
     display: inline-block;
     vertical-align: bottom;
     width: calc( 100% - 80px );
+    font-size: 18px;
+    line-height: 25px;
 }
 
 .fw-items .fw-items-wrap .post-title .fw-title-number>span {
@@ -722,7 +724,7 @@ section .cl-sub-title,
 .facilities-items .facilities-item .fiw-content {
     position: absolute;
     bottom: 34px;
-    left: 34px;
+    left: 15px;
 }
 
 .facilities-items .facilities-item .fiw-content img {
@@ -731,7 +733,7 @@ section .cl-sub-title,
 }
 
 .facilities-items .facilities-item .fiw-title {
-    font: normal bold 30px 'Yu Gothic Bold', 'sans-serif';
+    font: normal bold 20px 'Yu Gothic Bold', 'sans-serif';
     line-height: 50px;
     color: #FFFFFF;
     margin-top: 17.7px;
@@ -1225,7 +1227,11 @@ section .cl-sub-title,
 .facilities-items .facilities-item {
         margin: 0 !important;
         padding: 15px;
-    }
+}
+
+.pd-0{
+    padding: 0px;
+}
 /* responsive */
 
 @media screen and (max-width: 1919.98px) {
@@ -1309,7 +1315,7 @@ section .cl-sub-title,
     }
     .service-tabs .nav-tabs .nav-link {
         width: 100%;
-        font-size: 18px;
+        font-size: 15px;
     }
     .service-posts .service-post-wrap {
         padding: 31px 36px;
@@ -1397,7 +1403,7 @@ section .cl-sub-title,
     }
     /* home page */
     .fw-items .fw-items-wrap .fw-img {
-        height: 375px;
+        height: 325px;
     }
     .quote-customer .quote-author {
         padding-top: 35px;

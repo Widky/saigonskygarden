@@ -40,18 +40,18 @@
                 <div class="facilities-item col-xl-3 col-sm-6 col-12">
                     <div class="facilities-item-wrap">
                         <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
-                            <div class="fiw-img">
+                            
                                 <?php 
                                 $showHome = get_field('show_home', $v->ID);
                                 // echo "<pre>";var_dump($showHome);
                                 if($showHome && $showHome != NULL){ ?>
-                                <img src="<?php echo $showHome['image']['url']; ?>"
-                                    alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                <div class="fiw-img" style="background: url(<?php echo $showHome['image']['url']; ?>) center center;background-size: cover;background-repeat: no-repeat;">
                                 <?php 
                                 $imgOrverlay = $showHome['background_overlay_for_images'];
                                 if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).")'></div>"; ?>
+                                </div>
                                 <?php } ?>
-                            </div>
+                            
                             <div class="fiw-content">
                                 <?php
                                 $iconPost = $showHome['icon_title'];

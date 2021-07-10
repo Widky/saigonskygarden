@@ -527,6 +527,7 @@ ul {
 
 .footer a {
     color: #464646;
+    font-size: 12px;
 }
 
 .footer .footer-main {
@@ -536,7 +537,7 @@ ul {
 }
 
 .footer .footer-main-column1 .fmc1-title {
-    font: normal 25px 'Buenard Regular', 'sans-serif';
+    font: normal 20px 'Buenard Regular', 'sans-serif';
     line-height: 37px;
     color: #464646;
 }
@@ -548,7 +549,7 @@ ul {
 }
 
 .footer .footer-main-column1 p {
-    padding-top: 5px;
+   padding-top: 23px;
 }
 
 .footer .fmc1-social {
@@ -575,7 +576,7 @@ ul {
 }
 
 .footer .footer-main-column .fm-title {
-    font: normal bold 16px 'Yu Gothic Bold', 'sans-serif';
+    font: normal bold 13px 'Yu Gothic Bold', 'sans-serif';
     line-height: 37px;
     color: #333333;
 }
