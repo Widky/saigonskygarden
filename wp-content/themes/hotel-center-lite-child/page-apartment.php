@@ -379,7 +379,15 @@ if( $my_posts ) :
                         <div class="item">
                             <div class="panel panel-default">
                                 <div class="panel-thumbnail">
-                                    <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html" title="<?php echo $v->post_title; ?>"
+                                    <?php 
+                                        $getCat = get_the_terms($v->ID,'apartment');
+                                        $slugCat = '';
+                                        foreach($getCat as $kCat=>$vCat){
+                                            $slugCat =  $vCat->slug;
+                                            break;
+                                        }
+                                    ?>
+                                    <a href="<?php echo '/apartment/'.$slugCat.'.html';?>"
                                         class="thumb">
                                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
                                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
@@ -388,8 +396,6 @@ if( $my_posts ) :
                                         <?php endif; ?>
                                         <div class="apd-cat">
                                             <?php 
-                                            $getCat = get_the_terms($v->ID,'apartment');
-                                            // var_dump($getCat);
                                             foreach($getCat as $kCat=>$vCat){
                                                 echo $vCat->name;
                                                 break;
