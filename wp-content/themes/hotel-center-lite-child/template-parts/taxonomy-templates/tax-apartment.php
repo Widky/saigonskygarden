@@ -232,13 +232,13 @@ if( $my_posts ) :
             </div>
             <div class="apd-tax-header">
                 <div class="row">
-                    <div class="col-lg-6 col-md-7 col-12">
+                    <div class="col-lg-7 col-md-7 col-12">
                         <div class="apd-tax-header-content">
                             <h3 class="post-title"><?php echo $my_posts[0]->post_title; ?></h3>
                             <pre><?php echo $my_posts[0]->post_excerpt; ?></pre>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-5 col-12">
+                    <div class="col-lg-5 col-md-5 col-12">
                         <div class="tax-btn-contact">
                             <a href="<?php echo home_url($strLinkContact . '.html'); ?>"><?php echo $strTextContact; ?></a>
                         </div>
