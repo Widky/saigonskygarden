@@ -90,6 +90,7 @@ function add_theme_scripts(){
       wp_enqueue_script('event-script',  get_stylesheet_directory_uri() . '/assets/js/script.js',array(),false, false);
       wp_enqueue_script('slick',  get_stylesheet_directory_uri() . '/inc/libs/slick/slick.js',array(),false, false);
     }
+    wp_enqueue_script('cookie',  get_stylesheet_directory_uri() . '/assets/js/jquery.cookie.js',array(),false, false);
 
 }
 add_action('wp_enqueue_scripts','add_theme_scripts');

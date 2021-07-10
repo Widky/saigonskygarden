@@ -944,6 +944,14 @@ ul {
     padding: 0px 10px;
     background: #2398A9;
 }
+#navbar-nav-header:not(.nav-en) li, #lbb-lang-lists li a, #lbb-lang-lists li ul a, .header .lbb-wrap .lbb-book .lbbb-btn {
+    font-size: 17px !important;
+}
+
+#navbar-nav-header li, #lbb-lang-lists li a, #lbb-lang-lists li ul a, .header .lbb-wrap .lbb-book .lbbb-btn {
+    font-size: 13px !important;
+}
+
 
 
 /* responsive */
@@ -1014,9 +1022,9 @@ ul {
     #navbar-nav-header li,
     #lbb-lang-lists li a,
     #lbb-lang-lists li ul a,
-    .header .lbb-wrap .lbb-book .lbbb-btn {
+    /*.header .lbb-wrap .lbb-book .lbbb-btn {
         font-size: 14px !important;
-    }
+    }*/
     .header .lbb-wrap .lbb-lang {
         width: auto;
     }
