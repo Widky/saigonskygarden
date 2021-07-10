@@ -9,9 +9,8 @@
 }
 
 .attractions-about .atitle {
-    font: normal bold 40px 'Buenard Bold', 'sans-serif';
+    font: normal bold 30px 'Buenard Bold', 'sans-serif';
     color: #2398A9;
-    line-height: 60px;
 }
 
 .attractions-about .ades {
@@ -34,9 +33,8 @@
 }
 
 .attractions-item .aiw-img img {
-    max-width: 480px;
     width: 100%;
-    height: 514px;
+    height: 100%;
     display: block;
 }
 
@@ -52,17 +50,20 @@
 }
 
 .attractions-item .aiw-body {
-    min-height: 380px;
+    height: 420px;
     border: 1px solid #B9B9B9;
     margin-top: 6px;
     padding: 40px 42px;
 }
 
 .attractions-item .aiw-title {
-    font: normal bold 24px 'Yu Gothic', 'sans-serif';
+    font: normal bold 18px 'Yu Gothic', 'sans-serif';
     color: #333333;
     line-height: 30px;
     margin-bottom: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .attractions-item .aiw-line {

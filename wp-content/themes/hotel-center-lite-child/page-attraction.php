@@ -46,7 +46,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             <div class="col-lg-5 col-md-12">
                 <div class="abody">
                     <h3 class="atitle"><?php echo $my_posts[0]->post_title; ?></h3>
-                    <p class="ades"><?php echo $my_posts[0]->post_excerpt; ?></h3>
+                    <p class="ades"><?php // echo $my_posts[0]->post_excerpt; ?></h3>
                     </p>
                     <?php echo wpautop($my_posts[0]->post_content);  ?>
                 </div>
