@@ -233,7 +233,7 @@ if( $my_posts ) :
                             <pre><?php echo $my_posts[0]->post_excerpt; ?></pre>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-5 col-12">
+                    <div class="col-lg-5 col-md-5 col-12">
                         <div class="tax-btn-contact">
                             <a href="<?php echo home_url($strLinkContact . '.html'); ?>"><?php echo $strTextContact; ?></a>
                         </div>
