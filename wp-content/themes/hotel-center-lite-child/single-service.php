@@ -124,10 +124,10 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <?php $basicInformation = get_field('basic_information', get_the_ID()); ?>
                 <?php if($basicInformation != NULL) :?>
                 <div class="sprow-utilities sm-basic row">
-                    <div class="sprow-title col-md-4">
+                    <div class="sprow-title col-md-3">
                         <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
                     </div>
-                    <div class="sprow-basic-utilities col-md-8">
+                    <div class="sprow-basic-utilities col-md-9">
                         <div class="row">
                             <?php if($basicInformation['location'] != ''){ ?>
                             <div class="sprow-item col-md-6">
@@ -196,10 +196,13 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                                     <div class="sw-cat text-center">
                                                         <?php 
                                                             $getCat = get_the_terms($v->ID,'services');
-                                                            foreach($getCat as $kCat=>$vCat){
-                                                                echo $vCat->name;
-                                                                break;
+                                                            if(!empty($getCat)){
+                                                                    foreach($getCat as $kCat=>$vCat){
+                                                                    echo $vCat->name;
+                                                                    break;
+                                                                }
                                                             }
+                                                            
                                                         ?>
                                                     </div>
                                                 </div>

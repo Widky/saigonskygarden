@@ -1,3 +1,6 @@
+.sm-img img{
+    width: 100%;
+}
 #pFacilities .sr-title {
     margin: 72px auto 16px;
 }
@@ -29,11 +32,15 @@
 }
 
 .site-maincontentarea-facilities .sm-header {
-    margin-top: 126px;
+   /* margin: 60px 0px;*/
+   margin-top: 60px;
+   margin: 40px 0px;
 }
 
 .site-maincontentarea-facilities .sm-header .post-title {
     display: inline-block;
+    width: calc(100% - 80px);
+    vertical-align: top;
 }
 
 .site-maincontentarea-facilities .line-left {
@@ -249,8 +256,26 @@
 
 /* size E SM - < 575.98px */
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 600px) {
     .carousel-facilities-about .owl-carousel .fiw-img img{
       height: 133px;
+    }
+    .owl-carousel .owl-nav button.owl-next{
+        height: 40px;
+        width: 40px;
+        right: 55px;
+        top: 35%;
+    }
+    .owl-carousel .owl-nav button.owl-next span{
+        margin-left: 4px;
+    }
+    .owl-carousel .owl-nav button.owl-prev{
+        height: 40px;
+        width: 40px;
+        left: 55px;
+        top: 35%;
+    }
+    .owl-carousel .owl-nav button.owl-prev span{
+        left: 16px;
     }
 }
