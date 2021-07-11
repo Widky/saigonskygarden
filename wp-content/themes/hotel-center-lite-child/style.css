@@ -537,19 +537,20 @@ ul {
 }
 
 .footer .footer-main-column1 .fmc1-title {
-    font: normal 16px 'Yu Gothic Medium', 'sans-serif';
+    font: normal 16px 'Yu Gothic Medium', 'sans-serif' !important;;
     line-height: 37px;
     color: #464646;
+    margin-top: 4px;
 }
 
 .footer .footer-main-column1 p {
-    font: normal 12px 'Yu Gothic Medium', 'sans-serif';
+    font: normal 12px 'Yu Gothic Medium', 'sans-serif' !important;;
     line-height: 25px;
     color: #464646;
 }
 
 .footer .footer-main-column1 p {
-   padding-top: 23px;
+   padding-top: 28px;
 }
 
 .footer .fmc1-social {
@@ -586,7 +587,7 @@ ul {
 }
 
 .footer .footer-main-column .fm-items>.fm-item a {
-    font: normal 14px 'Yu Gothic Medium', 'sans-serif';
+    font: normal 14px 'Yu Gothic Medium', 'sans-serif' !important;;
     line-height: 28px;
     color: #333333;
     text-decoration: none;
@@ -600,7 +601,7 @@ ul {
 .footer .footer-main-column4,
 .footer .footer-main-column4 pre,
 .footer .footer-main-column4 p {
-    font: normal 12px 'Yu Gothic Medium', 'sans-serif';
+    font: normal 12px 'Yu Gothic Medium', 'sans-serif' !important;
     line-height: 25px;
     color: #464646;
 }
@@ -635,7 +636,7 @@ ul {
 }
 
 .footer .footer-main-column5 p {
-    font: normal 12px 'Yu Gothic Medium', 'sans-serif';
+    font: normal 12px 'Yu Gothic Medium', 'sans-serif' !important;
     line-height: 25px;
     color: #464646;
 }
@@ -657,7 +658,7 @@ ul {
 }
 
 .footer .fm-mail>span input {
-    font: normal 12px 'Yu Gothic Medium', 'sans-serif';
+    font: normal 12px 'Yu Gothic Medium', 'sans-serif' !important;
     line-height: 25px;
     color: #8E8E8E;
     border: 1px solid #ACB4B4;
