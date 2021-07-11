@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="fw-btn-direct btn-direct">
-            <a href="<?php echo home_url('category/feature.html'); ?>" target="_blank" rel="noopener noreferrer">もっと見る</a>
+            <a href="<?php echo home_url('feature.html'); ?>" rel="noopener noreferrer">もっと見る</a>
         </div>
     </div>
 </div>
