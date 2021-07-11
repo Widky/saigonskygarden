@@ -13,19 +13,13 @@
         <div class="facilities-items row">
             <?php 
             $args = array(
+                'meta_key'      =>      '_is_ns_featured_post',
+                'meta_value'    =>      'yes',
                 'post_type'     =>      'facility',
                 'orderby'       =>      'date',
                 'order'         =>      'DESC',
                 'post_status'   =>      'publish',
-                'posts_per_page'=>      7,
-                'tax_query'         =>  array(
-                    array(
-                        'taxonomy'      =>  'facilities',
-                        'field'         =>  'slug',
-                        'terms'         =>  $strCatFacilities,
-                        'operator'      =>  'IN'
-                    ),
-                )
+                'posts_per_page'=>      7
             );
             $query = new WP_Query($args);
             $myPosts = $query->get_posts();

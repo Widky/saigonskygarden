@@ -27,8 +27,142 @@ $event_cats = get_terms( array(
 
 ?>
 <style type="text/css">
-    
-  </style>
+.carousel-facilities-about .owl-carousel .fiw-img img{
+    height: 534px;
+}
+
+.carousel-facilities-about .owl-carousel .owl-item{
+    opacity: 0.5;
+}
+
+.carousel-facilities-about .owl-carousel .active{
+    opacity: 1 !important;
+}
+
+.container-facilities-about{
+    padding-left: 0px;
+    padding-right: 0px
+}
+
+.container-facilities-about .wrap-facilities-about{
+   width: 100%;
+   position: relative;
+}
+
+.container-facilities-about .wrap-facilities-about .mask-facilities-about{
+    width: 100%;
+    height: 930px;
+    position: absolute;
+    z-index: -1;
+    padding: 0px 60px;
+}
+
+.container-facilities-about .wrap-facilities-about .mask-facilities-about .content-facilities-about{
+    background: #F6F5F1;
+    position: relative;
+    height: 100%;
+}
+
+
+.owl-carousel .owl-nav button.owl-prev{
+    position: absolute;
+    top: 45%;
+    left: 195px;
+    background: #2c2d2d;
+    height: 60px;
+    width: 60px;
+    opacity: 0.5;
+}
+
+.owl-carousel .owl-nav button.owl-next{
+    position: absolute;
+    top: 45%;
+    right: 195px;
+    background: #2c2d2d !important;
+    height: 60px;
+    width: 60px;
+    opacity: 0.5;
+}
+
+.owl-carousel .owl-nav button.owl-prev:focus, .owl-carousel .owl-nav button.owl-next:focus{
+    outline: none;
+}
+
+.owl-carousel .owl-nav button.owl-prev:hover, .owl-carousel .owl-nav button.owl-next:hover{
+   background: #869791 !important;
+}
+
+
+
+.owl-carousel .owl-nav button.owl-next span, .owl-carousel .owl-nav button.owl-prev span {
+    background: none;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+    height: 20px;
+    width: 20px;
+    display: block;
+}
+
+.owl-carousel .owl-nav button.owl-next span {
+    -webkit-transform: rotate( -45deg);
+    -ms-transform: rotate( -45deg);
+    transform: rotate( -45deg);
+    margin-left: 15px;
+}
+
+.owl-carousel .owl-nav button.owl-prev span {
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate( 135deg);
+    transform: rotate(135deg);
+    margin-left: 25px;
+}
+
+/* size SM - < 767.98px */
+
+@media screen and (max-width: 767.98px) {
+
+    .carousel-facilities-about .owl-carousel .fiw-img img{
+      height: 174px;
+    }
+
+    .container-facilities-about .wrap-facilities-about .mask-facilities-about{
+        width: 100%;
+        height: 450px;
+        position: absolute;
+        z-index: -1;
+        padding: 0px 20px;
+    }
+   
+}
+
+
+/* size E SM - < 599px */
+
+@media screen and (max-width: 599px) {
+    .owl-carousel .owl-nav button.owl-next{
+        right: 55px;
+        top: 35%;
+        height: 35px;
+        width: 35px;
+    }
+    .owl-carousel .owl-nav button.owl-prev span{
+        margin-left: 13px;
+    }
+    .owl-carousel .owl-nav button.owl-prev{
+        left: 55px;
+        top: 35%;
+        height: 35px;
+        width: 35px;
+    }
+    .owl-carousel .owl-nav button.owl-next span{
+        margin-left: 4px;
+    }
+
+    .carousel-facilities-about .owl-carousel .fiw-img img{
+      height: 133px;
+    }
+}
+</style>
 
 <div class="container-fluid">
     <div class="row single-event">
@@ -150,7 +284,51 @@ $event_cats = get_terms( array(
         </div>
     </div>
 
-   <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-event-facilities.php'); ?>
+    <div class="block-carousel-facilities-about">
+        <div class="container-fluid container-facilities-about">
+            <div class="wrap-facilities-about">
+                <div class="mask-facilities-about">
+                    <div class="content-facilities-about"></div>
+                </div>    
+                <h2 class="cl-title text-center">
+                    <span class="cl-main-title"><?php echo _e('FACILITIES','hotel-center-lite-child') ?></span>
+                    <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
+                </h2>
+                
+                <div class="carousel-facilities-about">
+                    <div class="carousel-facilities-about-wrap">
+                        <div class="owl-carousel owl-theme">
+                                <?php 
+                            $args = array(
+                                'post_type'     =>      'facility',
+                                'orderby'       =>      'date',
+                                'order'         =>      'DESC',
+                                'post_status'   =>      'publish',
+                            );
+                            $query = new WP_Query($args);
+                            $myPosts = $query->get_posts();
+                            $i = 0;
+                            // echo "<pre>";print_r($myPosts);
+                            foreach($myPosts as $k=>$v) :
+                                if (has_post_thumbnail( $v->ID ) ): ?>
+                                <div class="item <?php if($i == 0) echo 'active'; ?>">
+                                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
+                                        <div class="fiw-img">
+                                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                            <img src="<?php echo $image[0]; ?>"
+                                                alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                        </div>
+                                    </a>
+                                </div>
+                                <?php $i++; ?>
+                                <?php endif; ?>
+                                <?php endforeach; ?>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php //get_sidebar();?>
     
