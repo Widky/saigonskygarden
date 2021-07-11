@@ -57,9 +57,9 @@ if( $my_posts ) :
                 <div class="csti-img">
                     <div class="apd-info-img">
                         <?php 
-                            $basicInformation = get_field('basic_infomation', $my_posts[0]->ID);
+                            // $basicInformation = get_field('basic_infomation', $my_posts[0]->ID);
                         ?>
-                        <h3 class="apdii-content"><?php echo $basicInformation['bed_type']; ?>(<?php echo $basicInformation['maximum_number_of_people_in_a_room']; ?>)</h3>
+                        <h3 class="apdii-content"><?php echo $term_name; ?></h3>
                     </div>
                     <?php
                         $sliderCat = get_field('slide_thumbnail', $my_posts[0]->ID);
@@ -344,7 +344,7 @@ if( $my_posts ) :
              <div class="row apd-tax-detail apd-basic">
                 <div class="apd-button col-12 text-md-right text-center p-md-0">
                     <a href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
-                    <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期ご契約 お問合せ ', 'hotel-center-lite-child'); ?></a>
+                    <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期ご契約', 'hotel-center-lite-child'); ?></a>
                 </div>
                 <div class="clear"></div>
             </div>            

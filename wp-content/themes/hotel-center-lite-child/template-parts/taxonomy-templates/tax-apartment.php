@@ -66,6 +66,9 @@ if( $my_posts ) :
             </div>
             <div class="apd-tax-slide">
                 <div class="csti-img">
+                    <div class="apd-info-img">
+                        <h3 class="apdii-content"><?php echo $term_name; ?></h3>
+                    </div>
                     <?php
                         $sliderCat = get_field('slide_thumbnail', $my_posts[0]->ID);
                         $lengthArray = count($sliderCat);
