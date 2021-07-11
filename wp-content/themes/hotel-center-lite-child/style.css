@@ -537,14 +537,14 @@ ul {
 }
 
 .footer .footer-main-column1 .fmc1-title {
-    font: normal 20px 'Buenard Regular', 'sans-serif';
+    font: normal 16px 'Yu Gothic Medium', 'sans-serif';
     line-height: 37px;
     color: #464646;
 }
 
 .footer .footer-main-column1 p {
-    font: normal 15px 'Yu Gothic', 'sans-serif';
-    line-height: 30px;
+    font: normal 12px 'Yu Gothic Medium', 'sans-serif';
+    line-height: 25px;
     color: #464646;
 }
 
@@ -600,7 +600,7 @@ ul {
 .footer .footer-main-column4,
 .footer .footer-main-column4 pre,
 .footer .footer-main-column4 p {
-    font: normal 14px 'Open Sans Regular', 'sans-serif';
+    font: normal 12px 'Yu Gothic Medium', 'sans-serif';
     line-height: 25px;
     color: #464646;
 }
@@ -635,7 +635,7 @@ ul {
 }
 
 .footer .footer-main-column5 p {
-    font: normal 14px 'Yu Gothic Medium', 'sans-serif';
+    font: normal 12px 'Yu Gothic Medium', 'sans-serif';
     line-height: 25px;
     color: #464646;
 }
@@ -657,8 +657,8 @@ ul {
 }
 
 .footer .fm-mail>span input {
-    font: normal 17px 'Yu Gothic Regular', 'sans-serif';
-    line-height: 27px;
+    font: normal 12px 'Yu Gothic Medium', 'sans-serif';
+    line-height: 25px;
     color: #8E8E8E;
     border: 1px solid #ACB4B4;
     padding: 0;
@@ -726,6 +726,10 @@ ul {
 
 .footer .footer-absolute-content a:hover {
     color: #2398A9;
+}
+
+.footer-absolute-wrap a{
+    font-size: unset;
 }
 
 
