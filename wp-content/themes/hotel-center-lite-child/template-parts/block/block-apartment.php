@@ -11,7 +11,7 @@
                     <div class="col-12 col-xl-10 p-0 cat-studio">
                         <?php 
                         $args = array(
-                            'post_type'         =>  'apartments',
+                            'post_type'         =>  'apartment',
                             'orderby'           =>  'date',
                             //'order'             =>  'DESC',
                             'post_status'       =>  'publish',
@@ -110,7 +110,7 @@
             </div>
             <?php 
             $args_bed_one = array(
-                'post_type'         =>  'apartments',
+                'post_type'         =>  'apartment',
                 'orderby'           =>  'date',
                 //'order'             =>  'DESC',
                 'post_status'       =>  'publish',
