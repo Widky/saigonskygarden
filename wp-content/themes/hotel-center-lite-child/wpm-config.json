@@ -3,6 +3,7 @@
         "post": {},
         "page": {},
         "apartments": {},
+        "apartment": {},
         "facility": {},
         "service": {},
         "event": {},
@@ -37,7 +38,10 @@
         "contact_url2": {},
         "day_of_the_event": {},
         "video_name": {},
-        "video_description": {}
+        "video_description": {},
+        "apartment_subtitle":{},
+        "sub_title_in_detail_page":{},
+        "sub_title_for_decription":{}
     },
     "taxonomies": {
         "apartment": {},

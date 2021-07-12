@@ -89,6 +89,12 @@
     color: #EC1F27 !important;
     transition: all 0.3s !important;
 }
+.other-events #multi-carousel-event .owl-prev{
+    background: none !important;
+}
+.other-events #multi-carousel-event .owl-next{
+    background:none !important;
+}
 section .cl-title .cl-sub-title{
     margin: 10px 0px 30px;
 }

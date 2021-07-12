@@ -135,16 +135,16 @@ function add_register_post_type(){
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'apartments' ),
+    'rewrite'            => array( 'slug' => 'apartment' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => 20,
     'menu_icon'          => 'dashicons-admin-multisite',
     'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','custom-fields' ),
-    'taxonomies'         => array(  'apartment' )
+    //'taxonomies'         => array(  'apartment' )
   );
-  register_post_type( 'apartments', $argsApartment );
+  register_post_type( 'apartment', $argsApartment );
 
   // Facilities
   $labelFacilities = array(
@@ -382,7 +382,7 @@ function add_register_taxonomies(){
         'rewrite'           => array( 'slug' => 'utilities-category' ),
     );
 
-    register_taxonomy( 'utilities-category', array( 'apartments' ), $args );
+    register_taxonomy( 'utilities-category', array( 'apartment' ), $args );
 
     unset($labels);
     unset($args);
@@ -706,7 +706,7 @@ function custom_post_permalink ( $post_link ) {
 // add .html for taxonomy
 add_action( 'registered_taxonomy', 'taxonomy_html', 10, 3 );
 function taxonomy_html( $taxonomy, $object_type, $args ) {
-  $array_tax = array('category','apartment','facilities','attractions','services','events');
+  $array_tax = array('category','apartment','facilities','attractions','services','event-category');
   foreach($array_tax as $at){
     if($taxonomy === $at)
       add_permastruct( $taxonomy, "{$args['rewrite']['slug']}/%$taxonomy%.html", $args['rewrite'] );

@@ -2030,6 +2030,10 @@ section .cl-sub-title,
 }
 
 @media screen and (max-width: 424.98px) {
+    .bg-facilities-bottom{
+        right: 0px;
+        height: 163px;
+    }
     .section-home-about .sha-wrap .sha-column-right img,
     .section-home-about .sha-wrap .sha-column-right .sha-overlay-image {
         height: 295px;
