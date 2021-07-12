@@ -28,10 +28,12 @@
                                         <div class="panel-thumbnail">
                                             <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>"
                                                 class="thumb">
-
-                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                                                <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
+                                                <div class="h_event_img">
+                                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                                    <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
                                                     alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
+                                                </div>    
+                                                
 
                                                 <?php $getCat = get_the_terms($v->ID,'event-category');
                                                     if($getCat != false){ ?>
@@ -48,7 +50,24 @@
 
                                                 <div class="evc-content">
                                                     <h3 class="evc-title"><?php echo $v->post_title; ?></h3>
-                                                    <?php if($v->post_excerpt != '') echo '<pre class="evc-excerpt">'.$v->post_excerpt.'</pre>'; ?>
+                                                    <!-- <?php //if($v->post_excerpt != '') echo '<pre class="evc-excerpt">'.$v->post_excerpt.'</pre>'; ?> -->
+                                                    <div class="evc-excerpt">
+                                                        <?php
+                                                                $locale = get_locale();
+                                                                $event_len = mb_strlen($v->post_excerpt,'UTF-8');
+                                                                if($locale == 'ja'){
+                                                                    echo mb_substr($v->post_excerpt, 0, 25,'UTF-8');
+                                                                        if($event_len > 25 ){
+                                                                            echo '...';
+                                                                        }
+                                                                }else{
+                                                                    echo mb_substr($v->post_excerpt, 0, 50,'UTF-8');
+                                                                        if($event_len > 50 ){
+                                                                            echo '...';
+                                                                        }    
+                                                                } 
+                                                            ?>
+                                                    </div>
                                                 </div>
                                             </a>
                                         </div>

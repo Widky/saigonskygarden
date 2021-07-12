@@ -9,16 +9,20 @@ jQuery(document).ready(function() {
                 items: 1
             },
             768: {
-                items: 3,
+                items: 2,
                 margin: 28,
             },
-            1440: {
+            1024: {
+                items: 2,
+                margin: 31,
+            },
+            1300: {
                 items: 3,
-                margin: 72.7
+                margin: 31
             },
             1920: {
                 items: 3,
-                margin: 72.7
+                margin: 31
             }
 
         }
