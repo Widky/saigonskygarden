@@ -93,7 +93,7 @@ $the_cat_bed_three = 'three-bed-rooms';
                                 <div class="csti-content post-content">
                                     <div class="csti-content-wrap">
                                         <a
-                                            href="<?php echo home_url($my_posts[0]->post_type . '/' .$my_posts[0]->post_name .'.html'); ?>">
+                                            href="<?php echo '/apartment/'.$the_cat.'.html';?>">
                                             <h3 class="post-title"><?php echo $my_posts[0]->post_title; ?></h3>
                                             <pre class="post-excerpt"><?php echo $my_posts[0]->post_excerpt; ?></pre>
                                         </a>
@@ -189,7 +189,7 @@ $the_cat_bed_three = 'three-bed-rooms';
                                 </div>
                                 <div class="cb-content post-content">
                                     <div class="cb-content-wrap">
-                                        <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
+                                        <a href="<?php echo '/apartment/'.$the_cat_bed_one.'.html';?>">
                                             <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                             <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                         </a>
@@ -286,7 +286,7 @@ $the_cat_bed_three = 'three-bed-rooms';
                             </div>
                             <div class="cb-content post-content">
                                 <div class="cb-content-wrap">
-                                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
+                                    <a href="<?php echo '/apartment/'.$the_cat_bed_two.'.html';?>">
                                         <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                         <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                     </a>
@@ -383,7 +383,7 @@ $the_cat_bed_three = 'three-bed-rooms';
                                 </div>
                                 <div class="cb-content post-content">
                                     <div class="cb-content-wrap">
-                                        <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
+                                        <a href="<?php echo '/apartment/'.$the_cat_bed_three.'.html';?>">
                                             <h4 class="post-title"><?php echo $v->post_title; ?></h4>
                                             <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                         </a>
