@@ -101,6 +101,8 @@ if(! function_exists('hierarchical_breadcrumb')){
                             echo $spanAfter;
                         }elseif(is_tax()){
                             $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+                            // var_dump($term);exit;
+                            echo '<a href="' . home_url($term->taxonomy . '.html') . '">' . $term->taxonomy . '</a>' . $delimiter;
                             echo '<span class="breadcrumb_last">';
                                 echo $term->name;
                             echo $spanAfter;
@@ -110,7 +112,9 @@ if(! function_exists('hierarchical_breadcrumb')){
                             $thisCat = $cat_obj->term_id;
                             $thisCat = get_category($thisCat);
                             $parentCat = get_category($thisCat->parent);
-                            if($thisCat->parent != 0) echo get_category_parents($parentCat, TRUE, $delimiter);
+                            if($thisCat->parent != 0){
+                                echo get_category_parents($parentCat, TRUE, $delimiter);
+                            }
                             echo '<span class="breadcrumb_last">';
                                 single_cat_title();
                             echo $spanAfter;
