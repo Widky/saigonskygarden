@@ -26,7 +26,7 @@
     color: #333333;
 }
 #navbar-main-mobi li a:hover, #navbar-main-mobi li.current-menu-item a {
-    color: #2398A9;
+    color: #333333;
 }
 #navbar-main-mobi li {
     font: normal bold 16px 'Yu Gothic Bold', 'sans-serif';
@@ -46,13 +46,15 @@
 #navbar-main-mobi li ul li a,#navbar-main-mobi li ul a:hover, #navbar-main-mobi li.current-menu-item ul a{
 	background: none;
 	color: #FFFFFF;
+    font-size: 14px !important;
+    padding-left: 0px !important;
 }
 #navbar-main-mobi li ul{
 	background: #2398A9;
 	display: none;
 }
 
-#navbar-main-mobi li ul.sub-menu:nth-of-type(1){
+#navbar-main-mobi #menu-item-51 ul.sub-menu:nth-of-type(1), #navbar-main-mobi #menu-item-49 ul.sub-menu:nth-of-type(1){
     display: none !important;
 }
 

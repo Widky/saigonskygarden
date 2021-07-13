@@ -215,3 +215,32 @@ class Walker_Dynamic_Submenu extends Walker_Nav_Menu {
         $output .= "</li>\n";
     }
 }
+
+class Walker_Dynamic_Submenu2 extends Walker_Nav_Menu {
+    function end_el(&$output, $item, $depth=0, $args=array()) { // function for first level posts
+        if( 49 == $item->ID ){ // replace with your menu item ID
+            global $post;
+            $chapters = get_posts(array('post_type'=>'services','posts_per_page'=>-1, 'post_parent' => 0));
+            if(!empty($chapters)) {
+                $output .= '<ul class="sub-menu">';
+                foreach($chapters as $post): setup_postdata($post);
+                    $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';
+                    $output .= '</li>';
+                endforeach; wp_reset_postdata();
+                $output .= '</ul>';
+            }           
+        }else if( 51 == $item->ID ){ // replace with your menu item ID
+            global $post;
+            $chapters = get_posts(array('post_type'=>'facilities','posts_per_page'=>-1, 'post_parent' => 0));
+            if(!empty($chapters)) {
+                $output .= '<ul class="sub-menu">';
+                foreach($chapters as $post): setup_postdata($post);
+                    $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';                
+                    $output .= '</li>';
+                endforeach; wp_reset_postdata();
+                $output .= '</ul>';
+            }           
+        }        
+        $output .= "</li>\n";
+    }
+}
