@@ -610,7 +610,7 @@ section .cl-sub-title,
     width: calc( 100% - 80px);
     font-size: 18px;
     line-height: 25px;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
 .fw-items .fw-items-wrap .post-title .fw-title-number>span {
@@ -966,8 +966,8 @@ section .cl-sub-title,
 }
 
 #multi-carousel .owl-item .evc-title {
-    margin-top: 28.7px;
-    margin-bottom: 17px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 #multi-carousel .owl-item .evc-excerpt {
@@ -1145,12 +1145,16 @@ section .cl-sub-title,
 }
 
 .home-contact .hcw-right-content {
-    height: 100%;
-    width: 100%;
+    /*height: 100%;
+    width: 100%;*/
     align-items: center;
-    display: inline-grid;
-    margin: 0 45px;
+   /* display: inline-grid;*/
+    margin: 25px 45px;
 }
+
+ .home-contact .hcw-right-des{
+    margin: 15px 0px;
+ }
 
 
 /* quote */
@@ -1957,6 +1961,9 @@ section .cl-sub-title,
 /* size E SM - < 575.98px */
 
 @media screen and (max-width: 575.98px) {
+    .home-contact .hcw-right-content {
+        margin: 25px 10px;
+    }
     #multi-carousel .owl-item img {
         height: auto;
     }

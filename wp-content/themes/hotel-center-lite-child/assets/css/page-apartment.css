@@ -265,7 +265,7 @@
 
 .apd-basic .apd-basic-item {
     font: normal 18px 'Yu Gothic Regular', 'sans-serif';
-    line-height: 35px;
+    line-height: 25px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -285,7 +285,11 @@
 
 .apd-basic .apd-basic-value {
     color: #333333;
-    font-size: 15px;
+    font-size: 15px;  
+}
+
+.first-detail .apd-basic-value {
+    width: 50%;
 }
 
 .apd-basic .apd-basic-item .post-price {

@@ -137,8 +137,27 @@ if(! function_exists('hierarchical_breadcrumb')){
 
                                     echo '<a href="'.get_permalink($page_b_id ).'">' . get_the_title($page_b_id) . '</a>' . $delimiter;
                                     echo '<span class="breadcrumb_last">';
+                                }elseif($postType == 'attraction'){  
+                                    $page_b = get_page_by_path("attractions");
+                                    $page_b_id =  $page_b->ID; 
+
+                                    echo '<a href="'.get_permalink($page_b_id ).'">' . get_the_title($page_b_id) . '</a>' . $delimiter;
+                                    echo '<span class="breadcrumb_last">';
+                                    $terms = get_the_terms($post->ID,'attractions');
+                                    $term_name = $terms[0]->name;
+                                    $term_url = $terms[0]->taxonomy .'/' . $terms[0]->slug . '.html';
+                                    echo '<a href="' . home_url($term_url) . '">' . $term_name . '</a>' . $delimiter;
+                                    echo '<span class="breadcrumb_last">';
+     
                                 }else{
-                                    echo '<a href="' . home_url($postType . '.html') . '">' . $postType . '</a>' . $delimiter;
+                                    $loc = get_locale();
+                                    $namePostType = $postType;
+                                    if ($postType == 'services'){
+                                        $namePostType = $loc == 'ja' ? 'サービス' : 'SERVICES';
+                                    }elseif ($postType == 'facilities'){
+                                        $namePostType = $loc == 'ja' ? '施設' : 'SERVICES';
+                                    }
+                                    echo '<a href="' . home_url($postType . '.html') . '">' . $namePostType . '</a>' . $delimiter;
                                     echo '<span class="breadcrumb_last">';
                                 }
                                
@@ -165,5 +184,34 @@ if(! function_exists('hierarchical_breadcrumb')){
             endif;
             
         endif;
+    }
+}
+
+class Walker_Dynamic_Submenu extends Walker_Nav_Menu {
+    function end_el(&$output, $item, $depth=0, $args=array()) { // function for first level posts
+        if( 49 == $item->ID ){ // replace with your menu item ID
+            global $post;
+            $chapters = get_posts(array('post_type'=>'services','posts_per_page'=>-1, 'post_parent' => 0));
+            if(!empty($chapters)) {
+                $output .= '<ul class="sub-menu">';
+                foreach($chapters as $post): setup_postdata($post);
+                    $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';
+                    $output .= '</li>';
+                endforeach; wp_reset_postdata();
+                $output .= '</ul>';
+            }           
+        }else if( 51 == $item->ID ){ // replace with your menu item ID
+            global $post;
+            $chapters = get_posts(array('post_type'=>'facilities','posts_per_page'=>-1, 'post_parent' => 0));
+            if(!empty($chapters)) {
+                $output .= '<ul class="sub-menu">';
+                foreach($chapters as $post): setup_postdata($post);
+                    $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';                
+                    $output .= '</li>';
+                endforeach; wp_reset_postdata();
+                $output .= '</ul>';
+            }           
+        }        
+        $output .= "</li>\n";
     }
 }

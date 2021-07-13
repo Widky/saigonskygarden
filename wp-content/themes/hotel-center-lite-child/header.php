@@ -69,6 +69,8 @@
                                 'menu_class'        =>  'navbar-nav',
                                 'container'         =>  false,
                                 'theme_location'    =>  'primary',
+                                'fallback_cb'       => 'Walker_Dynamic_Submenu::fallback',
+                                'walker' => new Walker_Dynamic_Submenu(),
                             );
                         }else{
                             $args = array(
@@ -76,6 +78,8 @@
                                 'menu_class'        =>  'navbar-nav nav-en',
                                 'container'         =>  false,
                                 'theme_location'    =>  'primary',
+                                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                                'walker' => new Walker_Dynamic_Submenu(),
                             );
                         }
                         
@@ -93,7 +97,7 @@
                             <a href="tel:+<?php echo get_option('phone') ?>"><i class="fas fa-phone"></i></a>
                         </div>
                         <div class="lbb-book">
-                            <a href="<?php echo get_option('booking'); ?>">
+                            <a target="_blank" href="<?php echo get_option('booking'); ?>">
                                 <div class="lbbb-btn bg-color-2398A9"><span><?php echo $strBooking; ?></span></div>
                             </a>
                         </div>
