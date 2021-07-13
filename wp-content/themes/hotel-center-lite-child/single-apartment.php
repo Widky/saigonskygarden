@@ -393,7 +393,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     <div class="owl-carousel owl-theme">
                         <?php 
                         $args = array(
-                            'post_type'     =>      'apartments',
+                            'post_type'     =>      'apartment',
                             'orderby'       =>      'date',
                             //'order'         =>      'DESC',
                             'post_status'   =>      'publish',
