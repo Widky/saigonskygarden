@@ -34,7 +34,7 @@
                     foreach($my_posts as $k=>$v) : 
                     ?>
                 <div class="fw-items-wrap col-md-4 col-sm-12 col-12">
-                    <a href="<?php echo home_url( $v->post_name .'.html' ); ?>">
+                    <!-- <a href="<?php //echo home_url( $v->post_name .'.html' ); ?>"> -->
                         <div class="fw-img <?php if($i == 3) echo 'fw-set-orverlay'; ?>">
 
                             <?php 
@@ -60,13 +60,13 @@
                             </div>
                         </div>
 
-                    </a>
+                    <!-- </a> -->
                 </div>
                 <?php $i++; endforeach; ?>
             </div>
         </div>
         <div class="fw-btn-direct btn-direct">
-            <a href="<?php echo home_url('feature.html'); ?>" rel="noopener noreferrer">もっと見る</a>
+            <a href="<?php echo home_url('feature.html'); ?>" rel="noopener noreferrer"><?php echo __('View More','hotel-center-lite-child') ?></a>
         </div>
     </div>
 </div>
