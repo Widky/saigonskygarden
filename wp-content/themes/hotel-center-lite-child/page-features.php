@@ -34,19 +34,13 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             <div class="feature_content">
                 <?php      
                 $args = array(
-                    'post_type'         =>  'post',
+                    'post_type'         =>  'feature',
                     'orderby'           =>  'date',
                     'order'             =>  'DESC',
                     'post_status'       =>  'publish',
                     'posts_per_page'        =>  -1,
-                    'tax_query'         =>  array(
-                        array(
-                            'taxonomy'      =>  'category',
-                            'field'         =>  'slug',
-                            'terms'         =>  $strCatFeatures,
-                            'operator'      =>  'IN'
-                        ),
-                    )
+                    'meta_key' => '_is_ns_featured_post',
+                    'meta_value' => 'yes'                    
                 );
                 $query = new WP_Query($args);
                 $my_posts = $query->get_posts();

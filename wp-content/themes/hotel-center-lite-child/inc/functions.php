@@ -111,6 +111,41 @@ function custom_the_post_thumbnail_caption() {
 
 // Register post type
 function add_register_post_type(){
+  //feautured
+  $labelsFeature = array(
+    'name'                  => _x( 'Features', 'Features', 'hotel-center-lite-child' ),
+    'singular_name'         => _x( 'Feature', 'Feature', 'hotel-center-lite-child' ),
+    'menu_name'             => _x( 'Features', 'Features', 'hotel-center-lite-child' ),
+    'name_admin_bar'        => _x( 'Features', 'Features', 'hotel-center-lite-child' ),
+    'add_new'               => __( 'Add New', 'hotel-center-lite-child' ),
+    'add_new_item'          => __( 'Add New Feature', 'hotel-center-lite-child' ),
+    'new_item'              => __( 'New Feature', 'hotel-center-lite-child' ),
+    'edit_item'             => __( 'Edit Feature', 'hotel-center-lite-child' ),
+    'view_item'             => __( 'View Feature', 'hotel-center-lite-child' ),
+    'all_items'             => __( 'All Feature', 'hotel-center-lite-child' ),
+    'search_items'          => __( 'Search Feature', 'hotel-center-lite-child' ),
+    'parent_item_colon'     => __( 'Parent Feature:', 'hotel-center-lite-child' ),
+    'not_found'             => __( 'No Feature found.', 'hotel-center-lite-child' ),
+    'not_found_in_trash'    => __( 'No Feature found in Trash.', 'hotel-center-lite-child' )
+  );
+
+  $argsFeature = array(
+    'labels'             => $labelsFeature,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => array( 'slug' => 'feature' ),
+    'capability_type'    => 'post',
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => 20,
+    'menu_icon'          => 'dashicons-images-alt2',
+    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt','custom-fields' ),
+  );
+  register_post_type( 'feature', $argsFeature );
+  //apartment
   $labelsApartment = array(
     'name'                  => _x( 'Apartments', 'Apartments', 'hotel-center-lite-child' ),
     'singular_name'         => _x( 'Apartment', 'Apartment', 'hotel-center-lite-child' ),
@@ -664,7 +699,7 @@ function review_menu(){
   $title_1 = _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' );
   $title_2 = _x( 'Review Response', 'Review Response', 'hotel-center-lite-child' );
   $main_icon_url = get_template_directory_uri().'/images/privacy-policy-20.png';
-    add_menu_page(_x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), 'edit_pages', $slug_1, '','dashicons-palmtree',25 );
+    add_menu_page(_x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), 'edit_pages', $slug_1, '','dashicons-star-filled',25 );
     add_submenu_page($slug_1, $title_1, $title_1, 'manage_options', $slug_1 );
     add_submenu_page($slug_1, $title_1, $title_2, 'manage_options', $slug_2 );
 }

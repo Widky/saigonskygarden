@@ -8,19 +8,20 @@
         </h2>
         <?php 
             $args = array(
-                'post_type'         =>  'post',
+                'post_type'         =>  'feature',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
-                'posts_per_page'        =>  3,
-                'tax_query'         =>  array(
-                    array(
-                        'taxonomy'      =>  'category',
-                        'field'         =>  'slug',
-                        'terms'         =>  $the_cat,
-                        'operator'      =>  'IN'
-                    ),
-                )
+                'meta_key' => '_is_ns_featured_post',
+                'meta_value' => 'yes'
+                // 'tax_query'         =>  array(
+                //     array(
+                //         'taxonomy'      =>  'category',
+                //         'field'         =>  'slug',
+                //         'terms'         =>  $the_cat,
+                //         'operator'      =>  'IN'
+                //     ),
+                // )
             );
             $query = new WP_Query($args);
             $my_posts = $query->get_posts();
