@@ -123,7 +123,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             <div class="row">
                 <?php 
                 $args = array(
-                    'post_type'     =>      'service',
+                    'post_type'     =>      'services',
                     'orderby'       =>      'date',
                     'order'         =>      'DESC',
                     'post_status'   =>      'publish',
