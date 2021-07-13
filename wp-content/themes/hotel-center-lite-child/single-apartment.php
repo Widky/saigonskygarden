@@ -253,48 +253,6 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                             </div>
                                         </div>
                                         <?php }  ?>
-                                        <?php 
-                                        $priceDollar = get_post_meta(get_the_ID(),'price_dollar', true);
-                                        if($basicInformation){ ?>
-                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
-                                            <div class="apd-basic-text d-inline-block"><?php echo $strPriceApartment; ?></div>
-                                            <div class="apd-basic-value d-inline-block">
-                                                <div class="post-price">
-                                                    <?php 
-                                                    $currentConversionRateToVND = get_post_meta(get_the_ID(),'currency_conversion_rate_to_vnd', true);
-                                                    switch($currentLang)
-                                                    {
-                                                        case 'en_US':
-                                                            $currentConversionUnit = get_post_meta(get_the_ID(),'currency_conversion_unit_for_english', true);
-                                                            $leaseTerm = get_post_meta(get_the_ID(),'lease_term_for_english', true);
-                                                            break;
-                                                        default:
-                                                            $currentConversionUnit = get_post_meta(get_the_ID(),'currency_conversion_unit', true);
-                                                            $leaseTerm = get_post_meta(get_the_ID(),'lease_term', true);
-                                                            break;
-                                                    }
-                                                                    ?>
-                                                    <span class="pp-dollar">
-                                                        <?php echo '$'.number_format($priceDollar, 0, '.', ','); ?>
-                                                        <?php //echo '$'.$priceDollar; ?>
-                                                            
-                                                        </span>
-                                                    <span class="pp-vnd">
-                                                        <?php 
-                                                        $priceVND = get_post_meta(get_the_ID(),'price_vnd', true);
-                                                        if($priceVND != ''){
-                                                            echo '(<span class="pp-vnd-number">'.number_format($priceVND, 0, '.', ',') .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
-                                                        }else{
-                                                            $dolar = $priceDollar*$currentConversionRateToVND;
-                                                            $dolar = number_format($dolar, 0, '.', ',');
-                                                            echo '(<span class="pp-vnd-number">'.$dolar.'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
-                                                        }
-                                                        ?>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <?php }  ?>
                                         <?php if($basicInformation['bed_type'] != ''){ ?>
                                         <div class="apd-basic-item col-md-6 col-lg-4 col-12">
                                             <div class="apd-basic-text d-inline-block"><?php echo $strBedType; ?></div>
@@ -367,7 +325,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 
                 <div class="row apd-tax-detail apd-basic">
                     <div class="apd-button col-12 text-md-right text-center p-md-0">
-                        <a href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期契約・booking.com', 'hotel-center-lite-child'); ?></a>
+                        <a target="_blank" href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期契約・booking.com', 'hotel-center-lite-child'); ?></a>
                         <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期契約・ご相談', 'hotel-center-lite-child'); ?></a>
                     </div>
                     <div class="clear"></div>
@@ -424,31 +382,6 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                         <div class="apd-content post-content">
                                             <h3 class="apd-title"><?php echo $v->post_title; ?></h3>
                                             <div class="aprt_expert"><?php echo $v->post_excerpt; ?></div>
-                                            <div class="post-price">
-                                                <?php 
-                                                $priceDollar = get_post_meta($v->ID,'price_dollar', true);
-                                                $currentConversionRateToVND = get_post_meta($v->ID,'currency_conversion_rate_to_vnd', true);
-                                                $currentConversionUnit = get_post_meta($v->ID, $strCurrentConversionUnit, true);
-                                                $leaseTerm = get_post_meta($v->ID, $strLeaseTerm, true);
-                                                ?>
-                                                <span class="pp-dollar">
-                                                    <?php echo '$'.number_format($priceDollar, 0, '.', ','); ?>
-                                                </span>
-                                                <span class="pp-vnd">
-                                                    <?php 
-                                                    $priceVND = get_post_meta($v->ID,'price_vnd', true);
-
-
-                                                    if($priceVND != ''){
-                                                        echo '(<span class="pp-vnd-number">'.number_format($priceVND, 0, '.', ',') .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
-                                                    }else{
-                                                        $dolar = $priceDollar*$currentConversionRateToVND;
-                                                        $dolar = number_format($dolar, 0, '.', ',');
-                                                        echo '(<span class="pp-vnd-number">'.$dolar.'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
-                                                    }
-                                                    ?>
-                                                </span>
-                                        </div>
                                         </div>
                                     </a>
                                 </div>
