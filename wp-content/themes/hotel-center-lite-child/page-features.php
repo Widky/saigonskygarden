@@ -39,8 +39,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                     'order'             =>  'DESC',
                     'post_status'       =>  'publish',
                     'posts_per_page'        =>  -1,
-                    'meta_key' => '_is_ns_featured_post',
-                    'meta_value' => 'yes'                    
+                                      
                 );
                 $query = new WP_Query($args);
                 $my_posts = $query->get_posts();
