@@ -77,8 +77,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-home-contact.php'); ?>
+                </div>                
             </div>
         </section>
      </div>
