@@ -51,6 +51,11 @@
 	background: #2398A9;
 	display: none;
 }
+
+#navbar-main-mobi li ul.sub-menu:nth-of-type(1){
+    display: none !important;
+}
+
 #navbar-main-mobi li.menu-item-has-children .arrow{
 	position: relative;
 	width: 16px;

@@ -28,7 +28,8 @@
                     </div>
                     <div class="wrap-menu-mobi">
                         <?php
-                            $args = array('after'    => '<span class="arrow"></span>',);
+                            $args = array('after'    => '<span class="arrow"></span>',
+                                'walker' => new Walker_Dynamic_Submenu(),);
                             wp_nav_menu($args);
                         ?>
                     </div>
@@ -78,7 +79,7 @@
                                 'menu_class'        =>  'navbar-nav nav-en',
                                 'container'         =>  false,
                                 'theme_location'    =>  'primary',
-                                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                                'fallback_cb'       => 'Walker_Dynamic_Submenu::fallback',
                                 'walker' => new Walker_Dynamic_Submenu(),
                             );
                         }
