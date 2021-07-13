@@ -149,19 +149,19 @@ function add_register_post_type(){
   // Facilities
   $labelFacilities = array(
     'name'                  => _x( 'Facilities', 'Facilities', 'hotel-center-lite-child' ),
-    'singular_name'         => _x( 'Facilities', 'Facilities', 'hotel-center-lite-child' ),
+    'singular_name'         => _x( 'Facility', 'Facility', 'hotel-center-lite-child' ),
     'menu_name'             => _x( 'Facilities', 'Facilities', 'hotel-center-lite-child' ),
     'name_admin_bar'        => _x( 'Facilities', 'Facilities', 'hotel-center-lite-child' ),
     'add_new'               => __( 'Add New', 'hotel-center-lite-child' ),
-    'add_new_item'          => __( 'Add New Facilities', 'hotel-center-lite-child' ),
-    'new_item'              => __( 'New Facilities', 'hotel-center-lite-child' ),
-    'edit_item'             => __( 'Edit Facilities', 'hotel-center-lite-child' ),
-    'view_item'             => __( 'View Facilities', 'hotel-center-lite-child' ),
+    'add_new_item'          => __( 'Add New Facility', 'hotel-center-lite-child' ),
+    'new_item'              => __( 'New Facility', 'hotel-center-lite-child' ),
+    'edit_item'             => __( 'Edit Facility', 'hotel-center-lite-child' ),
+    'view_item'             => __( 'View Facility', 'hotel-center-lite-child' ),
     'all_items'             => __( 'All Facilities', 'hotel-center-lite-child' ),
     'search_items'          => __( 'Search Facilities', 'hotel-center-lite-child' ),
-    'parent_item_colon'     => __( 'Parent Facilities:', 'hotel-center-lite-child' ),
-    'not_found'             => __( 'No Facilities found.', 'hotel-center-lite-child' ),
-    'not_found_in_trash'    => __( 'No Facilities found in Trash.', 'hotel-center-lite-child' )
+    'parent_item_colon'     => __( 'Parent Facility:', 'hotel-center-lite-child' ),
+    'not_found'             => __( 'No Facility found.', 'hotel-center-lite-child' ),
+    'not_found_in_trash'    => __( 'No Facility found in Trash.', 'hotel-center-lite-child' )
   );
 
   $argsFacilities = array(
@@ -171,16 +171,15 @@ function add_register_post_type(){
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'facility' ),
+    'rewrite'            => array( 'slug' => 'facilities' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => 21,
     'menu_icon'          => 'dashicons-rss',
     'supports'           => array( 'title', 'editor','thumbnail', 'excerpt'),
-    'taxonomies'         => array(  'facilities' )
   );
-  register_post_type( 'facility', $argsFacilities );
+  register_post_type( 'facilities', $argsFacilities );
 
   // Service
   $labelsService = array(
@@ -193,8 +192,8 @@ function add_register_post_type(){
     'new_item'              => __( 'New Service', 'hotel-center-lite-child' ),
     'edit_item'             => __( 'Edit Service', 'hotel-center-lite-child' ),
     'view_item'             => __( 'View Service', 'hotel-center-lite-child' ),
-    'all_items'             => __( 'All Service', 'hotel-center-lite-child' ),
-    'search_items'          => __( 'Search Service', 'hotel-center-lite-child' ),
+    'all_items'             => __( 'All Services', 'hotel-center-lite-child' ),
+    'search_items'          => __( 'Search Services', 'hotel-center-lite-child' ),
     'parent_item_colon'     => __( 'Parent Service:', 'hotel-center-lite-child' ),
     'not_found'             => __( 'No Service found.', 'hotel-center-lite-child' ),
     'not_found_in_trash'    => __( 'No Service found in Trash.', 'hotel-center-lite-child' )
@@ -207,16 +206,15 @@ function add_register_post_type(){
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'service' ),
+    'rewrite'            => array( 'slug' => 'services' ),
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => 22,
     'menu_icon'          => 'dashicons-email-alt2',
-    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','custom-fields' ),
-    'taxonomies'         => array(  'services' )
+    'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt','custom-fields' ),
   );
-  register_post_type( 'service', $argsService );
+  register_post_type( 'services', $argsService );
 
    // Event
    $labelEvent = array(
@@ -387,36 +385,6 @@ function add_register_taxonomies(){
     unset($labels);
     unset($args);
 
-    // service
-    $labels = array(
-      'name'              => _x( 'Service Category', 'taxonomy general name', 'hotel-center-lite-child' ),
-      'singular_name'     => _x( 'Service Category', 'taxonomy singular name', 'hotel-center-lite-child' ),
-      'search_items'      => __( 'Search Genres', 'hotel-center-lite-child' ),
-      'all_items'         => __( 'All Service Category', 'hotel-center-lite-child' ),
-      'parent_item'       => __( 'Parent Service Category', 'hotel-center-lite-child' ),
-      'parent_item_colon' => __( 'Parent Service Category:', 'hotel-center-lite-child' ),
-      'edit_item'         => __( 'Edit Service Category', 'hotel-center-lite-child' ),
-      'update_item'       => __( 'Update Service Category', 'hotel-center-lite-child' ),
-      'add_new_item'      => __( 'Add New Service Category', 'hotel-center-lite-child' ),
-      'new_item_name'     => __( 'New Service Category Name', 'hotel-center-lite-child' ),
-      'menu_name'         => __( 'Service Category', 'hotel-center-lite-child' ),
-    );
-
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'services' ),
-        'sort'              => true
-    );
-
-    register_taxonomy( 'services', array( 'service' ), $args );
-
-    unset($labels);
-    unset($args);
-
     // Event
     $labels = array(
       'name'              => _x( 'Event Category', 'taxonomy general name', 'hotel-center-lite-child' ),
@@ -443,36 +411,6 @@ function add_register_taxonomies(){
     );
 
     register_taxonomy( 'event-category', array( 'event' ), $args );
-
-    // Facilities
-    unset($labels);
-    unset($args);
-
-    $labels = array(
-      'name'              => _x( 'Facilities Category', 'taxonomy general name', 'hotel-center-lite-child' ),
-      'singular_name'     => _x( 'Facilities Category', 'taxonomy singular name', 'hotel-center-lite-child' ),
-      'search_items'      => __( 'Search Genres', 'hotel-center-lite-child' ),
-      'all_items'         => __( 'All Facilities Category', 'hotel-center-lite-child' ),
-      'parent_item'       => __( 'Parent Facilities Category', 'hotel-center-lite-child' ),
-      'parent_item_colon' => __( 'Parent Facilities Category:', 'hotel-center-lite-child' ),
-      'edit_item'         => __( 'Edit Facilities Category', 'hotel-center-lite-child' ),
-      'update_item'       => __( 'Update Facilities Category', 'hotel-center-lite-child' ),
-      'add_new_item'      => __( 'Add New Facilities Category', 'hotel-center-lite-child' ),
-      'new_item_name'     => __( 'New Facilities Category Name', 'hotel-center-lite-child' ),
-      'menu_name'         => __( 'Facilities Category', 'hotel-center-lite-child' ),
-    );
-
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'facilities' ),
-        'sort'              => true
-    );
-
-    register_taxonomy( 'facilities', array( 'facility' ), $args );
 
     // Attractions
     unset($labels);
@@ -706,7 +644,7 @@ function custom_post_permalink ( $post_link ) {
 // add .html for taxonomy
 add_action( 'registered_taxonomy', 'taxonomy_html', 10, 3 );
 function taxonomy_html( $taxonomy, $object_type, $args ) {
-  $array_tax = array('category','apartment','facilities','attractions','services','events');
+  $array_tax = array('category','attractions','events');
   foreach($array_tax as $at){
     if($taxonomy === $at)
       add_permastruct( $taxonomy, "{$args['rewrite']['slug']}/%$taxonomy%.html", $args['rewrite'] );
@@ -758,3 +696,4 @@ add_action( 'reviews-category_add_form', function( $taxonomy )
 }
 </style><?php
 }, 10, 2 );
+

@@ -3,8 +3,8 @@
         "post": {},
         "page": {},
         "apartments": {},
-        "facility": {},
-        "service": {},
+        "facilities": {},
+        "services": {},
         "event": {},
         "attraction": {},
         "review": {},
@@ -37,13 +37,12 @@
         "contact_url2": {},
         "day_of_the_event": {},
         "video_name": {},
-        "video_description": {}
+        "video_description": {},
+        "short_notes": {}
     },
     "taxonomies": {
         "apartment": {},
         "utilities-category": {},
-        "facilities": {},
-        "services": {},
         "event-category": {},
         "attractions": {},
         "reviews-category": {}

@@ -13,19 +13,13 @@
         <div class="facilities-items row">
             <?php 
             $args = array(
-                'post_type'     =>      'facility',
+                'post_type'     =>      'facilities',
                 'orderby'       =>      'date',
                 'order'         =>      'DESC',
                 'post_status'   =>      'publish',
                 'posts_per_page'=>      7,
-                'tax_query'         =>  array(
-                    array(
-                        'taxonomy'      =>  'facilities',
-                        'field'         =>  'slug',
-                        'terms'         =>  $strCatFacilities,
-                        'operator'      =>  'IN'
-                    ),
-                )
+                'meta_key' => '_is_ns_featured_post',
+                'meta_value' => 'yes'
             );
             $query = new WP_Query($args);
             $myPosts = $query->get_posts();
@@ -50,7 +44,7 @@
                                 $imgOrverlay = $showHome['background_overlay_for_images'];
                                 if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).")'></div>"; ?>
                                 </div>
-                                <div class="mask-img"></div>
+                                <!-- <div class="mask-img"></div> -->
                                 <?php } ?>
                             
                             <div class="fiw-content">
@@ -62,7 +56,8 @@
                                 }
                                 ?>
                                 <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
-                                <?php if($v->post_excerpt != '') echo '<pre class="fiw-excerpt">'.$v->post_excerpt.'</pre>'; ?>
+                                <?php $short_notes = get_field('show_home', $v->ID); ?>
+                                <?php if($short_notes && $short_notes['short_notes'] != '') echo '<pre class="fiw-excerpt">'.$short_notes['short_notes'].'</pre>'; ?>
                             </div>
                         </a>
                     </div>
@@ -97,7 +92,8 @@
                                     }
                                     ?>
                                     <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
-                                    <?php if($v->post_excerpt != '') echo '<pre class="fiw-excerpt">'.$v->post_excerpt.'</pre>'; ?>
+                                    <?php $short_notes = get_field('show_home', $v->ID); ?>
+                                    <?php if($short_notes && $short_notes['short_notes'] != '') echo '<pre class="fiw-excerpt">'.$short_notes['short_notes'].'</pre>'; ?>
                                 </div>
                             </a>
                         </div>

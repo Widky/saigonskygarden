@@ -4,7 +4,6 @@ $pageTitle = 'page_title';
 
 
 $strCatFeatures = 'feature';
-$strCatFacilities = 'post-home';
 $strCurrentConversionUnit = 'currency_conversion_unit';
 $strLeaseTerm = 'lease_term';
 $strPageAboutDesFeature = 'description_feature_about';

@@ -121,27 +121,7 @@ if(! function_exists('hierarchical_breadcrumb')){
                                 $cat = get_the_category(); $cat = $cat[0];
                                 echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
                             }else{
-                                switch($postType){
-                                    case 'apartments':
-                                        $terms = get_the_terms($post->ID,'apartment');
-                                        break;
-                                    case 'facility':
-                                        $terms = get_the_terms($post->ID,'facilities');
-                                        break;
-                                    case 'service':
-                                        $terms = get_the_terms($post->ID,'services');
-                                        break;
-                                    case 'event':
-                                        $terms = get_the_terms($post->ID,'event-category');
-                                        break;
-                                    default:
-                                        $terms = get_the_terms($post->ID,'attractions');
-                                        break;
-                                }
-                                // var_dump($terms);
-                                $term_name = $terms[0]->name;
-                                $term_url = $terms[0]->taxonomy .'/' . $terms[0]->slug . '.html';
-                                echo '<a href="' . home_url($term_url) . '">' . $term_name . '</a>' . $delimiter;
+                                echo '<a href="' . home_url($postType . '.html') . '">' . $postType . '</a>' . $delimiter;
                                 echo '<span class="breadcrumb_last">';
                                     echo $post->post_title;
                                 echo $spanAfter;

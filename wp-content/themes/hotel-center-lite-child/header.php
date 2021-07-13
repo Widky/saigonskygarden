@@ -69,7 +69,6 @@
                                 'menu_class'        =>  'navbar-nav',
                                 'container'         =>  false,
                                 'theme_location'    =>  'primary',
-                                // 'depth'             =>  1
                             );
                         }else{
                             $args = array(
@@ -77,11 +76,11 @@
                                 'menu_class'        =>  'navbar-nav nav-en',
                                 'container'         =>  false,
                                 'theme_location'    =>  'primary',
-                                // 'depth'             =>  1
                             );
                         }
                         
                         wp_nav_menu($args);
+                       
                         ?>
                     </div>
                 </div>

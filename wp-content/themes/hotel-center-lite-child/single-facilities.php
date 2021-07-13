@@ -14,12 +14,20 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 ?>
 </style>
 <?php 
+$page_slug = get_post_type();
+
+$page_id = get_page_by_path($page_slug);
 
 $pageTitle = 'Facilities';
 
 $pageSubTitle = '施設';
 
-$imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-facilities.png';
+$imageUrlBreadcrumb = wp_get_attachment_image_src( get_post_thumbnail_id( $page_id ), $pageTitle );
+if($imageUrlBreadcrumb){
+    $imageUrlBreadcrumb = $imageUrlBreadcrumb[0];
+}else{
+    $imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-not-found/img-not-found-breadcrumb.png';
+}
 // Call function breadcrumb
 breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 ?>
@@ -38,21 +46,22 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
         <div class="wrap-facilities-about">
             <div class="mask-facilities-about">
                 <div class="content-facilities-about"></div>
-            </div>    
+            </div>
             <h2 class="cl-title text-center">
                 <span class="cl-main-title"><?php echo _e('OTHER FACILITIES','hotel-center-lite-child') ?></span>
                 <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
             </h2>
-            
+
             <div class="carousel-facilities-about">
                 <div class="carousel-facilities-about-wrap">
                     <div class="owl-carousel owl-theme">
-                            <?php 
+                        <?php 
                         $args = array(
-                            'post_type'     =>      'facility',
+                            'post_type'     =>      'facilities',
                             'orderby'       =>      'date',
                             'order'         =>      'DESC',
-                            'post_status'   =>      'publish',
+                            'post_status'   =>      'publish', 
+                            'post__not_in'  =>      array(get_the_ID())
                         );
                         $query = new WP_Query($args);
                         $myPosts = $query->get_posts();
@@ -60,19 +69,19 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         // echo "<pre>";print_r($myPosts);
                         foreach($myPosts as $k=>$v) :
                             if (has_post_thumbnail( $v->ID ) ): ?>
-                            <div class="item <?php if($i == 0) echo 'active'; ?>">
-                                <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
-                                    <div class="fiw-img">
-                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                                        <img src="<?php echo $image[0]; ?>"
-                                            alt="<?php custom_the_post_thumbnail_caption(); ?>">
-                                    </div>
-                                </a>
-                            </div>
-                            <?php $i++; ?>
-                            <?php endif; ?>
-                            <?php endforeach; ?>
-                    </div>                    
+                        <div class="item <?php if($i == 0) echo 'active'; ?>">
+                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
+                                <div class="fiw-img">
+                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                    <img src="<?php echo $image[0]; ?>"
+                                        alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                </div>
+                            </a>
+                        </div>
+                        <?php $i++; ?>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>

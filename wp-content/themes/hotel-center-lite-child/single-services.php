@@ -15,16 +15,22 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 ?>
 </style>
 <?php
-$terms = wp_get_object_terms( get_the_ID(), 'services');
-// var_dump($terms);exit;
-$term_name = $terms[0]->name;
-$term_des = $terms[0]->description;
+
+$page_slug = get_post_type();
+// var_dump($page_slug);exit;
+$page_id = get_page_by_path($page_slug);
 
 $pageTitle = 'Services';
 
 $pageSubTitle = 'サービス';
 
-$imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-breacrumb/bc-image-services.png';
+$imageUrlBreadcrumb = wp_get_attachment_image_src( get_post_thumbnail_id( $page_id ), $pageTitle );
+if($imageUrlBreadcrumb){
+    $imageUrlBreadcrumb = $imageUrlBreadcrumb[0];
+}else{
+    $imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-not-found/img-not-found-breadcrumb.png';
+}
+
 // Call function breadcrumb
 breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 ?>
@@ -44,7 +50,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <p class="sp-excerpt"><?php echo get_the_content(); ?></p>
             </div>
             <div class="sp-body">
-                <h3 class="sp-title"><?php echo $term_name; ?></h3>
+                <h3 class="sp-title"><?php echo get_field('short_notes',get_the_ID()); ?></h3>
                 <div class="sp-img">
                     <?php
                     $sliderCat = get_field('slide_thumbnail', get_the_ID());
@@ -157,7 +163,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
         <section class="single-service">
             <div class="single-service-wrap">
                 <h2 class="sw-title cl-title text-center">
-                    <span class="cl-main-title change-cl"><?php _e('他のサービス', 'hotel-center-lite-child') ?></span>
+                    <span
+                        class="cl-main-title change-cl"><?php _e('Other Services', 'hotel-center-lite-child') ?></span>
                     <span class="cl-sub-title"><?php _e('他のサービス', 'hotel-center-lite-child') ?></span>
                 </h2>
                 <div class="service-carousel">
@@ -166,11 +173,12 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             <div class="owl-carousel owl-theme">
                                 <?php 
                                 $args = array(
-                                    'post_type'     =>      'service',
+                                    'post_type'     =>      'services',
                                     'orderby'       =>      'date',
                                     'order'         =>      'DESC',
                                     'post_status'   =>      'publish',
-                                    'posts_per_page'=>      12
+                                    'posts_per_page'=>      -1,
+                                    'post__not_in'  =>      array(get_the_ID())
                                 );
                                 $query = new WP_Query($args);
                                 $myPosts = $query->get_posts();
@@ -180,7 +188,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                 <div class="item">
                                     <div class="panel panel-default">
                                         <div class="panel-thumbnail">
-                                            <a href="/<?php echo $v->post_type . '/' .$v->post_name ?>.html"
+                                            <a href="<?php echo home_url($v->post_type . '/' . $v->post_name .'.html'); ?>"
                                                 title="<?php echo $v->post_title; ?>" class="thumb">
 
                                                 <div class="sw-img">
@@ -194,16 +202,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 
                                                 <div class="sw-content post-content">
                                                     <div class="sw-cat text-center">
-                                                        <?php 
-                                                            $getCat = get_the_terms($v->ID,'services');
-                                                            if(!empty($getCat)){
-                                                                    foreach($getCat as $kCat=>$vCat){
-                                                                    echo $vCat->name;
-                                                                    break;
-                                                                }
-                                                            }
-                                                            
-                                                        ?>
+                                                        <?php echo $v->post_title; ?>
                                                     </div>
                                                 </div>
                                             </a>
