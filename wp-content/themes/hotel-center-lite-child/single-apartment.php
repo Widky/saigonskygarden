@@ -226,11 +226,6 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             <pre><?php echo get_the_excerpt(); ?></pre>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-5 col-12">
-                        <div class="tax-btn-contact">
-                            <a href="<?php echo home_url($strLinkContact . '.html'); ?>"><?php echo $strTextContact; ?></a>
-                        </div>
-                    </div>
                 </div>
             </div>
                 <?php 
@@ -372,8 +367,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 
                 <div class="row apd-tax-detail apd-basic">
                     <div class="apd-button col-12 text-md-right text-center p-md-0">
-                        <a href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
-                        <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期ご契約', 'hotel-center-lite-child'); ?></a>
+                        <a href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期契約・booking.com', 'hotel-center-lite-child'); ?></a>
+                        <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期契約・ご相談', 'hotel-center-lite-child'); ?></a>
                     </div>
                     <div class="clear"></div>
                 </div>

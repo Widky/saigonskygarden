@@ -31,7 +31,7 @@
                             $args = array('after'    => '<span class="arrow"></span>',);
                             wp_nav_menu($args);
                         ?>
-                    </div>                    
+                    </div>
                 </div>
                 <!-- <div id="navbar-main" class="navbar-main-collapse1">
                     <div class="navbar-main-collapse-wrap1">
@@ -88,6 +88,9 @@
                     <div class="lbb-wrap">
                         <div class="lbb-lang">
                             <?php the_list_lang(); ?>
+                        </div>
+                        <div class="lbb-call">
+                            <a href="tel:+<?php echo get_option('phone') ?>"><i class="fas fa-phone"></i></a>
                         </div>
                         <div class="lbb-book">
                             <a href="<?php echo get_option('booking'); ?>">

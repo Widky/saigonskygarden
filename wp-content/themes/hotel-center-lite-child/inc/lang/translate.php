@@ -36,8 +36,6 @@ switch($currentLang)
         // Apartment
         $strButtonShare = 'Share';
         
-        
-        $strTextContact = 'Contact Us';
         $strArea = 'Area:';
         $strCheckIn = 'Check-in:';
         $strCheckOut = 'Check-out:';
@@ -61,7 +59,6 @@ switch($currentLang)
         // Apartment
         
         $strButtonShare = 'シェア';
-        $strTextContact = 'お問い合わせ';
         $strArea = '面積:';
         $strCheckIn = 'チェックイン:';
         $strCheckOut = 'チェックアウト:';

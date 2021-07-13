@@ -15,14 +15,8 @@
         <div class="col-xl-6 col-lg-12">
             <div class="hcw-col hcw-right">
                 <div class="hcw-right-content">
-                    <h2 class="hcw-right-main-title"><?php _e('Call center', 'hotel-center-lite-child'); ?></h2>
-                    <h3 class="hcw-right-title"><?php _e('いつも親切な相談をお約束いたします', 'hotel-center-lite-child'); ?></h3>
-                    <div class="hcw-right-phone">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/home-contact/icon-phone.png"
-                            alt="icon-phone.png">
-                        <a href="tel:+<?php echo get_option('phone') ?>"><?php echo get_option('phone') ?></a>
-                    </div>
-                    <pre class="hcw-right-des"><i class="far fa-clock"></i> <?php _e('口リアルタイム：PM09時 退室時間: AM06時', 'hotel-center-lite-child'); ?></pre>
+                    <div class="hcw-right-des hcw-left-title"><i class="far fa-clock"></i> <?php _e('口リアルタイム：PM09時', 'hotel-center-lite-child'); ?></div>
+                    <div class="hcw-right-des hcw-left-title"><i class="far fa-clock"></i> <?php _e('退室時間: AM06時', 'hotel-center-lite-child'); ?></div>
                 </div>
             </div>
         </div>
