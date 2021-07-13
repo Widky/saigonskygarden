@@ -279,14 +279,20 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                                             break;
                                                     }
                                                                     ?>
-                                                    <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
+                                                    <span class="pp-dollar">
+                                                        <?php echo '$'.number_format($priceDollar, 0, '.', ','); ?>
+                                                        <?php //echo '$'.$priceDollar; ?>
+                                                            
+                                                        </span>
                                                     <span class="pp-vnd">
                                                         <?php 
                                                         $priceVND = get_post_meta(get_the_ID(),'price_vnd', true);
                                                         if($priceVND != ''){
-                                                            echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
+                                                            echo '(<span class="pp-vnd-number">'.number_format($priceVND, 0, '.', ',') .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
                                                         }else{
-                                                            echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
+                                                            $dolar = $priceDollar*$currentConversionRateToVND;
+                                                            $dolar = number_format($dolar, 0, '.', ',');
+                                                            echo '(<span class="pp-vnd-number">'.$dolar.'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
                                                         }
                                                         ?>
                                                     </span>

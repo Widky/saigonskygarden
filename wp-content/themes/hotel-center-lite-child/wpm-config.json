@@ -40,6 +40,7 @@
         "video_name": {},
         "video_description": {},
         "apartment_subtitle":{},
+        "apartment_subtitle_number":{},
         "sub_title_in_detail_page":{},
         "sub_title_for_decription":{}
     },

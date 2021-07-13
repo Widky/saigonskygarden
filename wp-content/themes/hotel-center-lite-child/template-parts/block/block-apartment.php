@@ -141,7 +141,7 @@
                         <div class="cat-bed-items-wrap">
                             <div class="cat-main-title cat-bed-title">
                                 <h3 class="cat-title">
-                                    <?php echo "<span class='cat-title-number'>".$i."</span>"; echo get_field('apartment_subtitle', $v->ID);?>
+                                    <?php echo "<span class='cat-title-number'>".get_field('apartment_subtitle_number', $v->ID)."</span>"; echo get_field('apartment_subtitle', $v->ID);?>
                                 </h3>
                                 <div class="cat-line <?php echo 'mgl'; ?>"></div>
                             </div>
@@ -213,7 +213,9 @@
                 </div>
             </div>
 
-            <?php }else{?>
+            <?php }else{
+                 $number = get_field('apartment_subtitle_number', $v->ID)
+                ?>
                 <div class="cat-even position-relative cat_item">
                     <div class="cat-bed-items">
                        
@@ -221,7 +223,14 @@
                             <div class="cat-main-title cat-bed-title">
                                 <div class="cat-line mgr"></div>
                                 <h3 class="cat-title">
-                                    <?php echo "<span class='cat-title-number'>".$i."</span>"; _e('Bed Rooms', 'hotel-center-lite-child'); ?>
+                                    <?php
+                                    if(!empty($number)){?>
+                                        <span class='cat-title-number'>
+                                            <?php echo $number;?>
+                                        </span>    
+                                    <?php } 
+                                    ?>
+                                     <?php  echo get_field('apartment_subtitle', $v->ID); ?>
                                 </h3>
                             </div>
                             <div class="cb-item island">
