@@ -38,7 +38,7 @@ $my_posts = $query->get_posts();
                     <?php echo wpautop($my_posts[0]->post_excerpt); ?>
                 </div>
                 <div class="sha-more text-center">
-                    <a href="<?php echo home_url( $my_posts[0]->post_name .'.html' ); ?>" target="_blank"
+                    <a href="<?php echo home_url( $my_posts[0]->post_name .'.html' ); ?>" 
                         rel="noopener noreferrer"><?php _e('もっと見る', 'hotel-center-lite-child') ?></a>
                 </div>
             </div>
