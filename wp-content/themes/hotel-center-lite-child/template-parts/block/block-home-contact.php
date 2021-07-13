@@ -15,6 +15,7 @@
         <div class="col-xl-6 col-lg-12">
             <div class="hcw-col hcw-right">
                 <div class="hcw-right-content">
+                    <h3 class="hcw-right-title"><?php _e('いつも親切な相談をお約束いたします', 'hotel-center-lite-child'); ?></h3>
                     <div class="hcw-right-des hcw-left-title"><i class="far fa-clock"></i> <?php _e('口リアルタイム：PM09時', 'hotel-center-lite-child'); ?></div>
                     <div class="hcw-right-des hcw-left-title"><i class="far fa-clock"></i> <?php _e('退室時間: AM06時', 'hotel-center-lite-child'); ?></div>
                 </div>
