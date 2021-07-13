@@ -454,7 +454,11 @@ ul {
 }
 
 #navbar-nav-header li {
-    padding: 0 10px;
+    padding: 0 15px;
+}
+
+#navbar-nav-header.nav-en li {
+    padding: 0 12px;
 }
 
 #navbar-nav-header li ul li {
