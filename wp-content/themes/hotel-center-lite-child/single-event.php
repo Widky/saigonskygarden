@@ -5,6 +5,18 @@
  */
 
 get_header();
+// get banner
+ $page = get_page_by_path("events");
+ $page_id =  $page->ID;   
+
+$pageTitle = 'Event';
+
+$pageSubTitle = 'イベント';
+
+$imageUrlBreadcrumb = get_the_post_thumbnail_url($page_id);
+// Call function breadcrumb
+breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
+// end get banner
 $locale = get_locale();
     
 $sub_title = get_post_meta(get_the_ID(),'sub_title3',true);

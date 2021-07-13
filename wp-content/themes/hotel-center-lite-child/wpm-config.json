@@ -2,7 +2,7 @@
     "post_types": {
         "post": {},
         "page": {},
-        "apartments": {},
+        "apartment": {},
         "facilities": {},
         "services": {},
         "event": {},
@@ -38,11 +38,17 @@
         "day_of_the_event": {},
         "video_name": {},
         "video_description": {},
+        "apartment_subtitle": {},
+        "apartment_subtitle_number": {},
+        "sub_title_in_detail_page": {},
+        "sub_title_for_decription": {},
         "short_notes": {}
     },
     "taxonomies": {
         "apartment": {},
         "utilities-category": {},
+        "facilities": {},
+        "services": {},
         "event-category": {},
         "attractions": {},
         "reviews-category": {}

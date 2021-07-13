@@ -15,10 +15,10 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 ?>
 </style>
 <?php 
-$terms = wp_get_object_terms( get_the_ID(), 'apartment');
-// var_dump($terms);
-$term_name = $terms[0]->name;
-$term_des = $terms[0]->description;
+// $terms = wp_get_object_terms( get_the_ID(), 'apartment');
+// // var_dump($terms);
+// $term_name = $terms[0]->name;
+// $term_des = $terms[0]->description;
 
 $pageTitle = 'Apartment';
 
@@ -34,8 +34,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             <div class="apd-tax">
                 <div class="cat-main-title">
                     <div class="cat-line"></div>
-                    <h3 class="cat-title"><?php echo $term_name; ?></h3>
-                    <div class="cat-des"><?php echo $term_des; ?></div>
+                    <h3 class="cat-title"><?php echo get_field('apartment_subtitle', get_the_ID()); ?></h3>
+                    <div class="cat-des"><?php the_title(); ?></div>
                 </div>
                 <div class="apd-tax-share">
                     <a href="#">
@@ -222,7 +222,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <div class="row">
                     <div class="col-lg-6 col-md-7 col-12">
                         <div class="apd-tax-header-content">
-                            <h3 class="post-title"><?php the_title(); ?></h3>
+                            <h3 class="post-title"><?php echo get_field('sub_title_for_decription', get_the_ID()) ?></h3>
                             <pre><?php echo get_the_excerpt(); ?></pre>
                         </div>
                     </div>
@@ -233,91 +233,94 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     </div>
                 </div>
             </div>
-            <div class="apd-tax-detail">
-                <div class="line-color"></div>
                 <?php 
                 $basicInformation = get_field('basic_infomation', get_the_ID());
                 if($basicInformation) :
                 ?>
-                <div class="apd-basic">
-                    <div class="apd-title apd-basic-title">
+  
+                <div class="row  apd-basic first-detail">
+                    <div class="col-12 col-md-2 apd-title apd-basic-title">
                         <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
                     </div>
-                    <div class="apd-basic-content">
-                        <?php if($basicInformation['area'] != ''){ ?>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strArea; ?></div>
-                            <div class="apd-basic-value"><?php echo $basicInformation['area']; ?>
-                                m<sup>2</sup></div>
-                        </div>
-                        <?php }  ?>
-                        <?php if($basicInformation['check_in'] != ''){ ?>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strCheckIn; ?></div>
-                            <div class="apd-basic-value"><?php echo $basicInformation['check_in']; ?>
-                            </div>
-                        </div>
-                        <?php }  ?>
-                        <?php 
-                        $priceDollar = get_post_meta(get_the_ID(),'price_dollar', true);
-                        if($basicInformation){ ?>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strPriceApartment; ?></div>
-                            <div class="apd-basic-value">
-                                <div class="post-price">
-                                    <?php 
-                                    $currentConversionRateToVND = get_post_meta(get_the_ID(),'currency_conversion_rate_to_vnd', true);
-                                    switch($currentLang)
-                                    {
-                                        case 'en_US':
-                                            $currentConversionUnit = get_post_meta(get_the_ID(),'currency_conversion_unit_for_english', true);
-                                            $leaseTerm = get_post_meta(get_the_ID(),'lease_term_for_english', true);
-                                            break;
-                                        default:
-                                            $currentConversionUnit = get_post_meta(get_the_ID(),'currency_conversion_unit', true);
-                                            $leaseTerm = get_post_meta(get_the_ID(),'lease_term', true);
-                                            break;
-                                    }
-                                                    ?>
-                                    <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
-                                    <span class="pp-vnd">
+                    <div class="col-12 col-md-10 apd-basic-content">
+                            <div class="row">
+                               <?php if($basicInformation['area'] != ''){ ?>
+                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                            <div class="apd-basic-text d-inline-block"><?php echo $strArea; ?></div>
+                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['area']; ?>
+                                                m<sup>2</sup></div>
+                                        </div>
+                                        <?php }  ?>
+                                        <?php if($basicInformation['check_in'] != ''){ ?>
+                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                            <div class="apd-basic-text d-inline-block"><?php echo $strCheckIn; ?></div>
+                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['check_in']; ?>
+                                            </div>
+                                        </div>
+                                        <?php }  ?>
                                         <?php 
-                                        $priceVND = get_post_meta(get_the_ID(),'price_vnd', true);
-                                        if($priceVND != ''){
-                                            echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
-                                        }else{
-                                            echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
-                                        }
-                                        ?>
-                                    </span>
-                                </div>
+                                        $priceDollar = get_post_meta(get_the_ID(),'price_dollar', true);
+                                        if($basicInformation){ ?>
+                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                            <div class="apd-basic-text d-inline-block"><?php echo $strPriceApartment; ?></div>
+                                            <div class="apd-basic-value d-inline-block">
+                                                <div class="post-price">
+                                                    <?php 
+                                                    $currentConversionRateToVND = get_post_meta(get_the_ID(),'currency_conversion_rate_to_vnd', true);
+                                                    switch($currentLang)
+                                                    {
+                                                        case 'en_US':
+                                                            $currentConversionUnit = get_post_meta(get_the_ID(),'currency_conversion_unit_for_english', true);
+                                                            $leaseTerm = get_post_meta(get_the_ID(),'lease_term_for_english', true);
+                                                            break;
+                                                        default:
+                                                            $currentConversionUnit = get_post_meta(get_the_ID(),'currency_conversion_unit', true);
+                                                            $leaseTerm = get_post_meta(get_the_ID(),'lease_term', true);
+                                                            break;
+                                                    }
+                                                                    ?>
+                                                    <span class="pp-dollar"><?php echo '$'.$priceDollar; ?></span>
+                                                    <span class="pp-vnd">
+                                                        <?php 
+                                                        $priceVND = get_post_meta(get_the_ID(),'price_vnd', true);
+                                                        if($priceVND != ''){
+                                                            echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
+                                                        }else{
+                                                            echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
+                                                        }
+                                                        ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php }  ?>
+                                        <?php if($basicInformation['bed_type'] != ''){ ?>
+                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                            <div class="apd-basic-text d-inline-block"><?php echo $strBedType; ?></div>
+                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['bed_type']; ?>
+                                            </div>
+                                        </div>
+                                        <?php }  ?>
+                                        <?php if($basicInformation['check_out'] != ''){ ?>
+                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                            <div class="apd-basic-text d-inline-block"><?php echo $strCheckOut; ?></div>
+                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['check_out']; ?>
+                                            </div>
+                                        </div>
+                                        <?php }  ?>
+                                        <?php if($basicInformation['maximum_number_of_people_in_a_room'] != ''){ ?>
+                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                            <div class="apd-basic-text d-inline-block"><?php echo $strMaximumNumberPeople; ?></div>
+                                            <div class="apd-basic-value d-inline-block">
+                                                <?php echo $basicInformation['maximum_number_of_people_in_a_room']; ?>
+                                            </div>
+                                        </div>
+                                        <?php }  ?>
                             </div>
-                        </div>
-                        <?php }  ?>
-                        <?php if($basicInformation['bed_type'] != ''){ ?>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strBedType; ?></div>
-                            <div class="apd-basic-value"><?php echo $basicInformation['bed_type']; ?>
-                            </div>
-                        </div>
-                        <?php }  ?>
-                        <?php if($basicInformation['check_out'] != ''){ ?>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strCheckOut; ?></div>
-                            <div class="apd-basic-value"><?php echo $basicInformation['check_out']; ?>
-                            </div>
-                        </div>
-                        <?php }  ?>
-                        <?php if($basicInformation['maximum_number_of_people_in_a_room'] != ''){ ?>
-                        <div class="apd-basic-item">
-                            <div class="apd-basic-text"><?php echo $strMaximumNumberPeople; ?></div>
-                            <div class="apd-basic-value">
-                                <?php echo $basicInformation['maximum_number_of_people_in_a_room']; ?>
-                            </div>
-                        </div>
-                        <?php }  ?>
+                            
                     </div>
-                </div>
+                </div>    
+                    
                 <?php endif; ?>
 
                 <?php  
@@ -325,49 +328,50 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     // var_dump($termsUtilities);
                     if($termsUtilities) :
                 ?>
-                <div class="line-color opacity"></div>
-                <div class="apd-convenience apd-basic">
-                    <div class="apd-title apd-convenience-title">
-                        <h4><?php _e('部屋の利便性', 'hotel-center-lite-child'); ?></h4>
-                    </div>
-                    <div class="apd-basic-utilities">
-                        <?php  
-                        foreach($termsUtilities as $kterm=>$vterm) :
-                        ?>
-                        <div class="utilities-item apd-basic-item">
-                            <div class="utilities-icon apd-basic-text">
-                                <?php 
-                                $image = get_field('apartment_image_tax', $vterm->taxonomy . '_' . $vterm->term_id);
-                                if( !empty( $image ) ): ?>
-                                <img src="<?php echo esc_url($image['url']); ?>"
-                                    alt="<?php echo esc_attr($image['alt']); ?>" />
-                                <?php endif; ?>
+                 <div class="row apd-tax-detail apd-basic">
+                     <div class="col-12 col-md-2 apd-title apd-basic-title">
+                         <h4><?php _e('部屋の利便性', 'hotel-center-lite-child'); ?></h4>
+                     </div>
+                     <div class="col-12 col-md-10 apd-basic-content">
+                            <div class="row">
+                                  <?php  
+                                    foreach($termsUtilities as $kterm=>$vterm) :
+                                    ?>
+                                    <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                                        <div class="apd-basic-text d-inline-block">
+                                            <?php 
+                                            $image = get_field('apartment_image_tax', $vterm->taxonomy . '_' . $vterm->term_id);
+                                            if( !empty( $image ) ): ?>
+                                            <img class="basic_icon" src="<?php echo esc_url($image['url']); ?>"
+                                                alt="<?php echo esc_attr($image['alt']); ?>" />
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="apd-basic-value d-inline-block"><?php echo $vterm->name; ?></div>
+                                    </div>
+                                    <?php endforeach; ?>                     
                             </div>
-                            <div class="utilities-title apd-basic-value"><?php echo $vterm->name; ?></div>
-                        </div>
-                        <?php endforeach; ?>
                     </div>
-                </div>
+                </div> 
                 <?php endif; ?>
                 <?php if(get_the_content() != '') : ?>
-                <div class="line-color opacity"></div>
-                <div class="apd-info">
-                    <div class="apd-title apd-info-title">
+                <div class="row apd-tax-detail apd-basic">
+                    <div class="col-12 col-md-2 apd-title apd-basic-title">
                         <h4><?php _e('情報利用', 'hotel-center-lite-child'); ?></h4>
                     </div>
-                    <div class="apd-info-content">
+                    <div class="col-12 col-md-10 apd-basic-content">
                         <?php echo wpautop(get_the_content()); ?>
                     </div>
                 </div>
                 <?php endif; ?>
-                <div class="line-color opacity"></div>
-                <div class="apd-button">
-                    <a href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
-                    <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期ご契約 お問合せ ', 'hotel-center-lite-child'); ?></a>
+
+                <div class="row apd-tax-detail apd-basic">
+                    <div class="apd-button col-12 text-md-right text-center p-md-0">
+                        <a href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期宿泊', 'hotel-center-lite-child'); ?></a>
+                        <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期ご契約', 'hotel-center-lite-child'); ?></a>
+                    </div>
+                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
-            </div>
-        </div>
+       
     </div>
 </div>
 
@@ -385,9 +389,10 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         $args = array(
                             'post_type'     =>      'apartments',
                             'orderby'       =>      'date',
-                            'order'         =>      'DESC',
+                            //'order'         =>      'DESC',
                             'post_status'   =>      'publish',
                             'posts_per_page'=>      -1,
+                            'post__not_in' => array( get_the_ID())
                             // 'tax_query'         =>  array(
                             //     array(
                             //         'taxonomy'      =>  'apartment',
@@ -413,17 +418,11 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                             alt="<?php custom_the_post_thumbnail_caption(); ?>">
                                         <?php endif; ?>
                                         <div class="apd-cat">
-                                            <?php 
-                                            $getCat = get_the_terms($v->ID,'apartment');
-                                            // var_dump($getCat);
-                                            foreach($getCat as $kCat=>$vCat){
-                                                echo $vCat->name;
-                                                break;
-                                            }
-                                            ?>
+                                           <?php echo $v->post_title; ?>
                                         </div>
                                         <div class="apd-content post-content">
                                             <h3 class="apd-title"><?php echo $v->post_title; ?></h3>
+                                            <div class="aprt_expert"><?php echo $v->post_excerpt; ?></div>
                                             <div class="post-price">
                                                 <?php 
                                                 $priceDollar = get_post_meta($v->ID,'price_dollar', true);
@@ -432,19 +431,23 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                                 $leaseTerm = get_post_meta($v->ID, $strLeaseTerm, true);
                                                 ?>
                                                 <span class="pp-dollar">
-                                                    <?php echo '$'.$priceDollar; ?>
+                                                    <?php echo '$'.number_format($priceDollar, 0, '.', ','); ?>
                                                 </span>
                                                 <span class="pp-vnd">
                                                     <?php 
                                                     $priceVND = get_post_meta($v->ID,'price_vnd', true);
+
+
                                                     if($priceVND != ''){
-                                                        echo '(<span class="pp-vnd-number">'.$priceVND .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
+                                                        echo '(<span class="pp-vnd-number">'.number_format($priceVND, 0, '.', ',') .'</span>' . $currentConversionUnit .')' . ' ' .  $leaseTerm;
                                                     }else{
-                                                        echo '(<span class="pp-vnd-number">'.($priceDollar*$currentConversionRateToVND) .'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
+                                                        $dolar = $priceDollar*$currentConversionRateToVND;
+                                                        $dolar = number_format($dolar, 0, '.', ',');
+                                                        echo '(<span class="pp-vnd-number">'.$dolar.'</span>' . $currentConversionUnit .')' . ' ' . $leaseTerm; 
                                                     }
                                                     ?>
                                                 </span>
-                                            </div>
+                                        </div>
                                         </div>
                                     </a>
                                 </div>
