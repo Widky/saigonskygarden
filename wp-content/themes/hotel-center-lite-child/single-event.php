@@ -6,14 +6,14 @@
 
 get_header();
 // get banner
- $page = get_page_by_path("events");
- $page_id =  $page->ID;   
+ $page_e = get_page_by_path("events");
+ $page_e_id =  $page_e->ID;   
 
 $pageTitle = 'Event';
 
 $pageSubTitle = 'イベント';
 
-$imageUrlBreadcrumb = get_the_post_thumbnail_url($page_id);
+$imageUrlBreadcrumb = get_the_post_thumbnail_url($page_e_id);
 // Call function breadcrumb
 breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 // end get banner
