@@ -10,7 +10,7 @@
             $args = array(
                 'post_type'         =>  'feature',
                 'orderby'           =>  'date',
-                'order'             =>  'DESC',
+                'order'             =>  'ASC',
                 'post_status'       =>  'publish',
                 'meta_key' => '_is_ns_featured_post',
                 'meta_value' => 'yes'
