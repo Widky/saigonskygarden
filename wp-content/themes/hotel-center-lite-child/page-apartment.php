@@ -66,7 +66,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                             <div class="cat-line cat-studio-line"></div>
                             <h3 class="cat-title cat-studio-title">
                             	<?php //echo $my_posts[0]->post_title; ?>
-                            	<?php echo get_field('apartment_subtitle', $my_posts[0]->ID); ?>
+                            	<?php echo get_field('apartment_subtitle_field', $my_posts[0]->ID); ?>
                             		
                             </h3>
                         </div>
