@@ -48,7 +48,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <div class="csti-img">
                     <div class="apd-info-img">
                         <?php 
-                            $basicInformation = get_field('basic_infomation', get_the_ID());
+                            $basicInformation = get_field('basic_infomation_field', get_the_ID());
                         ?>
                         <h3 class="apdii-content">
                             <?php echo $basicInformation['bed_type_field']; ?>(<?php echo $basicInformation['maximum_number_of_people_in_a_room_field']; ?>)
@@ -229,7 +229,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 </div>
             </div>
                 <?php 
-                $basicInformation = get_field('basic_infomation', get_the_ID());
+                $basicInformation = get_field('basic_infomation_field', get_the_ID());
                 if($basicInformation) :
                 ?>
   
