@@ -1340,7 +1340,17 @@ section .cl-sub-title,
 .wpcf7-not-valid-tip {
     display: none;
 }
+ .cat-even .cat-bed-items .cat-bed-items-wrap.lor .cat-bed-title {
+        left: 10%;
+}
 
+.cat-odd .cat-bed-items .cat-bed-items-wrap.lor .cat-bed-title {
+    right: 10%;
+}
+.cat-bed-items .cb-item .cb-img img {
+    width: 100%;
+    height: 498px;
+}
 
 /* responsive */
 
