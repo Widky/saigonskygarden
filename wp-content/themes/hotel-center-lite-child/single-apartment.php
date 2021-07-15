@@ -49,9 +49,10 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     <div class="apd-info-img">
                         <?php 
                             $basicInformation = get_field('basic_infomation_field', get_the_ID());
+                            $max_num = isset($basicInformation['maximum_number_of_people_in_a_room_field']) ? $basicInformation['maximum_number_of_people_in_a_room_field'] : "";
                         ?>
                         <h3 class="apdii-content">
-                            <?php echo $basicInformation['bed_type_field']; ?>(<?php echo $basicInformation['maximum_number_of_people_in_a_room_field']; ?>)
+                            <?php if(isset($basicInformation['bed_type_field'])){echo $basicInformation['bed_type_field'] ;} ; ?>(<?php echo $max_num; ?>)
                         </h3>
                     </div>
                     <?php
@@ -239,10 +240,10 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     </div>
                     <div class="col-12 col-md-10 apd-basic-content">
                             <div class="row">
-                               <?php if($basicInformation['area'] != ''){ ?>
+                               <?php if($basicInformation['area_field'] != ''){ ?>
                                         <div class="apd-basic-item col-md-6 col-lg-4 col-12">
                                             <div class="apd-basic-text d-inline-block"><?php echo $strArea; ?></div>
-                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['area']; ?>
+                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['area_field']; ?>
                                                 m<sup>2</sup></div>
                                         </div>
                                         <?php }  ?>
