@@ -35,7 +35,7 @@
                             <div class="cat-line cat-studio-line"></div>
                             <h3 class="cat-title cat-studio-title">
                                 <?php //echo $my_posts[0]->post_title; ?>
-                                <?php echo get_field('apartment_subtitle', $my_posts[0]->ID); ?>
+                                <?php echo get_field('apartment_subtitle_field', $my_posts[0]->ID); ?>
                                     
                             </h3>
                         </div>
@@ -96,7 +96,7 @@
                                             href="<?php echo home_url($my_posts[0]->post_type . '/' .$my_posts[0]->post_name .'.html'); ?>">
                                             <h3 class="post-title">
                                                 <?php //echo $my_posts[0]->post_title; ?>
-                                                <?php echo get_field('sub_title_for_decription', $my_posts[0]->ID); ?>
+                                                <?php echo get_field('sub_title_for_decription_field', $my_posts[0]->ID); ?>
                                                 </h3>
                                             <pre class="post-excerpt"><?php echo $my_posts[0]->post_excerpt; ?></pre>
                                         </a>
@@ -141,7 +141,7 @@
                         <div class="cat-bed-items-wrap">
                             <div class="cat-main-title cat-bed-title">
                                 <h3 class="cat-title">
-                                    <?php echo "<span class='cat-title-number'>".get_field('apartment_subtitle_number', $v->ID)."</span>"; echo get_field('apartment_subtitle', $v->ID);?>
+                                    <?php echo "<span class='cat-title-number'>".get_field('apartment_subtitle_number_field', $v->ID)."</span>"; echo get_field('apartment_subtitle_field', $v->ID);?>
                                 </h3>
                                 <div class="cat-line <?php echo 'mgl'; ?>"></div>
                             </div>
@@ -200,13 +200,14 @@
                                        <!--  <a href="<?php //echo get_permalink($v->ID); ?>"> -->
                                             <h4 class="post-title">
                                                 <?php //echo $v->post_title; ?>
-                                                <?php echo get_field('sub_title_for_decription', $v->ID);?>
+                                                <?php echo get_field('sub_title_for_decription_field', $v->ID);?>
                                             </h4>
                                             <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                         </a>
                                     </div>
                                 </div>
                             </div>
+                            <div class="clearfix"></div>
                         </div>
                         
                     </div>
@@ -214,7 +215,7 @@
             </div>
 
             <?php }else{
-                 $number = get_field('apartment_subtitle_number', $v->ID)
+                 $number = get_field('apartment_subtitle_number_field', $v->ID)
                 ?>
                 <div class="cat-even position-relative cat_item">
                     <div class="cat-bed-items">
@@ -230,7 +231,7 @@
                                         </span>    
                                     <?php } 
                                     ?>
-                                     <?php  echo get_field('apartment_subtitle', $v->ID); ?>
+                                     <?php  echo get_field('apartment_subtitle_field', $v->ID); ?>
                                 </h3>
                             </div>
                             <div class="cb-item island">
@@ -287,7 +288,7 @@
                                         <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                                             <h4 class="post-title">
                                                 <?php //echo $v->post_title; ?>
-                                                <?php echo get_field('sub_title_for_decription', $v->ID);?>
+                                                <?php echo get_field('sub_title_for_decription_field', $v->ID);?>
                                                 </h4>
                                             <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                         </a>
@@ -295,6 +296,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
+                             <div class="clearfix"></div>
                         </div>
                        
                     </div>
