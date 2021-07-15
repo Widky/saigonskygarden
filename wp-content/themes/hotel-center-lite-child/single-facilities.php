@@ -48,8 +48,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <div class="content-facilities-about"></div>
             </div>
             <h2 class="cl-title text-center">
-                <span class="cl-main-title"><?php echo _e('OTHER FACILITIES','hotel-center-lite-child') ?></span>
-                <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
+                <span class="cl-main-title"><?php _e('OTHER FACILITIES','hotel-center-lite-child') ?></span>
+                <span class="cl-sub-title"><?php _e('施設','hotel-center-lite-child') ?></span>
             </h2>
 
             <div class="carousel-facilities-about">

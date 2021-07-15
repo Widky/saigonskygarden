@@ -18,8 +18,8 @@ $showAboutPage = get_field('show_about_page');
     <div class="sr-title">
         <div class="sr-title-wrap container">
             <h2 class="cl-title text-center">
-                <span class="cl-main-title change-cl"><?php echo _e('FACILITIES','hotel-center-lite-child') ?></span>
-                <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
+                <span class="cl-main-title change-cl"><?php _e('FACILITIES','hotel-center-lite-child') ?></span>
+                <span class="cl-sub-title"><?php _e('施設','hotel-center-lite-child') ?></span>
             </h2>
             <div class="cl-tax-share">
                 <a href="#">
@@ -48,7 +48,7 @@ $showAboutPage = get_field('show_about_page');
                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
                     <a class="top-image" href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
                         <img class="card-img-top " src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
-                            alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>"></a>
+                            alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{ _e('Not Image', 'hotel-center-lite-child'); } ?>"></a>
 
                     <div class="pfnote">
                         <?php echo $v->post_title; ?>

@@ -40,7 +40,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                 <div class="aimage">
                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
                     <img src="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){echo $image[0];} ?>"
-                        alt="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
+                        alt="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){custom_the_post_thumbnail_caption();}else{ _e('Not Image', 'hotel-center-lite-child');} ?>">
                 </div>
             </div>
             <div class="col-lg-5 col-md-12">
@@ -102,7 +102,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 
                                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $vp->ID ), 'single-post-thumbnail' ); ?>
                                 <img src="<?php if (has_post_thumbnail( $vp->ID ) ){echo $image[0];} ?>"
-                                    alt="<?php if (has_post_thumbnail( $vp->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
+                                    alt="<?php if (has_post_thumbnail( $vp->ID ) ){custom_the_post_thumbnail_caption();}else{_e('Not Image', 'hotel-center-lite-child');} ?>">
 
                                 <div class="aiw-des"><?php echo $vp->post_excerpt; ?></div>
                             </div>
@@ -150,7 +150,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 
                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
                 <img src="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){echo $image[0];} ?>"
-                    alt="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
+                    alt="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){custom_the_post_thumbnail_caption();}else{ _e('Not Image', 'hotel-center-lite-child');} ?>">
                 <div class="fri-body">
                     <h3 class="fri-title text-center"><?php echo $my_posts[0]->post_title; ?></h3>
                     <div class="fri-content aiw-content text-center"><?php echo wpautop($my_posts[0]->post_content); ?>

@@ -4,7 +4,7 @@
             <div class="footer-main-column footer-main-column1 col-xl-3 col-lg-3 col-md-5 col-12">
                 <div class="fmc1-wrap">
                     <h3 class="fmc1-title">SAIGON SKY GARDEN</h3>
-                    <p>自然と調和した現代的なデザインで、サイゴンスカイガーデンは1区の中心的な建物の一つとなっています。</p>
+                    <p><?php _e('自然と調和した現代的なデザインで、サイゴンスカイガーデンは1区の中心的な建物の一つとなっています。', 'hotel-center-lite-child'); ?></p>
                     <div class="fmc1-social">
                         <?php 
                         $linkFB = get_option('f_facebook');

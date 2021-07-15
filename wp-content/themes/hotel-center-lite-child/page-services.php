@@ -18,8 +18,8 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
         <div class="sr-title">
             <div class="sr-title-wrap container">
                 <h2 class="cl-title text-center">
-                    <span class="cl-main-title change-cl"><?php echo _e('Services','hotel-center-lite-child') ?></span>
-                    <span class="cl-sub-title"><?php echo _e('サービス','hotel-center-lite-child') ?></span>
+                    <span class="cl-main-title change-cl"><?php _e('Services','hotel-center-lite-child') ?></span>
+                    <span class="cl-sub-title"><?php _e('サービス','hotel-center-lite-child') ?></span>
                 </h2>
                 <div class="cl-tax-share">
                     <a href="#">
@@ -56,7 +56,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                         <div class="si-cat"><?php echo get_field('short_notes',$v->ID); ?></div>
                         <p class="si-excerpt"><?php echo $v->post_excerpt; ?></p>
                         <div class="btn-direct">
-                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>">もっと見る</a>
+                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"><?php _e('もっと見る', 'hotel-center-lite-child'); ?></a>
                         </div>
                     </div>
                 </div>
