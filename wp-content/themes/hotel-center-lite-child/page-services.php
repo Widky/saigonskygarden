@@ -53,7 +53,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                     </div>
                     <div class="si-body col-lg-5 col-md-12">
                         <h3 class="si-title"><?php echo $v->post_title; ?></h3>
-                        <div class="si-cat"><?php echo get_field('short_notes',$v->ID); ?></div>
+                        <div class="si-cat"><?php echo get_field('short_notes_field',$v->ID); ?></div>
                         <p class="si-excerpt"><?php echo $v->post_excerpt; ?></p>
                         <div class="btn-direct">
                             <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"><?php _e('もっと見る', 'hotel-center-lite-child'); ?></a>

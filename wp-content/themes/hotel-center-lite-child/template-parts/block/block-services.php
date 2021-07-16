@@ -61,7 +61,7 @@
                                         <?php endif; ?>
                                     </div>
                                     <div class="spw-content">
-                                        <h3 class="spw-title"><?php echo get_field('short_notes',$v->ID); ?></h3>
+                                        <h3 class="spw-title"><?php echo get_field('short_notes_field',$v->ID); ?></h3>
                                         <?php if($v->post_excerpt != '') echo '<pre class="spw-excerpt sdes">'.$v->post_excerpt.'</pre><p class="spw-excerpt d-none smo">'.$v->post_excerpt.'</p>'; ?>
                                         <div class="spw-btn-direct btn-direct">
                                             <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"><?php _e('もっと見る', 'hotel-center-lite-child'); ?></a>

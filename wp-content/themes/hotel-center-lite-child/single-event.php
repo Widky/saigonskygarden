@@ -312,7 +312,7 @@ $event_cats = get_terms( array(
                         <div class="owl-carousel owl-theme">
                                 <?php 
                             $args = array(
-                                'post_type'     =>      'facility',
+                                'post_type'     =>      'facilities',
                                 'orderby'       =>      'date',
                                 'order'         =>      'DESC',
                                 'post_status'   =>      'publish',

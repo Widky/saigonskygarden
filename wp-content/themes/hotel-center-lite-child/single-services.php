@@ -50,7 +50,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <p class="sp-excerpt"><?php echo get_the_content(); ?></p>
             </div>
             <div class="sp-body">
-                <h3 class="sp-title"><?php echo get_field('short_notes',get_the_ID()); ?></h3>
+                <h3 class="sp-title"><?php echo get_field('short_notes_field',get_the_ID()); ?></h3>
                 <div class="sp-img">
                     <?php
                     $sliderCat = get_field('slide_thumbnail', get_the_ID());
@@ -127,7 +127,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 </div>
                 <!-- end slide imgage -->
 
-                <?php $basicInformation = get_field('basic_information', get_the_ID()); ?>
+                <?php $basicInformation = get_field('basic_information_field', get_the_ID()); ?>
                 <?php if($basicInformation != NULL) :?>
                 <div class="sprow-utilities sm-basic row">
                     <div class="sprow-title col-md-3">
@@ -135,20 +135,20 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     </div>
                     <div class="sprow-basic-utilities col-md-9">
                         <div class="row">
-                            <?php if($basicInformation['location'] != ''){ ?>
+                            <?php if($basicInformation['location_field'] != ''){ ?>
                             <div class="sprow-item col-md-6">
                                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/services/is.png"
                                     alt="">
                                 <div class="sprow-text"><?php echo $strLocation; ?></div>
-                                <div class="sprow-value"><?php echo $basicInformation['location']; ?></div>
+                                <div class="sprow-value"><?php echo $basicInformation['location_field']; ?></div>
                             </div>
                             <?php } ?>
                             <div class="sprow-item col-md-6">
                                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f3.png"
                                     alt="">
                                 <div class="sprow-text"><?php echo $strOpeningHours; ?></div>
-                                <?php if($basicInformation['opening_hours'] != ''){ ?>
-                                <div class="sprow-value"><?php echo $basicInformation['opening_hours']; ?></div>
+                                <?php if($basicInformation['opening_hours_field'] != ''){ ?>
+                                <div class="sprow-value"><?php echo $basicInformation['opening_hours_field']; ?></div>
                                 <?php } ?>
                             </div>
                         </div>

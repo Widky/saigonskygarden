@@ -95,7 +95,7 @@ $showAboutPage = get_field('show_about_page');
                     <div class="owl-carousel owl-theme">
                             <?php 
                         $args = array(
-                            'post_type'     =>      'facility',
+                            'post_type'     =>      'facilities',
                             'orderby'       =>      'date',
                             'order'         =>      'DESC',
                             'post_status'   =>      'publish',
