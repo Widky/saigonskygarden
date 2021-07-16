@@ -33,13 +33,13 @@ get_header();
         </div>
         <div class="col-12 col-md-6 ">
             <?php
-                    $contact_map_url = get_post_meta( get_the_ID(), 'contact_map_url',true );
-                    $contact_address = get_post_meta( get_the_ID(), 'contact_address',true );
-                    $contact_tel = get_post_meta(get_the_ID(),'contact_tel',true);
-                    $contact_fax = get_post_meta(get_the_ID(),'contact_fax',true);
+                    $contact_map_url = get_post_meta( get_the_ID(), 'contact_map_url_field',true );
+                    $contact_address = get_post_meta( get_the_ID(), 'contact_address_field',true );
+                    $contact_tel = get_post_meta(get_the_ID(),'contact_tel_field',true);
+                    $contact_fax = get_post_meta(get_the_ID(),'contact_fax_field',true);
                     $contact_url = get_post_meta(get_the_ID(),'contact_site_url',true);
-                    $contact_email = get_post_meta(get_the_ID(),'contact_email',true);
-                    $contact_url2 = get_post_meta(get_the_ID(),'contact_url2',true);
+                    $contact_email = get_post_meta(get_the_ID(),'contact_email_field',true);
+                    $contact_url2 = get_post_meta(get_the_ID(),'contact_url2_field',true);
                 ?>
             <?php if(!empty($contact_address)) {?>
             <div class="map_iframe">
