@@ -34,7 +34,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             <div class="apd-tax">
                 <div class="cat-main-title">
                     <div class="cat-line"></div>
-                    <h3 class="cat-title"><?php echo get_field('sub_title_in_detail_page_field', get_the_ID()); ?></h3>
+                    <h3 class="cat-title"><?php echo get_field('sub_title_in_detail_page_field1', get_the_ID()); ?></h3>
                     <div class="cat-des"><?php the_title(); ?></div>
                 </div>
                 <div class="apd-tax-share">
@@ -223,7 +223,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <div class="row">
                     <div class="col-lg-6 col-md-7 col-12">
                         <div class="apd-tax-header-content">
-                            <h3 class="post-title"><?php echo get_field('sub_title_for_decription_field', get_the_ID()) ?></h3>
+                            <h3 class="post-title"><?php echo get_field('sub_title_decription_field', get_the_ID()) ?></h3>
                             <pre><?php echo get_the_excerpt(); ?></pre>
                         </div>
                     </div>
