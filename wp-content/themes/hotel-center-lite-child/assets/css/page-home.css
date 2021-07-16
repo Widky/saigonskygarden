@@ -741,8 +741,8 @@ section .cl-sub-title,
 }
 
 .facilities-items .facilities-item .fiw-title {
-    font: normal bold 20px 'Yu Gothic Bold', 'sans-serif';
-    line-height: 50px;
+    font: normal bold 18px 'Yu Gothic Bold', 'sans-serif';
+    line-height: 30px;
     color: #FFFFFF;
     margin-top: 17.7px;
 }
@@ -1148,13 +1148,13 @@ section .cl-sub-title,
     /*height: 100%;
     width: 100%;*/
     align-items: center;
-   /* display: inline-grid;*/
+    /* display: inline-grid;*/
     margin: 25px 45px;
 }
 
- .home-contact .hcw-right-des{
+.home-contact .hcw-right-des {
     margin: 15px 0px;
- }
+}
 
 
 /* quote */
@@ -1340,17 +1340,20 @@ section .cl-sub-title,
 .wpcf7-not-valid-tip {
     display: none;
 }
- .cat-even .cat-bed-items .cat-bed-items-wrap.lor .cat-bed-title {
-        left: 10%;
+
+.cat-even .cat-bed-items .cat-bed-items-wrap.lor .cat-bed-title {
+    left: 10%;
 }
 
 .cat-odd .cat-bed-items .cat-bed-items-wrap.lor .cat-bed-title {
     right: 10%;
 }
+
 .cat-bed-items .cb-item .cb-img img {
     width: 100%;
     height: 498px;
 }
+
 
 /* responsive */
 
