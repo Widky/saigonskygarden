@@ -701,7 +701,7 @@ section .cl-sub-title,
 
 .facilities-items .facilities-item:nth-child(n + 2) {
     width: 301px;
-    height: 397px;
+    /*height: 397px;*/
     display: block;
 }
 
