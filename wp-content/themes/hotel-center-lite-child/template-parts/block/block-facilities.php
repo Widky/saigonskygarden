@@ -36,7 +36,7 @@
                         <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                             
                                 <?php 
-                                $showHome = get_field('show_home', $v->ID);
+                                $showHome = get_field('show_home_field', $v->ID);
                                 // echo "<pre>";var_dump($showHome);
                                 if($showHome && $showHome != NULL){ ?>
                                 <div class="fiw-img" style="background: url(<?php echo $showHome['image']['url']; ?>) center center;background-size: cover;background-repeat: no-repeat;">
@@ -56,8 +56,8 @@
                                 }
                                 ?>
                                 <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
-                                <?php $short_notes = get_field('show_home', $v->ID); ?>
-                                <?php if($short_notes && $short_notes['short_notes'] != '') echo '<pre class="fiw-excerpt">'.$short_notes['short_notes'].'</pre>'; ?>
+                                <?php $short_notes = get_field('show_home_field', $v->ID); ?>
+                                <?php if($short_notes && $short_notes['short_notes_field'] != '') echo '<pre class="fiw-excerpt">'.$short_notes['short_notes_field'].'</pre>'; ?>
                             </div>
                         </a>
                     </div>
@@ -73,7 +73,7 @@
                             <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                                 <div class="fiw-img">
                                     <?php 
-                                    $showHome = get_field('show_home', $v->ID);
+                                    $showHome = get_field('show_home_field', $v->ID);
                                     // echo "<pre>";var_dump($showHome);
                                     if($showHome && $showHome != NULL){ ?>
                                     <img src="<?php echo $showHome['image']['url']; ?>"
@@ -92,8 +92,8 @@
                                     }
                                     ?>
                                     <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
-                                    <?php $short_notes = get_field('show_home', $v->ID); ?>
-                                    <?php if($short_notes && $short_notes['short_notes'] != '') echo '<pre class="fiw-excerpt">'.$short_notes['short_notes'].'</pre>'; ?>
+                                    <?php $short_notes = get_field('show_home_field', $v->ID); ?>
+                                    <?php if($short_notes && $short_notes['short_notes_field'] != '') echo '<pre class="fiw-excerpt">'.$short_notes['short_notes_field'].'</pre>'; ?>
                                 </div>
                             </a>
                         </div>

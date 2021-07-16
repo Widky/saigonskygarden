@@ -1,6 +1,6 @@
 <?php 
-$note = get_field('show_home', get_the_ID() ); 
-$note = $note['short_notes'];
+$note = get_field('show_home_field', get_the_ID() ); 
+$note = $note['short_notes_field'];
 if($note == '' || $note == NUll){
     $note = get_the_title();
 }
@@ -73,7 +73,7 @@ if($note == '' || $note == NUll){
 
         <?php else :?>
 
-        <?php $image = get_field('show_home', get_the_ID()); ?>
+        <?php $image = get_field('show_home_field', get_the_ID()); ?>
 
         <?php $image = $image['image']; ?>
 
@@ -105,8 +105,8 @@ if($note == '' || $note == NUll){
     </div>
     <div class="sm-detail">
 
-        <?php $basicInformation = get_field('basic_information', get_the_ID()); ?>
-        <?php if($basicInformation != Null && $basicInformation['area'] != '') :?>
+        <?php $basicInformation = get_field('basic_information_field', get_the_ID()); ?>
+        <?php if($basicInformation != Null && $basicInformation['area_field'] != '') :?>
         <div class="line-color opacity"></div>
         <div class="smrow-utilities sm-basic row">
             <div class="apd-title smrow-title col-md-3">
@@ -114,39 +114,39 @@ if($note == '' || $note == NUll){
             </div>
             <div class="smrow-basic-utilities col-md-9">
                 <div class="row">
-                    <?php if($basicInformation['area'] != ''){ ?>
+                    <?php if($basicInformation['area_field'] != ''){ ?>
                     <div class="smrow-item col-md-6">
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f1.png"
                             alt="">
                         <div class="smrow-text"><?php echo $strArea; ?></div>
-                        <div class="smrow-value"><?php echo $basicInformation['area']; ?><span>m<sup>2</sup></span>
+                        <div class="smrow-value"><?php echo $basicInformation['area_field']; ?><span>m<sup>2</sup></span>
                         </div>
                     </div>
                     <?php } ?>
-                    <?php if($basicInformation['capacity'] != ''){ ?>
+                    <?php if($basicInformation['capacity_field'] != ''){ ?>
                     <div class="smrow-item col-md-6">
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f4.png"
                             alt="">
                         <div class="smrow-text"><?php echo $strCapacity; ?></div>
-                        <div class="smrow-value"><?php echo $basicInformation['capacity']; ?>
+                        <div class="smrow-value"><?php echo $basicInformation['capacity_field']; ?>
                         </div>
                     </div>
                     <?php } ?>
-                    <?php if($basicInformation['location'] != ''){ ?>
+                    <?php if($basicInformation['location_field'] != ''){ ?>
                     <div class="smrow-item col-md-6">
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f2.png"
                             alt="">
                         <div class="smrow-text"><?php echo $strLocation; ?></div>
-                        <div class="smrow-value"><?php echo $basicInformation['location']; ?>
+                        <div class="smrow-value"><?php echo $basicInformation['location_field']; ?>
                         </div>
                     </div>
                     <?php } ?>
-                    <?php if($basicInformation['opening_hours'] != ''){ ?>
+                    <?php if($basicInformation['opening_hours_field'] != ''){ ?>
                     <div class="smrow-item col-md-6">
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f3.png"
                             alt="">
                         <div class="smrow-text"><?php echo $strOpeningHours; ?></div>
-                        <div class="smrow-value"><?php echo $basicInformation['opening_hours']; ?>
+                        <div class="smrow-value"><?php echo $basicInformation['opening_hours_field']; ?>
                         </div>
                     </div>
                     <?php } ?>
