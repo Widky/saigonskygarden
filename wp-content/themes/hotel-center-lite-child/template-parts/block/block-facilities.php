@@ -42,7 +42,7 @@
                                 <div class="fiw-img" style="background: url(<?php echo $showHome['image']['url']; ?>) center center;background-size: cover;background-repeat: no-repeat;">
                                 <?php 
                                 $imgOrverlay = $showHome['background_overlay_for_images'];
-                                if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).")'></div>"; ?>
+                                if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).");background-size: 100% 100%;'></div>"; ?>
                                 </div>
                                 <!-- <div class="mask-img"></div> -->
                                 <?php } ?>
