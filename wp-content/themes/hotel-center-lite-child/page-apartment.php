@@ -127,7 +127,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                                             href="<?php echo home_url($my_posts[0]->post_type . '/' .$my_posts[0]->post_name .'.html'); ?>">
                                             <h3 class="post-title">
                                             	<?php //echo $my_posts[0]->post_title; ?>
-                                            	<?php echo get_field('sub_title_for_decription_field', $my_posts[0]->ID); ?>
+                                            	<?php echo get_field('sub_title_decription_field', $my_posts[0]->ID); ?>
                                             	</h3>
                                             <pre class="post-excerpt"><?php echo $my_posts[0]->post_excerpt; ?></pre>
                                         </a>
@@ -230,7 +230,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                                         <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
                                             <h4 class="post-title">
                                             	<?php //echo $v->post_title; ?>
-                                            	<?php echo get_field('sub_title_for_decription_field', $v->ID);?>
+                                            	<?php echo get_field('sub_title_decription_field', $v->ID);?>
                                             </h4>
                                             <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
                                         </a>
@@ -317,7 +317,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 	                                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
 	                                        <h4 class="post-title">
 	                                        	<?php //echo $v->post_title; ?>
-	                                        	<?php echo get_field('sub_title_for_decription_field', $v->ID);?>
+	                                        	<?php echo get_field('sub_title_decription_field', $v->ID);?>
 	                                        	</h4>
 	                                        <pre class="post-excerpt"><?php echo $v->post_excerpt; ?></pre>
 	                                    </a>
