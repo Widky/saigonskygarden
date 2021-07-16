@@ -6,8 +6,10 @@
 
 get_header();
 // get banner
- $page_e = get_page_by_path("events");
- $page_e_id =  $page_e->ID;   
+include dirname( __FILE__ ) . '/inc/lang/translate.php';
+
+$page_e = get_page_by_path("events");
+$page_e_id =  $page_e->ID;   
 
 $pageTitle = 'Event';
 
@@ -19,7 +21,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 // end get banner
 $locale = get_locale();
     
-$sub_title = get_post_meta(get_the_ID(),'sub_title3',true);
+$sub_title = get_post_meta(get_the_ID(),'sub_title3_field',true);
 if($locale == 'ja'){
    $list_url = "/events.html";
 }else{
@@ -27,7 +29,7 @@ if($locale == 'ja'){
 }
     
 
-$day_of_event = get_post_meta( get_the_ID(), 'day_of_the_event',true );
+$day_of_event = get_post_meta( get_the_ID(), 'day_of_the_event_field',true );
 
 $event_cats = get_terms( array(
     'taxonomy' => 'event-category',
@@ -180,10 +182,25 @@ $event_cats = get_terms( array(
     <div class="row single-event">
         <div class="container">
             <section class="single-event-sec">
-                <div class="page_title text-center my-5">
-                    <h1><?php the_title(); ?></h1>
-                    <p><?php echo $sub_title; ?></p>
+            <div class="sr-title">
+                <div class="sr-title-wrap container">
+                    <h2 class="cl-title text-center">
+                        <span class="cl-main-title change-cl"><?php the_title(); ?></span>
+                        <span class="cl-sub-title"><?php echo $sub_title; ?></span>
+                    </h2>
+                    <div class="cl-tax-share">
+                        <a href="#">
+                            <i class="fas fa-share-alt"></i>
+                            <span><?php echo $strButtonShare; ?></span>
+                        </a>
+                    </div>
                 </div>
+            </div>
+
+                <!-- <div class="page_title text-center my-5"> -->
+                    <h1><?php //the_title(); ?></h1>
+                    <p><?php //echo $sub_title; ?></p>
+                <!-- </div> -->
                 <div class="day-of-event mb-2">
                     <?php if(!empty($day_of_event)) {
                         if($locale == 'ja'){
@@ -208,10 +225,19 @@ $event_cats = get_terms( array(
     <div class="row other-events">
         <div class="container">
             <section class="other-event-sec" id="multi-carousel-event">
-                <h2 class="ap-title cl-title text-center">
+                <div class="sr-title">
+                    <div class="sr-title-wrap container">
+                        <h2 class="cl-title text-center">
+                            <span class="cl-main-title change-cl">OTHER EVENTS</span>
+                            <span class="cl-sub-title">イベント</span>
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- <h2 class="ap-title cl-title text-center">
                     <span class="cl-main-title change-cl">OTHER EVENTS</span>
                     <span class="cl-sub-title change-cl">イベント</span>
-                </h2>
+                </h2> -->
 
                 <div class="owl-carousel owl-theme owl-loaded owl-drag">
 
@@ -268,14 +294,14 @@ $event_cats = get_terms( array(
                                             <?php
                                                 $event_len = mb_strlen(get_the_excerpt(),'UTF-8');
                                                 if($locale == 'ja'){
-                                                    echo mb_substr(get_the_excerpt(), 0, 50,'UTF-8');
-                                                        if($event_len > 50 ){
-                                                            echo '[...]'; 
+                                                    echo mb_substr(get_the_excerpt(), 0, 25,'UTF-8');
+                                                        if($event_len > 25 ){
+                                                            echo '...'; 
                                                         }
                                                 }else{
-                                                    echo mb_substr(get_the_excerpt(), 0, 100,'UTF-8');
-                                                        if($event_len > 100 ){
-                                                            echo '[...]';
+                                                    echo mb_substr(get_the_excerpt(), 0, 50,'UTF-8');
+                                                        if($event_len > 50 ){
+                                                            echo '...';
                                                         }    
                                                 } 
                                             ?>
@@ -296,17 +322,20 @@ $event_cats = get_terms( array(
         </div>
     </div>
 
-    <div class="block-carousel-facilities-about">
+    <div class="event-facility block-carousel-facilities-about">
         <div class="container-fluid container-facilities-about">
             <div class="wrap-facilities-about">
                 <div class="mask-facilities-about">
                     <div class="content-facilities-about"></div>
-                </div>    
-                <h2 class="cl-title text-center">
-                    <span class="cl-main-title"><?php echo _e('FACILITIES','hotel-center-lite-child') ?></span>
-                    <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
-                </h2>
-                
+                </div>
+                <div class="sr-title">
+                    <div class="sr-title-wrap container">
+                        <h2 class="cl-title text-center">
+                            <span class="cl-main-title change-cl"><?php echo _e('FACILITIES','hotel-center-lite-child') ?></span>
+                            <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
+                        </h2>
+                    </div>
+                </div>
                 <div class="carousel-facilities-about">
                     <div class="carousel-facilities-about-wrap">
                         <div class="owl-carousel owl-theme">

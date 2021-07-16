@@ -13,17 +13,34 @@ $url =  (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$
 $url_arr = explode('?', $url);
 $url = $url_arr[0];
 $locale = get_locale();
-$sub_title = get_post_meta(get_the_ID(),'sub_title3',true);
+
+
+include dirname( __FILE__ ) . '/inc/lang/translate.php';
+//$sub_title = get_post_meta(get_the_ID(),'sub_title3',true);
 
 ?>
     <div class="container">
         <div id="page_content_area">
             <section class="site_content">
-                <div class="page_title text-center my-5">
-                    <!-- EVENT -->
-                    <?php the_title(); ?>
-                    <p><?php echo $sub_title; ?></p>
+                <div class="sr-title">
+                    <div class="sr-title-wrap container">
+                        <h2 class="cl-title text-center">
+                            <span class="cl-main-title change-cl"><?php echo _e('Event','hotel-center-lite-child') ?></span>
+                            <span class="cl-sub-title"><?php echo _e('イベント','hotel-center-lite-child') ?></span>
+                        </h2>
+                        <div class="cl-tax-share">
+                            <a href="#">
+                                <i class="fas fa-share-alt"></i>
+                                <span><?php echo $strButtonShare; ?></span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+                <!-- <div class="page_title text-center my-5"> -->
+                    <!-- EVENT -->
+                    <?php //the_title(); ?>
+                    <p><?php //echo $sub_title; ?></p>
+                <!-- </div> -->
                 <div class="entry-content">
                     <?php if(!empty($event_cats)){ 
                         foreach($event_cats as $cat) {                            
@@ -90,12 +107,12 @@ $sub_title = get_post_meta(get_the_ID(),'sub_title3',true);
                                                                 if($locale == 'ja'){
                                                                     echo mb_substr(get_the_excerpt(), 0, 25,'UTF-8');
                                                                         if($event_len > 25 ){
-                                                                            echo '[...]';
+                                                                            echo '...';
                                                                         }
                                                                 }else{
                                                                     echo mb_substr(get_the_excerpt(), 0, 50,'UTF-8');
                                                                         if($event_len > 50 ){
-                                                                            echo '[...]';
+                                                                            echo '...';
                                                                         }    
                                                                 } 
                                                             ?>
