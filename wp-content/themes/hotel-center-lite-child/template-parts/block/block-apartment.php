@@ -154,7 +154,7 @@
                                     if($sliderCat && $sliderCat['img_1'] != false){
                                         ?>
                                     <div class="post-img-slide-wrap">
-                                        <div id="carouselImgSlide1" class="carousel slide" data-ride="carousel">
+                                        <div id="carouselImgSlide<?php echo $i; ?>" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner">
                                                 <?php if (has_post_thumbnail( $v->ID ) ): ?>
                                                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
@@ -172,12 +172,12 @@
                                                 <?php endif; ?>
                                                 <?php endforeach; ?>
                                             </div>
-                                            <a class="carousel-control carousel-control-prev" href="#carouselImgSlide1"
+                                            <a class="carousel-control carousel-control-prev" href="#carouselImgSlide<?php echo $i; ?>"
                                                 role="button" data-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                 <span class="sr-only">Previous</span>
                                             </a>
-                                            <a class="carousel-control carousel-control-next" href="#carouselImgSlide1"
+                                            <a class="carousel-control carousel-control-next" href="#carouselImgSlide<?php echo $i; ?>"
                                                 role="button" data-slide="next">
                                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                 <span class="sr-only">Next</span>
@@ -243,7 +243,7 @@
                                     if($sliderCat && $sliderCat['img_1'] != false){
                                         ?>
                                     <div class="post-img-slide-wrap">
-                                        <div id="carouselImgSlide2" class="carousel slide" data-ride="carousel">
+                                        <div id="carouselImgSlide<?php if(!empty($number)){ echo $number; }else{ echo $i; }?>" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner">
                                                 <?php if (has_post_thumbnail( $v->ID ) ): ?>
                                                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
@@ -261,12 +261,12 @@
                                                 <?php endif; ?>
                                                 <?php endforeach; ?>
                                             </div>
-                                            <a class="carousel-control carousel-control-prev" href="#carouselImgSlide2"
+                                            <a class="carousel-control carousel-control-prev" href="#carouselImgSlide<?php if(!empty($number)){ echo $number; }else{ echo $i; }?>"
                                                 role="button" data-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                 <span class="sr-only">Previous</span>
                                             </a>
-                                            <a class="carousel-control carousel-control-next" href="#carouselImgSlide2"
+                                            <a class="carousel-control carousel-control-next" href="#carouselImgSlide<?php if(!empty($number)){ echo $number; }else{ echo $i; }?>"
                                                 role="button" data-slide="next">
                                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                 <span class="sr-only">Next</span>
