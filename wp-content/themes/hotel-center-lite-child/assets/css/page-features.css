@@ -363,7 +363,7 @@
     .content_detail{
         overflow-y: inherit;
         max-height: none !important;
-        overflow: auto;
+        /*overflow: auto;*/
     }
     .feature_item .feature_img img{
         min-height: auto;
