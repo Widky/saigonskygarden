@@ -66,7 +66,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                             <div class="cat-line cat-studio-line"></div>
                             <h3 class="cat-title cat-studio-title">
                             	<?php //echo $my_posts[0]->post_title; ?>
-                            	<?php echo get_field('apartment_subtitle_field1', $my_posts[0]->ID); ?>
+                            	<?php echo get_field('apartment_subtitle_field2', $my_posts[0]->ID); ?>
                             		
                             </h3>
                         </div>
@@ -172,7 +172,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                         <div class="cat-bed-items-wrap">
                             <div class="cat-main-title cat-bed-title">
                                 <h3 class="cat-title">
-                                    <?php echo "<span class='cat-title-number'>".get_field('apartment_subtitle_number_field1', $v->ID)."</span>"; echo get_field('apartment_subtitle_field1', $v->ID);?>
+                                    <?php echo "<span class='cat-title-number'>".get_field('apartment_subtitle_number_field2', $v->ID)."</span>"; echo get_field('apartment_subtitle_field2', $v->ID);?>
                                 </h3>
                                 <div class="cat-line <?php echo 'mgl'; ?>"></div>
                             </div>
@@ -244,7 +244,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             </div>
 
             <?php }else{
-            $number = get_field('apartment_subtitle_number_field1', $v->ID)
+            $number = get_field('apartment_subtitle_number_field2', $v->ID)
                 ?>
             	<div class="cat-even position-relative cat_item">
 	                <div class="cat-bed-items">
@@ -260,7 +260,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                                         </span>    
                                     <?php } 
                                     ?>
-                                     <?php  echo get_field('apartment_subtitle_field1', $v->ID); ?>
+                                     <?php  echo get_field('apartment_subtitle_field2', $v->ID); ?>
                                 </h3>
 	                        </div>
 	                        <div class="cb-item island">
