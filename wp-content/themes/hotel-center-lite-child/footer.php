@@ -33,7 +33,22 @@
                 </div>
                 <div class="footer-main-column footer-main-column3 col-xl-7 col-lg-7 col-md-7 col-12 pd-0">
                     <div class="fmc3-wrap">
-                        <?php dynamic_sidebar( 'footer_menu_2' ); ?>
+                        <h4 class="fm-title">Facility</h4>
+                        <div class="menu-footer-2-container">
+                            <ul id="menu2-menu-footer-2" class="menu">
+                                <?php 
+                                    $menu_facilities =  wp_get_nav_menu_items('メニューフッター2 - Menu footer 2');
+                                    foreach ($menu_facilities as $item) { 
+                                        $post = get_post($item->object_id);
+                                        setup_postdata($post);
+                                ?>    
+                                <li id="menu-item-<?php echo $post->ID;?>" class="menu-item menu-item-type-post_type menu-item-object-facilities menu-item-<?php echo $post->ID;?>"><a href="<?php echo get_permalink();?>"><?php echo get_the_title();?></a></li>
+                                <?php
+                                   }
+                                   wp_reset_postdata();
+                                ?>
+                            </ul>
+                        </div>
                         <!--fm-items -->
                     </div>
                 </div>
