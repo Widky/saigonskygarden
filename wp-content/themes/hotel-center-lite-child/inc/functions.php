@@ -657,6 +657,7 @@ if(!function_exists('custom_theme_options_callback')){
                   $strDay = date('Y').'/'.date('m').'/';
                   $nameFile = str_replace($strDay, '',$file);
                   // var_dump($file);exit;
+
                   echo '<tr><th scope="row"></th><td><img src="/wp-content/uploads/'.$file.'" alt="'.$nameFile.'" /></td></tr>';}
                 ?>
                 <tr>
@@ -688,7 +689,7 @@ if(!function_exists('custom_theme_options_callback')){
 }
 function upload_image(){
   // WordPress environment
-  require( dirname(__FILE__) . '\..\..\..\..\wp-load.php' );
+  require( dirname(__FILE__) . '/../../../../wp-load.php' );
 
   $wordpress_upload_dir = wp_upload_dir();
   $i = 1; // number of tries when the file with the same name is already exists
