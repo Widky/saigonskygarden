@@ -129,7 +129,7 @@ $showAboutPage = get_field('show_about_page');
     <div class="container">
         <h2 class="cl-title text-center">
             <span class="cl-main-title change-cl"><?php echo _e('POPULAR VIDEO','hotel-center-lite-child') ?></span>
-            <span class="cl-sub-title"><?php echo _e('紹介動画','hotel-center-lite-child') ?></span>
+            <span class="cl-sub-title"><?php echo _e('人気のビデオ','hotel-center-lite-child') ?></span>
         </h2>
         <div class="content-popular-video">
             <div class="row rvideo">

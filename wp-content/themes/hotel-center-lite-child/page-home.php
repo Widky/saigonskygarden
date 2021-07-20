@@ -21,6 +21,8 @@
 
 <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-home-about-us.php'); ?>
 
+<?php require_once(get_stylesheet_directory() . '/template-parts/block/block-banner.php'); ?>
+
 
 <section class="group-block">
     <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-apartment.php'); ?>

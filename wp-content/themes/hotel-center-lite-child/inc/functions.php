@@ -556,6 +556,10 @@ function custom_theme_options_register_settings(){
   register_setting('options_group', 'f_twitter');
   register_setting('options_group', 'f_google_plus');
   register_setting('options_group', 'f_youtube');
+
+  register_setting('options_group', 'profilepicture','upload_image');
+  register_setting('options_group', 'text_ja');
+  register_setting('options_group', 'text_en');
 }
 add_action('admin_menu','custom_theme_options_menu');
 if(!function_exists('custom_theme_options')){
@@ -572,7 +576,7 @@ if(!function_exists('custom_theme_options_callback')){
     ?>
 <div class="wrap">
     <h2><?php _e('Theme Options','hotel-center-lite-child') ?></h2>
-    <form method="post" action="options.php" novalidate="novalidate">
+    <form method="post" action="options.php" novalidate="novalidate" enctype="multipart/form-data">
         <?php settings_fields( 'options_group' ); ?>
         <table class="form-table" role="presentation">
             <tbody>
@@ -635,6 +639,42 @@ if(!function_exists('custom_theme_options_callback')){
                 </tr>
             </tbody>
         </table>
+        <h2><b><?php _e('Banner Home','hotel-center-lite-child') ?></b></h2>
+        <p><?php _e('For short stays, we accept reservations on Booking.com. Please make a reservation from here.','hotel-center-lite-child') ?>
+        </p>
+        <table class="form-table" role="presentation">
+            <tbody>
+                <tr>
+                    <th scope="row"><label for="image"><?php _e('Image','hotel-center-lite-child') ?></label>
+                    </th>
+                    <td><input type="file" name="profilepicture" size="25" class="regular-text" value="<?php echo get_option('profilepicture')?>" /></td>
+                </tr>
+                <?php 
+                $upload_file = get_user_meta(1, 'upload_id');
+                // var_dump($upload_id);exit;
+                if($upload_file){
+                  $file = $upload_file[0]['file'];
+                  $strDay = date('Y').'/'.date('m').'/';
+                  $nameFile = str_replace($strDay, '',$file);
+                  // var_dump($file);exit;
+                  echo '<tr><th scope="row"></th><td><img src="/wp-content/uploads/'.$file.'" alt="'.$nameFile.'" /></td></tr>';}
+                ?>
+                <tr>
+                    <th scope="row"><label
+                            for="text_ja"><?php _e('Content for Japanese','hotel-center-lite-child') ?></label></th>
+                    <td><textarea name="text_ja" class="regular-text"
+                            rows="3"><?php echo get_option('text_ja')?></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label
+                            for="text_en"><?php _e('Content for English','hotel-center-lite-child') ?></label></th>
+                    <td><textarea name="text_en" class="regular-text"
+                            rows="3"><?php echo get_option('text_en')?></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <p class="submit">
             <font style="vertical-align: inherit;">
                 <font style="vertical-align: inherit;"><input type="submit" name="submit" id="submit"
@@ -646,7 +686,49 @@ if(!function_exists('custom_theme_options_callback')){
 <?php
   }
 }
+function upload_image(){
+  // WordPress environment
+  require( dirname(__FILE__) . '\..\..\..\..\wp-load.php' );
 
+  $wordpress_upload_dir = wp_upload_dir();
+  $i = 1; // number of tries when the file with the same name is already exists
+  $profilepicture = $_FILES["profilepicture"];
+  // var_dump($profilepicture);exit;
+  if( empty( $profilepicture ) || $profilepicture['error'] || $profilepicture['size'] > wp_max_upload_size() || !in_array( $new_file_mime, get_allowed_mime_types() )){
+      wp_redirect('/wp-admin/themes.php?page=theme-options.php');
+  }
+
+  if($profilepicture['size'] > 0){
+      $new_file_path = $wordpress_upload_dir['path'] . '/' . $profilepicture['name'];
+      $new_file_mime = mime_content_type( $profilepicture['tmp_name'] );
+      while( file_exists( $new_file_path ) ) {
+          $i++;
+          $new_file_path = $wordpress_upload_dir['path'] . '/' . $i . '_' . $profilepicture['name'];
+      }
+      // looks like everything is OK
+      if( move_uploaded_file( $profilepicture['tmp_name'], $new_file_path ) ) {
+          
+
+          $upload_id = wp_insert_attachment( array(
+              'guid'           => $new_file_path, 
+              'post_mime_type' => $new_file_mime,
+              'post_title'     => preg_replace( '/\.[^.]+$/', '', $profilepicture['name'] ),
+              'post_content'   => '',
+              'post_status'    => 'inherit'
+          ), $new_file_path );
+
+          // wp_generate_attachment_metadata() won't work if you do not include this file
+          require_once( ABSPATH . 'wp-admin/includes/image.php' );
+
+          // Generate and save the attachment metas into the database
+          wp_update_attachment_metadata( $upload_id, wp_generate_attachment_metadata( $upload_id, $new_file_path ) );
+          update_user_meta( 1 ,'upload_id', wp_generate_attachment_metadata( $upload_id, $new_file_path ) );
+
+          // Show the uploaded file in browser
+          wp_redirect('/wp-admin/themes.php?page=theme-options.php');
+    }
+  }
+}
 // Add .html for post Page
 add_action('init', 'wk_change_page_permalink', -1);
 function wk_change_page_permalink() {
