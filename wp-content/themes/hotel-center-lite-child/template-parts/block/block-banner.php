@@ -9,7 +9,7 @@ if($upload_file){
     <div class="col-12 p-0">
         <div class="home-banner">
             <a href="<?php echo get_option('booking'); ?>">
-                <?php echo '<img src="'.home_url().'/wp-content/uploads/'.$file.'" alt="'.$nameFile.'" />'; ?>
+                <?php echo '<img src="/wp-content/uploads/'.$file.'" alt="'.$nameFile.'" />'; ?>
                 <div class="banner-text">
                     <?php 
                     $currentLang = get_bloginfo("language");
