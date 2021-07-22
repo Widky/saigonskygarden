@@ -834,3 +834,6 @@ add_action( 'reviews-category_add_form', function( $taxonomy )
 }
 </style><?php
 }, 10, 2 );
+
+
+add_filter( 'wpm_post_acf-field-group_config', '__return_null' );

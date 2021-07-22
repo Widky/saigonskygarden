@@ -1,7 +1,5 @@
 {
     "post_types": {
-        "post": {},
-        "page": {},
         "apartment": {},
         "facilities": {},
         "services": {},

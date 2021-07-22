@@ -33,7 +33,7 @@
                 </div>
                 <div class="footer-main-column footer-main-column3 col-xl-7 col-lg-7 col-md-7 col-12 pd-0">
                     <div class="fmc3-wrap">
-                        <h4 class="fm-title">Facility</h4>
+                        <h4 class="fm-title"><?php echo _e('施設','hotel-center-lite-child') ?></h4>
                         <div class="menu-footer-2-container">
                             <ul id="menu2-menu-footer-2" class="menu">
                                 <?php 
