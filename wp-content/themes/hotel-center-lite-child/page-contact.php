@@ -33,17 +33,18 @@ get_header();
         </div>
         <div class="col-12 col-md-6 ">
             <?php
-                    $contact_map_url = get_post_meta( get_the_ID(), 'contact_map_url_newfield',true );
-                    $contact_address = get_post_meta( get_the_ID(), 'contact_address_newfield ',true );
-                    $contact_tel = get_post_meta(get_the_ID(),'contact_tel_newfield',true);
-                    $contact_fax = get_post_meta(get_the_ID(),'contact_fax_newfield',true);
-                    $contact_url = get_post_meta(get_the_ID(),'contact_site_url',true);
-                    $contact_email = get_post_meta(get_the_ID(),'contact_email_newfield',true);
-                    $contact_url2 = get_post_meta(get_the_ID(),'contact_url2_newfield',true);
-                ?>
+                $page_id = get_queried_object_id();
+                $contact_map_url = get_field('contact_map_url_newfield', $page_id, true );
+                $contact_address = get_field('contact_address_newfield',$page_id, true );
+                $contact_tel = get_field('contact_tel_newfield', $page_id, true);
+                $contact_fax = get_field('contact_fax_newfield', $page_id, true);
+                $contact_url = get_field('contact_site_url', $page_id, true);
+                $contact_email = get_field('contact_email_newfield', $page_id, true);
+                $contact_url2 = get_field('contact_url2_newfield', $page_id, true);
+            ?>
             <?php if(!empty($contact_address)) {?>
             <div class="map_iframe">
-                <?php echo $contact_map_url ?>
+                <?php echo $contact_map_url; ?>
             </div>
             <?php } ?>
 
