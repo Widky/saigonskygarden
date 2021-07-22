@@ -90,14 +90,16 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
                                 <div class="carousel-item active">
                                     <img src="<?php echo $image[0]; ?>"
-                                        alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                        alt="<?php custom_the_post_thumbnail_caption(); ?>" id="btnLightbox" class="button" type="button" data-toggle="modal"
+                            data-target="#modal-slide-apm">
                                 </div>
                                 <?php endif; ?>
                                 <?php foreach($sliderCat as $ks=>$vs) : ?>
                                 <?php if($sliderCat[$ks] != false) : ?>
                                 <div
                                     class="carousel-item <?php if($ks == 'img_1' && ! has_post_thumbnail( get_the_ID() )) echo 'active'; ?>">
-                                    <img src="<?php echo $vs['url']; ?>" alt="<?php echo $vs['title']; ?>">
+                                    <img src="<?php echo $vs['url']; ?>" alt="<?php echo $vs['filename']; ?>" id="btnLightbox" class="button" type="button" data-toggle="modal"
+                            data-target="#modal-slide-apm">
                                 </div>
                                 <?php endif; ?>
                                 <?php endforeach; ?>
@@ -115,12 +117,12 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         </div>
                         <div class="quote-orverlay"></div>
                     </div>
-                    <div class="apd-tax-slide-lightbox">
+                    <!-- <div class="apd-tax-slide-lightbox">
                         <button id="btnLightbox" class="button" type="button" data-toggle="modal"
                             data-target="#modal-slide-apm">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lightboxA.png" alt="">
+                            <img src="<?php //echo get_stylesheet_directory_uri() ?>/assets/images/lightboxA.png" alt="">
                         </button>
-                    </div>
+                    </div> -->
                     <?php }else{ ?>
 
                     <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
