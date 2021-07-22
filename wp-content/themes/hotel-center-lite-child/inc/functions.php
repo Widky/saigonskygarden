@@ -557,6 +557,7 @@ function custom_theme_options_register_settings(){
   register_setting('options_group', 'f_google_plus');
   register_setting('options_group', 'f_youtube');
 
+  register_setting('options_group', 'checknewtab');
   register_setting('options_group', 'profilepicture','upload_image');
   register_setting('options_group', 'text_ja');
   register_setting('options_group', 'text_en');
@@ -581,7 +582,8 @@ if(!function_exists('custom_theme_options_callback')){
         <table class="form-table" role="presentation">
             <tbody>
                 <tr>
-                    <th scope="row"><label for="booking"><?php _e('URL Booking','hotel-center-lite-child') ?></label></th>
+                    <th scope="row"><label for="booking"><?php _e('URL Booking','hotel-center-lite-child') ?></label>
+                    </th>
                     <td><input type="text" name="booking" value="<?php echo get_option('booking')?>"
                             class="regular-text" /></td>
                 </tr>
@@ -642,12 +644,30 @@ if(!function_exists('custom_theme_options_callback')){
         <h2><b><?php _e('Banner Home','hotel-center-lite-child') ?></b></h2>
         <p><?php _e('For short stays, we accept reservations on Booking.com. Please make a reservation from here.','hotel-center-lite-child') ?>
         </p>
+        <p><?php _e('Size 1920 by 350 pixels','hotel-center-lite-child') ?></p>
+
         <table class="form-table" role="presentation">
             <tbody>
                 <tr>
+                    <th scope="row"><?php _e('New tab','hotel-center-lite-child') ?></th>
+                    <td>
+                        <fieldset>
+                            <legend class="screen-reader-text">
+                                <span><?php _e('New tab','hotel-center-lite-child') ?></span>
+                            </legend>
+                            <label for="users_can_register">
+                                <input type="checkbox" name="checknewtab" class="regular-text"
+                                    value="1" <?php checked( 1, get_option( 'checknewtab' ), true ); ?>/>
+                                <?php _e('Check to open new tab when click','hotel-center-lite-child') ?>
+                            </label>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
                     <th scope="row"><label for="image"><?php _e('Image','hotel-center-lite-child') ?></label>
                     </th>
-                    <td><input type="file" name="profilepicture" size="25" class="regular-text" value="<?php echo get_option('profilepicture')?>" /></td>
+                    <td><input type="file" name="profilepicture" size="25" class="regular-text"
+                            value="<?php echo get_option('profilepicture')?>" /></td>
                 </tr>
                 <?php 
                 $upload_file = get_user_meta(1, 'upload_id');
@@ -687,6 +707,7 @@ if(!function_exists('custom_theme_options_callback')){
 <?php
   }
 }
+
 function upload_image(){
   // WordPress environment
   require( dirname(__FILE__) . '/../../../../wp-load.php' );

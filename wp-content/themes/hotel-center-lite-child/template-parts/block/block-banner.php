@@ -8,7 +8,8 @@ if($upload_file){
 <div class="row">
     <div class="col-12 p-0">
         <div class="home-banner">
-            <a href="<?php echo get_option('booking'); ?>">
+            <a href="http://" ></a>
+            <a href="<?php echo get_option('booking'); ?>" <?php if(1 == get_option( 'checknewtab' )) echo 'target="_blank"'; ?> rel="noopener noreferrer">
                 <?php echo '<img src="/wp-content/uploads/'.$file.'" alt="'.$nameFile.'" />'; ?>
                 <div class="banner-text">
                     <?php 
