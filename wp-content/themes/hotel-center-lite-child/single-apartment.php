@@ -328,8 +328,16 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 
                 <div class="row apd-tax-detail apd-basic">
                     <div class="apd-button col-12 text-md-right text-center p-md-0">
-                        <a target="_blank" href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期契約・booking.com', 'hotel-center-lite-child'); ?></a>
-                        <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期契約・ご相談', 'hotel-center-lite-child'); ?></a>
+                        <a target="_blank" href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期契約', 'hotel-center-lite-child'); ?></a>
+                        <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期契約', 'hotel-center-lite-child'); ?></a>
+                    </div>
+                    <div class="apd-note col-12 text-md-right text-center p-md-0">
+                        <div class="note-content">
+                            <span><?php _e('Booking.comページよりご予約下さい', 'hotel-center-lite-child'); ?><b><?php _e(':短期契約', 'hotel-center-lite-child'); ?></b></span>
+                        </div>
+                        <div class="note-content">
+                            <span><?php _e('Sky Gardenスタッフにご連絡下さい', 'hotel-center-lite-child'); ?><b><?php _e(':長期契約', 'hotel-center-lite-child'); ?></b></span>
+                        </div>
                     </div>
                     <div class="clear"></div>
                 </div>

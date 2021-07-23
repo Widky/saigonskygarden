@@ -226,14 +226,16 @@
 }
 
 .apartment-detail .apd-tax-detail {
-   /* margin-top: 50px;
+    /* margin-top: 50px;
     margin-bottom: 79px;*/
     border-top: 1px solid #707070;
 }
-.apartment-detail .first-detail{
+
+.apartment-detail .first-detail {
     border-top: 2px solid #707070;
 }
-.aprt_expert{
+
+.aprt_expert {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -241,7 +243,6 @@
     color: #333333;
     margin-bottom: 20px;
 }
-
 
 .apd-title {
     /*min-width: 280px;*/
@@ -260,7 +261,7 @@
     /*display: -webkit-box;
     display: -ms-flexbox;
     display: flex;*/
-    padding:40px 0px;
+    padding: 40px 0px;
 }
 
 .apd-basic .apd-basic-item {
@@ -285,7 +286,7 @@
 
 .apd-basic .apd-basic-value {
     color: #333333;
-    font-size: 15px;  
+    font-size: 15px;
 }
 
 .first-detail .apd-basic-value {
@@ -301,7 +302,7 @@
 }
 
 .apd-basic .apd-basic-item:nth-child(3n + 2) {
-   /* min-width: 288px;*/
+    /* min-width: 288px;*/
 }
 
 .apd-basic .apd-basic-item:nth-child(n + 2) {
@@ -310,7 +311,7 @@
 
 .apd-basic .apd-basic-item:nth-child(4),
 .apd-basic .utilities-item:nth-child(7) {
-   /* padding-left: 0;
+    /* padding-left: 0;
     clear: both;*/
 }
 
@@ -338,6 +339,8 @@
     border-radius: 5px;
     box-shadow: 0 3px 0 #00000014;
     float: right;
+    min-width: 200px;
+    text-align: center;
 }
 
 .apd-button a.change-cl {
@@ -348,6 +351,14 @@
 
 .clear {
     clear: both;
+}
+
+.apd-note .note-content {
+    margin-top: 20px;
+}
+
+.apd-note .note-content b {
+    margin-left: 5px;
 }
 
 
@@ -555,7 +566,8 @@
     width: 20px;
     height: 20px;
 }
-.basic_icon{
+
+.basic_icon {
     margin-right: 15px;
 }
 
@@ -771,15 +783,20 @@
     .apd-tax-slide .csti-img .apd-info-img {
         left: 22%;
     }
-
     .apd-basic .apd-basic-item {
         padding: 5px 15px;
     }
-
     .apd-title h4 {
-       margin-top: 0px;
+        margin-top: 0px;
     }
-
+    .apd-button a {
+        float: none;
+        display: block;
+    }
+    .apd-button a.change-cl {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
 }
 
 
@@ -825,7 +842,7 @@
     .apd-tax-slide .csti-img .apd-info-img {
         display: none;
     }
-    .apartment-detail .apd-tax-slide .carousel-item{
+    .apartment-detail .apd-tax-slide .carousel-item {
         height: 300px !important;
     }
 }
