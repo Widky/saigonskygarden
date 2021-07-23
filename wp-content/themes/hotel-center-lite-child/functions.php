@@ -101,8 +101,14 @@ if(! function_exists('hierarchical_breadcrumb')){
                             echo $spanAfter;
                         }elseif(is_tax()){
                             $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+                            $currentLang = get_bloginfo("language");
+                            if( $currentLang == 'ja' && strtolower($term->taxonomy) == 'attractions'){
+                                $termName = '魅力';
+                            }else{
+                                $termName = $term->taxonomy;
+                            }
                             // var_dump($term);exit;
-                            echo '<a href="' . home_url($term->taxonomy . '.html') . '">' . __($term->taxonomy, 'hotel-center-lite-child') . '</a>' . $delimiter;
+                            echo '<a href="' . home_url($term->taxonomy . '.html') . '">' . __($termName, 'hotel-center-lite-child') . '</a>' . $delimiter;
                             echo '<span class="breadcrumb_last">';
                                 echo $term->name;
                             echo $spanAfter;
