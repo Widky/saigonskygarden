@@ -102,7 +102,7 @@ if(! function_exists('hierarchical_breadcrumb')){
                         }elseif(is_tax()){
                             $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
                             // var_dump($term);exit;
-                            echo '<a href="' . home_url($term->taxonomy . '.html') . '">' . $term->taxonomy . '</a>' . $delimiter;
+                            echo '<a href="' . home_url($term->taxonomy . '.html') . '">' . __($term->taxonomy, 'hotel-center-lite-child') . '</a>' . $delimiter;
                             echo '<span class="breadcrumb_last">';
                                 echo $term->name;
                             echo $spanAfter;
