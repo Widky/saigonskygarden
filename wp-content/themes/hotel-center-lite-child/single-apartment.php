@@ -90,16 +90,17 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
                                 <div class="carousel-item active">
                                     <img src="<?php echo $image[0]; ?>"
-                                        alt="<?php custom_the_post_thumbnail_caption(); ?>" id="btnLightbox" class="button" type="button" data-toggle="modal"
-                            data-target="#modal-slide-apm">
+                                        alt="<?php custom_the_post_thumbnail_caption(); ?>" id="btnLightbox"
+                                        class="button" type="button" data-toggle="modal" data-target="#modal-slide-apm">
                                 </div>
                                 <?php endif; ?>
                                 <?php foreach($sliderCat as $ks=>$vs) : ?>
                                 <?php if($sliderCat[$ks] != false) : ?>
                                 <div
                                     class="carousel-item <?php if($ks == 'img_1' && ! has_post_thumbnail( get_the_ID() )) echo 'active'; ?>">
-                                    <img src="<?php echo $vs['url']; ?>" alt="<?php echo $vs['filename']; ?>" id="btnLightbox" class="button" type="button" data-toggle="modal"
-                            data-target="#modal-slide-apm">
+                                    <img src="<?php echo $vs['url']; ?>" alt="<?php echo $vs['filename']; ?>"
+                                        id="btnLightbox" class="button" type="button" data-toggle="modal"
+                                        data-target="#modal-slide-apm">
                                 </div>
                                 <?php endif; ?>
                                 <?php endforeach; ?>
@@ -225,137 +226,140 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 <div class="row">
                     <div class="col-lg-6 col-md-7 col-12">
                         <div class="apd-tax-header-content">
-                            <h3 class="post-title"><?php echo get_field('sub_title_decription_field', get_the_ID()) ?></h3>
+                            <h3 class="post-title"><?php echo get_field('sub_title_decription_field', get_the_ID()) ?>
+                            </h3>
                             <pre><?php echo get_the_excerpt(); ?></pre>
                         </div>
                     </div>
                 </div>
             </div>
-                <?php 
+            <?php 
                 $basicInformation = get_field('basic_infomation_field', get_the_ID());
                 if($basicInformation) :
                 ?>
-  
-                <div class="row  apd-basic first-detail">
-                    <div class="col-12 col-md-2 apd-title apd-basic-title">
-                        <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
-                    </div>
-                    <div class="col-12 col-md-10 apd-basic-content">
-                            <div class="row">
-                               <?php if($basicInformation['area_field'] != ''){ ?>
-                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
-                                            <div class="apd-basic-text d-inline-block"><?php echo $strArea; ?></div>
-                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['area_field']; ?>
-                                                m<sup>2</sup></div>
-                                        </div>
-                                        <?php }  ?>
-                                        <?php if($basicInformation['check_in'] != ''){ ?>
-                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
-                                            <div class="apd-basic-text d-inline-block"><?php echo $strCheckIn; ?></div>
-                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['check_in']; ?>
-                                            </div>
-                                        </div>
-                                        <?php }  ?>
-                                        <?php if($basicInformation['bed_type_field'] != ''){ ?>
-                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
-                                            <div class="apd-basic-text d-inline-block"><?php echo $strBedType; ?></div>
-                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['bed_type_field']; ?>
-                                            </div>
-                                        </div>
-                                        <?php }  ?>
-                                        <?php if($basicInformation['check_out'] != ''){ ?>
-                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
-                                            <div class="apd-basic-text d-inline-block"><?php echo $strCheckOut; ?></div>
-                                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['check_out']; ?>
-                                            </div>
-                                        </div>
-                                        <?php }  ?>
-                                        <?php if($basicInformation['maximum_number_of_people_in_a_room_field'] != ''){ ?>
-                                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
-                                            <div class="apd-basic-text d-inline-block"><?php echo $strMaximumNumberPeople; ?></div>
-                                            <div class="apd-basic-value d-inline-block">
-                                                <?php echo $basicInformation['maximum_number_of_people_in_a_room_field']; ?>
-                                            </div>
-                                        </div>
-                                        <?php }  ?>
-                            </div>
-                            
-                    </div>
-                </div>    
-                    
-                <?php endif; ?>
 
-                <?php  
+            <div class="row  apd-basic first-detail">
+                <div class="col-12 col-md-2 apd-title apd-basic-title">
+                    <h4><?php _e('基本情報', 'hotel-center-lite-child'); ?></h4>
+                </div>
+                <div class="col-12 col-md-10 apd-basic-content">
+                    <div class="row">
+                        <?php if($basicInformation['area_field'] != ''){ ?>
+                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                            <div class="apd-basic-text d-inline-block"><?php echo $strArea; ?></div>
+                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['area_field']; ?>
+                                m<sup>2</sup></div>
+                        </div>
+                        <?php }  ?>
+                        <?php if($basicInformation['check_in'] != ''){ ?>
+                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                            <div class="apd-basic-text d-inline-block"><?php echo $strCheckIn; ?></div>
+                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['check_in']; ?>
+                            </div>
+                        </div>
+                        <?php }  ?>
+                        <?php if($basicInformation['bed_type_field'] != ''){ ?>
+                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                            <div class="apd-basic-text d-inline-block"><?php echo $strBedType; ?></div>
+                            <div class="apd-basic-value d-inline-block">
+                                <?php echo $basicInformation['bed_type_field']; ?>
+                            </div>
+                        </div>
+                        <?php }  ?>
+                        <?php if($basicInformation['check_out'] != ''){ ?>
+                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                            <div class="apd-basic-text d-inline-block"><?php echo $strCheckOut; ?></div>
+                            <div class="apd-basic-value d-inline-block"><?php echo $basicInformation['check_out']; ?>
+                            </div>
+                        </div>
+                        <?php }  ?>
+                        <?php if($basicInformation['maximum_number_of_people_in_a_room_field'] != ''){ ?>
+                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                            <div class="apd-basic-text d-inline-block"><?php echo $strMaximumNumberPeople; ?></div>
+                            <div class="apd-basic-value d-inline-block">
+                                <?php echo $basicInformation['maximum_number_of_people_in_a_room_field']; ?>
+                            </div>
+                        </div>
+                        <?php }  ?>
+                    </div>
+
+                </div>
+            </div>
+
+            <?php endif; ?>
+
+            <?php  
                     $termsUtilities = wp_get_object_terms( get_the_ID(), 'utilities-category');
                     // var_dump($termsUtilities);
                     if($termsUtilities) :
                 ?>
-                 <div class="row apd-tax-detail apd-basic">
-                     <div class="col-12 col-md-2 apd-title apd-basic-title">
-                         <h4><?php _e('部屋の利便性', 'hotel-center-lite-child'); ?></h4>
-                     </div>
-                     <div class="col-12 col-md-10 apd-basic-content">
-                            <div class="row">
-                                  <?php  
+            <div class="row apd-tax-detail apd-basic">
+                <div class="col-12 col-md-2 apd-title apd-basic-title">
+                    <h4><?php _e('部屋の利便性', 'hotel-center-lite-child'); ?></h4>
+                </div>
+                <div class="col-12 col-md-10 apd-basic-content">
+                    <div class="row">
+                        <?php  
                                     foreach($termsUtilities as $kterm=>$vterm) :
                                     ?>
-                                    <div class="apd-basic-item col-md-6 col-lg-4 col-12">
-                                        <div class="apd-basic-text d-inline-block">
-                                            <?php 
+                        <div class="apd-basic-item col-md-6 col-lg-4 col-12">
+                            <div class="apd-basic-text d-inline-block">
+                                <?php 
                                             $image = get_field('apartment_image_tax', $vterm->taxonomy . '_' . $vterm->term_id);
                                             if( !empty( $image ) ): ?>
-                                            <img class="basic_icon" src="<?php echo esc_url($image['url']); ?>"
-                                                alt="<?php echo esc_attr($image['alt']); ?>" />
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class="apd-basic-value d-inline-block"><?php echo $vterm->name; ?></div>
-                                    </div>
-                                    <?php endforeach; ?>                     
+                                <img class="basic_icon" src="<?php echo esc_url($image['url']); ?>"
+                                    alt="<?php echo esc_attr($image['alt']); ?>" />
+                                <?php endif; ?>
                             </div>
-                    </div>
-                </div> 
-                <?php endif; ?>
-                <?php if(get_the_content() != '') : ?>
-                <div class="row apd-tax-detail apd-basic">
-                    <div class="col-12 col-md-2 apd-title apd-basic-title">
-                        <h4><?php _e('情報利用', 'hotel-center-lite-child'); ?></h4>
-                    </div>
-                    <div class="col-12 col-md-10 apd-basic-content">
-                        <?php echo wpautop(get_the_content()); ?>
+                            <div class="apd-basic-value d-inline-block"><?php echo $vterm->name; ?></div>
+                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
-                <?php endif; ?>
+            </div>
+            <?php endif; ?>
+            <?php if(get_the_content() != '') : ?>
+            <div class="row apd-tax-detail apd-basic">
+                <div class="col-12 col-md-2 apd-title apd-basic-title">
+                    <h4><?php _e('情報利用', 'hotel-center-lite-child'); ?></h4>
+                </div>
+                <div class="col-12 col-md-10 apd-basic-content">
+                    <?php echo wpautop(get_the_content()); ?>
+                </div>
+            </div>
+            <?php endif; ?>
 
-                <div class="row apd-tax-detail apd-basic">
-                    <div class="apd-button col-12 text-md-right text-center p-md-0">
-                        <a target="_blank" href="<?php echo get_option('booking'); ?>" class="change-cl"><?php _e('短期契約', 'hotel-center-lite-child'); ?></a>
-                        <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期契約', 'hotel-center-lite-child'); ?></a>
+            <div class="row apd-tax-detail apd-basic">
+                <div class="col-12 text-md-right text-center p-md-0">
+                    <div class="apd-button apd-booking">
+                        <a target="_blank" href="<?php echo get_option('booking'); ?>"
+                            class="change-cl"><?php _e('短期契約', 'hotel-center-lite-child'); ?>
+                        </a>
+                        <span><?php _e('Booking.comページよりご予約下さい', 'hotel-center-lite-child'); ?></span>
                     </div>
-                    <div class="apd-note col-12 text-md-right text-center p-md-0">
-                        <div class="note-content">
-                            <span><?php _e('Booking.comページよりご予約下さい', 'hotel-center-lite-child'); ?><b><?php _e(':短期契約', 'hotel-center-lite-child'); ?></b></span>
-                        </div>
-                        <div class="note-content">
-                            <span><?php _e('Sky Gardenスタッフにご連絡下さい', 'hotel-center-lite-child'); ?><b><?php _e(':長期契約', 'hotel-center-lite-child'); ?></b></span>
-                        </div>
+                    <div class="apd-button">
+                        <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期契約', 'hotel-center-lite-child'); ?>
+                        </a>
+                        <span><?php _e('Sky Gardenスタッフにご連絡下さい', 'hotel-center-lite-child'); ?></span>
                     </div>
-                    <div class="clear"></div>
                 </div>
-       
+                <div class="clear"></div>
+            </div>
+        </div>
     </div>
-</div>
 
-<section class="apd-tax-other-room">
-    <div class="apd-tax-other-room-wrap">
-        <h2 class="ap-title cl-title text-center">
-            <span class="cl-main-title change-cl"><?php echo _e('Other Apartment', 'hotel-center-lite-child') ?></span>
-            <span class="cl-sub-title"><?php echo _e('その他のアパート', 'hotel-center-lite-child') ?></span>
-        </h2>
-        <div class="apd-tax-other-room-carousel">
-            <div class="container-fluid">
-                <div id="multi-carousel-apartment" class="apartment-carousel">
-                    <div class="owl-carousel owl-theme">
-                        <?php 
+    <section class="apd-tax-other-room">
+        <div class="apd-tax-other-room-wrap">
+            <h2 class="ap-title cl-title text-center">
+                <span
+                    class="cl-main-title change-cl"><?php echo _e('Other Apartment', 'hotel-center-lite-child') ?></span>
+                <span class="cl-sub-title"><?php echo _e('その他のアパート', 'hotel-center-lite-child') ?></span>
+            </h2>
+            <div class="apd-tax-other-room-carousel">
+                <div class="container-fluid">
+                    <div id="multi-carousel-apartment" class="apartment-carousel">
+                        <div class="owl-carousel owl-theme">
+                            <?php 
                         $args = array(
                             'post_type'     =>      'apartment',
                             'orderby'       =>      'date',
@@ -377,34 +381,34 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         // echo "<pre>";print_r($myPosts);exit;
                         foreach($myPosts as $k=>$v) :
                         ?>
-                        <div class="item">
-                            <div class="panel panel-default">
-                                <div class="panel-thumbnail">
-                                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"
-                                        title="<?php echo $v->post_title; ?>" class="thumb">
-                                        <?php if (has_post_thumbnail( $v->ID ) ): ?>
-                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                                        <img src="<?php echo $image[0]; ?>"
-                                            alt="<?php custom_the_post_thumbnail_caption(); ?>">
-                                        <?php endif; ?>
-                                        <div class="apd-cat">
-                                           <?php echo $v->post_title; ?>
-                                        </div>
-                                        <div class="apd-content post-content">
-                                            <h3 class="apd-title"><?php echo $v->post_title; ?></h3>
-                                            <div class="aprt_expert"><?php echo $v->post_excerpt; ?></div>
-                                        </div>
-                                    </a>
+                            <div class="item">
+                                <div class="panel panel-default">
+                                    <div class="panel-thumbnail">
+                                        <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"
+                                            title="<?php echo $v->post_title; ?>" class="thumb">
+                                            <?php if (has_post_thumbnail( $v->ID ) ): ?>
+                                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                            <img src="<?php echo $image[0]; ?>"
+                                                alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                            <?php endif; ?>
+                                            <div class="apd-cat">
+                                                <?php echo $v->post_title; ?>
+                                            </div>
+                                            <div class="apd-content post-content">
+                                                <h3 class="apd-title"><?php echo $v->post_title; ?></h3>
+                                                <div class="aprt_expert"><?php echo $v->post_excerpt; ?></div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
+                            <?php endforeach; ?>
                         </div>
-                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<?php
+    </section>
+    <?php
 
 get_footer();

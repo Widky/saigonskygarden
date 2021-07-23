@@ -328,7 +328,7 @@
 }
 
 .apd-button {
-    /*margin-top: 69px;*/
+    float: right;
 }
 
 .apd-button a {
@@ -338,9 +338,15 @@
     color: #3E3E3E;
     border-radius: 5px;
     box-shadow: 0 3px 0 #00000014;
-    float: right;
-    min-width: 200px;
+    min-width: 300px;
+    display: block;
     text-align: center;
+}
+
+.apd-button span {
+    display: block;
+    margin-top: 10px;
+    float: left;
 }
 
 .apd-button a.change-cl {
@@ -353,12 +359,8 @@
     clear: both;
 }
 
-.apd-note .note-content {
-    margin-top: 20px;
-}
-
-.apd-note .note-content b {
-    margin-left: 5px;
+.apd-booking span {
+    margin-left: 10px;
 }
 
 
@@ -789,13 +791,22 @@
     .apd-title h4 {
         margin-top: 0px;
     }
-    .apd-button a {
+    .apd-button {
         float: none;
-        display: block;
+        display: -ms-grid;
+        display: grid;
     }
     .apd-button a.change-cl {
         margin-left: 0;
         margin-bottom: 15px;
+    }
+    .apd-booking span {
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .apd-button.apd-booking {
+        margin-bottom: 30px;
     }
 }
 
