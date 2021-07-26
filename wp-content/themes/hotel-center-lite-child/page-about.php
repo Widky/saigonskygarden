@@ -105,13 +105,19 @@ $showAboutPage = get_field('show_about_page');
                         $i = 0;
                         // echo "<pre>";print_r($myPosts);
                         foreach($myPosts as $k=>$v) :
-                            if (has_post_thumbnail( $v->ID ) ): ?>
+                            $image = get_field('image_show_in_about_page',$v->ID);
+
+                            if ($image != NULL ): ?>
                             <div class="item <?php if($i == 0) echo 'active'; ?>">
                                 <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
                                     <div class="fiw-img">
-                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                                        <img src="<?php echo $image[0]; ?>"
-                                            alt="<?php custom_the_post_thumbnail_caption(); ?>">
+                                        <?php 
+                                        if($image != NULL){
+                                            echo '<img src="'.$image['url'].'" alt="'.$image['filename'].'">';
+                                        }else{
+                                            echo '<img src="" alt="'._('Not Image').'">';
+                                        }
+                                        ?>
                                     </div>
                                 </a>
                             </div>
