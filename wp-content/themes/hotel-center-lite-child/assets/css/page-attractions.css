@@ -32,8 +32,8 @@
     position: relative;
 }
 
-.attractions-item .aiw-img{
-  overflow: hidden;  
+.attractions-item .aiw-img {
+    overflow: hidden;
 }
 
 .attractions-item .aiw-img img {
@@ -45,11 +45,10 @@
 
 .attractions-item .aiw-img img:hover {
     transform: scale(1.3);
-
 }
 
-.attractions-item .attractions-item-wrap h3:hover{
-  color: #2398A9;
+.attractions-item .attractions-item-wrap h3:hover {
+    color: #2398A9;
 }
 
 .attractions-item .attractions-item-wrap:hover {
@@ -72,7 +71,7 @@
 }
 
 .attractions-item .aiw-body {
-    height: 420px;
+    height: 350px;
     border: 1px solid #B9B9B9;
     margin-top: 6px;
     padding: 40px 42px;
