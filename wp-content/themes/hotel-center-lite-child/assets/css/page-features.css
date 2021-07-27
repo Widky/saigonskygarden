@@ -25,7 +25,7 @@
 }
 .feature_item .feature_img img{
     width: 100%;
-    min-height: 500px;
+    /*min-height: 500px;*/
 }
 .feature_body{
     width: 40%;
