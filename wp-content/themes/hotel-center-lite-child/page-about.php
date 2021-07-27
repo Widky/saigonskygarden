@@ -37,8 +37,8 @@ $showAboutPage = get_field('show_about_page');
                     <a href="<?php echo home_url('feature.html'); ?>"
                         class="thumb">
                         <div class="afi-img">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/about/feature.png"
-                                alt="<?php echo $v->post_title; ?>">
+                            <img src="/wp-content/uploads/<?php echo date('Y').'/'.date('m'); ?>/feature.jpg"
+                                alt="feature.jpg">
                         </div>
                         <div class="afi-content">
                             <h3 class="afi-title"><?php _e('特徴','hotel-center-lite-child') ?></h3>
@@ -51,8 +51,8 @@ $showAboutPage = get_field('show_about_page');
                     <a href="<?php echo home_url('facilities.html'); ?>" 
                         class="thumb">
                         <div class="afi-img">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/about/facilities.png"
-                                alt="<?php echo $v->post_title; ?>">
+                            <img src="/wp-content/uploads/<?php echo date('Y').'/'.date('m'); ?>/facilities.jpg"
+                                alt="facilities.jpg">
                         </div>
                         <div class="afi-content">
                             <h3 class="afi-title "><?php _e('施設','hotel-center-lite-child') ?></h3>
@@ -65,8 +65,8 @@ $showAboutPage = get_field('show_about_page');
                     <a href="<?php echo home_url('attractions.html'); ?>"
                         class="thumb">
                         <div class="afi-img">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/about/attractions.png"
-                                alt="<?php echo $v->post_title; ?>">
+                            <img src="/wp-content/uploads/<?php echo date('Y').'/'.date('m'); ?>/attractions.jpg"
+                                alt="attractions.jpg">
                         </div>
                         <div class="afi-content">
                             <h3 class="afi-title"><?php _e('魅力 ','hotel-center-lite-child') ?></h3>

@@ -351,7 +351,6 @@
 
 .apd-button a.change-cl {
     background-color: #2398A9;
-    margin-left: 10px;
     color: #FFFFFF;
 }
 
@@ -361,6 +360,10 @@
 
 .apd-booking span {
     margin-left: 10px;
+}
+
+.apd-button.apd-booking {
+    margin-left: 30px;
 }
 
 
@@ -807,6 +810,9 @@
     }
     .apd-button.apd-booking {
         margin-bottom: 30px;
+    }
+    .apd-button.apd-booking {
+        margin-left: 0;
     }
 }
 
