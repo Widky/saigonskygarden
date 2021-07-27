@@ -230,12 +230,12 @@ section .cl-sub-title,
 }
 
 .cat-studio-items .csti-item img {
-    /*width: 1437px;
-    height: 498px;*/
+    /*width: 1437px;*/
+    height: 498px;
     margin: auto;
     display: block;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .aparment-posts .post-content .post-excerpt {
