@@ -263,6 +263,15 @@
     padding: 37px 17px 0;
 }
 
+.attractions-carousel .att-content .att-excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
 .single-attractions-item .saiw-img {
     position: relative;
     padding-right: 0;
@@ -298,7 +307,7 @@
 
 .single-attractions-item .saiw-img img {
     width: 100%;
-    height: 500px;
+    height: auto;
 }
 
 .single-attractions-item .saiw-img .saiw-des {
