@@ -37,6 +37,5 @@
 
 <?php require_once(get_stylesheet_directory() . '/template-parts/block/block-event.php'); ?>
 
-<?php require_once(get_stylesheet_directory() . '/template-parts/block/block-quote-customer.php'); ?>
 </div>
 <?php get_footer(); ?>

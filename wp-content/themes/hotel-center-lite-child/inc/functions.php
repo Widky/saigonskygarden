@@ -322,41 +322,6 @@ function add_register_post_type(){
   );
   register_post_type( 'attraction', $argsAttractions );
 
-    // add review post type
-  $labelReviews = array(
-    'name'                  => _x( 'Review Response', 'Review Response', 'hotel-center-lite-child' ),
-    'singular_name'         => _x( 'Review', 'Reviews Response', 'hotel-center-lite-child' ),
-    'menu_name'             => _x( 'Review Response', 'Review Response', 'hotel-center-lite-child' ),
-    'name_admin_bar'        => _x( 'Review Response', 'Review Response', 'hotel-center-lite-child' ),
-    'add_new'               => __( 'Add New Review Response', 'hotel-center-lite-child' ),
-    'add_new_item'          => __( 'Add New Review Response ', 'hotel-center-lite-child' ),
-    'new_item'              => __( 'New Review', 'hotel-center-lite-child' ),
-    'edit_item'             => __( 'Edit Review', 'hotel-center-lite-child' ),
-    'view_item'             => __( 'View Review', 'hotel-center-lite-child' ),
-    'all_items'             => __( 'Reviews Response', 'hotel-center-lite-child' ),
-    'search_items'          => __( 'Search Review Response', 'hotel-center-lite-child' ),
-    'parent_item_colon'     => __( 'Parent Review:', 'hotel-center-lite-child' ),
-    'not_found'             => __( 'No Review Response found.', 'hotel-center-lite-child' ),
-    'not_found_in_trash'    => __( 'No Review Response found in Trash.', 'hotel-center-lite-child' )
-  );
-
-  $argsReviews = array(
-    'labels'             => $labelReviews,
-    'public'             => true,
-    'publicly_queryable' => true,
-    'show_ui'            => true,
-    'show_in_menu'       => false,
-    'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'review' ),
-    'capability_type'    => 'post',
-    'has_archive'        => true,
-    'hierarchical'       => false,
-    'menu_position'      => 20,
-    'menu_icon'          => 'dashicons-star-filled',
-    'supports'           => array( 'title','thumbnail'),
-    'taxonomies'         => array(  'reviews-category' )
-  );
-  register_post_type( 'review', $argsReviews );
 }
 add_action('init', 'add_register_post_type');
 
@@ -475,37 +440,6 @@ function add_register_taxonomies(){
     );
 
     register_taxonomy( 'attractions', array( 'attraction' ), $args );
-
-     // Review category
-    unset($labels);
-    unset($args);
-
-    $labels = array(
-      'name'              => _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ),
-      'singular_name'     => _x( 'Reviews', 'taxonomy singular name', 'hotel-center-lite-child' ),
-      'search_items'      => __( 'Search Genres', 'hotel-center-lite-child' ),
-      'all_items'         => __( 'All reviews', 'hotel-center-lite-child' ),
-      'parent_item'       => __( 'Parent reviews', 'hotel-center-lite-child' ),
-      'parent_item_colon' => __( 'Parent reviews:', 'hotel-center-lite-child' ),
-      'edit_item'         => __( 'Edit reviews', 'hotel-center-lite-child' ),
-      'update_item'       => __( 'Update reviews', 'hotel-center-lite-child' ),
-      'add_new_item'      => __( 'Add New reviews', 'hotel-center-lite-child' ),
-      'new_item_name'     => __( 'New reviews Name', 'hotel-center-lite-child' ),
-      'menu_name'         => __( 'Reviews', 'hotel-center-lite-child' ),
-    );
-
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'reviews-category' ),
-        'sort'              => true
-    );
-
-    register_taxonomy( 'reviews-category', array( 'review' ), $args );
-
 
 }
 add_action('init', 'add_register_taxonomies');
@@ -796,17 +730,17 @@ function hotel_center_lite_child_setup() {
 add_action( 'after_setup_theme', 'hotel_center_lite_child_setup' );
 
 
-add_action('admin_menu', 'review_menu');
-function review_menu(){
-  $slug_1 = 'edit-tags.php?taxonomy=reviews-category&post_type=review';
-  $slug_2 = 'edit.php?post_type=review';
-  $title_1 = _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' );
-  $title_2 = _x( 'Review Response', 'Review Response', 'hotel-center-lite-child' );
-  $main_icon_url = get_template_directory_uri().'/images/privacy-policy-20.png';
-    add_menu_page(_x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), 'edit_pages', $slug_1, '','dashicons-star-filled',25 );
-    add_submenu_page($slug_1, $title_1, $title_1, 'manage_options', $slug_1 );
-    add_submenu_page($slug_1, $title_1, $title_2, 'manage_options', $slug_2 );
-}
+// add_action('admin_menu', 'review_menu');
+// function review_menu(){
+//   $slug_1 = 'edit-tags.php?taxonomy=reviews-category&post_type=review';
+//   $slug_2 = 'edit.php?post_type=review';
+//   $title_1 = _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' );
+//   $title_2 = _x( 'Review Response', 'Review Response', 'hotel-center-lite-child' );
+//   $main_icon_url = get_template_directory_uri().'/images/privacy-policy-20.png';
+//     add_menu_page(_x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), 'edit_pages', $slug_1, '','dashicons-star-filled',25 );
+//     add_submenu_page($slug_1, $title_1, $title_1, 'manage_options', $slug_1 );
+//     add_submenu_page($slug_1, $title_1, $title_2, 'manage_options', $slug_2 );
+// }
 
 /**
  * Hide the term description in  edit form
