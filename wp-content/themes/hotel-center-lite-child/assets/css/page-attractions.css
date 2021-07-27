@@ -240,7 +240,7 @@
 
 .attractions-carousel .att-img img {
     width: 100%;
-    height: 289px;
+    height: auto;
 }
 
 .attractions-carousel .att-des {
