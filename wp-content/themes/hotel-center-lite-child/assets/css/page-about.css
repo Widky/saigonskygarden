@@ -85,6 +85,7 @@
 .about-feature-lists .about-feature-item img {
     width: 100%;
     height: auto;
+    border-radius: 5px;
 }
 
 .about-feature-lists .about-feature-item .afi-content {
