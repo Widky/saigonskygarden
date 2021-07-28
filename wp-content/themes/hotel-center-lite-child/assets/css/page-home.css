@@ -369,7 +369,7 @@ section .cl-sub-title,
 
 .cat-bed-items .cat-bed-items-wrap {
     position: relative;
-    height: 596px;
+/*     height: 596px; */
 }
 
 .cat-bed-items .cat-bed-title {
@@ -1358,7 +1358,13 @@ section .cl-sub-title,
 }
 
 .cat_item {
-    padding: 50px 0px;
+    margin: 100px 0px;
+}
+.cat_item:first-child{
+    margin-top:0;
+}
+.cat_item:last-child{
+    margin-bottom:0;
 }
 
 .cat-odd {
