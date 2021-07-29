@@ -334,8 +334,7 @@
 .apd-button a {
     background-color: #DFE5E8;
     padding: 15px;
-    font: normal 20px 'Yu Gothic Medium', 'sans-serif';
-    font-style: italic;
+    font: normal italic 20px 'Yu Gothic Bold', 'sans-serif';
     color: #3E3E3E;
     border-radius: 5px;
     box-shadow: 0 3px 0 #00000014;
@@ -356,7 +355,7 @@
 }
 
 .apd-button span {
-    font-style: italic;
+    font: normal italic 16px 'Yu Gothic', 'sans-serif';
     display: block;
     margin-top: 10px;
     float: left;
