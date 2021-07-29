@@ -445,7 +445,9 @@
 }
 
 .attractions-carousel .att-content {
-    padding: 37px 17px 0;
+    padding: 37px 17px;
+    background-color: #F4F4F4;
+    min-height: 175px;
 }
 
 .attractions-carousel .att-content .att-excerpt {
