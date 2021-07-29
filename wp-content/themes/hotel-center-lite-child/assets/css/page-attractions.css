@@ -114,6 +114,165 @@
     margin-top: 30px;
 }
 
+.attractions-item1 .aiw-img {
+    border-radius: 100%;
+    position: relative;
+}
+
+.attractions-item1 .aiw-des {
+    top: unset;
+    right: unset;
+    bottom: 56px;
+    left: 25%;
+}
+
+.attractions-item1 .aiw-body {
+    border: none;
+    box-shadow: none;
+    padding: 30px 0;
+    min-height: unset;
+}
+
+.attractions-item1 .aiw-line {
+    display: none;
+}
+
+.attractions-item1 .aiw-title {
+    font: normal bold 24px 'Yu Gothic Bold', 'sans-serif';
+    margin-bottom: 0;
+}
+
+.attractions-item1 .attractions-item-wrap:hover {
+    box-shadow: none;
+}
+
+.attractions-item .attractions-item-wrap:hover h3 {
+    color: #2398A9;
+}
+
+.attractions-end {
+    position: relative;
+}
+
+.attractions-end .aiw-line-point {
+    width: 1px;
+    height: 100%;
+    background-color: #333333;
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+.attractions-end .aiw-line-point .aiw-line-point-wrap {
+    margin-left: -12px;
+    margin-top: 141px;
+    background-color: #FFFFFF;
+}
+
+.attractions-end.nth .aiw-line-point .aiw-line-point-wrap {
+    margin-top: 81px;
+}
+
+.attractions-end .attractions-item {
+    margin: 60px 0;
+}
+
+.attractions-end.nth .attractions-item {
+    margin: 0;
+}
+
+.attractions-end.nth .attractions-item-wrap {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: reverse !important;
+    -ms-flex-direction: column-reverse !important;
+    flex-direction: column-reverse !important;
+    display: -webkit-box;
+    /* display: flex; */
+}
+
+.attractions-end .attractions-item .attractions-item-wrap:hover {
+    box-shadow: none;
+}
+
+.attractions-end .attractions-item .aiw-img,
+.attractions-end .attractions-item .aiw-img img {
+    border-radius: 0;
+}
+
+.attractions-end .attractions-item .aiw-img {
+    padding-right: 40px;
+}
+
+.attractions-end.nth .attractions-item .aiw-img {
+    padding-right: 15px;
+    padding-left: 40px;
+}
+
+.attractions-end .attractions-item .aiw-des {
+    right: unset;
+    left: 28px;
+    top: 18px;
+}
+
+.attractions-end.nth .attractions-item .aiw-des {
+    right: unset;
+    left: 53px;
+    top: 18px;
+}
+
+.attractions-end .attractions-item .aiw-body {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+    padding: 0 15px;
+    margin-top: 75px;
+}
+
+.attractions-end .attractions-item .aiw-body {
+    padding-left: 40px;
+}
+
+.attractions-end.nth .attractions-item .aiw-body {
+    padding-left: 15px;
+    padding-right: 40px;
+}
+
+.attractions-end.nth .attractions-item .aiw-body {
+    text-align: right;
+}
+
+.attractions-end .attractions-item .aiw-line {
+    display: none;
+}
+
+.attractions-end .attractions-item .aiw-title {
+    font: normal bold 24px 'Yu Gothic', 'sans-serif';
+    margin-bottom: 0;
+}
+
+.attractions-end .aiw-point {
+    width: 24px;
+    height: 24px;
+    display: block;
+    border: 1px solid #333333;
+    border-radius: 100%;
+}
+
+.attractions-end .aiw-point span {
+    width: 10px;
+    height: 10px;
+    display: block;
+    background-color: #333333;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 6px;
+}
+
+.attractions-end .attractions-item .aiw-img img:hover {
+    transform: none;
+}
+
 .aiw-content p {
     font: normal 15px 'Yu Gothic Medium', 'sans-serif';
     color: #33333390;
@@ -460,6 +619,9 @@
 /* size MD - < 991.98px */
 
 @media screen and (max-width: 991.98px) {
+    .attractions-end {
+        display: block !important;
+    }
     .attractions-items>div:nth-child(4n + 4) {
         display: none;
     }
@@ -507,6 +669,27 @@
     .festiva-restaurant .fri-body {
         top: 48px;
         padding: 30px 35px;
+    }
+    /* attractions-end */
+    .attractions-end .attractions-item .aiw-img,
+    .attractions-end.nth .attractions-item .aiw-img,
+    .attractions-end .attractions-item .aiw-body,
+    .attractions-end.nth .attractions-item .aiw-body {
+        padding: 0 15px;
+        text-align: left;
+    }
+    .attractions-end .attractions-item .aiw-title {
+        text-align: left;
+        margin-top: 15px;
+    }
+    .attractions-end:nth-child(n + 2) .attractions-item {
+        margin-top: 0;
+    }
+    .attractions-end .attractions-item .aiw-line {
+        display: block;
+    }
+    .attractions-end .aiw-line-point {
+        display: none;
     }
 }
 
