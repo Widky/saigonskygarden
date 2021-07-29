@@ -670,6 +670,10 @@
         top: 48px;
         padding: 30px 35px;
     }
+    .attractions-item .aiw-title {
+        text-overflow: unset;
+        white-space: inherit;
+    }
     /* attractions-end */
     .attractions-end .attractions-item .aiw-img,
     .attractions-end.nth .attractions-item .aiw-img,
@@ -690,6 +694,12 @@
     }
     .attractions-end .aiw-line-point {
         display: none;
+    }
+    .attractions-end .attractions-item .aiw-body {
+        margin-top: 0;
+    }
+    .attractions-end .attractions-item {
+        margin: 0;
     }
 }
 
