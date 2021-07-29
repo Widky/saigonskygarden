@@ -335,6 +335,7 @@
     background-color: #DFE5E8;
     padding: 15px;
     font: normal 20px 'Yu Gothic Medium', 'sans-serif';
+    font-style: italic;
     color: #3E3E3E;
     border-radius: 5px;
     box-shadow: 0 3px 0 #00000014;
@@ -343,7 +344,19 @@
     text-align: center;
 }
 
+.apd-button a::after {
+    content: '';
+    border: solid #3E3E3E;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate( -45deg);
+    -webkit-transform: rotate( -45deg);
+    margin-left: 0;
+}
+
 .apd-button span {
+    font-style: italic;
     display: block;
     margin-top: 10px;
     float: left;
@@ -364,6 +377,10 @@
 
 .apd-button.apd-booking {
     margin-left: 30px;
+}
+
+.apd-button.apd-booking a::after {
+    border-color: #FFFFFF;
 }
 
 

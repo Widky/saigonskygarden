@@ -330,7 +330,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             <?php endif; ?>
 
             <div class="row apd-tax-detail apd-basic">
-                <div class="col-12 text-md-right text-center p-md-0">
+                <div class="" style="margin:auto">
                     <div class="apd-button apd-booking">
                         <a target="_blank" href="<?php echo get_option('booking'); ?>"
                             class="change-cl"><?php _e('短期契約', 'hotel-center-lite-child'); ?>
