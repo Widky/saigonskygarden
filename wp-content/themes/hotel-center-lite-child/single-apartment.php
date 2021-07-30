@@ -224,7 +224,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             </div>
             <div class="apd-tax-header">
                 <div class="row">
-                    <div class="col-lg-6 col-md-7 col-12">
+                    <div class="col-lg-8 col-md-12 col-12">
                         <div class="apd-tax-header-content">
                             <h3 class="post-title"><?php echo get_field('sub_title_decription_field', get_the_ID()) ?>
                             </h3>
