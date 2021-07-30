@@ -52,7 +52,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             $max_num = isset($basicInformation['maximum_number_of_people_in_a_room_field']) ? $basicInformation['maximum_number_of_people_in_a_room_field'] : "";
                         ?>
                         <h3 class="apdii-content">
-                            <?php if(isset($basicInformation['bed_type_field'])){echo $basicInformation['bed_type_field'] ;} ; ?>(<?php echo $max_num; ?>)
+                            <?php if(isset($basicInformation['bed_type_field'])){echo $basicInformation['bed_type_field'].' ';} ; ?>(<?php echo $max_num; ?>)
                         </h3>
                     </div>
                     <?php
@@ -330,6 +330,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             <?php endif; ?>
 
             <div class="row apd-tax-detail apd-basic">
+                <?php $currentLang = get_bloginfo("language"); 
+                if($currentLang == 'ja'){ ?>
                 <div class="" style="margin:auto">
                     <div class="apd-button apd-booking">
                         <a target="_blank" href="<?php echo get_option('booking'); ?>"
@@ -343,6 +345,21 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         <span><?php _e('Sky Gardenスタッフにご連絡下さい', 'hotel-center-lite-child'); ?></span>
                     </div>
                 </div>
+                <?php }else{ ?>
+                <div class="" style="margin:auto">
+                    <div class="apd-button apd-booking apd-booking-en">
+                        <a target="_blank" href="<?php echo get_option('booking'); ?>"
+                            class="change-cl"><?php _e('短期契約', 'hotel-center-lite-child'); ?>
+                        </a>
+                        <span><?php _e('Booking.comページよりご予約下さい', 'hotel-center-lite-child'); ?></span>
+                    </div>
+                    <div class="apd-button apd-booking-en">
+                        <a href="<?php echo home_url('contact.html'); ?>"><?php _e('長期契約', 'hotel-center-lite-child'); ?>
+                        </a>
+                        <span><?php _e('Sky Gardenスタッフにご連絡下さい', 'hotel-center-lite-child'); ?></span>
+                    </div>
+                </div>
+                <?php } ?>
                 <div class="clear"></div>
             </div>
         </div>

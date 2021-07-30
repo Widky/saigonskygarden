@@ -382,6 +382,14 @@
     border-color: #FFFFFF;
 }
 
+.apd-button.apd-booking-en a {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: auto;
+    font-size: 16px;
+}
+
 
 /* carousel */
 
@@ -559,9 +567,9 @@
 .apd-tax-slide .csti-img .apd-info-img {
     position: absolute;
     bottom: 15px;
-    left: 25%;
+    left: 0;
+    width: 100%;
     z-index: 10;
-    background-color: #2398A9;
     opacity: 78%;
 }
 
@@ -569,6 +577,11 @@
     font: normal 1.5em 'Yu Gothic Medium', 'sans-serif';
     color: #FFFFFF;
     padding: 15px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    background-color: #2398A9;
+    margin: auto;
 }
 
 .apd-tax-slide-lightbox {
@@ -655,9 +668,6 @@
     #multi-carousel-apartment .owl-carousel {
         width: 834px;
     }
-    .apd-tax-slide .csti-img .apd-info-img {
-        left: 20%;
-    }
 }
 
 
@@ -717,9 +727,6 @@
     }
     #multi-carousel-apartment .owl-prev {
         left: -40px;
-    }
-    .apd-tax-slide .csti-img .apd-info-img {
-        left: 8%;
     }
     .apd-basic .apd-basic-item:nth-child(4),
     .apd-basic .utilities-item:nth-child(7) {
@@ -826,6 +833,9 @@
     }
     .apd-button.apd-booking {
         margin-left: 0;
+    }
+    .apd-button.apd-booking-en a {
+        width: 100%;
     }
 }
 
