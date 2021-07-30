@@ -316,7 +316,7 @@ section .cl-sub-title,
     height: 71px !important;
     background-color: #5A5A5A;
     opacity: 1;
-    top: 263px;
+    top: 375px;
 }
 
 .cat-studio-items .csti-img .carousel-control-next {
@@ -1606,6 +1606,9 @@ section .cl-sub-title,
     .home-contact.container {
         max-width: calc(100% - 244px);
     }
+    .cat-studio-items .csti-img .carousel-control {
+        top: 275px;
+    }
 }
 
 @media screen and (max-width: 1680.98px) {
@@ -1710,6 +1713,9 @@ section .cl-sub-title,
     }
     .quote-customer .carousel-inner .carousel-item {
         padding-top: 75px;
+    }
+    .cat-studio-items .csti-img .carousel-control {
+        top: 263px;
     }
 }
 
@@ -1983,6 +1989,9 @@ section .cl-sub-title,
     .post-content .post-title {
         font-size: 18px;
     }
+    .cat-studio-items .csti-img .carousel-control {
+        top: 200px;
+    }
 }
 
 
@@ -2111,13 +2120,13 @@ section .cl-sub-title,
         height: 41px !important;
     }
     .cat-studio-items .csti-img .carousel-control {
-        top: 111px;
+        top: 85px;
     }
     .cat-bed-items .cb-img .carousel-control-prev,
     .cat-bed-items .cat-bed-items-wrap.lor .cb-img .carousel-control-prev,
     .cat-bed-items .cb-img .carousel-control-next,
     .cat-bed-items .cat-bed-items-wrap.lor .cb-img .carousel-control-next {
-        top: 111px !important;
+        top: 85px !important;
     }
     .sdes {
         display: none;
