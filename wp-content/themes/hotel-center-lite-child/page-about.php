@@ -34,10 +34,9 @@ $showAboutPage = get_field('show_about_page');
         <div class="about-feature-lists row">
             <div class="about-feature-item col-md-4 col-12">
                 <div class="about-feature-item-wrap">
-                    <a href="<?php echo home_url('feature.html'); ?>"
-                        class="thumb">
+                    <a href="<?php echo home_url('feature.html'); ?>" class="thumb">
                         <div class="afi-img">
-                            <img src="/wp-content/uploads/<?php echo date('Y').'/'.date('m'); ?>/feature.jpg"
+                            <img src="/wp-content/uploads/2021/07/feature.jpg"
                                 alt="feature.jpg">
                         </div>
                         <div class="afi-content">
@@ -48,10 +47,9 @@ $showAboutPage = get_field('show_about_page');
             </div>
             <div class="about-feature-item col-md-4 col-12">
                 <div class="about-feature-item-wrap">
-                    <a href="<?php echo home_url('facilities.html'); ?>" 
-                        class="thumb">
+                    <a href="<?php echo home_url('facilities.html'); ?>" class="thumb">
                         <div class="afi-img">
-                            <img src="/wp-content/uploads/<?php echo date('Y').'/'.date('m'); ?>/facilities.jpg"
+                            <img src="/wp-content/uploads/2021/07/facilities.jpg"
                                 alt="facilities.jpg">
                         </div>
                         <div class="afi-content">
@@ -62,10 +60,9 @@ $showAboutPage = get_field('show_about_page');
             </div>
             <div class="about-feature-item col-md-4 col-12">
                 <div class="about-feature-item-wrap">
-                    <a href="<?php echo home_url('attractions.html'); ?>"
-                        class="thumb">
+                    <a href="<?php echo home_url('attractions.html'); ?>" class="thumb">
                         <div class="afi-img">
-                            <img src="/wp-content/uploads/<?php echo date('Y').'/'.date('m'); ?>/attractions.jpg"
+                            <img src="/wp-content/uploads/2021/07/attractions.jpg"
                                 alt="attractions.jpg">
                         </div>
                         <div class="afi-content">
@@ -84,16 +81,16 @@ $showAboutPage = get_field('show_about_page');
         <div class="wrap-facilities-about">
             <div class="mask-facilities-about">
                 <div class="content-facilities-about"></div>
-            </div>    
+            </div>
             <h2 class="cl-title text-center">
                 <span class="cl-main-title"><?php echo _e('FACILITIES','hotel-center-lite-child') ?></span>
                 <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
             </h2>
-            
+
             <div class="carousel-facilities-about">
                 <div class="carousel-facilities-about-wrap">
                     <div class="owl-carousel owl-theme">
-                            <?php 
+                        <?php 
                         $args = array(
                             'post_type'     =>      'facilities',
                             'orderby'       =>      'date',
@@ -108,23 +105,23 @@ $showAboutPage = get_field('show_about_page');
                             $image = get_field('image_show_in_about_page',$v->ID);
 
                             if ($image != NULL ): ?>
-                            <div class="item <?php if($i == 0) echo 'active'; ?>">
-                                <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
-                                    <div class="fiw-img">
-                                        <?php 
+                        <div class="item <?php if($i == 0) echo 'active'; ?>">
+                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
+                                <div class="fiw-img">
+                                    <?php 
                                         if($image != NULL){
                                             echo '<img src="'.$image['url'].'" alt="'.$image['filename'].'">';
                                         }else{
                                             echo '<img src="" alt="'._('Not Image').'">';
                                         }
                                         ?>
-                                    </div>
-                                </a>
-                            </div>
-                            <?php $i++; ?>
-                            <?php endif; ?>
-                            <?php endforeach; ?>
-                    </div>                    
+                                </div>
+                            </a>
+                        </div>
+                        <?php $i++; ?>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,8 +141,8 @@ $showAboutPage = get_field('show_about_page');
                         <?php if($showAboutPage['video_about']['url']) : ?>
                         <div class="card-img-top">
                             <iframe width="560" height="315"
-                                src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0" frameborder="0"
-                                allowfullscreen="allowfullscreen"></iframe>
+                                src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0"
+                                frameborder="0" allowfullscreen="allowfullscreen"></iframe>
                         </div>
                         <?php endif; ?>
                         <div class="card-body">
@@ -159,8 +156,8 @@ $showAboutPage = get_field('show_about_page');
                         <?php if($showAboutPage['video_about_2']['url']) : ?>
                         <div class="card-img-top">
                             <iframe width="560" height="315"
-                                src="<?php echo $showAboutPage['video_about_2']['url']; ?>&showinfo=0&rel=0" frameborder="0"
-                                allowfullscreen="allowfullscreen"></iframe>
+                                src="<?php echo $showAboutPage['video_about_2']['url']; ?>&showinfo=0&rel=0"
+                                frameborder="0" allowfullscreen="allowfullscreen"></iframe>
                         </div>
                         <?php endif; ?>
                         <div class="card-body">
