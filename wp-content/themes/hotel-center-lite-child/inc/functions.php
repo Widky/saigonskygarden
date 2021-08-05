@@ -34,6 +34,7 @@ function add_theme_styles(){
     wp_enqueue_style('carousel-c', get_stylesheet_directory_uri() . '/inc/libs/owlcarousel/css/owl.carousel.min.css',false);
     wp_enqueue_style('carousel-td', get_stylesheet_directory_uri() . '/inc/libs/owlcarousel/css/owl.theme.default.min.css',false);
     wp_enqueue_style('page-home', get_stylesheet_directory_uri() . '/assets/css/page-home.css',false);
+    
     // nav
     wp_enqueue_style('custom-nav', get_stylesheet_directory_uri() . '/inc/libs/navcollapse/css/jquery.mCustomScrollbar.min.css',false);
     wp_enqueue_style('nav-style', get_stylesheet_directory_uri() . '/inc/libs/navcollapse/css/styleVerticalMenuCollapse.css',false);
@@ -58,6 +59,12 @@ function add_theme_styles(){
       wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/inc/libs/slick/slick-theme.css',false);
     }
     wp_enqueue_style('mobi-menu', get_stylesheet_directory_uri() . '/assets/css/menu-mobi.css',false);
+    if(is_page_template('page-home.php')){
+      wp_enqueue_style('phbase', get_stylesheet_directory_uri() . '/assets/css/autoptimize_3c2c72f766a4c73dac074284d22b1123.css', false);
+      wp_enqueue_style('phauto', get_stylesheet_directory_uri() . '/assets/css/styles__ltr.css', false);
+      wp_enqueue_style('phrecaptcha', get_stylesheet_directory_uri() . '/assets/css/www-player.css', false);
+    }
+    
 
 }
 add_action('wp_enqueue_scripts','add_theme_styles');
@@ -78,6 +85,12 @@ function add_theme_scripts(){
     }
     wp_enqueue_script('cookie',  get_stylesheet_directory_uri() . '/assets/js/jquery.cookie.js',array(),false, false);
 
+    if(is_page_template('page-home.php')){
+      wp_enqueue_style('phbase', get_stylesheet_directory_uri() . '/assets/js/base.js',array(),false, false);
+      wp_enqueue_style('phauto', get_stylesheet_directory_uri() . '/assets/js/autoptimize_2eacf29a7696e8dde4ba4a2119f1e0f1.js',array(),false, false);
+      wp_enqueue_style('phrecaptcha', get_stylesheet_directory_uri() . '/assets/js/recaptcha__en.js',array(),false, false);
+      wp_enqueue_style('phembedy', get_stylesheet_directory_uri() . '/assets/js/www-embed-player.js',array(),false, false);
+    }
 }
 add_action('wp_enqueue_scripts','add_theme_scripts');
 
