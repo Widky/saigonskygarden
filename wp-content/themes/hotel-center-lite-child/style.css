@@ -19,7 +19,8 @@
 /* CSS General */
 
 body {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
+    font: normal 16px 'Yu Gothic Medium', 'sans-serif';
 }
 
 body,

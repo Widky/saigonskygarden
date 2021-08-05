@@ -2,79 +2,51 @@
 
 @font-face {
     font-family: 'Malgun Gothic';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/malgun/malgun.eot);
-    src: url(../../assets/fonts/font-converted/malgun/malgun.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/malgun/malgun.otf) format('otf'),
-    url(../../assets/fonts/font-converted/malgun/malgun.svg#malgun) format('svg'),
-    url(../../assets/fonts/font-converted/malgun/malgun.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/malgun/malgun.woff) format('woff'),
-    url(../../assets/fonts/font-converted/malgun/malgun.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/malgun/malgun.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/malgun/malgun.otf) format('otf'), url(../../assets/fonts/font-converted/malgun/malgun.svg#malgun) format('svg'), url(../../assets/fonts/font-converted/malgun/malgun.ttf) format('truetype'), url(../../assets/fonts/font-converted/malgun/malgun.woff) format('woff'), url(../../assets/fonts/font-converted/malgun/malgun.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'Yu Gothic';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/yu-gothic/yugothic.eot);
-    src: url(../../assets/fonts/font-converted/yu-gothic/yugothic.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.otf) format('otf'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.svg#yugothic) format('svg'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.woff) format('woff'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/yu-gothic/yugothic.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.otf) format('otf'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.svg#yugothic) format('svg'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.ttf) format('truetype'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.woff) format('woff'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'Yu Gothic Bold';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.eot);
-    src: url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.otf) format('otf'),
-    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.svg#yugothib) format('svg'),
-    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.woff) format('woff'),
-    url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.otf) format('otf'), url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.svg#yugothib) format('svg'), url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.ttf) format('truetype'), url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.woff) format('woff'), url(../../assets/fonts/font-converted/yu-gothic-bold/yugothib.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'Yu Gothic Medium';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.eot);
-    src: url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.otf) format('otf'),
-    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.svg#yugothic-medium) format('svg'),
-    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.woff) format('woff'),
-    url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.otf) format('otf'), url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.svg#yugothic-medium) format('svg'), url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.ttf) format('truetype'), url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.woff) format('woff'), url(../../assets/fonts/font-converted/yu-gothic-medium/yugothic-medium.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'Yu Gothic Regular';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/yu-gothic/yugothic.eot);
-    src: url(../../assets/fonts/font-converted/yu-gothic/yugothic.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.otf) format('otf'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.svg#yugothic) format('svg'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.woff) format('woff'),
-    url(../../assets/fonts/font-converted/yu-gothic/yugothic.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/yu-gothic/yugothic.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.otf) format('otf'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.svg#yugothic) format('svg'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.ttf) format('truetype'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.woff) format('woff'), url(../../assets/fonts/font-converted/yu-gothic/yugothic.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'Yu Gothic Light';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.eot);
-    src: url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.otf) format('otf'),
-    url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.svg#yugothil) format('svg'),
-    url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.woff) format('woff'),
-    url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.otf) format('otf'), url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.svg#yugothil) format('svg'), url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.ttf) format('truetype'), url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.woff) format('woff'), url(../../assets/fonts/font-converted/yu-gothic-light/yugothil.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'NanumGothic Regular';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.eot);
-    src: url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.otf) format('otf'),
-    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.svg#NanumGothic-Regular) format('svg'),
-    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.woff) format('woff'),
-    url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.otf) format('otf'), url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.svg#NanumGothic-Regular) format('svg'), url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.ttf) format('truetype'), url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.woff) format('woff'), url(../../assets/fonts/font-converted/nanum-gothic/NanumGothic-Regular.woff2) format('woff2');
 }
 
 
@@ -82,24 +54,16 @@
 
 @font-face {
     font-family: 'Open Sans Regular';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.eot);
-    src: url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.otf) format('otf'),
-    url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.svg#OpenSans-Regular) format('svg'),
-    url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.woff) format('woff'),
-    url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.otf) format('otf'), url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.svg#OpenSans-Regular) format('svg'), url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.ttf) format('truetype'), url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.woff) format('woff'), url(../../assets/fonts/font-converted/open-sans-regular/OpenSans-Regular.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'Open Sans Light';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.eot);
-    src: url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.otf) format('otf'),
-    url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.svg#OpenSans-Light) format('svg'),
-    url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.woff) format('woff'),
-    url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.otf) format('otf'), url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.svg#OpenSans-Light) format('svg'), url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.ttf) format('truetype'), url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.woff) format('woff'), url(../../assets/fonts/font-converted/open-sans-light/OpenSans-Light.woff2) format('woff2');
 }
 
 
@@ -107,24 +71,16 @@
 
 @font-face {
     font-family: 'Buenard Regular';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/buenard/Buenard-Regular.eot);
-    src: url(../../assets/fonts/font-converted/buenard/Buenard-Regular.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.otf) format('otf'),
-    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.svg#Buenard-Regular) format('svg'),
-    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.woff) format('woff'),
-    url(../../assets/fonts/font-converted/buenard/Buenard-Regular.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/buenard/Buenard-Regular.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/buenard/Buenard-Regular.otf) format('otf'), url(../../assets/fonts/font-converted/buenard/Buenard-Regular.svg#Buenard-Regular) format('svg'), url(../../assets/fonts/font-converted/buenard/Buenard-Regular.ttf) format('truetype'), url(../../assets/fonts/font-converted/buenard/Buenard-Regular.woff) format('woff'), url(../../assets/fonts/font-converted/buenard/Buenard-Regular.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'Buenard Bold';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.eot);
-    src: url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.otf) format('otf'),
-    url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.svg#Buenard-Bold) format('svg'),
-    url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.woff) format('woff'),
-    url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.otf) format('otf'), url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.svg#Buenard-Bold) format('svg'), url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.ttf) format('truetype'), url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.woff) format('woff'), url(../../assets/fonts/font-converted/buenard-bold/Buenard-Bold.woff2) format('woff2');
 }
 
 
@@ -132,13 +88,9 @@
 
 @font-face {
     font-family: 'Alegreya SC Regular';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.eot);
-    src: url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.otf) format('otf'),
-    url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.svg#AlegreyaSC-Regular) format('svg'),
-    url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.woff) format('woff'),
-    url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.otf) format('otf'), url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.svg#AlegreyaSC-Regular) format('svg'), url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.ttf) format('truetype'), url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.woff) format('woff'), url(../../assets/fonts/font-converted/alegreya-sc-regular/AlegreyaSC-Regular.woff2) format('woff2');
 }
 
 
@@ -146,13 +98,9 @@
 
 @font-face {
     font-family: 'Alegreya Sans ExtraBoldItalic';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.eot);
-    src: url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.otf) format('otf'),
-    url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.svg#AlegreyaSans-ExtraBoldItalic) format('svg'),
-    url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.woff) format('woff'),
-    url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.otf) format('otf'), url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.svg#AlegreyaSans-ExtraBoldItalic) format('svg'), url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.ttf) format('truetype'), url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.woff) format('woff'), url(../../assets/fonts/font-converted/alegreyasans/AlegreyaSans-ExtraBoldItalic.woff2) format('woff2');
 }
 
 
@@ -160,24 +108,17 @@
 
 @font-face {
     font-family: 'SeoulHangang M';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.eot);
-    src: url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.otf) format('otf'),
-    url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.svg#SeoulHangang-Medium) format('svg'),
-    url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.woff) format('woff'),
-    url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.otf) format('otf'), url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.svg#SeoulHangang-Medium) format('svg'), url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.ttf) format('truetype'), url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.woff) format('woff'), url(../../assets/fonts/font-converted/seoulhangangm/SeoulHangang-Medium.woff2) format('woff2');
 }
+
 
 /* Arizonia */
 
 @font-face {
     font-family: 'Arizonia Regular';
+    font-display: swap;
     src: url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.eot);
-    src: url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.eot?#iefix) format('embedded-opentype'),
-    url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.otf) format('otf'),
-    url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.svg#Arizonia-Regular) format('svg'),
-    url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.ttf) format('truetype'),
-    url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.woff) format('woff'),
-    url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.woff2) format('woff2');
+    src: url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.eot?#iefix) format('embedded-opentype'), url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.otf) format('otf'), url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.svg#Arizonia-Regular) format('svg'), url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.ttf) format('truetype'), url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.woff) format('woff'), url(../../assets/fonts/font-converted/arizonia/Arizonia-Regular.woff2) format('woff2');
 }
