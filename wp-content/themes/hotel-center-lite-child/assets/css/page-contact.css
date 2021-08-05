@@ -1,5 +1,7 @@
-body, pre, p {
-    font: normal 16px "yu-gothic-medium","sans-serif" !important;
+body,
+pre,
+p {
+    font: normal 16px "yu-gothic-medium", "sans-serif" !important;
     font-style: normal;
     font-variant-ligatures: normal;
     font-variant-caps: normal;
@@ -10,55 +12,57 @@ body, pre, p {
     font-size: 16px;
     line-height: 1.2;
     font-family: "yu-gothic-medium", sans-serif !important;
-   color: #333333;
+    color: #333333;
 }
-.contact-container{
-  /*  width: 100% !important;
-    max-width: 1200px !important;*/
-}
-.map_iframe iframe{
-    /*width: 592px !important;*/
+
+.map_iframe iframe {
     width: 100%;
     height: 335px !important;
     margin-bottom: 45px;
 }
-.contact-wrapper h1{
+
+.contact-wrapper h1 {
     font-size: 39px;
     color: #2398A9;
-    font-family: "yu-gothic-medium","sans-serif";
+    font-family: "yu-gothic-medium", "sans-serif";
 }
-.contact-wrapper h4{
+
+.contact-wrapper h4 {
     font-size: 18px;
     color: #2398A9;
     font-weight: bold;
     margin-bottom: 18px;
-    font-family: "yu-gothic-bold","sans-serif";
+    font-family: "yu-gothic-bold", "sans-serif";
 }
+
 .contact_content {
     margin: 22px 0px 39px;
-   /* max-width: 534px;*/
-    /*min-height: 230px;*/
 }
+
 .contact_content p {
     line-height: 28px !important;
 }
+
 .contact-left,
-.contact-right{
+.contact-right {
     padding: 0px;
 }
-.contact-form{
+
+.contact-form {
     max-width: 534px;
 }
-.contact-form label{
+
+.contact-form label {
     display: none !important;
 }
-.wpcf7-form-control-wrap{
+
+.wpcf7-form-control-wrap {
     margin-bottom: 30px;
 }
+
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    /*margin-bottom: 30px;*/
     border: 1px solid #E1E1E1;
     border-radius: 2px;
     outline: none !important;
@@ -66,21 +70,24 @@ body, pre, p {
     box-shadow: none;
     font-size: 15px;
 }
+
 .contact-form input[type="text"],
-.contact-form input[type="email"]{
+.contact-form input[type="email"] {
     height: 48px !important;
     padding-left: 15px !important;
 }
+
 .contact-form textarea {
     width: 100% !important;
     padding: 15px !important;
-}     
+}
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: #585858 !important;
-    /* padding-left: 10px !important; */
     font-size: 15px;
 }
+
 .contact-form input[type="submit"] {
     font-weight: bold;
     color: #ffffff;
@@ -88,53 +95,62 @@ body, pre, p {
     height: 50px !important;
     border: none !important;
     width: 30% !important;
-    font-family: "yu-gothic-bold","sans-serif";
+    font-family: "yu-gothic-bold", "sans-serif";
 }
+
 .contact-form .container {
     padding: 0px !important;
 }
-.contact-details{    
+
+.contact-details {
     border-bottom: 1px solid #CDCDCD;
     padding-bottom: 20px;
 }
+
 .contact-details .indent {
     padding-left: 24px;
     text-indent: -24px;
     font-size: 15px;
 }
+
 .contact-details .fax,
-.contact-details .email2{
+.contact-details .email2 {
     padding-left: 24px;
 }
+
 .contact-form input[type="text"]::-webkit-input-placeholder,
 .contact-form input[type="email"]::-webkit-input-placeholder,
-.contact-form textarea::-webkit-input-placeholder { /* Edge */
-  color: #B8B8B8 !important;
+.contact-form textarea::-webkit-input-placeholder {
+    /* Edge */
+    color: #B8B8B8 !important;
 }
 
 .contact-form input[type="text"]::-webkit-input-placeholder,
 .contact-form input[type="email"]::-webkit-input-placeholder,
-.contact-form textarea::-webkit-input-placeholder {  /* Internet Explorer 10-11 */
-  color: #B8B8B8 !important;
+.contact-form textarea::-webkit-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #B8B8B8 !important;
 }
 
 .contact-form input[type="text"]::-webkit-input-placeholder,
 .contact-form input[type="email"]::-webkit-input-placeholder,
-.contact-form textarea::-webkit-input-placeholder { 
-  color: #B8B8B8 !important;
+.contact-form textarea::-webkit-input-placeholder {
+    color: #B8B8B8 !important;
 }
-a.contact_url{
+
+a.contact_url {
     color: #333333;
 }
-a.contact_url:hover{
+
+a.contact_url:hover {
     color: #2398a9;
 }
-.contact-button{
+
+.contact-button {
     padding: 30px 0px;
-    
 }
 
-.btn_cls{
+.btn_cls {
     background-color: #DFE5E8;
     padding: 7px 27px;
     color: #3E3E3E;
@@ -143,38 +159,39 @@ a.contact_url:hover{
     font-size: 20px;
 }
 
-.contact_btn:hover{
+.contact_btn:hover {
     background: #d4dee3;
 }
 
-.booking_btn{
+.booking_btn {
     background-color: #2398A9;
     margin-left: 10px;
     color: #FFFFFF;
 }
 
 .booking_btn:hover {
-   opacity: 0.8;
-   color: #ffffff !important;
+    opacity: 0.8;
+    color: #ffffff !important;
 }
-.booking_btn:focus{
-     color: #ffffff !important;
+
+.booking_btn:focus {
+    color: #ffffff !important;
 }
+
 @media(min-width:1200px) {
-.contact-details .address {
-    margin-bottom: 15px !important;
-}
-.contact-details .url {
-    /*margin-bottom: 37px !important;*/
-}
-.detail-right{
-    padding-left: 15px;
-}
-.detail-left{
-    padding-right: 15px;
-}
+    .contact-details .address {
+        margin-bottom: 15px !important;
+    }
+    .detail-right {
+        padding-left: 15px;
+    }
+    .detail-left {
+        padding-right: 15px;
+    }
 }
 
 @media screen and (max-width: 900px) {
-    .btn_cls{font-size: 16px;}
+    .btn_cls {
+        font-size: 16px;
+    }
 }

@@ -1,18 +1,4 @@
 <?php
-// css default for child theme
-// add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
-// function my_theme_enqueue_styles() {
-//     $parenthandle = 'parent-style';
-//     $theme = wp_get_theme();
-//     wp_enqueue_style( $parenthandle, get_template_directory_uri() . '/style.css', 
-//         array(),
-//         $theme->parent()->get('Version')
-//     );
-//     wp_enqueue_style( 'child-style', get_stylesheet_uri(),
-//         array( $parenthandle ),
-//         $theme->get('Version')
-//     );
-// }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 function my_theme_enqueue_styles() {
     $parenthandle = 'parent-style'; // This is 'hotel-center-lite-style' for the hotel-center-lite-child theme.
@@ -590,8 +576,8 @@ if(!function_exists('custom_theme_options_callback')){
                                 <span><?php _e('New tab','hotel-center-lite-child') ?></span>
                             </legend>
                             <label for="users_can_register">
-                                <input type="checkbox" name="checknewtab" class="regular-text"
-                                    value="1" <?php checked( 1, get_option( 'checknewtab' ), true ); ?>/>
+                                <input type="checkbox" name="checknewtab" class="regular-text" value="1"
+                                    <?php checked( 1, get_option( 'checknewtab' ), true ); ?> />
                                 <?php _e('Check to open new tab when click','hotel-center-lite-child') ?>
                             </label>
                         </fieldset>
@@ -728,19 +714,6 @@ function hotel_center_lite_child_setup() {
     load_child_theme_textdomain( 'hotel-center-lite-child', $path );
 }
 add_action( 'after_setup_theme', 'hotel_center_lite_child_setup' );
-
-
-// add_action('admin_menu', 'review_menu');
-// function review_menu(){
-//   $slug_1 = 'edit-tags.php?taxonomy=reviews-category&post_type=review';
-//   $slug_2 = 'edit.php?post_type=review';
-//   $title_1 = _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' );
-//   $title_2 = _x( 'Review Response', 'Review Response', 'hotel-center-lite-child' );
-//   $main_icon_url = get_template_directory_uri().'/images/privacy-policy-20.png';
-//     add_menu_page(_x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), _x( 'Reviews', 'taxonomy general name', 'hotel-center-lite-child' ), 'edit_pages', $slug_1, '','dashicons-star-filled',25 );
-//     add_submenu_page($slug_1, $title_1, $title_1, 'manage_options', $slug_1 );
-//     add_submenu_page($slug_1, $title_1, $title_2, 'manage_options', $slug_2 );
-// }
 
 /**
  * Hide the term description in  edit form

@@ -187,7 +187,6 @@
     -ms-flex-direction: column-reverse !important;
     flex-direction: column-reverse !important;
     display: -webkit-box;
-    /* display: flex; */
 }
 
 .attractions-end .attractions-item .attractions-item-wrap:hover {
@@ -479,8 +478,6 @@
     -ms-flex-direction: column-reverse !important;
     flex-direction: column-reverse !important;
     display: -webkit-box;
-    /* display: -ms-flexbox; */
-    /* display: flex; */
 }
 
 .spa-items .sai:nth-child(2n + 3) .single-attractions-item .saiw-img {

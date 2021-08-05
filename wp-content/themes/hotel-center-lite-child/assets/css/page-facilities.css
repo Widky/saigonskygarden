@@ -88,8 +88,6 @@
 
 /* responsive */
 
-@media (min-width: 1920px) {}
-
 
 /* size LG - < 1200px */
 
@@ -115,11 +113,6 @@
 }
 
 
-/* size MD - < 991.98px */
-
-@media screen and (max-width: 991.98px) {}
-
-
 /* size SM - < 767.98px */
 
 @media screen and (max-width: 767.98px) {
@@ -130,8 +123,3 @@
         margin-bottom: 112px;
     }
 }
-
-
-/* size E SM - < 575.98px */
-
-@media screen and (max-width: 575.98px) {}

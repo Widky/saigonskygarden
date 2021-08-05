@@ -31,7 +31,6 @@
 
 .feature_item .feature_img img {
     width: 100%;
-    /*min-height: 500px;*/
 }
 
 .feature_body {
@@ -376,7 +375,6 @@
     .content_detail {
         overflow-y: inherit;
         max-height: none !important;
-        /*overflow: auto;*/
     }
     .feature_item .feature_img img {
         min-height: auto;

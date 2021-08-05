@@ -16,8 +16,6 @@
     -ms-flex-direction: column-reverse !important;
     flex-direction: column-reverse !important;
     display: -webkit-box;
-    /* display: -ms-flexbox; */
-    /* display: flex; */
 }
 
 .service-items>.nth>.service-item .si-body {
