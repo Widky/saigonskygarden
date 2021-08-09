@@ -1,5 +1,5 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+add_action( 'wp_footer', 'my_theme_enqueue_styles' );
 function my_theme_enqueue_styles() {
     $parenthandle = 'parent-style'; // This is 'hotel-center-lite-style' for the hotel-center-lite-child theme.
     $theme = wp_get_theme();
@@ -92,7 +92,7 @@ function add_theme_scripts(){
       wp_enqueue_style('phembedy', get_stylesheet_directory_uri() . '/assets/js/www-embed-player.js',array(),false, false);
     }
 }
-add_action('wp_enqueue_scripts','add_theme_scripts');
+add_action('wp_footer','add_theme_scripts');
 
 // load language
 // load_theme_textdomain('hotel-center-lite-child', get_stylesheet_directory_uri(). '/inc/lang');
