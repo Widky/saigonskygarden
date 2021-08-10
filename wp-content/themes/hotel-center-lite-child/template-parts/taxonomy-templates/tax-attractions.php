@@ -123,13 +123,13 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 {
                     echo "<nav aria-label='Page navigation'>  <ul class='pagination m-0 justify-content-center '>";
                         
-                    if(${"paged".$cat_id} > 1 && $showitems < $query->max_num_pages){
+                    if(${"paged".$cat_id} > 1){
                         echo "<li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=1"."&".$add_str."'><i class=\"fa fa-angle-double-left\" aria-hidden=\"true\"></i></a></li>";
                         echo "<li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=".(${"paged".$cat_id}-1)."&".$add_str."'><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i></a></li>";
                     }
                     for ($i=1; $i <= $pages; $i++)
                     {
-                        if (1 != $pages &&( !($i >= ${"paged".$cat_id}+$range+2 || $i <= ${"paged".$cat_id}-$range-2) || $pages <= $showitems ))
+                        if (1 != $pages &&( !($i >= ${"paged".$cat_id}+$range+2 || $i <= ${"paged".$cat_id}-$range-2) || $pages <= $showitems || ($i < 6 && ${"paged".$cat_id} <= 3) || ($i > $pages-5 && ${"paged".$cat_id} > $pages-2)))
                         {
                         echo (${"paged".$cat_id} == $i)? "<li class=\"page-item active\"><a class='page-link'>".$i."</a></li>":"<li class='page-item'> <a href='".$url."/?paged".$cat_id."=".$i."&".$add_str."' class=\"page-link\">".$i."</a></li>";
                         }
