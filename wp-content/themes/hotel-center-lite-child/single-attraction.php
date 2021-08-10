@@ -64,12 +64,27 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 </div>
             </div>
             <?php 
+            $attractions_cats = get_terms( array(
+                'taxonomy' => 'attractions',
+                'hide_empty' => false,
+                'parent'   => 0
+            ) );
+            $url =  (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            $url_arr = explode('?', $url);
+            $url = $url_arr[0];
+            $locale = get_locale();
+
+            $cat_id = $terms[0]->term_id;
+            $page_name = 'paged'.$cat_id;
+            ${"paged".$cat_id} = isset( $_GET[$page_name] ) ? (int) $_GET[$page_name] : 1;
+            // echo ${"paged".$cat_id};
             $args = array(
                 'post_type'         =>  'attraction',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
-                'posts_per_page'        =>  2,
+                'posts_per_page'    =>  4,
+                'paged'             => ${"paged".$cat_id},
                 'post__not_in'      =>  array(get_the_ID()),
                 'tax_query'         =>  array(
                     array(
@@ -82,7 +97,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             );
             $query = new WP_Query($args);
             $my_posts = $query->get_posts();
-            // var_dump($my_posts);
+            // var_dump($query);
             $i = 1;
             if($my_posts) : 
                 foreach($my_posts as $kp=>$vp) :?>
@@ -113,7 +128,49 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     </div>
                 </div>
             </div>
-            <?php $i++; endforeach; ?>
+            <?php $i++; endforeach; wp_reset_postdata();?>
+            <div class="col-12 justify-content-center att-navigation">
+                <?php 
+                wp_reset_query();
+                ${"pag_args".$cat_id} = array(
+                    'format'  => '?paged=%#%',
+                    'current' => ${"paged".$cat_id},
+                    'total'   => $query->max_num_pages,
+                );
+                $range = 1;
+                $showitems = ($range * 2)+1;
+                $pages = $query->max_num_pages;
+                $add_str = $pages;
+
+                if(!$pages)
+                {
+                    $pages = 1;
+                }
+
+                if(1 != $pages)
+                {
+                    echo "<nav aria-label='Page navigation'>  <ul class='pagination m-0 justify-content-center '>";
+                        
+                    if(${"paged".$cat_id} > 1 && $showitems < $query->max_num_pages){
+                        echo "<li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=1"."&".$add_str."'><i class=\"fa fa-angle-double-left\" aria-hidden=\"true\"></i></a></li>";
+                        echo "<li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=".(${"paged".$cat_id}-1)."&".$add_str."'><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i></a></li>";
+                    }
+                    for ($i=1; $i <= $pages; $i++)
+                    {
+                        if (1 != $pages &&( !($i >= ${"paged".$cat_id}+$range+1 || $i <= ${"paged".$cat_id}-$range-1) || $pages <= $showitems ))
+                        {
+                        echo (${"paged".$cat_id} == $i)? "<li class=\"page-item active\"><a class='page-link'>".$i."</a></li>":"<li class='page-item'> <a href='".$url."/?paged".$cat_id."=".$i."&".$add_str."' class=\"page-link\">".$i."</a></li>";
+                        }
+                    }
+                    if (${"paged".$cat_id} < $pages && $showitems < $pages){
+                        echo " <li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=".(${"paged".$cat_id}+1)."&".$add_str."'><i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i></a></li>";
+                        echo " <li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=".$pages."&".$add_str."'><i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i></a></li>";
+                        echo "</ul></nav>\n";
+                    } 
+                }
+                
+                ?>
+            </div>
             <?php endif; ?>
         </div>
         <section class="attractions">
@@ -134,7 +191,15 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             'order'         =>      'DESC',
                             'post_status'   =>      'publish',
                             'posts_per_page'=>      12,
-                            'post__not_in'  =>      array(get_the_ID())
+                            'post__not_in'  =>      array(get_the_ID()),
+                            'tax_query'         =>  array(
+                                array(
+                                    'taxonomy'      =>  'attractions',
+                                    'field'         =>  'slug',
+                                    'terms'         =>  $terms[0]->slug,
+                                    'operator'      =>  'IN'
+                                ),
+                            )
                         );
                         $query = new WP_Query($args);
                         $myPosts = $query->get_posts();
@@ -152,16 +217,16 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 
                                                 <div class="att-img">
 
-                                                <?php $image = get_field('set_image_for_other',$v->ID);
+                                                    <?php $image = get_field('set_image_for_other',$v->ID);
 
                                                     if($image != NULL){
                                                         echo '<img src="'.$image['url'].'" alt="'.$image['filename'].'">';
                                                     }else{
                                                         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                                                        <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
-                                                            alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
+                                                    <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
+                                                        alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
                                                     <?php } ?>
-                                                
+
                                                     <?php if($v->post_excerpt != ''){ ?><div class="att-des">
                                                         <?php echo $v->post_excerpt; ?></div><?php } ?>
                                                 </div>

@@ -3,12 +3,12 @@
     <div class="apratment_bg"></div>
     <?php
     $args = array(
-        'post_type'         =>  'post',
+        'post_type'         =>  'apartment',
         'orderby'           =>  'date',
-        'order'             =>  'DESC',
+        // 'order'             =>  'DESC',
         'post_status'       =>  'publish',
         'posts_per_page'    =>  1,
-        'pagename'          => 'telewwork',
+        'pagename'          => 'work-from-home',
     );
     $query = new WP_Query($args);
     $my_posts = $query->get_posts();
@@ -17,6 +17,7 @@
     <div class="col-12 apartment_block p-0 ">
         <div class="fw container">
             <div class="row fw-items">
+                <a href="<?php echo home_url($my_posts[0]->post_type.'/'.$my_posts[0]->post_name.'.html'); ?>">
                 <div class="telewwork">
                     <div class="tw-img">
                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
@@ -24,9 +25,10 @@
                             alt="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
                     </div>
                     <div class="tw-content">
-                        <?php echo $my_posts[0]->post_content; ?>
+                        <?php echo $my_posts[0]->post_excerpt; ?>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
 

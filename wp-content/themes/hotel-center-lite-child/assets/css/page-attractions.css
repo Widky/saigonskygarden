@@ -557,6 +557,40 @@
 }
 
 
+/* navigation */
+
+.att-navigation {
+    margin-top: 70px;
+}
+
+.att-navigation .page-item.active .page-link {
+    background-color: #2398A9;
+    border-color: #2398A9;
+}
+
+.att-navigation .page-link {
+    color: #333333;
+}
+
+.att-navigation .page-link:hover {
+    color: #2398A9;
+    text-decoration: none;
+    background-color: #FFFFFF;
+    border-color: #2398A9;
+}
+
+.att-navigation a:not([href]):not([tabindex]):focus,
+.att-navigation a:not([href]):not([tabindex]):hover {
+    background-color: #FFFFFF;
+    border-color: #2398A9;
+    color: #2398A9;
+}
+
+.att-navigation .page-link:focus {
+    box-shadow: 0 0 0 0.2rem rgb(35 152 169 / 25%);
+}
+
+
 /* responsive */
 
 @media screen and (max-width: 1919.98px) {

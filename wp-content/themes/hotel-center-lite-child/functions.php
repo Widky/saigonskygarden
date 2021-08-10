@@ -148,11 +148,11 @@ if(! function_exists('hierarchical_breadcrumb')){
                                     $page_b_id =  $page_b->ID; 
 
                                     echo '<a href="'.get_permalink($page_b_id ).'">' . get_the_title($page_b_id) . '</a>' . $delimiter;
-                                    echo '<span class="breadcrumb_last">';
-                                    $terms = get_the_terms($post->ID,'attractions');
-                                    $term_name = $terms[0]->name;
-                                    $term_url = $terms[0]->taxonomy .'/' . $terms[0]->slug . '.html';
-                                    echo '<a href="' . home_url($term_url) . '">' . $term_name . '</a>' . $delimiter;
+                                    // echo '<span class="breadcrumb_last">';
+                                    // $terms = get_the_terms($post->ID,'attractions');
+                                    // $term_name = $terms[0]->name;
+                                    // $term_url = $terms[0]->taxonomy .'/' . $terms[0]->slug . '.html';
+                                    // echo '<a href="' . home_url($term_url) . '">' . $term_name . '</a>' . $delimiter;
                                     echo '<span class="breadcrumb_last">';
      
                                 }else{

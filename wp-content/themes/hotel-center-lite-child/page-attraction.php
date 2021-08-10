@@ -46,7 +46,9 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                         'terms'         =>  $v->slug,
                         'operator'      =>  'IN'
                     ),
-                )
+                ),
+                'meta_key' => '_is_ns_featured_post',
+                'meta_value' => 'yes' 
             );
             $query = new WP_Query($args);
             $my_posts = $query->get_posts();

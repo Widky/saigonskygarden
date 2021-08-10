@@ -16,14 +16,6 @@
                             //'order'             =>  'DESC',
                             'post_status'       =>  'publish',
                             'posts_per_page'        =>  1,
-                            // 'tax_query'         =>  array(
-                            //     array(
-                            //         'taxonomy'      =>  'apartment',
-                            //         'field'         =>  'slug',
-                            //         'terms'         =>  $the_cat,
-                            //         'operator'      =>  'IN'
-                            //     ),
-                            // )
                         );
                         $query = new WP_Query($args);
                         $my_posts = $query->get_posts();
@@ -114,16 +106,8 @@
                 'orderby'           =>  'date',
                 //'order'             =>  'DESC',
                 'post_status'       =>  'publish',
-                'post__not_in' => array($first_id)
-               // 'posts_per_page'    =>  1,
-                // 'tax_query'         =>  array(
-                //     array(
-                //         'taxonomy'      =>  'apartment',
-                //         'field'         =>  'slug',
-                //         'terms'         =>  $the_cat_bed_one,
-                //         'operator'      =>  'IN'
-                //     ),
-                // )
+                'post__not_in' => array($first_id),
+               'posts_per_page'    =>  3,
             );
             $query_bed = new WP_Query($args_bed_one);
             $my_posts_bed = $query_bed->get_posts();
