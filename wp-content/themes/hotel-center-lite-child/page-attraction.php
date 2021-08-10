@@ -55,9 +55,11 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             // echo "<pre>"; var_dump($my_posts);exit;
             if($my_posts && $i < 4) :
                 foreach($my_posts as $kp=>$vp) :
+                    $termsPost = wp_get_object_terms( $vp->ID, 'attractions');
+                    // var_dump($termsPost);
             ?>
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <a href="<?php echo home_url($vp->post_type . '/' .$vp->post_name . '.html'); ?>">
+                <a href="<?php echo home_url($termsPost[0]->taxonomy . '/' .$termsPost[0]->slug . '.html'); ?>">
                     <div class="attractions-item attractions-item<?php echo $i; ?>">
                         <div class="attractions-item-wrap">
                             <div class="aiw-img">
@@ -83,9 +85,9 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             <?php elseif($my_posts && $i == 4) : ?>
 
             <?php $j = 1; ?>
-            <?php foreach($my_posts as $kp=>$vp) : ?>
+            <?php foreach($my_posts as $kp=>$vp) : $termsPost = wp_get_object_terms( $vp->ID, 'attractions');?>
             <div class="col-12 attractions-end <?php if($j%2==1) echo 'nth'; ?>">
-                <a href="<?php echo home_url($vp->post_type . '/' .$vp->post_name . '.html'); ?>">
+                <a href="<?php echo home_url($termsPost[0]->taxonomy . '/' .$termsPost[0]->slug . '.html'); ?>">
                     <div class="attractions-item attractions-item<?php echo $i; ?>">
                         <div class="attractions-item-wrap row">
                             <div class="aiw-img col-lg-6 col-md-6 col-12">
