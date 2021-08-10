@@ -134,7 +134,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         echo (${"paged".$cat_id} == $i)? "<li class=\"page-item active\"><a class='page-link'>".$i."</a></li>":"<li class='page-item'> <a href='".$url."/?paged".$cat_id."=".$i."&".$add_str."' class=\"page-link\">".$i."</a></li>";
                         }
                     }
-                    if (${"paged".$cat_id} < $pages && $showitems < $pages){
+                    if (${"paged".$cat_id} < $pages && $pages > 1){
                         echo " <li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=".(${"paged".$cat_id}+1)."&".$add_str."'><i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i></a></li>";
                         echo " <li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=".$pages."&".$add_str."'><i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i></a></li>";
                         echo "</ul></nav>\n";
