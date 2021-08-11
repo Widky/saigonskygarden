@@ -48,16 +48,16 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             $locale = get_locale();
 
             $cat_id = $terms->term_id;
-            $page_name = 'paged'.$cat_id;
-            ${"paged".$cat_id} = isset( $_GET[$page_name] ) ? (int) $_GET[$page_name] : 1;
-            // echo ${"paged".$cat_id};
+            $page_name = 'page';
+            $paged = isset( $_GET[$page_name] ) ? (int) $_GET[$page_name] : 1;
+            // echo $paged;exit;
             $args = array(
                 'post_type'         =>  'attraction',
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
-                'posts_per_page'    =>  5,
-                'paged'             => ${"paged".$cat_id},
+                'posts_per_page'    =>  2,
+                'paged'             => $paged,
                 'tax_query'         =>  array(
                     array(
                         'taxonomy'      =>  'attractions',
@@ -106,7 +106,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 wp_reset_query();
                 ${"pag_args".$cat_id} = array(
                     'format'  => '?paged=%#%',
-                    'current' => ${"paged".$cat_id},
+                    'current' => $paged,
                     'total'   => $query->max_num_pages,
                 );
                 $range = 1;
@@ -123,20 +123,22 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 {
                     echo "<nav aria-label='Page navigation'>  <ul class='pagination m-0 justify-content-center '>";
                         
-                    if(${"paged".$cat_id} > 1){
-                        echo "<li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=1"."&".$add_str."'><i class=\"fa fa-angle-double-left\" aria-hidden=\"true\"></i></a></li>";
-                        echo "<li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=".(${"paged".$cat_id}-1)."&".$add_str."'><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i></a></li>";
+                    if($paged > 1){
+                        ($paged - 1 != 1) ? $linkPage = "/?page=".($paged-1): $linkPage = '';
+                        echo "<li class='page-item'><a class='page-link' href='".$url."'><i class=\"fa fa-angle-double-left\" aria-hidden=\"true\"></i></a></li>";
+                        echo "<li class='page-item'><a class='page-link' href='".$url.$linkPage."'><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i></a></li>";
                     }
                     for ($i=1; $i <= $pages; $i++)
                     {
-                        if (1 != $pages &&( !($i >= ${"paged".$cat_id}+$range+2 || $i <= ${"paged".$cat_id}-$range-2) || $pages <= $showitems || ($i < 6 && ${"paged".$cat_id} <= 3) || ($i > $pages-5 && ${"paged".$cat_id} > $pages-2)))
+                        if (1 != $pages &&( !($i >= $paged+$range+2 || $i <= $paged-$range-2) || $pages <= $showitems || ($i < 6 && $paged <= 3) || ($i > $pages-5 && $paged > $pages-2)))
                         {
-                        echo (${"paged".$cat_id} == $i)? "<li class=\"page-item active\"><a class='page-link'>".$i."</a></li>":"<li class='page-item'> <a href='".$url."/?paged".$cat_id."=".$i."&".$add_str."' class=\"page-link\">".$i."</a></li>";
+                            ($i > 1) ? $linkPage = "/?page=".$i : $linkPage = '';
+                            echo ($paged == $i)? "<li class=\"page-item active\"><a class='page-link'>".$i."</a></li>":"<li class='page-item'> <a href='".$url.$linkPage."' class=\"page-link\">".$i."</a></li>";
                         }
                     }
-                    if (${"paged".$cat_id} < $pages && $pages > 1){
-                        echo " <li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=".(${"paged".$cat_id}+1)."&".$add_str."'><i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i></a></li>";
-                        echo " <li class='page-item'><a class='page-link' href='".$url."/?paged".$cat_id."=".$pages."&".$add_str."'><i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i></a></li>";
+                    if ($paged < $pages && $pages > 1){
+                        echo " <li class='page-item'><a class='page-link' href='".$url."/?page=".($paged+1)."'><i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i></a></li>";
+                        echo " <li class='page-item'><a class='page-link' href='".$url."/?page=".$pages."'><i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i></a></li>";
                         echo "</ul></nav>\n";
                     } 
                 }

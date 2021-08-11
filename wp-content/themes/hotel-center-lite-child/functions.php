@@ -80,11 +80,11 @@ if(! function_exists('breadcrumb_header')){
 // Phân cấp breadcrumb
 if(! function_exists('hierarchical_breadcrumb')){
     function hierarchical_breadcrumb(){
-        if ( function_exists('yoast_breadcrumb') ) :
+        // if ( function_exists('yoast_breadcrumb') ) :
             
-            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+        //     yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 
-        else: 
+        // else: 
             if(!is_front_page()) : 
 
                 echo '<p id="breadcrumbs">';
@@ -161,7 +161,7 @@ if(! function_exists('hierarchical_breadcrumb')){
                                     if ($postType == 'services'){
                                         $namePostType = $loc == 'ja' ? 'サービス' : 'SERVICES';
                                     }elseif ($postType == 'facilities'){
-                                        $namePostType = $loc == 'ja' ? '施設' : 'SERVICES';
+                                        $namePostType = $loc == 'ja' ? '施設' : 'Facilities';
                                     }
                                     echo '<a href="' . home_url($postType . '.html') . '">' . $namePostType . '</a>' . $delimiter;
                                     echo '<span class="breadcrumb_last">';
@@ -189,7 +189,7 @@ if(! function_exists('hierarchical_breadcrumb')){
 
             endif;
             
-        endif;
+        // endif;
     }
 }
 
