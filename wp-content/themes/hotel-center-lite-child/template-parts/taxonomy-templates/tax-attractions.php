@@ -56,7 +56,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                 'orderby'           =>  'date',
                 'order'             =>  'DESC',
                 'post_status'       =>  'publish',
-                'posts_per_page'    =>  2,
+                'posts_per_page'    =>  5,
                 'paged'             => $paged,
                 'tax_query'         =>  array(
                     array(
