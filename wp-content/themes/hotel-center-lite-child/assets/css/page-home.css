@@ -661,7 +661,7 @@ section .cl-sub-title,
 }
 
 .hb-btn-direct a {
-    background-image: linear-gradient(45deg, transparent 50%, #2398a9 50%);
+    background-image: linear-gradient(45deg, #2cb7cc 50%, #2398a9 50%);
     background-position: 100%;
     background-size: 400%;
     transition: background 300ms ease-in-out;
@@ -669,7 +669,7 @@ section .cl-sub-title,
 
 .hb-btn-direct a:hover {
     background-position: 0;
-    background-color: transparent;
+    background-color: #2cb7cc;
 }
 
 
