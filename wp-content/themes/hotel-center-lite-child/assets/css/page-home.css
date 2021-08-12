@@ -621,7 +621,10 @@ section .cl-sub-title,
     font: normal 20px 'Yu Gothic Regular', 'sans-serif';
     line-height: 30px;
     color: #FFFFFF;
-    width: 254px;
+    min-width: 254px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     height: 66px;
     background-color: #2398a9;
     text-align: center;
