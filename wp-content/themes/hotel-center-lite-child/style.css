@@ -774,6 +774,20 @@ ul {
     color: #464646;
 }
 
+.footer .footer-main-column5 .wpcf7 .wpcf7-response-output {
+    margin: 60px 0;
+}
+
+.footer .footer-main-column5 .wpcf7-not-valid-tip {
+    display: none;
+}
+
+.footer .fm-mail>span.ajax-loader,
+.footer .footer-main-column5 .ajax-loader {
+    width: 25px;
+    margin: 6px;
+}
+
 .footer .fm-mail {
     position: relative;
     margin-top: 20px;

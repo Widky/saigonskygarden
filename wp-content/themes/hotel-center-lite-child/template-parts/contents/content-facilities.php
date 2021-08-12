@@ -1,6 +1,5 @@
 <?php 
-$note = get_field('show_home_field', get_the_ID() ); 
-$note = $note['short_notes_field'];
+$note = get_field('short_note_title',get_the_ID() ); 
 if($note == '' || $note == NUll){
     $note = get_the_title();
 }
