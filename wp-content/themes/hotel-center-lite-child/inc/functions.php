@@ -64,7 +64,6 @@ function add_theme_styles(){
       wp_enqueue_style('phauto', get_stylesheet_directory_uri() . '/assets/css/styles__ltr.css', false);
       wp_enqueue_style('phrecaptcha', get_stylesheet_directory_uri() . '/assets/css/www-player.css', false);
     }
-    
 
 }
 add_action('wp_enqueue_scripts','add_theme_styles');
@@ -306,7 +305,7 @@ function add_register_post_type(){
   $argsAttractions = array(
     'labels'             => $labelAttractions,
     'public'             => true,
-    'publicly_queryable' => true,
+    'publicly_queryable' => false,
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,

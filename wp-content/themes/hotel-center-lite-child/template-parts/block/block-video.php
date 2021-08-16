@@ -9,9 +9,10 @@ $args = array(
 );
 $query = new WP_Query($args);
 $my_posts = $query->get_posts();
-// var_dump($my_posts);exit;
+// var_dump($my_posts[0]->ID);exit;
 if($my_posts) :
     $showAboutPage = get_field('show_about_page', $my_posts[0]->ID);
+    if($showAboutPage != NULL){
 ?>
 
 <div class="popular-video">
@@ -33,12 +34,6 @@ if($my_posts) :
                             </div>
                             <?php endif; ?>
                             <div class="card-body">
-                                <?php if(get_bloginfo('language') == 'ja'){?>
-                                <div class="card-day"><?php echo date('Y年n月j日', strtotime($my_posts[0]->post_date)); ?></div>
-                                <?php }else{ ?>
-                                    <div class="card-day"><?php echo date('F j, Y', strtotime($my_posts[0]->post_date)); ?></div>
-                                <?php } ?>
-                                <h5 class="card-title"><?php echo $showAboutPage['video_about']['video_name']; ?></h5>
                                 <p class="card-text"><?php echo $showAboutPage['video_about']['video_description']; ?>
                                 </p>
                             </div>
@@ -56,12 +51,6 @@ if($my_posts) :
                             </div>
                             <?php endif; ?>
                             <div class="card-body">
-                            <?php if(get_bloginfo('language') == 'ja'){?>
-                                <div class="card-day"><?php echo date('Y年n月j日', strtotime($my_posts[0]->post_date)); ?></div>
-                                <?php }else{ ?>
-                                    <div class="card-day"><?php echo date('F j, Y', strtotime($my_posts[0]->post_date)); ?></div>
-                                <?php } ?>
-                                <h5 class="card-title"><?php echo $showAboutPage['video_about_2']['video_name']; ?></h5>
                                 <p class="card-text"><?php echo $showAboutPage['video_about_2']['video_description']; ?>
                                 </p>
                             </div>
@@ -73,4 +62,4 @@ if($my_posts) :
     </div>
 </div>
 
-<?php endif; ?>
+<?php }else{echo '<div style="margin: 50px 0;"></div>';} endif; ?>

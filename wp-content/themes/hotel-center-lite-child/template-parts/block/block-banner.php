@@ -1,5 +1,6 @@
 <?php 
 $upload_file = get_user_meta(1, 'upload_id');
+// var_dump($upload_file);exit;
 if($upload_file){
     $file = $upload_file[0]['file'];
     $strDay = date('Y').'/'.date('m').'/';
@@ -22,7 +23,7 @@ if($upload_file){
                 <div class="hb-btn-direct btn-direct">
                     <a href="<?php echo get_option('booking'); ?>" rel="noopener noreferrer"
                         <?php if(1 == get_option( 'checknewtab' )) echo 'target="_blank"'; ?>
-                        rel="noopener noreferrer"><?php echo __('短期契約','hotel-center-lite-child') ?></a>
+                        rel="noopener noreferrer"><?php echo __('Booking.com','hotel-center-lite-child') ?></a>
                 </div>
             </div>
 
@@ -44,7 +45,7 @@ if($upload_file){
                 display: block;
                 position: absolute;
                 top: 0;
-                opacity: 24%;
+                opacity: 50%;
                 z-index: 10;
             }
 

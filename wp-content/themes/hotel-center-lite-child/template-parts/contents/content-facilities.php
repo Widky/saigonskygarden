@@ -1,13 +1,15 @@
 <?php 
 $note = get_field('short_note_title',get_the_ID() ); 
 if($note == '' || $note == NUll){
-    $note = get_the_title();
+    $note = '';
 }
 ?>
 <div class="site-maincontentarea-facilities">
     <h2 class="sr-title cl-title text-center">
         <span class="cl-main-title change-cl"><?php echo _e(get_the_title(),'hotel-center-lite-child') ?></span>
-        <span class="cl-sub-title"><?php echo _e($note,'hotel-center-lite-child') ?></span>
+        <?php if($note != '' || $note != NUll){ ?>
+            <span class="cl-sub-title"><?php echo _e($note,'hotel-center-lite-child') ?></span>
+        <?php } ?>
     </h2>
     <div class="sm-img">
         <?php
@@ -118,7 +120,8 @@ if($note == '' || $note == NUll){
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facilities/u-f1.png"
                             alt="">
                         <div class="smrow-text"><?php echo $strArea; ?></div>
-                        <div class="smrow-value"><?php echo $basicInformation['area_field']; ?><span>m<sup>2</sup></span>
+                        <div class="smrow-value">
+                            <?php echo $basicInformation['area_field']; ?><span>m<sup>2</sup></span>
                         </div>
                     </div>
                     <?php } ?>

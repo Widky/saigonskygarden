@@ -474,7 +474,7 @@ section .cl-sub-title,
 }
 
 .telewwork {
-    margin-bottom: 100px;
+    margin-bottom: 65px;
 }
 
 .telewwork img {
@@ -527,7 +527,7 @@ section .cl-sub-title,
 
 .fw-items {
     margin: auto;
-    margin-top: 66px;
+    margin-top: 20px;
 }
 
 .fw-items .fw-items-wrap .fw-img {
@@ -613,8 +613,8 @@ section .cl-sub-title,
 }
 
 .fw-btn-direct {
-    margin-top: 93px;
-    margin-bottom: 45;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .btn-direct a {
@@ -653,7 +653,7 @@ section .cl-sub-title,
 .hb-btn-direct a {
     box-sizing: border-box;
     appearance: none;
-    border: 2px solid #2398a9;
+    border: 2px solid #2cb7cc;
     border-radius: 5px;
     box-shadow: 3px 3px 3px #00000014;
     cursor: pointer;
@@ -664,7 +664,7 @@ section .cl-sub-title,
 }
 
 .hb-btn-direct a {
-    background-image: linear-gradient(45deg, #2cb7cc 50%, #2398a9 50%);
+    background-image: linear-gradient(45deg, #2398a9 50%, #2cb7cc 50%);
     background-position: 100%;
     background-size: 400%;
     transition: background 300ms ease-in-out;
@@ -672,14 +672,14 @@ section .cl-sub-title,
 
 .hb-btn-direct a:hover {
     background-position: 0;
-    background-color: #2cb7cc;
+    border-color: #2398a9;
 }
 
 
 /* popular video */
 
 .popular-video {
-    margin: 140px 0;
+    margin: 100px 0;
 }
 
 .popular-video .home-video {
@@ -824,15 +824,15 @@ section .cl-sub-title,
 
 .service {
     background-color: #166772;
-    padding-top: 71px;
-    padding-bottom: 140px;
+    padding-top: 65px;
+    padding-bottom: 100px;
 }
 
 .service-tabs {
     width: 1442px;
     height: auto;
     margin: auto;
-    margin-top: 89px;
+    margin-top: 50px;
 }
 
 .service-tabs .nav-tabs {
@@ -944,8 +944,8 @@ section .cl-sub-title,
 
 .events {
     background: url('../images/event/bg-event.png') no-repeat top left;
-    padding-top: 125px;
-    padding-bottom: 107px;
+    padding-top: 65px;
+    padding-bottom: 100px;
     height: auto;
 }
 
@@ -1334,8 +1334,16 @@ section .cl-sub-title,
     float: right;
 }
 
+.page-template-page-apartment .apartment_frame {
+    padding: 100px 0;
+}
+
 .apartment_frame {
     padding: 40px 0px;
+}
+
+.aparment-posts>div:nth-child(2) {
+    margin-top: 0;
 }
 
 .fw-items {

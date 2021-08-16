@@ -47,17 +47,8 @@ body {
                         $args = array(
                             'post_type'         =>  'apartment',
                             'orderby'           =>  'date',
-                            //'order'             =>  'DESC',
                             'post_status'       =>  'publish',
                             'posts_per_page'        =>  1,
-                            // 'tax_query'         =>  array(
-                            //     array(
-                            //         'taxonomy'      =>  'apartment',
-                            //         'field'         =>  'slug',
-                            //         'terms'         =>  'work-from-home',
-                            //         'operator'      =>  'NOT IN'
-                            //     ),
-                            // )
                         );
                         $query = new WP_Query($args);
                         $my_posts = $query->get_posts();
@@ -146,12 +137,22 @@ body {
                     </div>
                 </div>
                 <?php 
+                $args_notget = array(
+                    'post_type'         =>  'apartment',
+                    'orderby'           =>  'date',
+                    'post_status'       =>  'publish',
+                    'name' => 'work-from-home',
+                );
+                $qr = new WP_Query($args_notget);
+                $mp = $qr->get_posts();
+                $second_id = $mp[0]->ID;
+
             $args_bed_one = array(
                 'post_type'         =>  'apartment',
                 'orderby'           =>  'date',
                 //'order'             =>  'DESC',
                 'post_status'       =>  'publish',
-                'post__not_in' => array($first_id),
+                'post__not_in' => array($first_id, $second_id),
             );
             $query_bed = new WP_Query($args_bed_one);
             $my_posts_bed = $query_bed->get_posts();
