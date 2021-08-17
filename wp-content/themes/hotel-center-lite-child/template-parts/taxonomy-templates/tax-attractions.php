@@ -176,13 +176,13 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         );
                         $query = new WP_Query($args);
                         $myPosts = $query->get_posts();
-                        // echo "<pre>";print_r($myPosts);exit;
+                        // echo "<pre>";var_dump($terms);exit;
                         foreach($myPosts as $k=>$v) :
                         ?>
                                 <div class="item">
                                     <div class="panel panel-default">
                                         <div class="panel-thumbnail">
-                                            <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"
+                                            <a href="<?php echo home_url($terms->taxonomy . '/' .$terms->slug . '.html'); ?>"
                                                 title="<?php echo $v->post_title; ?>" class="thumb">
                                                 <h3 class="att-title"><span
                                                         class="cat-line cat-attractions-line"></span><?php echo $v->post_title; ?>
