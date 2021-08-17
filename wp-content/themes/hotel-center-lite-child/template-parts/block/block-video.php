@@ -29,7 +29,7 @@ if($my_posts) :
                         <div class="card about-video">
                             <?php if($showAboutPage['video_about']['url']) : ?>
                             <div class="card-img-top">
-                                <?php if($showAboutPage['video_about']['representative_image']['url'] != NULL || $showAboutPage['video_about']['representative_image'] != false){ ?>
+                                <?php if($showAboutPage['video_about']['representative_image'] != false){ ?>
                                 <div id="background-video"
                                     style="background: url(<?php echo $showAboutPage['video_about']['representative_image']['url']; ?>) top center no-repeat; background-size: cover;">
                                     <iframe width="100%" height="560"
@@ -65,7 +65,7 @@ if($my_posts) :
                         <div class="card about-video">
                             <?php if($showAboutPage['video_about_2']['url']) : ?>
                             <div class="card-img-top">
-                                <?php if($showAboutPage['video_about_2']['representative_image']['url'] != NULL || $showAboutPage['video_about_2']['representative_image'] != false){ ?>
+                                <?php if($showAboutPage['video_about_2']['representative_image'] != false){ ?>
                                 <div id="background-video2"
                                     style="background: url(<?php echo $showAboutPage['video_about_2']['representative_image']['url']; ?>) top center no-repeat; background-size: cover;">
                                     <iframe width="100%" height="560"

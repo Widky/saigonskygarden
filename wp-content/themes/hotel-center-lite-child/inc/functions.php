@@ -756,3 +756,5 @@ add_action( 'reviews-category_add_form', function( $taxonomy )
 
 
 add_filter( 'wpm_post_acf-field-group_config', '__return_null' );
+
+add_filter( 'auto_update_theme', '__return_false' );
