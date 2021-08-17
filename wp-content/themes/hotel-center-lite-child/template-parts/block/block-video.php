@@ -12,6 +12,7 @@ $my_posts = $query->get_posts();
 // var_dump($my_posts[0]->ID);exit;
 if($my_posts) :
     $showAboutPage = get_field('show_about_page', $my_posts[0]->ID);
+    // var_dump($showAboutPage);exit;
     if($showAboutPage != NULL){
 ?>
 
@@ -28,9 +29,28 @@ if($my_posts) :
                         <div class="card about-video">
                             <?php if($showAboutPage['video_about']['url']) : ?>
                             <div class="card-img-top">
-                                <iframe width="560" height="315"
+                                <?php if($showAboutPage['video_about']['representative_image']['url'] != Null){ ?>
+                                <div id="background-video"
+                                    style="background: url(<?php echo $showAboutPage['video_about']['representative_image']['url']; ?>) top center no-repeat; background-size: cover;">
+                                    <iframe width="100%" height="560"
+                                        src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0"
+                                        frameborder="0" allow="autoplay; encrypted-media"
+                                        allowfullscreen="allowfullscreen"></iframe>
+                                    <h3 class="card-title"><?php echo $showAboutPage['video_about']['video_name']; ?>
+                                    </h3>
+                                    <a class="btn-play" href="#">Play Button</a>
+                                </div>
+                                <style>
+                                .card-img-top .ytp-cued-thumbnail-overlay {
+                                    display: none !important;
+                                }
+                                </style>
+                                <?php }else{ ?>
+                                <iframe width="100%" height="560"
                                     src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0"
-                                    frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                    frameborder="0" allow="autoplay; encrypted-media"
+                                    allowfullscreen="allowfullscreen"></iframe>
+                                <?php } ?>
                             </div>
                             <?php endif; ?>
                             <div class="card-body">
@@ -45,9 +65,23 @@ if($my_posts) :
                         <div class="card about-video">
                             <?php if($showAboutPage['video_about_2']['url']) : ?>
                             <div class="card-img-top">
-                                <iframe width="560" height="315"
+                                <?php if($showAboutPage['video_about_2']['representative_image']['url'] != Null){ ?>
+                                <div id="background-video2"
+                                    style="background: url(<?php echo $showAboutPage['video_about_2']['representative_image']['url']; ?>) top center no-repeat; background-size: cover;">
+                                    <iframe width="100%" height="560"
+                                        src="<?php echo $showAboutPage['video_about_2']['url']; ?>&showinfo=0&rel=0"
+                                        frameborder="0" allow="autoplay; encrypted-media"
+                                        allowfullscreen="allowfullscreen"></iframe>
+                                    <h3 class="card-title"><?php echo $showAboutPage['video_about_2']['video_name']; ?>
+                                    </h3>
+                                    <a class="btn-play2" href="#">Play Button</a>
+                                </div>
+                                <?php }else{ ?>
+                                <iframe width="100%" height="560"
                                     src="<?php echo $showAboutPage['video_about_2']['url']; ?>&showinfo=0&rel=0"
-                                    frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                    frameborder="0" allow="autoplay; encrypted-media"
+                                    allowfullscreen="allowfullscreen"></iframe>
+                                <?php } ?>
                             </div>
                             <?php endif; ?>
                             <div class="card-body">

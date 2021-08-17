@@ -73,6 +73,14 @@ if($upload_file){
                 letter-spacing: 0.5px;
                 padding: 65px 0 45px;
             }
+            @media screen and (max-width: 767.98px){
+                .home-banner .banner-text p {
+                    padding: 30px 0 30px;
+                }
+                .home-banner .banner-text p br{
+                    display: none;
+                }
+            }
             </style>
         </div>
     </div>

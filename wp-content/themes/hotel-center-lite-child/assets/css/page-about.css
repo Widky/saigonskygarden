@@ -72,6 +72,11 @@
     font: normal bold 24px 'Yu Gothic Bold', 'sans-serif';
     line-height: 25px;
     color: #333333;
+    padding: 0;
+}
+
+#background-video {
+    height: 287px;
 }
 
 .about-feature-lists {
@@ -321,9 +326,6 @@
     }
     .popular-video .cl-title {
         margin-bottom: 44px;
-    }
-    .about-video {
-        height: 350px;
     }
     .carousel-facilities-about .owl-carousel .fiw-img img {
         height: 133px;

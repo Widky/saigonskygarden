@@ -36,8 +36,7 @@ $showAboutPage = get_field('show_about_page');
                 <div class="about-feature-item-wrap">
                     <a href="<?php echo home_url('feature.html'); ?>" class="thumb">
                         <div class="afi-img">
-                            <img src="/wp-content/uploads/2021/07/feature.jpg"
-                                alt="feature.jpg">
+                            <img src="/wp-content/uploads/2021/07/feature.jpg" alt="feature.jpg">
                         </div>
                         <div class="afi-content">
                             <h3 class="afi-title"><?php _e('特徴','hotel-center-lite-child') ?></h3>
@@ -49,8 +48,7 @@ $showAboutPage = get_field('show_about_page');
                 <div class="about-feature-item-wrap">
                     <a href="<?php echo home_url('facilities.html'); ?>" class="thumb">
                         <div class="afi-img">
-                            <img src="/wp-content/uploads/2021/07/facilities.jpg"
-                                alt="facilities.jpg">
+                            <img src="/wp-content/uploads/2021/07/facilities.jpg" alt="facilities.jpg">
                         </div>
                         <div class="afi-content">
                             <h3 class="afi-title "><?php _e('施設','hotel-center-lite-child') ?></h3>
@@ -62,8 +60,7 @@ $showAboutPage = get_field('show_about_page');
                 <div class="about-feature-item-wrap">
                     <a href="<?php echo home_url('attractions.html'); ?>" class="thumb">
                         <div class="afi-img">
-                            <img src="/wp-content/uploads/2021/07/attractions.jpg"
-                                alt="attractions.jpg">
+                            <img src="/wp-content/uploads/2021/07/attractions.jpg" alt="attractions.jpg">
                         </div>
                         <div class="afi-content">
                             <h3 class="afi-title"><?php _e('魅力 ','hotel-center-lite-child') ?></h3>
@@ -128,7 +125,7 @@ $showAboutPage = get_field('show_about_page');
     </div>
 </div>
 
-<div class="popular-video">
+<div class="popular-video page-popular-video">
     <div class="container">
         <h2 class="cl-title text-center">
             <span class="cl-main-title change-cl"><?php echo _e('POPULAR VIDEO','hotel-center-lite-child') ?></span>
@@ -140,9 +137,21 @@ $showAboutPage = get_field('show_about_page');
                     <div class="card about-video">
                         <?php if($showAboutPage['video_about']['url']) : ?>
                         <div class="card-img-top">
-                            <iframe width="560" height="315"
+                            <?php if($showAboutPage['video_about']['representative_image']['url'] != Null){ ?>
+                            <div id="background-video"
+                                style="background: url(<?php echo $showAboutPage['video_about']['representative_image']['url']; ?>) top center no-repeat; background-size: cover;">
+                                <iframe width="100%" height="315"
+                                    src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0"
+                                    frameborder="0" allow="autoplay; encrypted-media"
+                                    allowfullscreen="allowfullscreen"></iframe>
+                                <a class="btn-play" href="#"></a>
+                            </div>
+                            <?php }else{ ?>
+                            <iframe width="100%" height="315"
                                 src="<?php echo $showAboutPage['video_about']['url']; ?>&showinfo=0&rel=0"
-                                frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                frameborder="0" allow="autoplay; encrypted-media"
+                                allowfullscreen="allowfullscreen"></iframe>
+                            <?php } ?>
                         </div>
                         <?php endif; ?>
                         <div class="card-body">
@@ -155,9 +164,23 @@ $showAboutPage = get_field('show_about_page');
                     <div class="card about-video">
                         <?php if($showAboutPage['video_about_2']['url']) : ?>
                         <div class="card-img-top">
-                            <iframe width="560" height="315"
+                            <?php if($showAboutPage['video_about_2']['representative_image']['url'] != Null){ ?>
+                            <div id="background-video2"
+                                style="background: url(<?php echo $showAboutPage['video_about_2']['representative_image']['url']; ?>) top center no-repeat; background-size: cover;">
+                                <iframe width="100%" height="315"
+                                    src="<?php echo $showAboutPage['video_about_2']['url']; ?>&showinfo=0&rel=0"
+                                    frameborder="0" allow="autoplay; encrypted-media"
+                                    allowfullscreen="allowfullscreen"></iframe>
+                                <h3 class="card-title"><?php echo $showAboutPage['video_about_2']['video_name']; ?>
+                                </h3>
+                                <a class="btn-play2" href="#">Play Button</a>
+                            </div>
+                            <?php }else{ ?>
+                            <iframe width="100%" height="315"
                                 src="<?php echo $showAboutPage['video_about_2']['url']; ?>&showinfo=0&rel=0"
-                                frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                frameborder="0" allow="autoplay; encrypted-media"
+                                allowfullscreen="allowfullscreen"></iframe>
+                            <?php } ?>
                         </div>
                         <?php endif; ?>
                         <div class="card-body">

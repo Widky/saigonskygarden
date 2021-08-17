@@ -678,6 +678,16 @@ section .cl-sub-title,
 
 /* popular video */
 
+.page-template-page-home .rvideo>div:nth-child(1) {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+.page-template-page-home .rvideo>div:nth-child(2) {
+    padding-left: 30px;
+    padding-right: 0;
+}
+
 .popular-video {
     margin: 100px 0;
 }
@@ -692,12 +702,10 @@ section .cl-sub-title,
 
 .popular-video .card-title {
     font: normal bold 24px 'Yu Gothic Bold', 'sans-serif';
-    color: #333333;
+    color: #FFFFFF;
     line-height: 30px;
-    border-bottom: 2px solid #707070;
-    padding-bottom: .75em;
-    margin-bottom: 1.75em;
-    text-align: center;
+    padding: 15px;
+    text-align: left;
 }
 
 .popular-video .card-body {
@@ -711,6 +719,82 @@ section .cl-sub-title,
     color: #333333;
     text-align: center;
     margin-bottom: .75em;
+}
+
+#background-video {
+    width: 100%;
+    height: 560px;
+    position: relative;
+}
+
+#background-video iframe {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#background-video .btn-play {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 0px;
+    line-height: 0px;
+    background: url(/wp-content/themes/hotel-center-lite-child/assets/images/playyoutube.png) center center no-repeat;
+    background-size: 75px auto;
+    opacity: 80%;
+}
+
+#background-video:hover .btn-play {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 0px;
+    line-height: 0px;
+    background: url(/wp-content/themes/hotel-center-lite-child/assets/images/playyoutubehover.png) center center no-repeat;
+    background-size: 75px auto;
+    opacity: 1;
+}
+
+#background-video2 {
+    width: 100%;
+    height: 560px;
+    position: relative;
+}
+
+#background-video2 iframe {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#background-video2 .btn-play2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 0px;
+    line-height: 0px;
+    background: url(/wp-content/themes/hotel-center-lite-child/assets/images/playyoutube.png) center center no-repeat;
+    background-size: 75px auto;
+    opacity: 80%;
+}
+
+#background-video2:hover .btn-play2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 0px;
+    line-height: 0px;
+    background: url(/wp-content/themes/hotel-center-lite-child/assets/images/playyoutubehover.png) center center no-repeat;
+    background-size: 75px auto;
+    opacity: 1;
 }
 
 
@@ -1291,7 +1375,7 @@ section .cl-sub-title,
 
 .home-video iframe {
     width: 100%;
-    height: 550px;
+    height: 560px;
 }
 
 .cat-studio {
@@ -1870,6 +1954,11 @@ section .cl-sub-title,
     .cat-studio-items .csti-img .carousel-control {
         top: 200px;
     }
+    .page-template-page-home .rvideo>div:nth-child(1),
+    .page-template-page-home .rvideo>div:nth-child(2) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 
@@ -1936,6 +2025,9 @@ section .cl-sub-title,
     .pd-0 {
         padding-left: 15px;
         padding-right: 15px;
+    }
+    .aparment-posts>div:nth-child(2) {
+        padding-top: 100px;
     }
 }
 
@@ -2027,7 +2119,9 @@ section .cl-sub-title,
         flex: 0 0 100%;
     }
     /* video home */
-    .home-video iframe {
+    .home-video iframe,
+    #background-video,
+    #background-video2 {
         height: 350px;
     }
     /* home page */
