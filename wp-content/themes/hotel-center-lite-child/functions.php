@@ -217,18 +217,20 @@ class Walker_Dynamic_Submenu extends Walker_Nav_Menu {
                 endforeach; wp_reset_postdata();
                 $output .= '</ul>';
             }           
-        }elseif( 45 == $item->ID ){ // replace with your menu item ID
+        }elseif( 1816 == $item->ID ){ // replace with your menu item ID
             global $post;
             $chapters = get_posts(array('post_type'=>'apartment','posts_per_page'=>-1, 'post_parent' => 0));
             if(!empty($chapters)) {
                 $output .= '<ul class="sub-menu">';
                 foreach($chapters as $post): setup_postdata($post);
-                    $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';                
-                    $output .= '</li>';
+                    if($post->menu_order != 0){
+                        $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';                
+                        $output .= '</li>';
+                    }
                 endforeach; wp_reset_postdata();
                 $output .= '</ul>';
             }           
-        }              
+        }
         $output .= "</li>\n";
     }
 }
@@ -246,7 +248,7 @@ class Walker_Dynamic_Submenu2 extends Walker_Nav_Menu {
                 endforeach; wp_reset_postdata();
                 $output .= '</ul>';
             }           
-        }else if( 51 == $item->ID ){ // replace with your menu item ID
+        }elseif( 51 == $item->ID ){ // replace with your menu item ID
             global $post;
             $chapters = get_posts(array('post_type'=>'facilities','posts_per_page'=>-1, 'post_parent' => 0));
             if(!empty($chapters)) {
@@ -254,6 +256,19 @@ class Walker_Dynamic_Submenu2 extends Walker_Nav_Menu {
                 foreach($chapters as $post): setup_postdata($post);
                     $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';                
                     $output .= '</li>';
+                endforeach; wp_reset_postdata();
+                $output .= '</ul>';
+            }           
+        }elseif( 1816 == $item->ID ){ // replace with your menu item ID
+            global $post;
+            $chapters = get_posts(array('post_type'=>'apartment','posts_per_page'=>-1, 'post_parent' => 0));
+            if(!empty($chapters)) {
+                $output .= '<ul class="sub-menu">';
+                foreach($chapters as $post): setup_postdata($post);
+                    if($post->menu_order != 0){
+                        $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';                
+                        $output .= '</li>';
+                    }
                 endforeach; wp_reset_postdata();
                 $output .= '</ul>';
             }           

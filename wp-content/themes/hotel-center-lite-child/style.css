@@ -1164,6 +1164,12 @@ ul {
     .header .lbb-wrap .lbb-lang {
         width: auto;
     }
+    #navbar-nav-header li {
+        padding: 0 10px;
+    }
+    #navbar-nav-header.nav-en li {
+        padding: 0 8px;
+    }
 }
 
 .header .lbb-wrap .lbb-lang {
