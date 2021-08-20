@@ -223,10 +223,8 @@ class Walker_Dynamic_Submenu extends Walker_Nav_Menu {
             if(!empty($chapters)) {
                 $output .= '<ul class="sub-menu">';
                 foreach($chapters as $post): setup_postdata($post);
-                    if($post->menu_order != 0){
                         $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';                
                         $output .= '</li>';
-                    }
                 endforeach; wp_reset_postdata();
                 $output .= '</ul>';
             }           
@@ -265,10 +263,8 @@ class Walker_Dynamic_Submenu2 extends Walker_Nav_Menu {
             if(!empty($chapters)) {
                 $output .= '<ul class="sub-menu">';
                 foreach($chapters as $post): setup_postdata($post);
-                    if($post->menu_order != 0){
                         $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a>';                
                         $output .= '</li>';
-                    }
                 endforeach; wp_reset_postdata();
                 $output .= '</ul>';
             }           
