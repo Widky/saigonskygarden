@@ -14,20 +14,24 @@
     $my_posts = $query->get_posts();
     // var_dump($my_posts);exit;
     if($my_posts) : ?>
-    <div class="col-12 apartment_block p-0 ">
+    <div class="col-12 apartment_block p-0 block-teleworking">
+        <h2 class="cl-title text-center">
+            <span class="cl-main-title"><?php _e('Teleworking','hotel-center-lite-child') ?></span>
+            <span class="cl-sub-title"><?php _e('在宅勤務','hotel-center-lite-child') ?></span>
+        </h2>
         <div class="fw container">
             <div class="row fw-items">
                 <a href="<?php echo home_url($my_posts[0]->post_type.'/'.$my_posts[0]->post_name.'.html'); ?>">
-                <div class="telewwork">
-                    <div class="tw-img">
-                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
-                        <img src="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){echo $image[0];} ?>"
-                            alt="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
+                    <div class="telewwork">
+                        <div class="tw-img">
+                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
+                            <img src="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){echo $image[0];} ?>"
+                                alt="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
+                        </div>
+                        <div class="tw-content">
+                            <?php echo $my_posts[0]->post_excerpt; ?>
+                        </div>
                     </div>
-                    <div class="tw-content">
-                        <?php echo $my_posts[0]->post_excerpt; ?>
-                    </div>
-                </div>
                 </a>
             </div>
         </div>
