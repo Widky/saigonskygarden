@@ -289,7 +289,7 @@ $event_cats = get_terms( array(
                         <?php } ?>
 
                         <div class="event_img">
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium') ?></a>
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail') ?></a>
                         </div>
 
                         <div class="event_info p-3">
