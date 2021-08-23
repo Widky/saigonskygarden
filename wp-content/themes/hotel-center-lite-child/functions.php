@@ -272,3 +272,16 @@ class Walker_Dynamic_Submenu2 extends Walker_Nav_Menu {
         $output .= "</li>\n";
     }
 }
+
+/**
+ * Add description Featured Image
+ */
+function wk_description_featured_image( $content, $post_id, $thumbnail_id ) {
+	$arrPosttype = array('attraction');
+    if ( ! in_array(get_post_type( $post_id ), $arrPosttype) ) {
+        return $content;
+    }
+    $caption = '<p>' . esc_html__( 'Recommended image size: 684px (width) x 684px (height) or Proportionally larger (449x449/1079x1079)', 'i18n-tag' ) . '</p>';
+    return $content . $caption;
+}
+add_filter( 'admin_post_thumbnail_html', 'wk_description_featured_image', 10, 3 );

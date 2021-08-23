@@ -155,7 +155,6 @@ $showAboutPage = get_field('show_about_page');
                         </div>
                         <?php endif; ?>
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $showAboutPage['video_about']['video_name']; ?></h5>
                             <p class="card-text"><?php echo $showAboutPage['video_about']['video_description']; ?></p>
                         </div>
                     </div>
@@ -184,7 +183,6 @@ $showAboutPage = get_field('show_about_page');
                         </div>
                         <?php endif; ?>
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $showAboutPage['video_about_2']['video_name']; ?></h5>
                             <p class="card-text"><?php echo $showAboutPage['video_about_2']['video_description']; ?></p>
                         </div>
                     </div>

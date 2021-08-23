@@ -492,7 +492,7 @@ section .cl-sub-title,
 }
 
 .block-teleworking .fw.container {
-    box-shadow: 0px 0px 6px 6px #ffffff;
+    box-shadow: 0px 0px 3px 3px #ffffff;
     margin-top: -85px;
     margin-bottom: 100px;
 }
