@@ -91,7 +91,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                                                     <?php } ?>
                                                     <div class="event_img">
                                                         <a href="<?php the_permalink(); ?>">
-                                                            <?php the_post_thumbnail('medium')  ?>
+                                                            <?php the_post_thumbnail('post-thumbnail')  ?>
                                                         </a>
                                                     </div>
                                                     <div class="event_info p-3">
