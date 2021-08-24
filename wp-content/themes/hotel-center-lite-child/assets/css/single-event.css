@@ -17,6 +17,10 @@
     font-family: 'Buenard-Regular', 'sans-serif' !important;
 }
 
+.single-event-sec .cl-title .cl-main-title {
+    font-family: 'Yu Gothic Medium', 'sans-serif' !important;
+}
+
 .event-facility.block-carousel-facilities-about .cl-sub-title {
     padding-bottom: 20px !important;
 }

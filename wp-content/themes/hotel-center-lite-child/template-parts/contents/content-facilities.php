@@ -7,9 +7,9 @@ if($note == '' || $note == NUll){
 <div class="site-maincontentarea-facilities">
     <h2 class="sr-title cl-title text-center">
         <?php if($note != '' || $note != NUll){ ?>
-            <span class="cl-sub-title"><?php echo _e($note,'hotel-center-lite-child') ?></span>
+            <span class="cl-main-title change-cl"><?php echo _e($note,'hotel-center-lite-child') ?></span>
         <?php } ?>
-        <span class="cl-main-title change-cl"><?php echo _e(get_the_title(),'hotel-center-lite-child') ?></span>
+        <span class="cl-sub-title"><?php echo _e(get_the_title(),'hotel-center-lite-child') ?></span>
         
     </h2>
     <div class="sm-img">
@@ -23,7 +23,7 @@ if($note == '' || $note == NUll){
             <div id="carouselImgSlideModal" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
-                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-feature' ); ?>
                     <li data-target="#carouselImgSlideModal" data-slide-to="0" class="active"
                         style="background: url('<?php echo $image[0]; ?>')">
                     </li>
@@ -48,7 +48,7 @@ if($note == '' || $note == NUll){
                 </ol>
                 <div class="carousel-inner">
                     <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
-                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-feature' ); ?>
                     <div class="carousel-item active">
                         <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
                     </div>
@@ -70,7 +70,7 @@ if($note == '' || $note == NUll){
 
         <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
 
-        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-feature' ); ?>
         <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
 
         <?php else :?>

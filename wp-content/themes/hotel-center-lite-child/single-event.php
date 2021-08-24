@@ -196,8 +196,8 @@ $event_cats = get_terms( array(
                 <div class="sr-title">
                     <div class="sr-title-wrap container">
                         <h2 class="cl-title text-center">
-                            <span class="cl-sub-title"><?php echo $sub_title; ?></span>
-                            <span class="cl-main-title change-cl"><?php the_title(); ?></span>
+                            <span class="cl-main-title change-cl"><?php echo $sub_title; ?></span>
+                            <span class="cl-sub-title"><?php the_title(); ?></span>
                         </h2>
                         <div class="cl-tax-share">
                             <a href="#">

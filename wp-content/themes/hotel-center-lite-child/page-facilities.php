@@ -45,7 +45,7 @@ $showAboutPage = get_field('show_about_page');
             foreach($my_posts as $k=>$v) : ?>
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
-                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-facilities' ); ?>
                     <a class="top-image" href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
                         <img class="card-img-top " src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
                             alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{ _e('Not Image', 'hotel-center-lite-child'); } ?>"></a>
