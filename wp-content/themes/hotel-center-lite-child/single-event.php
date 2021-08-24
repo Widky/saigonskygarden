@@ -15,13 +15,18 @@ $pageTitle = 'Event';
 
 $pageSubTitle = 'イベント';
 
-$imageUrlBreadcrumb = get_the_post_thumbnail_url($page_e_id);
+$imageUrlBreadcrumb = wp_get_attachment_image_src( get_post_thumbnail_id( $page_e_id ), $pageTitle );
+if($imageUrlBreadcrumb){
+    $imageUrlBreadcrumb = $imageUrlBreadcrumb[0];
+}else{
+    $imageUrlBreadcrumb = get_stylesheet_directory_uri().'/assets/images/img-not-found/img-not-found-breadcrumb.png';
+}
 // Call function breadcrumb
 breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 // end get banner
 $locale = get_locale();
     
-$sub_title = get_post_meta(get_the_ID(),'sub_title3_field',true);
+$sub_title = get_field('sub_title_bk',get_the_ID(),true);
 if($locale == 'ja'){
    $list_url = "/events.html";
 }else{
@@ -29,7 +34,7 @@ if($locale == 'ja'){
 }
     
 
-$day_of_event = get_post_meta( get_the_ID(), 'day_of_the_event_field',true );
+$day_of_event = get_field('day_of_event_bk', get_the_ID(), true );
 
 $event_cats = get_terms( array(
     'taxonomy' => 'event-category',
