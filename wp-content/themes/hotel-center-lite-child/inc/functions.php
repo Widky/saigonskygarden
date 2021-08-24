@@ -130,7 +130,7 @@ function add_register_post_type(){
   $argsFeature = array(
     'labels'             => $labelsFeature,
     'public'             => true,
-    'publicly_queryable' => true,
+    'publicly_queryable' => false,
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,

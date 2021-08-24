@@ -47,7 +47,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
             <div class="col-12 <?php if($i%2==0) echo 'nth' ?>">
                 <div class="service-item row">
                     <div class="si-img col-lg-7 col-md-12">
-                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-service' ); ?>
                         <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
                             alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
                     </div>

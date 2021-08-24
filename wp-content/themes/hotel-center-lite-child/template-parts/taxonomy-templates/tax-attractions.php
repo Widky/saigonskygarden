@@ -195,7 +195,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                                     if($image != NULL){
                                                         echo '<img src="'.$image['url'].'" alt="'.$image['filename'].'">';
                                                     }else{
-                                                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-attraction-3' ); ?>
                                                     <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
                                                         alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
                                                     <?php } ?>

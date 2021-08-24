@@ -62,7 +62,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         <div id="carouselImgSlideModal" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
-                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-feature' ); ?>
                                 <li data-target="#carouselImgSlideModal" data-slide-to="0" class="active"
                                     style="background: url('<?php echo $image[0]; ?>')">
                                 </li>
@@ -87,7 +87,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             </ol>
                             <div class="carousel-inner">
                                 <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
-                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-feature' ); ?>
                                 <div class="carousel-item active">
                                     <img src="<?php echo $image[0]; ?>"
                                         alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -119,7 +119,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     <?php else :?>
 
                     <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
-                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-feature' ); ?>
                     <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
                     <?php endif;?>
 
@@ -193,7 +193,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 
                                                 <div class="sw-img">
 
-                                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-service-other' ); ?>
                                                     <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
                                                         alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{ _e('Not Image', 'hotel-center-lite-child');} ?>">
 

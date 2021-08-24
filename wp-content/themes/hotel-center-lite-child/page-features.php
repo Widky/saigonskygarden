@@ -39,6 +39,8 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                     'order'             =>  'DESC',
                     'post_status'       =>  'publish',
                     'posts_per_page'        =>  -1,
+                    'meta_key' => '_is_ns_featured_post',
+                    'meta_value' => 'yes'
                                       
                 );
                 $query = new WP_Query($args);
@@ -57,7 +59,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                         <div class="feature_img">
                             <?php if (has_post_thumbnail( $v->ID ) ): ?>
 
-                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-feature' ); ?>
                             <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
 
                             <?php else : ?>

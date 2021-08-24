@@ -87,7 +87,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             </ol>
                             <div class="carousel-inner">
                                 <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
-                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-apartment' ); ?>
                                 <div class="carousel-item active">
                                     <img src="<?php echo $image[0]; ?>"
                                         alt="<?php custom_the_post_thumbnail_caption(); ?>" id="btnLightbox"
@@ -127,7 +127,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     <?php }else{ ?>
 
                     <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
-                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-apartment' ); ?>
                     <img src="<?php echo $image[0]; ?>" alt="<?php custom_the_post_thumbnail_caption(); ?>">
                     <?php endif; ?>
 
@@ -150,7 +150,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                         <div id="carouselImgSlideModal" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators">
                                                 <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
-                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-apartment' ); ?>
                                                 <li data-target="#carouselImgSlideModal" data-slide-to="0"
                                                     class="active" style="background: url('<?php echo $image[0]; ?>')">
                                                 </li>
@@ -175,7 +175,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                             </ol>
                                             <div class="carousel-inner">
                                                 <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
-                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' ); ?>
+                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'custom-apartment' ); ?>
                                                 <div class="carousel-item active">
                                                     <img src="<?php echo $image[0]; ?>"
                                                         alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -404,7 +404,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                         <a href="<?php echo home_url($v->post_type . '/' .$v->post_name . '.html'); ?>"
                                             title="<?php echo $v->post_title; ?>" class="thumb">
                                             <?php if (has_post_thumbnail( $v->ID ) ): ?>
-                                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-apartment-single' ); ?>
                                             <img src="<?php echo $image[0]; ?>"
                                                 alt="<?php custom_the_post_thumbnail_caption(); ?>">
                                             <?php endif; ?>

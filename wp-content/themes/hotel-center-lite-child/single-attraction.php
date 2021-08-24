@@ -15,7 +15,6 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
 </style>
 <?php
 $terms = wp_get_object_terms( get_the_ID(), 'attractions');
-// var_dump($terms);
 $term_name = $terms[0]->name;
 $term_des = $terms[0]->description;
 
@@ -190,8 +189,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             'orderby'       =>      'date',
                             'order'         =>      'DESC',
                             'post_status'   =>      'publish',
-                            'posts_per_page'=>      12,
-                            'post__not_in'  =>      array(get_the_ID()),
+                            'posts_per_page'=>      -1,
                             'tax_query'         =>  array(
                                 array(
                                     'taxonomy'      =>  'attractions',

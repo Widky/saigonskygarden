@@ -24,7 +24,7 @@
                 <a href="<?php echo home_url($my_posts[0]->post_type.'/'.$my_posts[0]->post_name.'.html'); ?>">
                     <div class="telewwork">
                         <div class="tw-img">
-                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
+                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'custom-apartment' ); ?>
                             <img src="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){echo $image[0];} ?>"
                                 alt="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
                         </div>

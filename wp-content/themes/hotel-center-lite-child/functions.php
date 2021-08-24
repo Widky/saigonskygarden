@@ -277,11 +277,39 @@ class Walker_Dynamic_Submenu2 extends Walker_Nav_Menu {
  * Add description Featured Image
  */
 function wk_description_featured_image( $content, $post_id, $thumbnail_id ) {
-	$arrPosttype = array('attraction');
+	$arrPosttype = array('page', 'feature', 'attraction', 'event', 'facilities');
     if ( ! in_array(get_post_type( $post_id ), $arrPosttype) ) {
         return $content;
     }
-    $caption = '<p>' . esc_html__( 'Recommended image size: 684px (width) x 684px (height) or Proportionally larger (449x449/1079x1079)', 'i18n-tag' ) . '</p>';
+    if(get_post_type( $post_id ) == 'page'){
+        $caption = '<p>' . esc_html__( 'Recommended image size: 1920px (width) x 351px (height) or Proportionally larger', 'i18n-tag' ) . '</p>';
+
+    }elseif(get_post_type( $post_id ) == 'feature'){
+        $caption = '<p>' . esc_html__( 'Recommended image size: 1142px (width) x 596px (height) or Proportionally larger', 'i18n-tag' ) . '</p>';
+
+    }elseif(get_post_type( $post_id ) == 'event'){
+        $caption = '<p>' . esc_html__( 'Recommended image size: 457px (width) x 240px (height) or Proportionally larger', 'i18n-tag' ) . '</p>';
+
+    }elseif(get_post_type( $post_id ) == 'facilities'){
+        $caption = '<p>' . esc_html__( 'Recommended image size: 457px (width) x 240px (height) or Proportionally larger', 'i18n-tag' ) . '</p>';
+
+    }else{
+        $caption = '<p>' . esc_html__( 'Recommended image size: 684px (width) x 684px (height) or Proportionally larger (449x449/1079x1079)', 'i18n-tag' ) . '</p>';
+    }
     return $content . $caption;
 }
-add_filter( 'admin_post_thumbnail_html', 'wk_description_featured_image', 10, 3 );
+add_filter( 'admin_post_thumbnail_html', 'wk_description_featured_image', 10, 3 ); 
+
+add_action( 'after_setup_theme', 'wk_image_theme_setup' );
+function wk_image_theme_setup() {
+    add_image_size( 'custom-apartment', 1437, 596, true);
+    add_image_size( 'custom-apartment-single', 419, 185, true);
+    add_image_size( 'custom-feature-home', 345, 449, true);
+    add_image_size( 'custom-feature', 1142, 596, true);
+    add_image_size( 'custom-attraction', 449, 449, true);
+    add_image_size( 'custom-attraction-2', 664, 664, true);
+    add_image_size( 'custom-attraction-3', 438, 292, true);
+    add_image_size( 'custom-facilities', 457, 240, true);
+    add_image_size( 'custom-service', 808, 538, true);
+    add_image_size( 'custom-service-other', 428, 285, true);
+}

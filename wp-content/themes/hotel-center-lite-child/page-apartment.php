@@ -78,7 +78,7 @@ body {
                                             <div id="carouselImgSlide" class="carousel slide" data-ride="carousel">
                                                 <div class="carousel-inner">
                                                     <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
-                                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
+                                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'custom-apartment' ); ?>
                                                     <div class="carousel-item active">
                                                         <img src="<?php echo $image[0]; ?>"
                                                             alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -111,7 +111,7 @@ body {
                                     }else{
                                     ?>
                                         <?php if (has_post_thumbnail( $my_posts[0]->ID ) ): ?>
-                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'single-post-thumbnail' ); ?>
+                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'custom-apartment' ); ?>
                                         <img src="<?php echo $image[0]; ?>"
                                             alt="<?php custom_the_post_thumbnail_caption(); ?>">
                                         <?php endif; ?>
@@ -186,7 +186,7 @@ body {
                                             <div id="carouselImgSlide1" class="carousel slide" data-ride="carousel">
                                                 <div class="carousel-inner">
                                                     <?php if (has_post_thumbnail( $v->ID ) ): ?>
-                                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-feature' ); ?>
                                                     <div class="carousel-item active">
                                                         <img src="<?php echo $image[0]; ?>"
                                                             alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -219,7 +219,7 @@ body {
                                     }else{
                                     ?>
                                         <?php if (has_post_thumbnail( $v->ID ) ): ?>
-                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-feature' ); ?>
                                         <img src="<?php echo $image[0]; ?>"
                                             alt="<?php custom_the_post_thumbnail_caption(); ?>">
                                         <?php endif; ?>
@@ -276,7 +276,7 @@ body {
                                         <div id="carouselImgSlide2" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner">
                                                 <?php if (has_post_thumbnail( $v->ID ) ): ?>
-                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-feature' ); ?>
                                                 <div class="carousel-item active">
                                                     <img src="<?php echo $image[0]; ?>"
                                                         alt="<?php custom_the_post_thumbnail_caption(); ?>">
@@ -309,7 +309,7 @@ body {
 	                                }else{
 	                                ?>
                                     <?php if (has_post_thumbnail( $v->ID ) ): ?>
-                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
+                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-feature' ); ?>
                                     <img src="<?php echo $image[0]; ?>"
                                         alt="<?php custom_the_post_thumbnail_caption(); ?>">
                                     <?php endif; ?>

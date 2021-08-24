@@ -64,7 +64,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                         <div class="attractions-item-wrap">
                             <div class="aiw-img">
 
-                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $vp->ID ), 'single-post-thumbnail' ); ?>
+                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $vp->ID ), 'custom-attraction' ); ?>
                                 <img src="<?php if (has_post_thumbnail( $vp->ID ) ){echo $image[0];} ?>"
                                     alt="<?php if (has_post_thumbnail( $vp->ID ) ){custom_the_post_thumbnail_caption();}else{_e('Not Image', 'hotel-center-lite-child');} ?>">
 
@@ -92,7 +92,7 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                         <div class="attractions-item-wrap row">
                             <div class="aiw-img col-lg-6 col-md-6 col-12">
 
-                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $vp->ID ), 'single-post-thumbnail' ); ?>
+                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $vp->ID ), 'custom-attraction-2' ); ?>
                                 <img src="<?php if (has_post_thumbnail( $vp->ID ) ){echo $image[0];} ?>"
                                     alt="<?php if (has_post_thumbnail( $vp->ID ) ){custom_the_post_thumbnail_caption();}else{_e('Not Image', 'hotel-center-lite-child');} ?>">
 
