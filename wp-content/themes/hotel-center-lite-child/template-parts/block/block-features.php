@@ -51,15 +51,8 @@
                 'order'             =>  'ASC',
                 'post_status'       =>  'publish',
                 'meta_key' => '_is_ns_featured_post',
-                'meta_value' => 'yes'
-                // 'tax_query'         =>  array(
-                //     array(
-                //         'taxonomy'      =>  'category',
-                //         'field'         =>  'slug',
-                //         'terms'         =>  $the_cat,
-                //         'operator'      =>  'IN'
-                //     ),
-                // )
+                'meta_value' => 'yes',
+                'posts_per_page'        =>  3,
             );
             $query = new WP_Query($args);
             $my_posts = $query->get_posts();

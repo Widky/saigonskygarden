@@ -302,6 +302,7 @@ add_filter( 'admin_post_thumbnail_html', 'wk_description_featured_image', 10, 3 
 
 add_action( 'after_setup_theme', 'wk_image_theme_setup' );
 function wk_image_theme_setup() {
+    add_theme_support( 'post-thumbnails' );
     add_image_size( 'custom-apartment', 1437, 596, true);
     add_image_size( 'custom-apartment-single', 419, 185, true);
     add_image_size( 'custom-feature-home', 345, 449, true);
