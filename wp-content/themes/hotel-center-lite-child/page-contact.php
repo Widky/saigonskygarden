@@ -95,7 +95,7 @@ get_header();
                     <!-- <a class="contact_btn btn_cls d-inline-block" href="#">
                     <?php //echo __('長期ご契約 お問合せ','hotel-center-lite-child'); ?>
                     </a> -->
-                    <a class="booking_btn btn_cls d-inline-block" target="_blank" href="https://www.booking.com/">
+                    <a class="booking_btn btn_cls d-inline-block" target="_blank" href="https://www.booking.com/hotel/vn/saigon-sky-garden.html?label=gen173nr-1FCAEoggI46AdIM1gEaPQBiAEBmAExuAEXyAEP2AEB6AEB-AECiAIBqAID;sid=b4ce4dc38b9dd8d15ac2a14878dcbe23;dest_id=-3730078;dest_type=city;dist=0;hapos=1;hpos=1;room1=A%2CA;sb_price_type=tot">
                         <?php echo __('短期宿泊','hotel-center-lite-child'); ?>
                     </a>
                 </div>

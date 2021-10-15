@@ -84,3 +84,63 @@ h2.section_title{ text-align:center;}
 .header-menu ul li:hover ul li:hover ul, .header-menu ul li:hover ul li:hover ul li:hover ul{ left:0 !important;}
 .header-menu ul li ul li a{ color:#000;}
 }
+
+a.go_top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    background: #31abb9;
+    bottom: 80px;
+    right: 15px;
+    z-index: 11;
+    color: #ffffff;
+    font-size: 20px;
+}
+a.go_top svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+    -webkit-animation: bouncez 1.2s 500ms infinite;
+    -o-animation: bouncez 1.2s 500ms infinite;
+    animation: bouncez 1.2s 500ms infinite;
+}
+
+.bounce {
+	position: absolute;
+	bottom: 25px;
+	left: 50% ;
+	animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	-moz-animation: bounce 2s infinite;
+	-o-animation: bounce 2s infinite;
+}
+ 
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}	
+	40% {-webkit-transform: translateY(-7px);}
+	60% {-webkit-transform: translateY(-5px);}
+}
+ 
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-7px);}
+	60% {-moz-transform: translateY(-5px);}
+}
+ 
+@-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-7px);}
+	60% {-o-transform: translateY(-5px);}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-7px);}
+	60% {transform: translateY(-5px);}
+}

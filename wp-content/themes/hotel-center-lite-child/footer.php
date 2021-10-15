@@ -110,6 +110,16 @@
 </div>
 <!-- end page-wrap -->
 <?php wp_footer(); ?>
+<a href="javascript:void(0)" onclick="jQuery('html,body').animate({scrollTop: 0},1000);" class="go_top" style="display: none;"><span class="bounce"><i class="fa fa-angle-up"></i></span></a>
+<script type="text/javascript">
+    jQuery(window).scroll(function(event){
+       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        jQuery(".go_top").css("display", "block");
+       } else {
+        jQuery(".go_top").css("display", "none");
+       }
+    });
+</script>
 </body>
 
 </html>
