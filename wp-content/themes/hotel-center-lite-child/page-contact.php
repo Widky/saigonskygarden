@@ -84,9 +84,9 @@ get_header();
                         </div>
                     <?php } ?>
                     <?php if(!empty($contact_url2)) {?>
-                        <div class="mb-2 d-block">
+                       <!--  <div class="mb-2 d-block">
                             <div class="email2"><?php echo $contact_url2 ?></div>
-                        </div>
+                        </div> -->
                     <?php } ?>
                 </div>
             </div>
