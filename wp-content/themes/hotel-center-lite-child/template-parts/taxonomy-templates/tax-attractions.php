@@ -82,7 +82,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             <img src="<?php if (has_post_thumbnail( $vp->ID ) ){echo $image[0];} ?>"
                                 alt="<?php if (has_post_thumbnail( $vp->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
 
-                            <?php if($vp->post_excerpt != ''){ ?><div class="saiw-des"><?php echo $vp->post_excerpt; ?>
+                            <?php if($vp->post_excerpt != ''){ ?><div class="saiw-des">
+                                <div class="saiw-des-text"><?php echo $vp->post_excerpt; ?></div>
                             </div><?php } ?>
                         </div>
                         <div class="saiw-body col-lg-5 col-md-12">
