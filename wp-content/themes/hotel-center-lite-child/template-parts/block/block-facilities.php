@@ -17,7 +17,7 @@
                 'orderby'       =>      'date',
                 'order'         =>      'DESC',
                 'post_status'   =>      'publish',
-                'posts_per_page'=>      7,
+                'posts_per_page'=>      8,
                 'meta_key' => '_is_ns_featured_post',
                 'meta_value' => 'yes'
             );
