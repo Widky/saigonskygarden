@@ -500,7 +500,7 @@
     height: 54px;
     min-width: 307px;
     line-height: 54px;
-    padding-left: 27px;
+    /*padding-left: 27px;*/
     background-color: #FFFFFF;
     border-radius: 4px;
 }
@@ -509,6 +509,10 @@
     position: absolute;
     right: 15px;
     bottom: 15px;
+}
+
+.single-attractions-item .saiw-img .saiw-des .saiw-des-text{
+    padding: 0px 20px;
 }
 
 .single-attractions-item .saiw-body {

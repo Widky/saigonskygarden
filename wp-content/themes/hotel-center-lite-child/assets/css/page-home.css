@@ -881,6 +881,7 @@ section .cl-sub-title,
     position: absolute;
     bottom: 34px;
     left: 15px;
+    right: 15px;
 }
 
 .facilities-items .facilities-item .fiw-content img {

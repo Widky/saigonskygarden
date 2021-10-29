@@ -41,7 +41,7 @@ switch($currentLang)
         $strCheckOut = 'Check-out:';
         $strPriceApartment = 'Price:';
         $strBedType = 'Bed Type:';
-        $strMaximumNumberPeople = 'Maximum number of people in a room:';
+        $strMaximumNumberPeople = 'Number of Guests:';
 
         // single facilities
         $strCapacity = 'Capacity:';
