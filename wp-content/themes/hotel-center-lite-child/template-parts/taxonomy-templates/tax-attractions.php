@@ -93,8 +93,9 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             <p class="saiw-content"><?php echo $vp->post_content; ?></p>
                             <div class="saiw-footer">
                                 <?php $ggmap = get_field('google_maps',$vp->ID); ?>
+                                <?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?>
                                 <a href="<?php echo $ggmap; ?>" target="_blank"
-                                    rel="noopener noreferrer"><?php _e('Googlemap','hotel-center-lite-child') ?></a><?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?>
+                                    rel="noopener noreferrer"><?php _e('Googlemap','hotel-center-lite-child') ?></a>
                             </div>
                         </div>
 

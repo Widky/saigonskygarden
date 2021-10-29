@@ -355,8 +355,12 @@ section .cl-sub-title,
 }
 
 .cat-bed-items .cat-bed-title {
-    position: absolute;
+    position: relative;
     top: -10px;
+}
+
+.cat-odd .cat-bed-items .cat-bed-title {
+    float: right;
 }
 
 .cat-bed-title .cat-line.mgl {
@@ -1888,6 +1892,10 @@ section .cl-sub-title,
         top: 0px;
         left: 0px;
     }
+
+    .cat-odd .cat-bed-items .cat-bed-title {
+        float: unset;
+    }    
     .cat-bed-items .cb-item .cb-img {
         width: 100%;
     }
