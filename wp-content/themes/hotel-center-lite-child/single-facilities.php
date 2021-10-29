@@ -70,7 +70,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                         foreach($myPosts as $k=>$v) :
                             $image = get_field('image_show_in_about_page',$v->ID);
 
-                            if ($image != NULL ): ?>
+                            // if ($image != NULL ): ?>
                         <div class="item <?php if($i == 0) echo 'active'; ?>">
                             <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html')?>">
                                 <div class="fiw-img">
@@ -85,7 +85,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             </a>
                         </div>
                         <?php $i++; ?>
-                        <?php endif; ?>
+                        <?php //endif; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>
