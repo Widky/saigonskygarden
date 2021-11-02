@@ -360,7 +360,8 @@ section .cl-sub-title,
 }
 
 .cat-odd .cat-bed-items .cat-bed-title {
-    float: right;
+    text-align: right;
+    width: 100%;
 }
 
 .cat-bed-title .cat-line.mgl {

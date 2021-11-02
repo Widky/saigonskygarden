@@ -202,8 +202,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                                                         alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
                                                     <?php } ?>
 
-                                                    <?php if($v->post_excerpt != ''){ ?><div class="att-des">
-                                                        <?php echo $v->post_excerpt; ?></div><?php } ?>
+                                                    <?php if($v->post_excerpt != ''){ ?><div class="att-des"><div class="att-des-text">
+                                                        <?php echo $v->post_excerpt; ?></div></div><?php } ?>
                                                 </div>
 
                                                 <div class="att-content post-content">
