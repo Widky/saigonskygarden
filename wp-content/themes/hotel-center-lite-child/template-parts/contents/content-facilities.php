@@ -6,11 +6,10 @@ if($note == '' || $note == NUll){
 ?>
 <div class="site-maincontentarea-facilities">
     <h2 class="sr-title cl-title text-center">
-        <?php if($note != '' || $note != NUll){ ?>
-            <span class="cl-main-title change-cl"><?php echo _e($note,'hotel-center-lite-child') ?></span>
-        <?php } ?>
-        <span class="cl-sub-title"><?php echo _e(get_the_title(),'hotel-center-lite-child') ?></span>
-        
+            <span class="cl-main-title change-cl"><?php echo _e(get_the_title(),'hotel-center-lite-child') ?></span>
+            <?php if($note != '' || $note != NUll){ ?>
+            <span class="cl-sub-title"><?php echo _e($note,'hotel-center-lite-child') ?></span>
+            <?php } ?>
     </h2>
     <div class="sm-img">
         <?php
