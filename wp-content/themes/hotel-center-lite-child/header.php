@@ -108,6 +108,18 @@
         </div>
     </header>
     <div class="page-wrap">
+        <h1 class="seo_tag">
+            <?php if(is_front_page()){
+                $name = get_bloginfo('name');
+                if($name != ''){
+                    echo $name;
+                }else{
+                    the_title();
+                }
+            }elseif(is_tax()){
+                echo get_queried_object()->name;
+            }else{the_title();} ?>
+        </h1>
         <?php 
     if(!is_front_page() && is_page()){
         $page_id = get_queried_object_id();
