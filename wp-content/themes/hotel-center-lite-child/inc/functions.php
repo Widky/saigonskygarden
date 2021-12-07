@@ -484,6 +484,8 @@ function custom_theme_options_register_settings(){
   register_setting('options_group', 'phone');
   register_setting('options_group', 'fax');
   register_setting('options_group', 'email');
+  register_setting('options_group', 'webname');
+  register_setting('options_group', 'weburl');
   register_setting('options_group', 'f_facebook');
   register_setting('options_group', 'f_twitter');
   register_setting('options_group', 'f_google_plus');
@@ -537,6 +539,16 @@ if(!function_exists('custom_theme_options_callback')){
                 <tr>
                     <th scope="row"><label for="email"><?php _e('Email','hotel-center-lite-child') ?></label></th>
                     <td><input type="text" name="email" value="<?php echo get_option('email')?>" class="regular-text" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="webname"><?php _e('Web','hotel-center-lite-child') ?></label></th>
+                    <td><input type="text" name="webname" value="<?php echo get_option('webname')?>" class="regular-text" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="weburl"><?php _e('Web URL','hotel-center-lite-child') ?></label></th>
+                    <td><input type="text" name="weburl" value="<?php echo get_option('weburl')?>" class="regular-text" />
                     </td>
                 </tr>
             </tbody>
@@ -758,3 +770,22 @@ add_action( 'reviews-category_add_form', function( $taxonomy )
 add_filter( 'wpm_post_acf-field-group_config', '__return_null' );
 add_filter( 'auto_update_plugin', '__return_false' );
 add_filter( 'auto_update_theme', '__return_false' );
+
+add_filter('site_transient_update_plugins', 'remove_update_notification');
+function remove_update_notification($value) {
+     unset($value->response['advanced-custom-fields/acf.php']);
+     unset($value->response['cf7-grid-layout/cf7-grid-layout.php']);
+     unset($value->response['contact-form-7/wp-contact-form-7.php']);
+     unset($value->response['ns-featured-posts/ns-featured-posts.php']);
+     unset($value->response['polylang/polylang.php']);
+     unset($value->response['smart-slider-3/smart-slider-3.php']);
+     unset($value->response['taxonomy-terms-order/taxonomy-terms-order.php']);
+     unset($value->response['wp-multilang/wp-multilang.php']);
+     return $value;
+} 
+
+add_action( 'wp_loaded', 'disable_wp_theme_update_loaded' );
+function disable_wp_theme_update_loaded() {
+    remove_action( 'load-update-core.php', 'wp_update_themes' );
+    add_filter( 'pre_site_transient_update_themes', '__return_null' );
+}

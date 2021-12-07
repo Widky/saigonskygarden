@@ -63,6 +63,8 @@
                         $linkPhone = get_option('phone');
                         $linkFax = get_option('fax');
                         $linkEmail = get_option('email');
+                        $webname = get_option('webname');
+                        $weburl = get_option('weburl');
                         ?>
                     <div class="fmc4-icon">
                         <i class="fas fa-map-marker-alt"></i>
@@ -86,7 +88,9 @@
                         <div class="fmc4-content">
                             <div class="fmc4-line1"><a
                                     href="mailto:<?php echo $linkEmail; ?>"><?php echo $linkEmail; ?></a></div>
-                            <div class="fmc4-line2">saigonskygarden.com.vn</div>
+                            <?php if($webname){ ?>
+                                <div class="fmc4-line2"><?php if($weburl) echo '<a href="'.$weburl.'">'?><?php echo $webname; ?><?php if($weburl) echo '</a>'?></div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
