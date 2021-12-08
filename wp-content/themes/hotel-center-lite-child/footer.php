@@ -97,7 +97,14 @@
             </div>
             <div class="footer-main-column footer-main-column5 col-xl-3 col-lg-2 col-md-7 col-12">
                 <div class="fmc5-wrap">
-                    <?php echo do_shortcode('[contact-form-7 id="61" title="ニュースを購読する - Subscribe to news"]'); ?>
+                    <?php 
+                        $locale = get_locale();
+                        if($locale == 'ja'){
+                            echo do_shortcode ( '[cf7form cf7key="stn_61"]' );
+                        }else{
+                            echo do_shortcode ( '[cf7form cf7key="stn_62"]' );
+                        }                     
+                    ?>
                 </div>
             </div>
         </div>
