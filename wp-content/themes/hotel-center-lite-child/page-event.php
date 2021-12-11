@@ -36,11 +36,6 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                         </div>
                     </div>
                 </div>
-                <!-- <div class="page_title text-center my-5"> -->
-                    <!-- EVENT -->
-                    <?php //the_title(); ?>
-                    <p><?php //echo $sub_title; ?></p>
-                <!-- </div> -->
                 <div class="entry-content">
                     <?php if(!empty($event_cats)){ 
                         foreach($event_cats as $cat) {                            
@@ -52,9 +47,6 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                             // echo ${"paged".$cat_id};
                          ?>
                             <div class="event_cat">
-                                <h2 class="cat_title">
-                                    <span class="cat_text" style="background: <?php echo $cat_color; ?>"><?php echo $cat->name; ?></span>
-                                </h2>
                                 <?php
                                     $args = array(
                                     'post_type' => 'event',
@@ -83,19 +75,13 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                                          ?>   
                                             <div class="col-12 col-md-6 col-lg-4 mb-4 item_wrap">
                                                 <div class="event_item ">
-                                                    <?php if(!empty( $sub_cat)) {
-                                                        $sub_cat_color = get_field('category_background_color',$sub_cat[0]->taxonomy.'_'.$sub_cat[0]->term_id) ;
-                                                        $sub_cat_color = !empty($sub_cat_color) ? $sub_cat_color : '#166772';
-                                                     ?>
-                                                        <div class="sub_cat" style="background: <?php echo $sub_cat_color; ?>"><?php  echo $sub_cat[0]->name ;?></div>
-                                                    <?php } ?>
                                                     <div class="event_img">
                                                         <a href="<?php the_permalink(); ?>">
                                                             <?php the_post_thumbnail('post-thumbnail')  ?>
                                                         </a>
                                                     </div>
                                                     <div class="event_info p-3">
-                                                        <div class="event_date"><?php echo get_the_date('Y-m-d'); ?></div>
+                                                        <div class="event_date"><?php echo get_field('day_of_event_bk', get_the_ID()); ?></div>
                                                         <h3 class="mb-2">
                                                             <a href="<?php the_permalink(); ?>">
                                                                 <?php the_title(); ?>                    

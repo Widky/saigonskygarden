@@ -46,10 +46,6 @@ p {
     display: inline-block;
 }
 
-.event_items {
-    padding: 35px 0px;
-}
-
 .event_item {
     border: 1px solid #DCDCDC;
     box-sizing: border-box;
