@@ -289,8 +289,6 @@ $event_cats = get_terms( array(
                                         $sub_cat_color = get_field('category_background_color',$sub_cat[0]->taxonomy.'_'.$sub_cat[0]->term_id) ;
                                         $sub_cat_color = !empty($sub_cat_color) ? $sub_cat_color : '#166772';
                                         ?>
-                        <div class="sub_cat" style="background: <?php echo $sub_cat_color; ?>">
-                        <?php echo get_field('day_of_event_bk', get_the_ID()); ?></div>
                         <?php } ?>
 
                         <div class="event_img">
@@ -298,6 +296,7 @@ $event_cats = get_terms( array(
                         </div>
 
                         <div class="event_info p-3">
+                            <div class="event_date" style="text-align: center">(<?php echo get_field('day_of_event_bk', get_the_ID()); ?>)</div>
                             <h3 class="mb-2 text-center">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h3>
