@@ -290,7 +290,7 @@ $event_cats = get_terms( array(
                                         $sub_cat_color = !empty($sub_cat_color) ? $sub_cat_color : '#166772';
                                         ?>
                         <div class="sub_cat" style="background: <?php echo $sub_cat_color; ?>">
-                            <?php echo $sub_cat[0]->name ;?></div>
+                        <?php echo get_field('day_of_event_bk', get_the_ID()); ?></div>
                         <?php } ?>
 
                         <div class="event_img">
