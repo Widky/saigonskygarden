@@ -1118,9 +1118,8 @@ section .cl-sub-title,
     text-align: center;
 }
 
-#multi-carousel .owl-item .evc-title {
-    margin-top: 30px;
-    margin-bottom: 20px;
+.hevent_date {
+    color: #333333;
 }
 
 #multi-carousel .owl-item .evc-excerpt {
@@ -1128,7 +1127,6 @@ section .cl-sub-title,
     line-height: 25px;
     color: #333333;
     min-height: 50px;
-    padding: 0px 15px 15px;
     text-align: left;
 }
 
@@ -1893,10 +1891,9 @@ section .cl-sub-title,
         top: 0px;
         left: 0px;
     }
-
     .cat-odd .cat-bed-items .cat-bed-title {
         float: unset;
-    }    
+    }
     .cat-bed-items .cb-item .cb-img {
         width: 100%;
     }

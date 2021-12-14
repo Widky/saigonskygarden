@@ -34,22 +34,9 @@
                                                     alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
                                                 </div>    
                                                 
-
-                                                <?php $getCat = get_the_terms($v->ID,'event-category');
-                                                    if($getCat != false){ ?>
-                                                <div class="evc-cat"
-                                                    style="<?php if(get_field('change_color',$v->ID) != '') echo 'background-color:'.get_field('change_color',$v->ID)  ?>">
-                                                    <?php 
-                                                    foreach($getCat as $kCat=>$vCat){
-                                                        echo $vCat->name;
-                                                        break;
-                                                    }
-                                                    ?>
-                                                </div>
-                                                <?php } ?>
-
-                                                <div class="evc-content">
-                                                    <h3 class="evc-title"><?php echo $v->post_title; ?></h3>
+                                                <div class="evc-content p-3">
+                                                    <div class="hevent_date" style="text-align: center">(<?php echo get_field('day_of_event_bk', $v->ID); ?>)</div>
+                                                    <h3 class="evc-title mb-2 mt-2"><?php echo $v->post_title; ?></h3>
                                                     <!-- <?php //if($v->post_excerpt != '') echo '<pre class="evc-excerpt">'.$v->post_excerpt.'</pre>'; ?> -->
                                                     <div class="evc-excerpt">
                                                         <?php
