@@ -217,7 +217,7 @@ $event_cats = get_terms( array(
                         if($locale == 'ja'){
                             echo '開催時期: ';
                         }else{
-                            echo 'Day of the event: ';
+                            echo 'Time of event: ';
                         } 
                         echo $day_of_event; 
                     } ?>
