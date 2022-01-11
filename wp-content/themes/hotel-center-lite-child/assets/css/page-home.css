@@ -1117,6 +1117,9 @@ section .cl-sub-title,
     line-height: 25px;
     color: #333333;
     text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .hevent_date {

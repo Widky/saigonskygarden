@@ -82,6 +82,12 @@
     width: 100%;
 }
 
+.other-events .event_info h3{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .other-events .event_info h3 a {
     color: #333333 !important;
     font-size: 25px;
