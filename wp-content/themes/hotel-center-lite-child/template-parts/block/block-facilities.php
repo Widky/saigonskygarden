@@ -5,11 +5,10 @@
             <span class="cl-main-title change-cl"><?php echo _e('FACILITIES','hotel-center-lite-child') ?></span>
             <span class="cl-sub-title"><?php echo _e('施設','hotel-center-lite-child') ?></span>
         </h2>
-    </div>    
+    </div>
 </div>
 <div class="row position-relative facilities_block ">
     <div class="container p-md-0">
-        
         <div class="facilities-items row">
             <?php 
             $args = array(
@@ -31,43 +30,42 @@
             foreach($myPosts as $k=>$v) :
             ?>
             <?php if($i == 0) { ?>
-                <div class="facilities-item col-xl-3 col-sm-6 col-12">
-                    <div class="facilities-item-wrap">
-                        <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
-                            
-                                <?php 
-                                $showHome = get_field('show_home_field', $v->ID);
-                                // echo "<pre>";var_dump($showHome);
-                                if($showHome && $showHome != NULL){ ?>
-                                <div class="fiw-img" style="background: url(<?php echo $showHome['image']['url']; ?>) center center;background-size: cover;background-repeat: no-repeat;">
-                                <?php 
+            <div class="facilities-item col-xl-3 col-sm-6 col-12 large-w">
+                <div class="facilities-item-wrap">
+                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
+                        <?php 
+                            $showHome = get_field('show_home_field', $v->ID);
+                            // echo "<pre>";var_dump($showHome);
+                            if($showHome && $showHome != NULL){ ?>
+                        <div class="fiw-img"
+                            style="background: url(<?php echo $showHome['image']['url']; ?>) center center;background-size: cover;background-repeat: no-repeat;">
+                            <?php 
                                 $imgOrverlay = $showHome['background_overlay_for_images'];
                                 if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).");background-size: 100% 100%;'></div>"; ?>
-                                </div>
-                                <!-- <div class="mask-img"></div> -->
-                                <?php } ?>
-                            
-                            <div class="fiw-content">
-                                <?php
+                        </div>
+                        <!-- <div class="mask-img"></div> -->
+                        <?php } ?>
+
+                        <div class="fiw-content">
+                            <?php
                                 $iconPost = $showHome['icon_title'];
                                 // echo "<pre>";var_dump($iconPost);
                                 if($iconPost != NULL){
                                     echo '<img src="'.esc_url($iconPost['url']).'" alt="'.esc_attr($iconPost['alt']).'"/>';
                                 }
                                 ?>
-                                <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
-                                <?php $short_notes = get_field('show_home_field', $v->ID); ?>
-                                <?php if($short_notes && $short_notes['short_notes_field'] != '') echo '<pre class="fiw-excerpt">'.$short_notes['short_notes_field'].'</pre>'; ?>
-                            </div>
-                        </a>
-                    </div>
+                            <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
+                            <?php $short_notes = get_field('show_home_field', $v->ID); ?>
+                            <?php if($short_notes && $short_notes['short_notes_field'] != '') echo '<pre class="fiw-excerpt">'.$short_notes['short_notes_field'].'</pre>'; ?>
+                        </div>
+                    </a>
                 </div>
-            <?php }else{ 
-                ?>
-                <?php if($i == 1 && $w >= 1200) { ?>
-                    <div class="col-12 col-xl-9 col-12">
-                        <div class="row">
-                <?php } ?> 
+            </div>
+            <?php }else{ ?>
+            <?php if($i == 1) { ?>
+            <div class="col-12 col-xl-9 col-12 large-w">
+                <div class="row">
+                    <?php } ?>
                     <div class="facilities-item col-xl-4 col-sm-6 col-12">
                         <div class="facilities-item-wrap">
                             <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
@@ -98,24 +96,50 @@
                             </a>
                         </div>
                     </div>
-                <?php if(($i== count($myPosts) - 1) && ( $w >=1200 ) ){ ?>
-                    </div>
-                </div>    
-                <?php } ?>   
-            <?php } ?>    
-            
+                    <?php if(($i== count($myPosts) - 1)){ ?>
+                </div>
+            </div>
+            <?php } ?>
+            <?php } ?>
             <?php
             $i = $i + 1;
             endforeach;
-        ?>
+
+            foreach($myPosts as $k=>$v) :
+                ?>
+            <div class="facilities-item col-xl-3 col-sm-6 col-12 small-w">
+                <div class="facilities-item-wrap">
+                    <a href="<?php echo home_url($v->post_type . '/' .$v->post_name .'.html'); ?>">
+                        <?php 
+                            $showHome = get_field('show_home_field', $v->ID);
+                            // echo "<pre>";var_dump($showHome);
+                            if($showHome && $showHome != NULL){ ?>
+                        <div class="fiw-img"
+                            style="background: url(<?php echo $showHome['image']['url']; ?>) center center;background-size: cover;background-repeat: no-repeat;">
+                            <?php 
+                                $imgOrverlay = $showHome['background_overlay_for_images'];
+                                if($imgOrverlay) echo "<div class='fiw-img-orverlay' style='background:url(".esc_url($imgOrverlay['url']).");background-size: 100% 100%;'></div>"; ?>
+                        </div>
+                        <!-- <div class="mask-img"></div> -->
+                        <?php } ?>
+
+                        <div class="fiw-content">
+                            <?php
+                                $iconPost = $showHome['icon_title'];
+                                // echo "<pre>";var_dump($iconPost);
+                                if($iconPost != NULL){
+                                    echo '<img src="'.esc_url($iconPost['url']).'" alt="'.esc_attr($iconPost['alt']).'"/>';
+                                }
+                                ?>
+                            <h3 class="fiw-title"><?php echo $v->post_title; ?></h3>
+                            <?php $short_notes = get_field('show_home_field', $v->ID); ?>
+                            <?php if($short_notes && $short_notes['short_notes_field'] != '') echo '<pre class="fiw-excerpt">'.$short_notes['short_notes_field'].'</pre>'; ?>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <?php endforeach; ?>
         </div>
-        
         <div class="bg-facilities bg-facilities-bottom"></div>
     </div>
 </div>
-<script type="text/javascript">
-    jQuery(function() {
-        var scr_width = jQuery(window).width();
-        jQuery.cookie("screen_width", scr_width);
-    });
-</script>

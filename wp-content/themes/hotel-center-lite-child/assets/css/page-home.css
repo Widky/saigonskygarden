@@ -1521,7 +1521,12 @@ section .cl-sub-title,
     width: 100%;
 }
 
-
+.small-w{
+    display: none;
+}
+.large-w{
+    display: block;
+}
 /* responsive */
 
 @media screen and (max-width: 1919.98px) {
@@ -1879,6 +1884,12 @@ section .cl-sub-title,
     }
     .home-contact .hcw-right {
         margin-top: 60px;
+    }
+    .small-w{
+        display: block;
+    }
+    .large-w{
+        display: none;
     }
 }
 
