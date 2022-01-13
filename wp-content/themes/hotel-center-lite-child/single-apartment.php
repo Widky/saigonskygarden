@@ -37,12 +37,6 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     <h3 class="cat-title"><?php echo get_field('sub_title_in_detail_page_field3', get_the_ID()); ?></h3>
                     <div class="cat-des"><?php the_title(); ?></div>
                 </div>
-                <div class="apd-tax-share">
-                    <a href="#">
-                        <i class="fas fa-share-alt"></i>
-                        <span><?php echo $strButtonShare; ?></span>
-                    </a>
-                </div>
             </div>
             <div class="apd-tax-slide">
                 <div class="csti-img">
@@ -224,7 +218,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             </div>
             <div class="apd-tax-header">
                 <div class="row">
-                    <div class="col-lg-8 col-md-12 col-12">
+                    <div class="col-12">
                         <div class="apd-tax-header-content">
                             <h3 class="post-title"><?php echo get_field('sub_title_decription_field', get_the_ID()) ?>
                             </h3>
@@ -369,8 +363,8 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
         <div class="apd-tax-other-room-wrap">
             <h2 class="ap-title cl-title text-center">
                 <span
-                    class="cl-main-title change-cl"><?php echo _e('Other Apartment', 'hotel-center-lite-child') ?></span>
-                <span class="cl-sub-title"><?php echo _e('その他のアパート', 'hotel-center-lite-child') ?></span>
+                    class="cl-main-title change-cl"><?php echo _e('OTHER ROOM', 'hotel-center-lite-child') ?></span>
+                <span class="cl-sub-title"><?php echo _e('その他のお部屋', 'hotel-center-lite-child') ?></span>
             </h2>
             <div class="apd-tax-other-room-carousel">
                 <div class="container-fluid">

@@ -23,10 +23,8 @@
             <div class="row fw-items">
                 <a href="<?php echo home_url($my_posts[0]->post_type.'/'.$my_posts[0]->post_name.'.html'); ?>">
                     <div class="telewwork">
-                        <div class="tw-img">
-                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'custom-apartment' ); ?>
-                            <img src="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){echo $image[0];} ?>"
-                                alt="<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
+                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $my_posts[0]->ID ), 'custom-apartment' ); ?>
+                        <div class="tw-img" style="background: url(<?php if (has_post_thumbnail( $my_posts[0]->ID ) ){echo $image[0];} ?>);background-position: center;background-size: cover;height: 500px;">
                         </div>
                         <div class="tw-content">
                             <?php echo $my_posts[0]->post_excerpt; ?>

@@ -55,7 +55,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             <p class="saiw-content"><?php echo get_the_content(); ?></p>
                             <div class="saiw-footer">
                                 <?php $ggmap = get_field('google_maps',get_the_ID()); ?>
-                                <?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?> 
+                                <?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?>
                                 <a href="<?php echo $ggmap; ?>" target="_blank"
                                     rel="noopener noreferrer"><?php _e('Googlemap','hotel-center-lite-child') ?></a>
                             </div>
@@ -122,7 +122,7 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                             <p class="saiw-content"><?php echo $vp->post_content; ?></p>
                             <div class="saiw-footer">
                                 <?php $ggmap = get_field('google_maps',$vp->ID); ?>
-                                <?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?> 
+                                <?php _e('でホテルからのルートを見る','hotel-center-lite-child') ?>
                                 <a href="<?php echo $ggmap; ?>" target="_blank"
                                     rel="noopener noreferrer"><?php _e('Googlemap','hotel-center-lite-child') ?></a>
                             </div>
@@ -219,18 +219,24 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
 
                                                 <div class="att-img">
 
-                                                    <?php $image = get_field('set_image_for_other',$v->ID);
-
-                                                    if($image != NULL){
-                                                        echo '<img src="'.$image['url'].'" alt="'.$image['filename'].'">';
+                                                    <?php $image = get_field('set_image_for_other',$v->ID); ?>
+                                                    <?php
+                                                    if($image != NULL){ ?>
+                                                    <div class="saiw-img-m"
+                                                        style="background: url(<?php echo $image['url']; ?>);background-position: center;background-size: cover;height: 295px;">
+                                                    </div>
+                                                    <?php
                                                     }else{
-                                                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'single-post-thumbnail' ); ?>
-                                                    <img src="<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>"
-                                                        alt="<?php if (has_post_thumbnail( $v->ID ) ){custom_the_post_thumbnail_caption();}else{echo 'Not Image';} ?>">
-                                                    <?php } ?>
+                                                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $v->ID ), 'custom-attraction-3' ); ?>
+                                                    <div class="saiw-img-m"
+                                                        style="background: url(<?php if (has_post_thumbnail( $v->ID ) ){echo $image[0];} ?>);background-position: center;background-size: cover;height: 295px;">
+                                                    </div>
 
-                                                    <?php if($v->post_excerpt != ''){ ?><div class="att-des"><div class="att-des-text">
-                                                        <?php echo $v->post_excerpt; ?></div></div><?php } ?>
+                                                    <?php } ?>
+                                                    <?php if($v->post_excerpt != ''){ ?><div class="att-des">
+                                                        <div class="att-des-text">
+                                                            <?php echo $v->post_excerpt; ?></div>
+                                                    </div><?php } ?>
                                                 </div>
 
                                                 <div class="att-content post-content">

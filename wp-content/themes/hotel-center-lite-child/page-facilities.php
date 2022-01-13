@@ -21,12 +21,6 @@ $showAboutPage = get_field('show_about_page');
                 <span class="cl-main-title change-cl"><?php _e('FACILITIES','hotel-center-lite-child') ?></span>
                 <span class="cl-sub-title"><?php _e('施設','hotel-center-lite-child') ?></span>
             </h2>
-            <div class="cl-tax-share">
-                <a href="#">
-                    <i class="fas fa-share-alt"></i>
-                    <span><?php echo $strButtonShare; ?></span>
-                </a>
-            </div>
         </div>
     </div>
     <div class="pfacilities-wrap container">

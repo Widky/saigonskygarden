@@ -18,12 +18,6 @@ include dirname( __FILE__ ) . '/inc/lang/translate.php';
                 <span class="cl-main-title change-cl"><?php echo _e('Feature','hotel-center-lite-child') ?></span>
                 <span class="cl-sub-title"><?php echo _e('特色','hotel-center-lite-child') ?></span>
             </h2>
-            <div class="cl-tax-share">
-                <a href="#">
-                    <i class="fas fa-share-alt"></i>
-                    <span><?php echo $strButtonShare; ?></span>
-                </a>
-            </div>
         </div>
     </div>
 </div>

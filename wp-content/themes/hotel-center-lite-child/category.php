@@ -34,12 +34,6 @@ include get_stylesheet_directory() . '/assets/css/category.css';
                 <span class="cl-main-title change-cl"><?php echo _e($term_name,'hotel-center-lite-child') ?></span>
                 <span class="cl-sub-title"><?php echo _e($term_des,'hotel-center-lite-child') ?></span>
             </h2>
-            <div class="cl-tax-share">
-                <a href="#">
-                    <i class="fas fa-share-alt"></i>
-                    <span><?php echo $strButtonShare; ?></span>
-                </a>
-            </div>
         </div>
     </div>
     <div class="pfacilities-wrap container">

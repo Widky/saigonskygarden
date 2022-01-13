@@ -199,12 +199,6 @@ $event_cats = get_terms( array(
                             <span class="cl-main-title change-cl"><?php echo $sub_title; ?></span>
                             <span class="cl-sub-title"><?php the_title(); ?></span>
                         </h2>
-                        <div class="cl-tax-share">
-                            <a href="#">
-                                <i class="fas fa-share-alt"></i>
-                                <span><?php echo $strButtonShare; ?></span>
-                            </a>
-                        </div>
                     </div>
                 </div>
 

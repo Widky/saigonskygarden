@@ -25,12 +25,6 @@ body {
                     <span class="cl-main-title change-cl"><?php echo _e('APARTMENT','hotel-center-lite-child') ?></span>
                     <span class="cl-sub-title"><?php echo _e('お部屋案内','hotel-center-lite-child') ?></span>
                 </h2>
-                <div class="cl-tax-share">
-                    <a href="#">
-                        <i class="fas fa-share-alt"></i>
-                        <span><?php echo $strButtonShare; ?></span>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -152,7 +146,7 @@ body {
                 'orderby'           =>  'date',
                 //'order'             =>  'DESC',
                 'post_status'       =>  'publish',
-                'post__not_in' => array($first_id, $second_id),
+                'post__not_in' => array($first_id),
             );
             $query_bed = new WP_Query($args_bed_one);
             $my_posts_bed = $query_bed->get_posts();

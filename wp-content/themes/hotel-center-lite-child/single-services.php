@@ -40,12 +40,6 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
             <div class="sp-header">
                 <div class="sp-header-wrap">
                     <h3 class="sp-cat-title text-center"><?php the_title(); ?></h3>
-                    <div class="sp-share">
-                        <a href="#">
-                            <i class="fas fa-share-alt"></i>
-                            <span><?php echo $strButtonShare; ?></span>
-                        </a>
-                    </div>
                 </div>
                 <p class="sp-excerpt"><?php echo get_the_content(); ?></p>
             </div>

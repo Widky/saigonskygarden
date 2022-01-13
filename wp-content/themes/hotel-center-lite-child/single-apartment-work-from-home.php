@@ -41,12 +41,6 @@ breadcrumb_header($pageTitle, $pageSubTitle, $imageUrlBreadcrumb);
                     <h3 class="cat-title"><?php echo get_field('sub_title_in_detail_page_field3', get_the_ID()); ?></h3>
                     <div class="cat-des"><?php the_title(); ?></div>
                 </div>
-                <div class="apd-tax-share">
-                    <a href="#">
-                        <i class="fas fa-share-alt"></i>
-                        <span><?php echo $strButtonShare; ?></span>
-                    </a>
-                </div>
             </div>
             <div class="apd-tax-slide">
                 <div class="csti-img">
