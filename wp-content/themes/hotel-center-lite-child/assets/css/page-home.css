@@ -1521,10 +1521,10 @@ section .cl-sub-title,
     width: 100%;
 }
 
-.small-w{
+.facilities-items .facilities-item.small-w{
     display: none;
 }
-.large-w{
+.facilities-items .facilities-item.large-w, .large-w{
     display: block;
 }
 /* responsive */
@@ -1885,10 +1885,10 @@ section .cl-sub-title,
     .home-contact .hcw-right {
         margin-top: 60px;
     }
-    .small-w{
+    .facilities-items .facilities-item.small-w{
         display: block;
     }
-    .large-w{
+    .facilities-items .facilities-item.large-w,.large-w{
         display: none;
     }
 }

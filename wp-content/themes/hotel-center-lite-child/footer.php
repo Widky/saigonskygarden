@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="footer-wrap container">
         <div class="footer-main row">
-            <div class="footer-main-column footer-main-column1 col-xl-3 col-lg-3 col-md-5 col-12">
+            <div class="footer-main-column footer-main-column1 col-xl-3 col-lg-3 col-md-6 col-12">
                 <div class="fmc1-wrap">
                     <h3 class="fmc1-title">SAIGON SKY GARDEN</h3>
                     <p><?php _e('自然と調和した現代的なデザインで、サイゴンスカイガーデンは1区の中心的な建物の一つとなっています。', 'hotel-center-lite-child'); ?></p>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-main-column footer-main-column2 col-xl-3 col-lg3 col-md-3 col-6">
+            <div class="footer-main-column footer-main-column2 col-xl-3 col-lg-3 col-md-6 col-12">
                 <div class="row">
                 <div class="footer-main-column footer-main-column2 col-xl-5 col-lg-5 col-md-5 col-12">
                     <div class="fmc2-wrap">
@@ -95,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-main-column footer-main-column5 col-xl-3 col-lg-2 col-md-7 col-12">
+            <div class="footer-main-column footer-main-column5 col-xl-3 col-lg-3 col-md-7 col-12">
                 <div class="fmc5-wrap">
                     <?php 
                         $locale = get_locale();
